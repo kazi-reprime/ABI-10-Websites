@@ -17,7 +17,7 @@
 | 09 | Noir Gold | Cinematic luxe · spotlight | https://abi-app-9.vercel.app |
 | 10 | Vapor Retro | Synthwave · 3D grid sun | https://abi-app-10.vercel.app |
 
-**Master hub:** https://abi-ten.vercel.app  
+**Master hub:** https://abi-ten-rose.vercel.app  
 **Asset CDN:** https://abi-assets.vercel.app
 
 ## Architecture
@@ -49,7 +49,7 @@
 /                       — landing index.html (preview hub)
 /01-neon-blade …/10-…/  — 10 site folders (each: index + 4 subpages + sitemap + robots + vercel.json)
 /assets/                — source-of-truth for img + logos + videos (mirrored on abi-assets.vercel.app)
-/landing/               — master hub (abi-ten.vercel.app)
+/landing/               — master hub (abi-ten-rose.vercel.app)
 /_content/              — content.json (single source of truth) + sites.json
 /_build/                — Python builder (build.py) + PPT generator (make_pptx.py)
 /_deploy/               — deploy manifest + PPT deck + audit script
