@@ -2,156 +2,180 @@
   "brand": {
     "name": "American Barber Institute",
     "short": "ABI",
-    "tagline": "Your Future. Your Career. Start Today.",
-    "subtitle": "New York's only dedicated barber school — changing lives for over 30 years.",
+    "tagline": {"en":"Your Future. Your Career. Start Today.","es":"Tu Futuro. Tu Carrera. Empieza Hoy."},
+    "subtitle": {"en":"New York's only dedicated barber school — changing lives for over 30 years.","es":"La única escuela de barbería dedicada en Nueva York — cambiando vidas por más de 30 años."},
+    "promo": {"en":"Start Your Barber Career Today for Only $150 a Week!","es":"¡Comienza Tu Carrera de Barbero Hoy por Solo $150 a la Semana!"},
     "phone_manhattan": "(212) 290-2289",
     "phone_manhattan_es": "(212) 290-0278",
     "phone_bronx": "(718) 676-0640",
     "phone_haircut_booking": "(856) 316-1551",
     "email": "admission@abi.edu",
-    "next_start_date": "Monday, July 6, 2026",
-    "next_start_short": "First Monday of every month",
+    "next_start_short": {"en":"First Monday of every month","es":"El primer lunes de cada mes"},
     "years_in_business": "30+",
     "graduates": "10,000+",
-    "rating": "4.3/5 on Google",
-    "facility": "3,000 sq ft two-floor Midtown Manhattan facility",
-    "instagram": "@americanbarberinstitute",
-    "license_authority": "New York State Department of Education (BPSS)"
+    "rating": "4.3/5 Google",
+    "facility": {"en":"3,000 sq ft two-floor Midtown Manhattan facility","es":"Instalaciones de 3,000 pies cuadrados, dos pisos en Midtown Manhattan"},
+    "license_authority": {"en":"New York State Department of Education (BPSS)","es":"Departamento de Educación del Estado de Nueva York (BPSS)"}
+  },
+  "ui": {
+    "apply_now": {"en":"Apply Now","es":"Aplica Ahora"},
+    "apply_today": {"en":"Apply Today","es":"Aplica Hoy"},
+    "call_english": {"en":"Call (English)","es":"Llamar (Inglés)"},
+    "call_spanish": {"en":"Call (Spanish)","es":"Llamar (Español)"},
+    "call_admissions": {"en":"Call Admissions","es":"Llama a Admisiones"},
+    "send_message": {"en":"Send a Message","es":"Enviar un Mensaje"},
+    "read_faq": {"en":"Read FAQ","es":"Leer Preguntas"},
+    "see_programs": {"en":"See Programs","es":"Ver Programas"},
+    "talk_admissions": {"en":"Talk to Admissions","es":"Habla con Admisiones"},
+    "get_directions": {"en":"Get Directions","es":"Obtener Direcciones"},
+    "visit_campus": {"en":"Visit Our Campus","es":"Visita Nuestro Campus"},
+    "book_chair": {"en":"Book a Chair","es":"Reserva un Asiento"},
+    "become_barber": {"en":"Become a Barber","es":"Conviértete en Barbero"},
+    "lets_do_it": {"en":"Let's Do It","es":"¡Adelante!"},
+    "language": {"en":"Language","es":"Idioma"}
+  },
+  "nav": {
+    "home":         {"en":"Home","es":"Inicio"},
+    "about":        {"en":"About","es":"Acerca de"},
+    "programs":     {"en":"Programs","es":"Programas"},
+    "instructors":  {"en":"Instructors","es":"Instructores"},
+    "gallery":      {"en":"Gallery","es":"Galería"},
+    "partners":     {"en":"Partners","es":"Aliados"},
+    "haircuts":     {"en":"Haircuts","es":"Cortes de Cabello"},
+    "jobplacement": {"en":"Job Placement","es":"Colocación Laboral"},
+    "resources":    {"en":"Resources","es":"Recursos"},
+    "faq":          {"en":"FAQ","es":"Preguntas Frecuentes"},
+    "contact":      {"en":"Contact","es":"Contacto"}
   },
   "campuses": [
-    {"name":"Manhattan","address":"48 West 39th Street, New York, NY 10018","phone":"(212) 290-2289","hours":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM"},
-    {"name":"Bronx","address":"121 Westchester Square, Bronx, NY 10461","phone":"(718) 676-0640","hours":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM"}
+    {"name":{"en":"Manhattan","es":"Manhattan"},"address":"48 West 39th Street, New York, NY 10018","phone":"(212) 290-2289","hours":{"en":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM","es":"Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM"}},
+    {"name":{"en":"Bronx","es":"Bronx"},"address":"121 Westchester Square, Bronx, NY 10461","phone":"(718) 676-0640","hours":{"en":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM","es":"Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM"}}
   ],
   "programs": [
-    {"campus":"Manhattan","name":"500-Hour Master Barber Program","duration":"≈ 17 weeks / 4 months","summary":"The complete, state-approved path to your New York Master Barber License. Cutting, fading, beard work, straight-razor shaving, sanitation, sterilization, barber history, NY State law, shop management, and full Board Exam prep — written and practical.","price":"$4,600–$5,600","details":"Hands-on training in the live student clinic from week one. Choose Morning (Mon–Fri 8AM–2PM), Afternoon (Mon–Fri 2PM–8PM), or Weekend (Sat–Sun 9AM–7PM).","flagship":true},
-    {"campus":"Manhattan","name":"50-Hour Barber Refresher","duration":"2-week intensive","summary":"A fast, focused refresher for licensed or returning barbers who want to sharpen speed, technique, and confidence on modern fades, beard work, and clipper-over-comb.","price":"$1,500","details":"Perfect after a career gap, a move to NY, or a license transfer."},
-    {"campus":"Manhattan","name":"3-Hour Contagious Diseases","duration":"Single session","summary":"NY State-required infection-control certification — sanitation, sterilization, blood-borne pathogens, OSHA, and compliance practices for the barbershop.","price":"Call for pricing","details":"A single session you can complete in an afternoon. Required for all NY barbers."},
-    {"campus":"Bronx","name":"540-Hour Master Barber — Bronx","duration":"≈ 18 weeks","summary":"The full Master Barber certification program at the Westchester Square campus. Same curriculum and exam prep as the Manhattan program, in the Bronx.","price":"$4,600–$5,600","details":"Same three flexible schedules. Same instructor-led clinic. Same NY State Master Barber License at the end."},
-    {"campus":"Bronx","name":"3-Hour Contagious Diseases — Bronx","duration":"Single session","summary":"NY State-required infection-control certification — Bronx campus.","price":"Call for pricing"}
+    {"campus":{"en":"Manhattan","es":"Manhattan"},"name":{"en":"500-Hour Master Barber Program","es":"Programa de Maestro Barbero — 500 Horas"},"duration":{"en":"≈ 17 weeks / 4 months","es":"≈ 17 semanas / 4 meses"},"summary":{"en":"The complete state-approved path to your New York Master Barber License. Cutting, fading, beard work, straight-razor shaving, sanitation, sterilization, barber history, NY State law, shop management, and full Board Exam prep — written and practical.","es":"El camino completo aprobado por el estado para tu Licencia de Maestro Barbero de Nueva York. Cortes, degradados, trabajo de barba, afeitado con navaja, sanitización, esterilización, historia de la barbería, ley estatal de NY, administración de tienda, y preparación completa para el examen estatal — escrito y práctico."},"price":"$4,600–$5,600","details":{"en":"Hands-on training in the live student clinic from week one. Choose Morning, Afternoon, or Weekend schedule.","es":"Entrenamiento práctico en la clínica de estudiantes desde la primera semana. Elige horario de Mañana, Tarde, o Fin de Semana."},"flagship":true},
+    {"campus":{"en":"Manhattan","es":"Manhattan"},"name":{"en":"50-Hour Barber Refresher","es":"Curso de Actualización — 50 Horas"},"duration":{"en":"2-week intensive","es":"Intensivo de 2 semanas"},"summary":{"en":"A fast, focused refresher for licensed or returning barbers who want to sharpen speed, technique, and confidence.","es":"Una actualización rápida y enfocada para barberos licenciados o que regresan al oficio y quieren afinar velocidad, técnica y confianza."},"price":"$1,500"},
+    {"campus":{"en":"Manhattan","es":"Manhattan"},"name":{"en":"3-Hour Contagious Diseases","es":"Enfermedades Contagiosas — 3 Horas"},"duration":{"en":"Single session","es":"Sesión única"},"summary":{"en":"NY State-required infection-control certification — sanitation, sterilization, blood-borne pathogens, OSHA, and compliance practices.","es":"Certificación de control de infecciones requerida por el Estado de NY — sanitización, esterilización, patógenos sanguíneos, OSHA, y prácticas de cumplimiento."},"price":{"en":"Call for pricing","es":"Llama para conocer el precio"}},
+    {"campus":{"en":"Bronx","es":"Bronx"},"name":{"en":"540-Hour Master Barber — Bronx","es":"Maestro Barbero — 540 Horas — Bronx"},"duration":{"en":"≈ 18 weeks","es":"≈ 18 semanas"},"summary":{"en":"The full Master Barber certification program at the Westchester Square campus. Same curriculum and exam prep as the Manhattan program.","es":"El programa completo de certificación de Maestro Barbero en el campus de Westchester Square. Mismo currículo y preparación de examen que el programa de Manhattan."},"price":"$4,600–$5,600"},
+    {"campus":{"en":"Bronx","es":"Bronx"},"name":{"en":"3-Hour Contagious Diseases — Bronx","es":"Enfermedades Contagiosas — 3 Horas — Bronx"},"duration":{"en":"Single session","es":"Sesión única"},"summary":{"en":"NY State-required infection-control certification — Bronx campus.","es":"Certificación de control de infecciones requerida por el Estado de NY — campus del Bronx."},"price":{"en":"Call for pricing","es":"Llama para conocer el precio"}}
   ],
   "schedules": [
-    {"label":"Full-Time Morning","days":"Mon–Fri","time":"8:00 AM – 2:00 PM","tuition":"$5,600","plan":"$500 down + 17 weekly payments of $300"},
-    {"label":"Full-Time Afternoon","days":"Mon–Fri","time":"2:00 PM – 8:00 PM","tuition":"$4,600","plan":"$500 down + 16 weekly payments of $250 + $100 final"},
-    {"label":"Weekend","days":"Sat & Sun","time":"9:00 AM – 7:00 PM","tuition":"$4,600","plan":"$550 down + 27 weekly payments of $150"}
+    {"label":{"en":"Full-Time Morning","es":"Tiempo Completo · Mañana"},"days":{"en":"Mon–Fri","es":"Lun–Vie"},"time":"8:00 AM – 2:00 PM","tuition":"$5,600","plan":{"en":"$500 down + 17 weekly payments of $300","es":"$500 enganche + 17 pagos semanales de $300"}},
+    {"label":{"en":"Full-Time Afternoon","es":"Tiempo Completo · Tarde"},"days":{"en":"Mon–Fri","es":"Lun–Vie"},"time":"2:00 PM – 8:00 PM","tuition":"$4,600","plan":{"en":"$500 down + 16 weekly payments of $250 + $100 final","es":"$500 enganche + 16 pagos semanales de $250 + $100 final"}},
+    {"label":{"en":"Weekend","es":"Fin de Semana"},"days":{"en":"Sat & Sun","es":"Sáb & Dom"},"time":"9:00 AM – 7:00 PM","tuition":"$4,600","plan":{"en":"$550 down + 27 weekly payments of $150","es":"$550 enganche + 27 pagos semanales de $150"}}
   ],
-  "enrollment_requirements": [
-    "Social Security card",
-    "High School Diploma, GED, or pass the ATB exam at ABI",
-    "Minimum age 17",
-    "Proof of residential address",
-    "Valid photo ID or driver's license",
-    "$500 down payment (includes $100 registration fee)"
+  "requirements": [
+    {"en":"Social Security card","es":"Tarjeta de Seguro Social"},
+    {"en":"High School Diploma, GED, or pass the ATB exam at ABI","es":"Diploma de Preparatoria, GED, o aprobar el examen ATB en ABI"},
+    {"en":"Minimum age 17","es":"Edad mínima de 17 años"},
+    {"en":"Proof of residential address","es":"Comprobante de domicilio"},
+    {"en":"Valid photo ID or driver's license","es":"Identificación con foto válida o licencia de conducir"},
+    {"en":"$500 down payment (includes $100 registration fee)","es":"$500 de enganche (incluye $100 de cuota de inscripción)"}
   ],
   "enrollment_steps": [
-    {"step":1,"title":"Apply","desc":"Submit your information online or call admissions. The whole form takes less than two minutes."},
-    {"step":2,"title":"Speak with an advisor","desc":"An admissions advisor walks you through tuition options, the GI Bill / ACCES-VR process, and the schedule that fits your life."},
-    {"step":3,"title":"Start training","desc":"New cohorts start the first Monday of every month. Complete enrollment, gather your tools list, and step onto the clinic floor."}
+    {"step":1,"title":{"en":"Apply","es":"Aplica"},"desc":{"en":"Submit your information online or call admissions. The whole form takes less than two minutes.","es":"Envía tu información en línea o llama a admisiones. El formulario completo toma menos de dos minutos."}},
+    {"step":2,"title":{"en":"Speak with an advisor","es":"Habla con un asesor"},"desc":{"en":"An admissions advisor walks you through tuition, GI Bill / ACCES-VR, and the schedule that fits your life.","es":"Un asesor de admisiones te explica la matrícula, GI Bill / ACCES-VR, y el horario que se ajusta a tu vida."}},
+    {"step":3,"title":{"en":"Start training","es":"Comienza el entrenamiento"},"desc":{"en":"New cohorts start the first Monday of every month. Step onto the clinic floor.","es":"Las nuevas generaciones comienzan el primer lunes de cada mes. Pisa el piso de la clínica."}}
   ],
   "why_choose": [
-    "New York's only dedicated barber school — barbering is all we do.",
-    "Licensed by the NY State Department of Education (BPSS).",
-    "30+ years of proven results with 10,000+ graduates.",
-    "3,000 sq ft two-floor facility in Midtown Manhattan.",
-    "Flexible schedules: morning, afternoon, weekend.",
-    "Veterans & GI Bill® benefits accepted: Post-9/11 GI Bill (Ch. 33), VR&E (Ch. 31), Montgomery GI Bill, DEA (Ch. 35).",
-    "ACCES-VR (NY State Vocational Rehabilitation) accepted.",
-    "Hands-on training in a real barber clinic from day one.",
-    "Real barbershop skills taught within the first few weeks.",
-    "Full-time Job Placement Office on graduation.",
-    "Two campuses: Manhattan and the Bronx.",
-    "Spanish-speaking admissions on call.",
-    "No prior experience required."
+    {"en":"New York's only dedicated barber school.","es":"La única escuela de barbería dedicada de Nueva York."},
+    {"en":"Licensed by the NY State Department of Education.","es":"Licenciada por el Departamento de Educación del Estado de NY."},
+    {"en":"30+ years of proven results with 10,000+ graduates.","es":"Más de 30 años de resultados comprobados con más de 10,000 graduados."},
+    {"en":"3,000 sq ft two-floor facility in Midtown Manhattan.","es":"Instalaciones de 3,000 pies cuadrados en Midtown Manhattan."},
+    {"en":"Flexible schedules: morning, afternoon, weekend.","es":"Horarios flexibles: mañana, tarde, fin de semana."},
+    {"en":"GI Bill® accepted: Post-9/11 (Ch. 33), VR&E (Ch. 31), Montgomery, DEA (Ch. 35).","es":"GI Bill® aceptado: Post-9/11 (Cap. 33), VR&E (Cap. 31), Montgomery, DEA (Cap. 35)."},
+    {"en":"ACCES-VR (NY State Vocational Rehabilitation) accepted.","es":"ACCES-VR (Rehabilitación Vocacional del Estado de NY) aceptado."},
+    {"en":"Hands-on training from day one in a real barber clinic.","es":"Entrenamiento práctico desde el primer día en una clínica de barbería real."},
+    {"en":"Full-time Job Placement Office on graduation.","es":"Oficina de Colocación Laboral a tiempo completo en la graduación."},
+    {"en":"Two campuses: Manhattan and the Bronx.","es":"Dos campus: Manhattan y el Bronx."},
+    {"en":"Spanish-speaking admissions on call.","es":"Admisiones en español disponibles."},
+    {"en":"No prior experience required.","es":"No se requiere experiencia previa."}
   ],
   "career_earnings": [
-    {"stage":"Entry-Level Barber","window":"Year 1","range":"$35,000 – $45,000","desc":"Building a client base, refining technique, learning the rhythm of a working shop floor."},
-    {"stage":"Established Barber","window":"Years 2–3","range":"$50,000 – $70,000","desc":"Loyal clientele, faster service, increased income, brand starting to travel."},
-    {"stage":"Booth Renter / Shop Owner","window":"Year 3+","range":"$75,000 – $100,000+","desc":"Full control of schedule, pricing, and brand. Most graduates aiming for ownership land here within five years."}
+    {"stage":{"en":"Entry-Level Barber","es":"Barbero Principiante"},"window":{"en":"Year 1","es":"Año 1"},"range":"$35,000 – $45,000","desc":{"en":"Building a client base, refining technique.","es":"Construyendo una clientela, refinando la técnica."}},
+    {"stage":{"en":"Established Barber","es":"Barbero Establecido"},"window":{"en":"Years 2–3","es":"Años 2–3"},"range":"$50,000 – $70,000","desc":{"en":"Loyal clientele, faster service, increased income.","es":"Clientela leal, servicio más rápido, ingresos crecientes."}},
+    {"stage":{"en":"Booth Renter / Shop Owner","es":"Arrendatario / Dueño de Tienda"},"window":{"en":"Year 3+","es":"Año 3+"},"range":"$75,000 – $100,000+","desc":{"en":"Full control of schedule and earnings.","es":"Control total del horario y de los ingresos."}}
   ],
-  "earnings_note": "Earnings figures are estimates only and are not guaranteed. Actual income will vary based on individual effort, hours worked, location, and market conditions.",
+  "earnings_note": {"en":"Earnings figures are estimates only and are not guaranteed. Actual income varies based on individual effort, hours worked, location, and market conditions.","es":"Las cifras de ingresos son solo estimaciones y no están garantizadas. Los ingresos reales varían según el esfuerzo individual, horas trabajadas, ubicación, y condiciones del mercado."},
   "instructors": [
-    {"name":"David \"King David\" Ayeoribe","role":"Lead Senior Instructor & Director","bio":"Over 50 years of barbering experience and more than 30 years of teaching. The longest-serving barber instructor in New York City and one of the most respected names in NY barbering education. King David has personally trained generations of master barbers — from first-timers to shop owners across the five boroughs.","tags":["Founding faculty","30+ years teaching","NY State licensed"]},
-    {"name":"Harold \"Barkim\" Brown","role":"Master Instructor","bio":"Decades of professional barbering and a relentless eye for detail. Barkim runs the floor like a working shop — fast, exact, and patient with every student who steps to a chair.","tags":["Master Barber","Clinic-floor lead"]},
-    {"name":"Barry Brown","role":"Master Instructor","bio":"Brings deep experience from the NY barber scene to a curriculum focused on modern fades, beard work, and the discipline of running a real chair under pressure.","tags":["Master Barber","Fade specialist"]},
-    {"name":"Richard","role":"Bilingual Instructor","bio":"English and Spanish instruction. Richard's brother Mike owns Diamond Fadez Barbershop just one block from our Manhattan campus — a two-generation family story rooted in ABI.","tags":["Bilingual","ES + EN"]}
+    {"name":"David \"King David\" Ayeoribe","role":{"en":"Lead Senior Instructor & Director","es":"Instructor Principal Senior & Director"},"bio":{"en":"Over 50 years of barbering experience and more than 30 years of teaching. The longest-serving barber instructor in New York City. King David has personally trained generations of master barbers — from first-timers to shop owners across the five boroughs.","es":"Más de 50 años de experiencia en barbería y más de 30 años enseñando. El instructor de barbería con más antigüedad en la ciudad de Nueva York. King David ha entrenado personalmente a generaciones de maestros barberos — desde principiantes hasta dueños de tienda en los cinco condados."},"tags":[{"en":"Founding faculty","es":"Profesorado fundador"},{"en":"30+ years teaching","es":"30+ años enseñando"},{"en":"NY State licensed","es":"Licenciado por el Estado de NY"}]},
+    {"name":"Harold \"Barkim\" Brown","role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Decades of professional barbering and a relentless eye for detail. Barkim runs the floor like a working shop — fast, exact, and patient with every student.","es":"Décadas de barbería profesional y un ojo implacable para el detalle. Barkim dirige el piso como una tienda en funcionamiento — rápido, exacto, y paciente con cada estudiante."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Clinic-floor lead","es":"Líder del piso clínico"}]},
+    {"name":"Barry Brown","role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Brings deep experience from the NY barber scene to a curriculum focused on modern fades, beard work, and the discipline of running a real chair.","es":"Aporta profunda experiencia de la escena barberil de NY a un currículo enfocado en degradados modernos, trabajo de barba, y la disciplina de manejar un sillón real."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Fade specialist","es":"Especialista en degradados"}]},
+    {"name":"Richard Cancel","role":{"en":"Bilingual Instructor","es":"Instructor Bilingüe"},"bio":{"en":"English and Spanish instruction. Richard's brother Mike owns Diamond Fadez just one block from our Manhattan campus — a two-generation family story rooted in ABI.","es":"Instrucción en inglés y español. El hermano de Richard, Mike, es dueño de Diamond Fadez a solo una cuadra de nuestro campus de Manhattan — una historia familiar de dos generaciones arraigada en ABI."},"tags":[{"en":"Bilingual ES + EN","es":"Bilingüe ES + EN"}]}
   ],
   "testimonials": [
-    {"name":"Jerrick Matthews","role":"Current Student","quote":"The level of knowledge and training is superb. One of the best teachers around — King David — will show you everything."},
-    {"name":"Carlos Perez","role":"Current Student","quote":"I have King David as my instructor and he has been awesome. He has 30 years of experience and gives us great techniques."},
-    {"name":"Zyee Fin","role":"Current Student","quote":"I'm currently enrolled and I'm happy with the progress from learning from the teachers and classmates. Nothing but positivity."},
-    {"name":"Richard Cacace","role":"5★ Google Review","quote":"The best barber school in New York — way better than the Arrojo Barber Academy. Real barber culture."},
-    {"name":"Vincybie Lee","role":"Clinic Client","quote":"Only $3 for a regular haircut and it's not bad at all. Great that we could help student trainees."},
-    {"name":"Tina Banee","role":"Clinic Client","quote":"Donovan gave me a great haircut. He did exactly what I asked. Well worth $3 plus a $7 tip."}
+    {"name":"Jerrick Matthews","role":{"en":"Current Student","es":"Estudiante Actual"},"quote":{"en":"The level of knowledge and training is superb. One of the best teachers around — King David — will show you everything.","es":"El nivel de conocimiento y entrenamiento es excepcional. Uno de los mejores maestros — King David — te mostrará todo."}},
+    {"name":"Carlos Perez","role":{"en":"Current Student","es":"Estudiante Actual"},"quote":{"en":"I have King David as my instructor and he has been awesome. He has 30 years of experience.","es":"Tengo a King David como mi instructor y ha sido increíble. Tiene 30 años de experiencia."}},
+    {"name":"Zyee Fin","role":{"en":"Current Student","es":"Estudiante Actual"},"quote":{"en":"I'm enrolled and I'm happy with the progress from the teachers and classmates. Nothing but positivity.","es":"Estoy inscrito y estoy contento con el progreso de los maestros y compañeros. Pura positividad."}},
+    {"name":"Richard Cacace","role":{"en":"5★ Google Review","es":"Reseña 5★ Google"},"quote":{"en":"The best barber school in New York — real barber culture.","es":"La mejor escuela de barbería de Nueva York — verdadera cultura de barbero."}},
+    {"name":"Vincybie Lee","role":{"en":"Clinic Client","es":"Cliente de la Clínica"},"quote":{"en":"Only $3 for a regular haircut and it's not bad at all.","es":"Solo $3 por un corte regular y no está nada mal."}},
+    {"name":"Tina Banee","role":{"en":"Clinic Client","es":"Cliente de la Clínica"},"quote":{"en":"Donovan gave me a great haircut. He did exactly what I asked.","es":"Donovan me dio un excelente corte. Hizo exactamente lo que pedí."}}
   ],
   "partners": [
-    {"name":"Levels Barbershop","locations":"Manhattan · Brooklyn · Orange County, NY","desc":"Founded 1996 on 125th Street in Harlem. Multi-location empire including The Antique Barber product line and Barber World TV. Several Nuru-family co-owners are ABI graduates; many licensed barbers on staff are alumni.","why":"Proof that ABI graduates can build iconic businesses and mentor the next generation."},
-    {"name":"Diamond Fadez","locations":"308 West 39th Street, NYC","desc":"Combined barbershop and tattoo studio one block from ABI's Manhattan campus. Owner Mike is an ABI graduate; his brother Richard teaches at ABI as a bilingual instructor.","why":"Two generations of one family — taught and now teaching at the same school."},
-    {"name":"Untouchable Cutz","locations":"Staten Island, NY","desc":"Respected modern barbershop with a team carrying 50+ combined years of experience. Owner Jimmy opened shop within two years of earning his ABI license. Actively hires ABI graduates and offers private tutoring.","why":"Rapid entrepreneurial success — and a commitment to passing the craft forward."},
-    {"name":"Expo Gentlemen Salon","locations":"Staten Island (326 New Dorp Lane) · Brooklyn","desc":"Multi-location established salon. Owner Joe consistently hires ABI graduates to staff both locations.","why":"Trust built shop-by-shop through consistent graduate performance."},
-    {"name":"Otis & Finn","locations":"Long Island City · Court Square · Greenpoint · Williamsburg","desc":"State-of-the-art barbershop featured in GQ, BuzzFeed, HuffPost, FOX5, and PIX11. ABI graduates anchor every team; graduate James Cavanaugh is featured in the official Otis & Finn bio.","why":"Public partnerships where employers publicly recognize and invest in alumni talent."},
-    {"name":"NYC Barber Shop Museum","locations":"Columbus Ave & E 70th St, Manhattan · Sunny Isles, Miami","desc":"The first museum of its kind — a working barbershop housing century-old artifacts. Operated by fourth-generation Master Barber Arthur Rubinoff. 501(c)(3) non-profit.","why":"\"To work at the NYC Barber Shop Museum is to step into a lineage.\" Four-generation professional standard."}
+    {"name":"Levels Barbershop","locations":"Manhattan · Brooklyn · Orange County, NY","desc":{"en":"Founded 1996 on 125th Street in Harlem. Multi-location empire including The Antique Barber product line and Barber World TV. Several Nuru-family co-owners are ABI graduates; many licensed barbers on staff are alumni.","es":"Fundada en 1996 en la calle 125 en Harlem. Imperio multi-locación que incluye la línea de productos The Antique Barber y Barber World TV. Varios co-dueños de la familia Nuru son graduados de ABI; muchos barberos licenciados en el equipo son ex-alumnos."},"why":{"en":"Proof that ABI graduates can build iconic businesses.","es":"Prueba de que los graduados de ABI pueden construir negocios icónicos."}},
+    {"name":"Diamond Fadez","locations":"308 West 39th Street, NYC","desc":{"en":"Combined barbershop and tattoo studio one block from ABI's Manhattan campus. Owner Mike is an ABI graduate; his brother Richard teaches at ABI as a bilingual instructor.","es":"Barbería y estudio de tatuajes combinados a una cuadra del campus de Manhattan de ABI. El dueño Mike es graduado de ABI; su hermano Richard enseña en ABI como instructor bilingüe."},"why":{"en":"Two generations of one family — taught and now teaching.","es":"Dos generaciones de una familia — enseñados y ahora enseñando."}},
+    {"name":"Untouchable Cutz","locations":"Staten Island, NY","desc":{"en":"Respected modern barbershop with a team carrying 50+ combined years of experience. Owner Jimmy opened shop within two years of earning his ABI license.","es":"Barbería moderna respetada con un equipo que acumula más de 50 años combinados de experiencia. El dueño Jimmy abrió su tienda dos años después de obtener su licencia de ABI."},"why":{"en":"Rapid entrepreneurial success.","es":"Éxito empresarial rápido."}},
+    {"name":"Expo Gentlemen Salon","locations":"Staten Island · Brooklyn","desc":{"en":"Multi-location established salon. Owner Joe consistently hires ABI graduates to staff both locations.","es":"Salón multi-locación establecido. El dueño Joe contrata consistentemente graduados de ABI para ambas ubicaciones."},"why":{"en":"Trust built through consistent graduate performance.","es":"Confianza construida a través del desempeño consistente de los graduados."}},
+    {"name":"Otis & Finn","locations":"Long Island City · Court Square · Greenpoint · Williamsburg","desc":{"en":"State-of-the-art barbershop featured in GQ, BuzzFeed, HuffPost, FOX5, PIX11. ABI graduate James Cavanaugh featured in the official bio.","es":"Barbería de vanguardia destacada en GQ, BuzzFeed, HuffPost, FOX5 y PIX11. El graduado de ABI James Cavanaugh aparece en la biografía oficial."},"why":{"en":"Employers publicly recognize and invest in alumni talent.","es":"Empleadores reconocen y invierten públicamente en el talento ex-alumno."}},
+    {"name":"NYC Barber Shop Museum","locations":"Columbus Ave & E 70th St, Manhattan · Sunny Isles, Miami","desc":{"en":"The first museum of its kind — a working barbershop housing century-old artifacts. Operated by fourth-generation Master Barber Arthur Rubinoff. 501(c)(3) non-profit.","es":"El primer museo de su tipo — una barbería en funcionamiento que alberga artefactos centenarios. Operada por el Maestro Barbero de cuarta generación Arthur Rubinoff. Sin fines de lucro 501(c)(3)."},"why":{"en":"Four-generation professional standard. School-to-master pipeline.","es":"Estándar profesional de cuatro generaciones. Tubería de escuela a maestro."}}
   ],
   "haircut_clinic": {
     "price": "$3",
     "booking_phone": "(856) 316-1551",
-    "intro": "Our student barber clinic is open to the public Monday through Friday. You'll sit in the chair of a future master barber — every cut supervised by a NY-licensed instructor on the floor.",
-    "services": ["Classic tapers","Low / mid / high fades","Caesars","Flat tops","Shape-ups","Razor lineups","Beard trims","Hot shaves","Shampoos & blowouts","Mohawks","Afro cuts","Pompadours","Bald-head shaves","Scissor cuts","Clipper cuts","Fohawks"],
+    "intro": {"en":"Our student barber clinic is open to the public Monday through Friday. You'll sit in the chair of a future master barber — every cut supervised by a NY-licensed instructor on the floor.","es":"Nuestra clínica de barbería estudiantil está abierta al público de lunes a viernes. Te sentarás en la silla de un futuro maestro barbero — cada corte supervisado por un instructor licenciado por NY en el piso."},
+    "services": [
+      {"en":"Classic Tapers","es":"Tapers Clásicos"},{"en":"Low / Mid / High Fades","es":"Degradados Bajo / Medio / Alto"},{"en":"Caesars","es":"Caesars"},{"en":"Flat Tops","es":"Flat Tops"},{"en":"Shape-Ups","es":"Delineados"},{"en":"Razor Lineups","es":"Líneas con Navaja"},{"en":"Beard Trims","es":"Recortes de Barba"},{"en":"Hot Shaves","es":"Afeitados Calientes"},{"en":"Shampoos & Blowouts","es":"Champú & Secado"},{"en":"Mohawks","es":"Mohawks"},{"en":"Afro Cuts","es":"Cortes Afro"},{"en":"Pompadours","es":"Pompadours"},{"en":"Bald-Head Shaves","es":"Afeitados de Cabeza"},{"en":"Scissor Cuts","es":"Cortes con Tijera"},{"en":"Clipper Cuts","es":"Cortes con Máquina"},{"en":"Fohawks","es":"Fohawks"}
+    ],
     "hours": "Mon–Fri 8:00 AM – 8:00 PM",
-    "what_to_expect": "Call ahead or walk in based on availability. Consult with your student barber on the style you want. All work is supervised by licensed instructors — student barbers are training, not licensed professionals, and you'll know exactly who's in your chair."
+    "what_to_expect": {"en":"Call ahead or walk in based on availability. Consult with your student barber on the style you want. All work is supervised by licensed instructors.","es":"Llama con anticipación o ven sin cita según disponibilidad. Consulta con tu barbero estudiante sobre el estilo que quieres. Todo el trabajo es supervisado por instructores licenciados."}
   },
   "job_placement": {
-    "intro": "Every ABI graduate meets with our Job Placement Office. We don't just hand you a license — we put you in the seat of your first chair.",
+    "intro": {"en":"Every ABI graduate meets with our Job Placement Office. We don't just hand you a license — we put you in the seat of your first chair.","es":"Cada graduado de ABI se reúne con nuestra Oficina de Colocación Laboral. No solo te damos una licencia — te ponemos en el asiento de tu primera silla."},
     "services": [
-      "1-on-1 career counseling on graduation",
-      "Direct referrals to our partner shops (Levels, Diamond Fadez, Otis & Finn, Untouchable Cutz, Expo Gentlemen, NYC Barber Shop Museum)",
-      "Resume and portfolio review",
-      "Mock interviews",
-      "Booth-rental vs. employment guidance",
-      "Independent shop-owner mentorship for grads who want to open their own"
+      {"en":"1-on-1 career counseling on graduation","es":"Consejería de carrera 1-a-1 al graduarte"},
+      {"en":"Direct referrals to our partner shops","es":"Referencias directas a nuestras barberías aliadas"},
+      {"en":"Resume and portfolio review","es":"Revisión de currículum y portafolio"},
+      {"en":"Mock interviews","es":"Entrevistas simuladas"},
+      {"en":"Booth-rental vs. employment guidance","es":"Orientación sobre alquiler vs. empleo"},
+      {"en":"Shop-owner mentorship for grads who want their own","es":"Mentoría de dueño de tienda para graduados que quieren la suya"}
     ],
-    "outcomes": "Many of our partner shops are owned by alumni. Many of their licensed staff are alumni. Our placement office runs the pipeline you'll step into the day you pass the State Board."
+    "outcomes": {"en":"Many of our partner shops are owned by alumni. Many of their licensed staff are alumni. Our placement office runs the pipeline you'll step into the day you pass the State Board.","es":"Muchas de nuestras barberías aliadas son propiedad de ex-alumnos. Muchos de sus empleados licenciados son ex-alumnos. Nuestra oficina de colocación maneja la tubería en la que entras el día que apruebas el Estado."}
   },
   "resources": {
     "veterans": {
-      "title": "Veterans & GI Bill® Benefits",
-      "intro": "ABI is approved to certify enrollment for veteran education benefits. We accept:",
-      "items": ["Post-9/11 GI Bill® (Chapter 33)","VR&E — Vocational Rehabilitation & Employment (Chapter 31)","Montgomery GI Bill® (Active Duty & Selected Reserve)","DEA — Dependents' Educational Assistance (Chapter 35)"],
-      "outro": "Coverage may pay all or part of your tuition. Talk to admissions about certifying your benefits before your start date."
+      "title": {"en":"Veterans & GI Bill® Benefits","es":"Beneficios para Veteranos y GI Bill®"},
+      "intro": {"en":"ABI is approved to certify enrollment for veteran education benefits. We accept:","es":"ABI está aprobado para certificar la inscripción para los beneficios educativos de veteranos. Aceptamos:"},
+      "items": [{"en":"Post-9/11 GI Bill® (Chapter 33)","es":"GI Bill® Post-9/11 (Capítulo 33)"},{"en":"VR&E — Vocational Rehab & Employment (Chapter 31)","es":"VR&E — Rehabilitación Vocacional & Empleo (Capítulo 31)"},{"en":"Montgomery GI Bill® (Active Duty & Reserve)","es":"Montgomery GI Bill® (Servicio Activo & Reserva)"},{"en":"DEA — Dependents' Educational Assistance (Chapter 35)","es":"DEA — Asistencia Educativa para Dependientes (Capítulo 35)"}],
+      "outro": {"en":"Talk to admissions about certifying your benefits before your start date.","es":"Habla con admisiones para certificar tus beneficios antes de tu fecha de inicio."}
     },
     "accesvr": {
       "title": "ACCES-VR",
-      "intro": "ACCES-VR (Adult Career and Continuing Education Services — Vocational Rehabilitation) is a New York State program that supports individuals with documented disabilities in obtaining and maintaining employment.",
-      "items": ["Coverage may include tuition, tools, and supplies","Contact your local ACCES-VR office to begin","ABI assists with the referral and certification process"]
+      "intro": {"en":"ACCES-VR is a New York State program that supports individuals with documented disabilities in obtaining and maintaining employment.","es":"ACCES-VR es un programa del Estado de Nueva York que apoya a personas con discapacidades documentadas para obtener y mantener empleo."},
+      "items": [{"en":"Coverage may include tuition, tools, and supplies","es":"La cobertura puede incluir matrícula, herramientas y suministros"},{"en":"Contact your local ACCES-VR office to begin","es":"Contacta tu oficina local de ACCES-VR para comenzar"},{"en":"ABI assists with referral and certification","es":"ABI ayuda con la referencia y certificación"}]
     },
     "licensing": {
-      "title": "NY State Board of Barbering",
-      "items": ["500-hour Master Barber program covers both written and practical exam prep","Master Barber License required to practice professionally in New York","NY State Board info: op.nysed.gov/prof/barber"]
+      "title": {"en":"NY State Board of Barbering","es":"Junta Estatal de Barbería de NY"},
+      "items": [{"en":"500-hour program covers written and practical exam prep","es":"El programa de 500 horas cubre la preparación del examen escrito y práctico"},{"en":"Master Barber License required to practice professionally in New York","es":"Se requiere la Licencia de Maestro Barbero para ejercer profesionalmente en Nueva York"}]
     },
     "tools": {
-      "title": "Tools & Supplies",
-      "items": ["Students purchase their own tools, books, and supplies","ABI provides a detailed tools list at registration","Buy from ABI directly or from approved third-party suppliers"]
+      "title": {"en":"Tools & Supplies","es":"Herramientas & Suministros"},
+      "items": [{"en":"Students purchase their own tools, books, and supplies","es":"Los estudiantes compran sus propias herramientas, libros y suministros"},{"en":"ABI provides a detailed tools list at registration","es":"ABI proporciona una lista detallada de herramientas en la inscripción"},{"en":"Buy from ABI or approved suppliers","es":"Compra a ABI o a proveedores aprobados"}]
     }
   },
   "faqs": [
-    {"q":"How long does the Master Barber program take?","a":"The 500-Hour Master Barber program can be completed in as little as 4 months full-time (Morning or Afternoon, Mon–Fri). The Weekend track typically completes in 6–7 months. The 50-Hour Refresher is a 2-week intensive. The 3-Hour Contagious Diseases course is a single afternoon."},
-    {"q":"Do I need prior experience to enroll?","a":"No prior barbering experience is required. We train you from the fundamentals — sanitation, posture, blade angle — and progress to advanced fading, beard work, straight-razor shaving, color, and chair-side business skills."},
-    {"q":"When do new classes start?","a":"New classes begin the first Monday of every month. The next cohort starts Monday, July 6, 2026. Apply, gather your documents, and be ready for the next start date — there's almost never a long wait."},
-    {"q":"What are the entrance requirements?","a":"A Social Security card, a High School Diploma / GED (or pass the ATB exam at ABI), proof of address, a valid photo ID, being at least 17, and a $500 down payment (which includes a $100 registration fee)."},
-    {"q":"How much does the program cost?","a":"The 500-Hour Master Barber program is $4,600 on the Afternoon and Weekend tracks; the Morning track is $5,600. The 50-Hour Refresher is $1,500. The 3-Hour Contagious Diseases course is call-for-pricing. All programs include flexible weekly payment plans after the down payment."},
-    {"q":"Do you offer payment plans?","a":"Yes. Every program includes a weekly payment plan after your down payment. Examples: Morning is $500 down + 17 weekly payments of $300. Afternoon is $500 down + 16 weekly payments of $250 + $100 final. Weekend is $550 down + 27 weekly payments of $150."},
-    {"q":"What license will I earn?","a":"On completing the 500-Hour Master Barber program you'll be fully prepared for the New York State Board of Barbering exam — both written and practical — and your Master Barber License."},
-    {"q":"Do you offer job placement?","a":"Yes. On graduation you'll meet with our Job Placement Office for 1-on-1 career counseling, resume and portfolio review, mock interviews, and direct referrals to our partner shops including Levels, Diamond Fadez, Otis & Finn, Untouchable Cutz, Expo Gentlemen, and the NYC Barber Shop Museum."},
-    {"q":"Do you accept GI Bill® or VA benefits?","a":"Yes. ABI accepts the Post-9/11 GI Bill® (Ch. 33), VR&E (Ch. 31), Montgomery GI Bill®, and DEA (Ch. 35) education benefits. We certify your enrollment with the VA on your behalf."},
-    {"q":"What is ACCES-VR?","a":"ACCES-VR is the NY State Adult Career and Continuing Education Services — Vocational Rehabilitation program. It supports individuals with documented disabilities and may cover tuition, tools, and supplies. Talk to your local ACCES-VR office, and we'll handle the school-side paperwork."},
-    {"q":"Is ABI licensed by the state?","a":"Yes. American Barber Institute is licensed by the New York State Department of Education through the Bureau of Proprietary School Supervision (BPSS), and we've served New York for over 30 years."},
-    {"q":"Can I get a haircut at ABI?","a":"Yes — the public is welcome for affordable student haircuts (typically $3). It's a great way to support trainees while getting a clean, supervised cut. Booking: (856) 316-1551."},
-    {"q":"Do I need to buy my own tools?","a":"Yes. Students are responsible for purchasing their own barbering tools, books, and supplies. ABI provides a detailed tools list at registration, with the option to buy directly from us or from approved third-party suppliers."},
-    {"q":"Do you offer Spanish-speaking admissions?","a":"Yes. Spanish-speaking admissions advisors are available. Call (212) 290-0278 to speak with Spanish admissions at the Manhattan campus."},
-    {"q":"How big are the classes?","a":"We keep instructor-to-student ratios low so every student gets real hands-on time on the floor. You're not learning by lecture — you're learning by chair time, in a working clinic, with an instructor inches away when you need them."}
-  ],
-  "social": [
-    {"label":"Instagram","href":"https://instagram.com/americanbarberinstitute"},
-    {"label":"Facebook","href":"https://facebook.com"},
-    {"label":"YouTube","href":"https://youtube.com"},
-    {"label":"Twitter","href":"https://x.com"}
+    {"q":{"en":"How long does the Master Barber program take?","es":"¿Cuánto dura el programa de Maestro Barbero?"},"a":{"en":"The 500-Hour Master Barber program can be completed in as little as 4 months full-time. The Weekend track typically completes in 6–7 months. The 50-Hour Refresher is a 2-week intensive.","es":"El Programa de Maestro Barbero de 500 Horas se puede completar en tan solo 4 meses a tiempo completo. La opción de Fin de Semana usualmente termina en 6–7 meses. El Curso de Actualización de 50 Horas es un intensivo de 2 semanas."}},
+    {"q":{"en":"Do I need prior experience to enroll?","es":"¿Necesito experiencia previa para inscribirme?"},"a":{"en":"No prior barbering experience is required. We train you from the fundamentals to advanced fading, beard work, and chair-side business skills.","es":"No se requiere experiencia previa. Te entrenamos desde los fundamentos hasta degradados avanzados, trabajo de barba y habilidades de negocio."}},
+    {"q":{"en":"When do new classes start?","es":"¿Cuándo empiezan las nuevas clases?"},"a":{"en":"New classes begin the first Monday of every month. Apply, gather your documents, and be ready for the next start date.","es":"Las nuevas clases empiezan el primer lunes de cada mes. Aplica, reúne tus documentos, y prepárate para la próxima fecha."}},
+    {"q":{"en":"What are the entrance requirements?","es":"¿Cuáles son los requisitos de ingreso?"},"a":{"en":"A Social Security card, a High School Diploma or GED (or pass the ATB exam at ABI), proof of address, a valid photo ID, being at least 17, and a $500 down payment.","es":"Tarjeta de Seguro Social, Diploma de Preparatoria o GED (o aprobar el examen ATB en ABI), comprobante de domicilio, identificación con foto válida, tener al menos 17 años, y un enganche de $500."}},
+    {"q":{"en":"How much does the program cost?","es":"¿Cuánto cuesta el programa?"},"a":{"en":"The 500-Hour Master Barber program is $4,600 on Afternoon and Weekend tracks; Morning is $5,600. The 50-Hour Refresher is $1,500.","es":"El Programa de Maestro Barbero de 500 Horas es de $4,600 en las opciones de Tarde y Fin de Semana; Mañana es $5,600. El Curso de Actualización de 50 Horas es $1,500."}},
+    {"q":{"en":"Do you offer payment plans?","es":"¿Ofrecen planes de pago?"},"a":{"en":"Yes. Every program includes a weekly payment plan after your down payment.","es":"Sí. Cada programa incluye un plan de pago semanal después de tu enganche."}},
+    {"q":{"en":"What license will I earn?","es":"¿Qué licencia obtendré?"},"a":{"en":"On completing the 500-Hour Master Barber program you'll be fully prepared for the NY State Board of Barbering exam and your Master Barber License.","es":"Al completar el programa de Maestro Barbero de 500 Horas estarás totalmente preparado para el examen de la Junta Estatal de Barbería de NY y tu Licencia de Maestro Barbero."}},
+    {"q":{"en":"Do you offer job placement?","es":"¿Ofrecen asistencia de colocación laboral?"},"a":{"en":"Yes. On graduation you'll meet with our Job Placement Office for 1-on-1 counseling, partner-shop referrals, resume review, and mock interviews.","es":"Sí. Al graduarte te reunirás con nuestra Oficina de Colocación Laboral para consejería 1-a-1, referencias a barberías aliadas, revisión de currículum, y entrevistas simuladas."}},
+    {"q":{"en":"Do you accept GI Bill® or VA benefits?","es":"¿Aceptan beneficios del GI Bill® o de la VA?"},"a":{"en":"Yes. ABI accepts the Post-9/11 GI Bill® (Ch. 33), VR&E (Ch. 31), Montgomery, and DEA (Ch. 35). We certify your enrollment with the VA.","es":"Sí. ABI acepta el GI Bill® Post-9/11 (Cap. 33), VR&E (Cap. 31), Montgomery, y DEA (Cap. 35). Certificamos tu inscripción con la VA."}},
+    {"q":{"en":"What is ACCES-VR?","es":"¿Qué es ACCES-VR?"},"a":{"en":"ACCES-VR is the NY State Adult Career and Continuing Education Services — Vocational Rehabilitation program. Coverage may include tuition, tools, and supplies.","es":"ACCES-VR es el programa de Rehabilitación Vocacional del Estado de NY. La cobertura puede incluir matrícula, herramientas, y suministros."}},
+    {"q":{"en":"Is ABI licensed by the state?","es":"¿Está ABI licenciada por el estado?"},"a":{"en":"Yes. American Barber Institute is licensed by the NY State Department of Education (BPSS) and has served NY for over 30 years.","es":"Sí. American Barber Institute está licenciada por el Departamento de Educación del Estado de NY (BPSS) y ha servido a NY por más de 30 años."}},
+    {"q":{"en":"Can I get a haircut at ABI?","es":"¿Puedo obtener un corte de cabello en ABI?"},"a":{"en":"Yes. The public is welcome for affordable student haircuts (typically $3). Booking: (856) 316-1551.","es":"Sí. El público es bienvenido a cortes de cabello asequibles (típicamente $3). Reservas: (856) 316-1551."}},
+    {"q":{"en":"Do I need to buy my own tools?","es":"¿Necesito comprar mis propias herramientas?"},"a":{"en":"Yes. Students are responsible for their own barbering tools, books, and supplies. ABI provides a detailed tools list at registration.","es":"Sí. Los estudiantes son responsables de sus propias herramientas, libros y suministros. ABI proporciona una lista detallada de herramientas en la inscripción."}},
+    {"q":{"en":"Do you offer Spanish-speaking admissions?","es":"¿Tienen admisiones en español?"},"a":{"en":"Yes. Call (212) 290-0278 to speak with Spanish admissions at the Manhattan campus.","es":"Sí. Llama al (212) 290-0278 para hablar con admisiones en español en el campus de Manhattan."}},
+    {"q":{"en":"How big are the classes?","es":"¿Qué tan grandes son las clases?"},"a":{"en":"We keep instructor-to-student ratios low so every student gets real hands-on time. You learn by chair time in a working clinic.","es":"Mantenemos proporciones bajas de instructor a estudiante para que cada estudiante obtenga tiempo real de práctica. Aprendes por tiempo en la silla en una clínica en funcionamiento."}}
   ]
 }

@@ -3,3 +3,5 @@
 **/.vercel/
 node_modules/
 *.log
+# Per-site assets bundles — generated at build time, not committed
+[0-9]*-*/assets/
