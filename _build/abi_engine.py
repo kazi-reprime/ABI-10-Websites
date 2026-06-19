@@ -403,6 +403,14 @@ details.card[open] summary::after{transform:rotate(45deg)}
 .m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}
 .m-vid.playing::before{opacity:0}
 @media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}
+/* ---- animated barber pole (brand mark; blue stripe tinted per site via --accent) ---- */
+.barber-pole{position:relative;display:inline-block;width:14px;height:clamp(34px,4.6vw,44px);border-radius:8px;flex-shrink:0;overflow:hidden;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,#e11d2a 0 8px,#fff 8px 16px,var(--accent) 16px 24px,#fff 24px 32px);background-size:100% 46px;animation:poleSpin 1s linear infinite;box-shadow:0 2px 8px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.18)}
+@keyframes poleSpin{to{background-position:0 -46px}}
+@media (prefers-reduced-motion:reduce){.barber-pole{animation:none}}
+/* ---- footer social row ---- */
+.social-row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+.social-row a{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--mut);font-weight:800;font-size:.66rem;transition:color .2s,background .2s,border-color .2s,transform .2s}
+.social-row a:hover{color:var(--bg);background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
 """
 
 MEDIA_STYLE_CSS = {
@@ -486,8 +494,14 @@ def jsonld(include_faq=False, article=None):
 
 
 # ---- optional analytics (off until IDs are set; empty ships nothing) ----
-ANALYTICS = {"ga4": "", "pixel": ""}
+ANALYTICS = {"gtm": "GTM-NKLLGPC", "ga4": "", "pixel": ""}
 FORM_NEXT = ""  # set per-site in build_site() so the contact form returns the visitor to their own site
+_GTM_HEAD = ("<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});"
+             "var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;"
+             "j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})"
+             "(window,document,'script','dataLayer','__GTM__');</script>")
+_GTM_BODY = ('<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=__GTM__" height="0" width="0" '
+             'style="display:none;visibility:hidden"></iframe></noscript>')
 _GA4_TPL = ('<script async src="https://www.googletagmanager.com/gtag/js?id=__GA__"></script>'
             '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}'
             'gtag("js",new Date());gtag("config","__GA__")</script>')
@@ -499,11 +513,17 @@ _PIXEL_TPL = ("<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function
               "fbq('init','__PIXEL__');fbq('track','PageView')</script>")
 def analytics_snippet():
     out = ""
+    if ANALYTICS.get("gtm"):
+        out += _GTM_HEAD.replace("__GTM__", ANALYTICS["gtm"])
     if ANALYTICS.get("ga4"):
         out += _GA4_TPL.replace("__GA__", ANALYTICS["ga4"])
     if ANALYTICS.get("pixel"):
         out += _PIXEL_TPL.replace("__PIXEL__", ANALYTICS["pixel"])
     return out
+
+
+def gtm_body():
+    return _GTM_BODY.replace("__GTM__", ANALYTICS["gtm"]) if ANALYTICS.get("gtm") else ""
 
 
 def top_banner():
@@ -534,7 +554,7 @@ def header_html(active_key=""):
     return f'''<header class="site-header">
   <div class="header-inner">
     <a class="brand-logo" href="/" aria-label="American Barber Institute home">
-      <img src="/assets/logo.jpeg" alt="ABI">
+      <span class="barber-pole" role="img" aria-label="Barber pole"></span>
       <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
     </a>
     <nav class="primary-nav" id="primary-nav">{links}</nav>
@@ -565,6 +585,8 @@ def footer_html():
     f = CONTENT["footer"]
     nav_html = "".join(f'<a href="{p}">{bi(NAV[k])}</a>' for k, p in NAV_ITEMS if k != "home")
     hours = "".join(f'<p>{bi(h)}</p>' for h in f["hours"])
+    _abbr = {"Facebook": "f", "Instagram": "IG", "YouTube": "YT", "X": "X", "Pinterest": "P"}
+    socials = "".join(f'<a href="{s["url"]}" target="_blank" rel="noopener" aria-label="{s["name"]}">{_abbr.get(s["name"], s["name"][:2])}</a>' for s in CONTENT.get("social", []))
     return f'''<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -572,6 +594,7 @@ def footer_html():
         <h4>American Barber Institute</h4>
         <p>{bi(f["tagline"])}</p>
         <p style="margin-top:10px;font-size:.85rem">{bi({"en": "GI Bill® · ACCES-VR · VA benefits accepted.", "es": "GI Bill® · ACCES-VR · beneficios de la VA aceptados."})}</p>
+        <div class="social-row">{socials}</div>
       </div>
       <div>
         <h4>{bi({"en": "Links", "es": "Enlaces"})}</h4>
@@ -699,6 +722,7 @@ PAGE_TPL = '''<!DOCTYPE html>
 {css}
 </head>
 <body class="lang-en {hfx}">
+{gtm_body}
 <video class="bg-video" autoplay muted loop playsinline poster="/assets/logo.jpeg" aria-hidden="true"><source src="/assets/bg.mp4" type="video/mp4"></video>
 <div class="bg-overlay"></div>
 {decoration}
@@ -734,6 +758,7 @@ def render_page(t, page_key, pdata, site_index=0, article=None):
         head_meta=head_meta(pdata["path"], title),
         jsonld=jsonld(include_faq=(page_key == "faq"), article=article),
         analytics=analytics_snippet(),
+        gtm_body=gtm_body(),
         css=css_for_site(t, pdata.get("_extra_css", "")),
         hfx=hfx,
         decoration=decoration_layer(t),
@@ -766,6 +791,9 @@ def p_home():
     why = "".join(f'<div class="card"><h3 style="margin-bottom:8px">{bi(w["title"])}</h3><p style="color:var(--mut)">{bi(w["desc"])}</p></div>' for w in CONTENT["why_choose"])
     sched = "".join(f'<div class="card"><div class="eyebrow-acc">{bi(s["label"])}</div><h3 style="margin:8px 0">{bi(s["days"])} · {s["time"]}</h3><div class="price-tag">{s["tuition"]}</div><p style="color:var(--mut);font-size:.92rem">{bi(s["plan"])}</p></div>' for s in CONTENT["schedules"])
     tcards = "".join(f'<div class="card"><p style="color:var(--ink);font-style:italic;margin-bottom:10px">“{bi(tt["quote"])}”</p><p style="font-weight:800">{tt["name"]}</p><p style="color:var(--accent);font-size:.84rem">{bi(tt["role"])}</p></div>' for tt in CONTENT["testimonials"])
+    ce = CONTENT["career_earnings"]
+    earn = "".join(f'<div class="card"><div class="eyebrow-acc">{bi(t["window"])}</div><h3 style="margin:8px 0">{bi(t["stage"])}</h3><div class="price-tag">{t["range"]}</div></div>' for t in ce["tiers"])
+    grads = " · ".join(p["name"] for p in CONTENT["partners"])
     hero_ctas = (f'<div class="hero-ctas"><a class="btn btn-primary" href="/contact">{bi(UI["become_barber"])} ✂</a>'
                  f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>')
     return {"path": "/",
@@ -782,6 +810,8 @@ def p_home():
 </div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Why Choose ABI","es":"Por Qué Elegir ABI"})}</div><h2 style="margin-bottom:18px">{bi({"en":"Everything you need to succeed","es":"Todo lo que necesitas para triunfar"})}</h2><div class="grid">{why}</div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Schedule & Tuition","es":"Horario y Matrícula"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three flexible schedules","es":"Tres horarios flexibles"})}</h2><div class="grid">{sched}</div></div></section>
+<section><div class="container"><div class="eyebrow-acc">{bi(ce["headline"])}</div><h2 style="margin-bottom:14px">{bi({"en":"What barbers earn","es":"Lo que ganan los barberos"})}</h2><div class="grid">{earn}</div><p class="lead" style="margin-top:14px;font-size:.84rem">{bi(ce["note"])}</p></div></section>
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Where Our Graduates Work","es":"Dónde Trabajan Nuestros Graduados"})}</div><h2 style="margin-bottom:12px">{bi({"en":"From our chairs to NYC's best shops","es":"De nuestras sillas a las mejores barberías de NYC"})}</h2><p class="lead">{grads}.</p><p><a class="btn btn-ghost" href="/partners">{bi({"en":"Meet our partner shops →","es":"Conoce nuestras barberías aliadas →"})}</a></p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Student voices","es":"Voces estudiantiles"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What our students say","es":"Lo que dicen nuestros estudiantes"})}</h2><div class="grid">{tcards}</div></div></section>'''}
 
 
@@ -801,7 +831,7 @@ def p_about():
 <div class="stat-card"><b class="count" data-target="30" data-suffix="+">0</b><span class="label">{bi({"en":"Years in business","es":"Años en activo"})}</span><span class="sublabel">{bi({"en":"NY State licensed","es":"Licenciado por NY"})}</span></div>
 <div class="stat-card"><b class="count" data-target="10000" data-suffix="+">0</b><span class="label">{bi({"en":"Graduates trained","es":"Graduados entrenados"})}</span><span class="sublabel">{bi({"en":"& counting","es":"y subiendo"})}</span></div>
 <div class="stat-card"><b class="count" data-target="2" data-suffix="">0</b><span class="label">{bi({"en":"NYC campuses","es":"Campus en NYC"})}</span><span class="sublabel">{bi({"en":"Manhattan + Bronx","es":"Manhattan + Bronx"})}</span></div>
-<div class="stat-card"><b class="count" data-target="3000" data-suffix=" sq ft">0</b><span class="label">{bi({"en":"Facility size","es":"Tamaño del campus"})}</span><span class="sublabel">{bi({"en":"Two floors · Midtown","es":"Dos pisos · Midtown"})}</span></div>
+<div class="stat-card"><b class="count" data-target="17" data-suffix="">0</b><span class="label">{bi({"en":"Weeks to license","es":"Semanas a la licencia"})}</span><span class="sublabel">{bi({"en":"Full-time track","es":"Tiempo completo"})}</span></div>
 </div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Leadership","es":"Liderazgo"})}</div><h2 style="margin-bottom:24px">{bi({"en":"The faculty","es":"La facultad"})}</h2><div class="grid">{instr}</div><p style="margin-top:20px"><a class="btn btn-ghost" href="/instructors">{bi({"en":"Meet all instructors →","es":"Conoce a todos →"})}</a></p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Why ABI","es":"Por qué ABI"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What makes us different","es":"Lo que nos hace diferentes"})}</h2><div class="grid">{why}</div></div></section>'''}

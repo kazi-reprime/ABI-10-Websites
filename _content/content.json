@@ -2,8 +2,8 @@
   "brand": {
     "name": "American Barber Institute",
     "short": "ABI",
-    "tagline": {"en":"Become a Barber. Change Your Life.","es":"Conviértete en Barbero. Cambia Tu Vida."},
-    "subtitle": {"en":"New York's only dedicated barber school. Licensed by the New York State Department of Education. New classes start the first Monday of every month.","es":"La única escuela de barbería dedicada de Nueva York. Licenciada por el Departamento de Educación del Estado de Nueva York. Las nuevas clases comienzan el primer lunes de cada mes."},
+    "tagline": {"en":"Your Future. Your Career. Start Today.","es":"Tu Futuro. Tu Carrera. Empieza Hoy."},
+    "subtitle": {"en":"Become a licensed barber in as little as 17 weeks. Hands-on training. Real skills. Real opportunities.","es":"Conviértete en barbero licenciado en tan solo 17 semanas. Entrenamiento práctico. Habilidades reales. Oportunidades reales."},
     "promo": {"en":"Start Your Barber Journey Today for Only $150 per Week*","es":"Comienza Tu Camino de Barbero Hoy por Solo $150 por Semana*"},
     "phone_manhattan": "(212) 290-2289",
     "phone_manhattan_es": "(212) 290-0278",
@@ -13,10 +13,20 @@
     "next_start_short": {"en":"First Monday of every month","es":"El primer lunes de cada mes"},
     "years_in_business": "30+",
     "graduates": "10,000+",
-    "rating": "4.3/5 Google",
-    "facility": {"en":"3,000 sq ft two-floor Midtown Manhattan facility","es":"Instalaciones de 3,000 pies cuadrados, dos pisos en Midtown Manhattan"},
+    "rating": "4.3",
+    "reviews": "100+",
+    "next_start_date": {"en":"Monday, July 6, 2026","es":"Lunes, 6 de julio de 2026"},
+    "weeks_to_license": "17",
+    "facility": {"en":"Modern campus in Midtown Manhattan","es":"Campus moderno en Midtown Manhattan"},
     "license_authority": {"en":"New York State Department of Education (BPSS)","es":"Departamento de Educación del Estado de Nueva York (BPSS)"}
   },
+  "social": [
+    {"name":"Facebook","url":"https://www.facebook.com/Abi.Education/","icon":"facebook"},
+    {"name":"Instagram","url":"https://www.instagram.com/americanbarberinstitute/","icon":"instagram"},
+    {"name":"YouTube","url":"https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ","icon":"youtube"},
+    {"name":"X","url":"https://x.com/amerbarberedu","icon":"x"},
+    {"name":"Pinterest","url":"https://www.pinterest.com/alexzholendz/american-barber-institute/","icon":"pinterest"}
+  ],
   "ui": {
     "apply_now": {"en":"Apply Now","es":"Aplica Ahora"},
     "apply_today": {"en":"Apply Today","es":"Aplica Hoy"},
@@ -87,11 +97,25 @@
     {"title":{"en":"Financial Assistance Available","es":"Asistencia Financiera Disponible"},"desc":{"en":"ACCES-VR, Post-9/11 GI Bill®, and VA benefits accepted.","es":"Aceptamos ACCES-VR, GI Bill® Post-9/11 y beneficios de la VA."}},
     {"title":{"en":"Monthly Start Dates","es":"Inicios Mensuales"},"desc":{"en":"New classes begin every first Monday of the month.","es":"Las nuevas clases comienzan el primer lunes de cada mes."}}
   ],
+  "career_earnings": {
+    "headline": {"en":"Barber Career Earnings","es":"Ingresos de una Carrera de Barbero"},
+    "note": {"en":"Earnings vary by experience, location, hours, and clientele. Figures are industry estimates, not guarantees.","es":"Los ingresos varían según la experiencia, ubicación, horas y clientela. Las cifras son estimaciones de la industria, no garantías."},
+    "tiers": [
+      {"stage":{"en":"Entry-Level Barber","es":"Barbero Principiante"},"window":{"en":"Year 1","es":"Año 1"},"range":"$35,000–$45,000/yr"},
+      {"stage":{"en":"Established Barber","es":"Barbero Establecido"},"window":{"en":"Years 2–3","es":"Años 2–3"},"range":"$50,000–$70,000/yr"},
+      {"stage":{"en":"Booth Renter / Shop Owner","es":"Inquilino de Silla / Dueño"},"window":{"en":"Year 3+","es":"Año 3+"},"range":"$75,000+/yr"}
+    ]
+  },
   "instructors": [
-    {"name":"David \"King David\" Ayeoribe","role":{"en":"Lead Senior Instructor & Director","es":"Instructor Principal Senior & Director"},"bio":{"en":"Over 50 years of barbering experience and more than 30 years of teaching. The longest-serving barber instructor in New York City. King David has personally trained generations of master barbers — from first-timers to shop owners across the five boroughs.","es":"Más de 50 años de experiencia en barbería y más de 30 años enseñando. El instructor de barbería con más antigüedad en la ciudad de Nueva York. King David ha entrenado personalmente a generaciones de maestros barberos — desde principiantes hasta dueños de tienda en los cinco condados."},"tags":[{"en":"Founding faculty","es":"Profesorado fundador"},{"en":"30+ years teaching","es":"30+ años enseñando"},{"en":"NY State licensed","es":"Licenciado por el Estado de NY"}]},
-    {"name":"Harold \"Barkim\" Brown","role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Decades of professional barbering and a relentless eye for detail. Barkim runs the floor like a working shop — fast, exact, and patient with every student.","es":"Décadas de barbería profesional y un ojo implacable para el detalle. Barkim dirige el piso como una tienda en funcionamiento — rápido, exacto, y paciente con cada estudiante."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Clinic-floor lead","es":"Líder del piso clínico"}]},
-    {"name":"Barry Brown","role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Brings deep experience from the NY barber scene to a curriculum focused on modern fades, beard work, and the discipline of running a real chair.","es":"Aporta profunda experiencia de la escena barberil de NY a un currículo enfocado en degradados modernos, trabajo de barba, y la disciplina de manejar un sillón real."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Fade specialist","es":"Especialista en degradados"}]},
-    {"name":"Richard Cancel","role":{"en":"Bilingual Instructor","es":"Instructor Bilingüe"},"bio":{"en":"English and Spanish instruction. Richard's brother Mike owns Diamond Fadez just one block from our Manhattan campus — a two-generation family story rooted in ABI.","es":"Instrucción en inglés y español. El hermano de Richard, Mike, es dueño de Diamond Fadez a solo una cuadra de nuestro campus de Manhattan — una historia familiar de dos generaciones arraigada en ABI."},"tags":[{"en":"Bilingual ES + EN","es":"Bilingüe ES + EN"}]}
+    {"name":"David \"King David\" Ayeoribe","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Lead Senior Instructor & Director","es":"Instructor Principal Senior & Director"},"bio":{"en":"Over 50 years of barbering experience and more than 30 years of teaching. The longest-serving barber instructor in New York City. King David has personally trained generations of master barbers — from first-timers to shop owners across the five boroughs.","es":"Más de 50 años de experiencia en barbería y más de 30 años enseñando. El instructor de barbería con más antigüedad en la ciudad de Nueva York. King David ha entrenado personalmente a generaciones de maestros barberos — desde principiantes hasta dueños de tienda en los cinco condados."},"tags":[{"en":"Founding faculty","es":"Profesorado fundador"},{"en":"30+ years teaching","es":"30+ años enseñando"},{"en":"NY State licensed","es":"Licenciado por el Estado de NY"}]},
+    {"name":"Harold \"Barkim\" Brown","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Decades of professional barbering and a relentless eye for detail. Barkim runs the floor like a working shop — fast, exact, and patient with every student. Featured on Barber World TV (Episode 007).","es":"Décadas de barbería profesional y un ojo implacable para el detalle. Barkim dirige el piso como una tienda en funcionamiento — rápido, exacto, y paciente con cada estudiante. Apareció en Barber World TV (Episodio 007)."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Clinic-floor lead","es":"Líder del piso clínico"}]},
+    {"name":"Barry Brown","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Brings deep experience from the NY barber scene to a curriculum focused on modern fades, beard work, and the discipline of running a real chair.","es":"Aporta profunda experiencia de la escena barberil de NY a un currículo enfocado en degradados modernos, trabajo de barba, y la disciplina de manejar un sillón real."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Fade specialist","es":"Especialista en degradados"}]},
+    {"name":"Freddie Liciaga","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"A working-floor master barber on the ABI Manhattan teaching team, bringing real shop experience to every clinic session.","es":"Un maestro barbero del equipo docente de ABI en Manhattan, que aporta experiencia real de barbería a cada sesión de clínica."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"}]},
+    {"name":"Benny Santamaria","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Instructor","es":"Instructor"},"bio":{"en":"Manhattan-team instructor focused on fundamentals, sanitation, and building student confidence from the first cut.","es":"Instructor del equipo de Manhattan enfocado en los fundamentos, la sanitización y desarrollar la confianza del estudiante desde el primer corte."},"tags":[{"en":"Instructor","es":"Instructor"}]},
+    {"name":"Richard Cancel","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Bilingual Instructor","es":"Instructor Bilingüe"},"bio":{"en":"English and Spanish instruction. Richard's brother Mike owns Diamond Fadez just one block from our Manhattan campus — a two-generation family story rooted in ABI.","es":"Instrucción en inglés y español. El hermano de Richard, Mike, es dueño de Diamond Fadez a solo una cuadra de nuestro campus de Manhattan — una historia familiar de dos generaciones arraigada en ABI."},"tags":[{"en":"Bilingual ES + EN","es":"Bilingüe ES + EN"}]},
+    {"name":"Truth \"The Barber Artist\" Quinones","team":{"en":"Bronx","es":"Bronx"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Leads the Bronx teaching floor with an artist's eye for detail, design work, and modern styling.","es":"Lidera el piso docente del Bronx con ojo de artista para el detalle, el trabajo de diseño y el estilismo moderno."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Design work","es":"Trabajo de diseño"}]},
+    {"name":"Osvaldy \"Mr. O\" Rodriguez","team":{"en":"Bronx","es":"Bronx"},"role":{"en":"Instructor","es":"Instructor"},"bio":{"en":"Bronx-team instructor with bilingual instruction and a patient, hands-on teaching style.","es":"Instructor del equipo del Bronx con instrucción bilingüe y un estilo de enseñanza paciente y práctico."},"tags":[{"en":"Bilingual ES + EN","es":"Bilingüe ES + EN"}]},
+    {"name":"Noah Vera","team":{"en":"Bronx","es":"Bronx"},"role":{"en":"Instructor","es":"Instructor"},"bio":{"en":"Bronx-team instructor coaching students through fades, line work, and NY State Board Exam prep.","es":"Instructor del equipo del Bronx que guía a los estudiantes en degradados, líneas y preparación para el examen de la Junta Estatal de NY."},"tags":[{"en":"Instructor","es":"Instructor"}]}
   ],
   "testimonials": [
     {"name":"Jerrick Matthews","role":{"en":"Current Student","es":"Estudiante Actual"},"quote":{"en":"The level of knowledge and training is superb. One of the best teachers around — King David — will show you everything.","es":"El nivel de conocimiento y entrenamiento es excepcional. Uno de los mejores maestros — King David — te mostrará todo."}},
@@ -108,9 +132,9 @@
     {"name":"NYC Barber Shop Museum","locations":"Columbus Ave & E 70th St, Manhattan · Sunny Isles, Miami","desc":{"en":"The first museum of its kind — a working barbershop housing century-old artifacts. Operated by fourth-generation Master Barber Arthur Rubinoff. 501(c)(3) non-profit.","es":"El primer museo de su tipo — una barbería en funcionamiento que alberga artefactos centenarios. Operada por el Maestro Barbero de cuarta generación Arthur Rubinoff. Sin fines de lucro 501(c)(3)."},"why":{"en":"Four-generation professional standard. School-to-master pipeline.","es":"Estándar profesional de cuatro generaciones. Tubería de escuela a maestro."}}
   ],
   "haircut_clinic": {
-    "price": "Affordable",
+    "price": "$3",
     "booking_phone": "(856) 316-1551",
-    "intro": {"en":"Our student barber clinic is open to the public Monday through Friday. You'll sit in the chair of a future master barber — every cut supervised by a NY-licensed instructor on the floor.","es":"Nuestra clínica de barbería estudiantil está abierta al público de lunes a viernes. Te sentarás en la silla de un futuro maestro barbero — cada corte supervisado por un instructor licenciado por NY en el piso."},
+    "intro": {"en":"Get an affordable student haircut at ABI — just $3. Help our trainee barbers practice, reach their required training hours, and perfect their craft. Every cut is performed by a student under the supervision of a NY-licensed instructor.","es":"Recibe un corte de cabello estudiantil asequible en ABI — solo $3. Ayuda a nuestros barberos en formación a practicar, alcanzar sus horas de entrenamiento requeridas y perfeccionar su oficio. Cada corte lo realiza un estudiante bajo la supervisión de un instructor licenciado de NY."},
     "services": [
       {"en":"Classic Tapers","es":"Tapers Clásicos"},{"en":"Low / Mid / High Fades","es":"Degradados Bajo / Medio / Alto"},{"en":"Caesars","es":"Caesars"},{"en":"Flat Tops","es":"Flat Tops"},{"en":"Shape-Ups","es":"Delineados"},{"en":"Razor Lineups","es":"Líneas con Navaja"},{"en":"Beard Trims","es":"Recortes de Barba"},{"en":"Hot Shaves","es":"Afeitados Calientes"},{"en":"Shampoos & Blowouts","es":"Champú & Secado"},{"en":"Mohawks","es":"Mohawks"},{"en":"Afro Cuts","es":"Cortes Afro"},{"en":"Pompadours","es":"Pompadours"},{"en":"Bald-Head Shaves","es":"Afeitados de Cabeza"},{"en":"Scissor Cuts","es":"Cortes con Tijera"},{"en":"Clipper Cuts","es":"Cortes con Máquina"},{"en":"Fohawks","es":"Fohawks"}
     ],

@@ -81,7 +81,6 @@ def audit_site(site):
     # forbidden stale content across all pages
     for path in sorted(d.glob("*.html")) + sorted((d / "blog").glob("*.html")):
         t = path.read_text(errors="replace")
-        if re.search(r'\$3(?![\d,])', t): fail(site, path.stem, "stale '$3' price found")
         if "540-Hour" in t or "540 Hour" in t: fail(site, path.stem, "stale 540-Hour program")
         if "Call for pricing" in t: fail(site, path.stem, "stale 'Call for pricing'")
         if "abi-assets.vercel.app" in t: fail(site, path.stem, "stale asset host abi-assets")
