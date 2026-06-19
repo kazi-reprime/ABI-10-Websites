@@ -298,14 +298,14 @@ details.card[open] summary::after{transform:rotate(45deg)}
 
 /* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
 .brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
-.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;flex-shrink:0;position:relative;border-radius:9px;overflow:hidden}
-.brand-logo .brand-mark img{height:46px;width:auto;max-width:200px;object-fit:contain;border-radius:9px;box-shadow:none;border:0}
-.brand-mark.logo-light{background:#fff;padding:3px 7px;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.06)}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;width:46px;flex-shrink:0;position:relative;border-radius:10px;overflow:hidden}
+.brand-logo .brand-mark img{height:100%;width:100%;object-fit:cover;border-radius:10px;box-shadow:none;border:0}
+.brand-mark.logo-light{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.08)}
 .brand-mark.logo-dark{background:transparent}
 .brand-mark.has-ovl .logo-pole-ovl{position:absolute;pointer-events:none;border-radius:3px;background:repeating-linear-gradient(45deg,#e11d2a 0 6px,#fff 6px 12px,var(--accent) 12px 18px,#fff 18px 24px);background-size:100% 34px;animation:poleSpin 1s linear infinite;opacity:.95;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
 .brand-mark.has-ovl + .brand-pole{display:none}
-@media (max-width:760px){.brand-mark,.brand-logo .brand-mark img{height:40px}.brand-logo .brand-mark img{max-width:160px}}
-@media (max-width:480px){.brand-mark,.brand-logo .brand-mark img{height:36px}.brand-logo .brand-mark img{max-width:140px}}
+@media (max-width:760px){.brand-mark{height:42px;width:42px}}
+@media (max-width:480px){.brand-mark{height:38px;width:38px}}
 
 /* EN/ES toggle in the sticky header — ALWAYS visible */
 .lang-toggle-header{flex-shrink:0;margin-left:6px}
@@ -353,7 +353,11 @@ details.card[open] summary::after{transform:rotate(45deg)}
 .footer-logo{height:54px;width:auto;max-width:200px;object-fit:contain;margin-bottom:14px;border-radius:8px}
 .ms-neon-scan .m-tile{border-color:var(--accent);transform:translateY(26px) skewX(-2.5deg)}.ms-neon-scan .m-tile.shown{transform:none}.ms-neon-scan .m-tile::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,#ffffff0d 2px 3px)}.ms-neon-scan .m-tile:hover{box-shadow:0 0 22px var(--accent),0 0 46px var(--accent2)}.ms-neon-scan .m-tile:hover .m-media{filter:saturate(1.3) contrast(1.06)}
 /* ============================================================
-   01-neon-blade — unique polish + responsive fixes (SITE_CSS)
+   01-neon-blade — CYBERPUNK NEON signature look (SITE_CSS)
+   Cyan #00f0ff + magenta #ff2bd6 on near-black. Glitch/scanline
+   overlays, neon-outlined glowing clipped cards, diagonal section
+   skews, animated cyan->magenta underlines + grid scanlines, and
+   RGB-split image hover. Appended last; wins the cascade.
    ============================================================ */
 
 /* --- FIX 1: mobile drawer anchoring (belt-and-suspenders) -----------------
@@ -378,9 +382,159 @@ details.card[open] summary::after{transform:rotate(45deg)}
   .primary-nav::-webkit-scrollbar{display:none}
 }
 
-/* --- POLISH 1: unique cyberpunk neon EN/ES segmented toggle ---------------
-   Glowing neon-outlined switch, cyan default + magenta-tinted active glow,
-   clipped corners. Restyles only .lang-toggle; no markup/JS changes. */
+/* ============================================================
+   SIGNATURE BACKGROUND — animated neon grid + drifting scanline
+   Two fixed pseudo-elements on <body>, GPU-light (transform/opacity
+   only), layered above the engine deco (z-index:1) but behind all
+   content (sections are z-index:2). Gated behind no-preference.
+   ============================================================ */
+body::before{
+  content:"";position:fixed;inset:-2px;z-index:1;pointer-events:none;
+  background-image:
+    linear-gradient(color-mix(in srgb,var(--accent) 9%,transparent) 1px,transparent 1px),
+    linear-gradient(90deg,color-mix(in srgb,var(--accent2) 7%,transparent) 1px,transparent 1px);
+  background-size:46px 46px,46px 46px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 35%,#000 0,transparent 75%);
+  mask-image:radial-gradient(ellipse 90% 80% at 50% 35%,#000 0,transparent 75%);
+  opacity:.5
+}
+body::after{
+  content:"";position:fixed;left:0;right:0;top:0;height:34vh;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--accent) 14%,transparent) 48%,transparent);
+  mix-blend-mode:screen;opacity:.5;transform:translateY(-40vh)
+}
+@media (prefers-reduced-motion:no-preference){
+  body::before{animation:abiGridDrift 24s linear infinite}
+  body::after{animation:abiScanSweep 7.5s linear infinite}
+}
+@keyframes abiGridDrift{to{background-position:46px 46px,-46px -46px}}
+@keyframes abiScanSweep{0%{transform:translateY(-40vh)}100%{transform:translateY(140vh)}}
+
+/* ============================================================
+   HERO — glitch headline + animated neon underline
+   ============================================================ */
+.subpage-hero h1,.hero-home h1{position:relative;isolation:isolate}
+.subpage-hero h1::after,.hero-home h1::after{
+  content:"";display:block;width:clamp(72px,13vw,140px);height:3px;margin:18px auto 0;border-radius:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));
+  box-shadow:0 0 14px color-mix(in srgb,var(--accent) 75%,transparent),0 0 28px color-mix(in srgb,var(--accent2) 50%,transparent);
+  background-size:200% 100%;animation:abiUnderline 5s ease-in-out infinite
+}
+@keyframes abiUnderline{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.eyebrow{
+  position:relative;border-color:color-mix(in srgb,var(--accent) 50%,transparent);
+  background:color-mix(in srgb,var(--accent) 8%,transparent);
+  box-shadow:0 0 12px color-mix(in srgb,var(--accent) 22%,transparent),inset 0 0 8px color-mix(in srgb,var(--accent) 10%,transparent);
+  text-shadow:0 0 8px color-mix(in srgb,var(--accent) 55%,transparent)
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero-home h1{animation:abiGlitch 6.5s steps(1) infinite}
+  @keyframes abiGlitch{
+    0%,93%,100%{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 42%,transparent),0 0 48px color-mix(in srgb,var(--accent) 22%,transparent)}
+    94%{text-shadow:-3px 0 var(--accent2),3px 0 var(--accent)}
+    95%{text-shadow:3px 0 var(--accent2),-3px 0 var(--accent);transform:translateX(1px)}
+    96%{text-shadow:-2px 0 var(--accent),2px 0 var(--accent2)}
+    97%{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 42%,transparent)}
+  }
+}
+
+/* ============================================================
+   SECTIONS — alternating diagonal-skew neon dividers
+   Uses main section:nth-of-type(n) for distinct alternating
+   treatments. Odd sections get a top cyan skewed hairline; even
+   sections get a tinted skewed slab + magenta hairline.
+   ============================================================ */
+main section{position:relative}
+main section:nth-of-type(even)::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,color-mix(in srgb,var(--accent) 5%,transparent),transparent 40%,color-mix(in srgb,var(--accent2) 5%,transparent));
+  transform:skewY(-1.6deg);transform-origin:left;
+  border-top:1px solid color-mix(in srgb,var(--accent2) 30%,transparent);
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 24%,transparent)
+}
+main section:nth-of-type(odd) + section::after,
+main section:nth-of-type(n+2)::after{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%) skewX(-24deg);
+  width:min(160px,46%);height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);
+  box-shadow:0 0 12px color-mix(in srgb,var(--accent) 60%,transparent)
+}
+.eyebrow-acc{text-shadow:0 0 10px color-mix(in srgb,var(--accent) 45%,transparent)}
+
+/* ============================================================
+   CARDS — neon-outlined glowing panels w/ clipped corner
+   ============================================================ */
+.card{
+  position:relative;
+  border-color:color-mix(in srgb,var(--accent) 22%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 5%,transparent),var(--glass) 60%);
+  -webkit-clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+  clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))
+}
+.card::after{
+  content:"";position:absolute;top:0;right:0;width:14px;height:14px;pointer-events:none;
+  background:linear-gradient(225deg,var(--accent2),transparent);opacity:.85
+}
+.card:hover{
+  border-color:var(--accent);
+  box-shadow:0 0 22px color-mix(in srgb,var(--accent) 30%,transparent),
+             0 0 44px color-mix(in srgb,var(--accent2) 16%,transparent),
+             0 16px 40px rgba(0,0,0,.5)
+}
+.eyebrow-acc.eyebrow-acc{display:block}
+
+/* ============================================================
+   BUTTONS — neon pill w/ scan-sweep + glow
+   ============================================================ */
+.btn-primary{
+  background:linear-gradient(120deg,var(--accent),color-mix(in srgb,var(--accent) 70%,var(--accent2)));
+  position:relative;overflow:hidden;
+  box-shadow:0 0 16px color-mix(in srgb,var(--accent) 40%,transparent)
+}
+.btn-primary::before{
+  content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;
+  background:linear-gradient(100deg,transparent,color-mix(in srgb,#fff 70%,transparent),transparent);
+  transform:skewX(-20deg);transition:left .6s ease
+}
+.btn-primary:hover::before{left:160%}
+.btn-primary:hover{box-shadow:0 0 26px var(--accent),0 0 46px color-mix(in srgb,var(--accent2) 40%,transparent),0 14px 28px rgba(0,0,0,.4)}
+.btn-ghost{
+  border-color:var(--accent);color:var(--accent);
+  box-shadow:inset 0 0 12px color-mix(in srgb,var(--accent) 14%,transparent),0 0 10px color-mix(in srgb,var(--accent) 18%,transparent);
+  text-shadow:0 0 8px color-mix(in srgb,var(--accent) 50%,transparent)
+}
+.btn-ghost:hover{
+  background:var(--accent);color:var(--bg);text-shadow:none;
+  box-shadow:0 0 24px var(--accent),0 0 44px color-mix(in srgb,var(--accent2) 35%,transparent)
+}
+
+/* ============================================================
+   STATS BAND — neon HUD tiles, magenta count glow
+   ============================================================ */
+.stat-card{
+  border-color:color-mix(in srgb,var(--accent) 26%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent2) 5%,transparent),var(--glass) 55%)
+}
+.stat-card::before{background:linear-gradient(180deg,var(--accent),var(--accent2));box-shadow:0 0 14px var(--accent)}
+.stat-card:hover{border-color:var(--accent);box-shadow:0 0 26px color-mix(in srgb,var(--accent) 24%,transparent),0 14px 36px rgba(0,0,0,.45)}
+.stat-card .count{text-shadow:0 0 18px color-mix(in srgb,var(--accent) 55%,transparent),0 0 36px color-mix(in srgb,var(--accent2) 30%,transparent)}
+.row-stat .s b{text-shadow:0 0 14px color-mix(in srgb,var(--accent) 45%,transparent)}
+
+/* ============================================================
+   BRAND MARK + BARBER POLE — neon-framed, glowing pole
+   ============================================================ */
+.brand-mark.logo-dark{
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 30%,transparent),0 0 16px color-mix(in srgb,var(--accent) 20%,transparent);
+  background:color-mix(in srgb,var(--accent) 5%,transparent)
+}
+.barber-pole{
+  border-color:color-mix(in srgb,var(--accent) 60%,transparent);
+  box-shadow:0 0 12px color-mix(in srgb,var(--accent) 55%,transparent),0 0 22px color-mix(in srgb,var(--accent2) 28%,transparent),inset 0 0 0 1px rgba(255,255,255,.2)
+}
+
+/* ============================================================
+   EN/ES TOGGLE — neon-outlined clipped segmented switch
+   ============================================================ */
 .lang-toggle{
   position:relative;display:inline-flex;align-items:stretch;
   height:44px;min-height:44px;padding:2px;gap:2px;border-radius:10px;overflow:hidden;
@@ -415,32 +569,107 @@ details.card[open] summary::after{transform:rotate(45deg)}
   50%{box-shadow:0 0 18px var(--accent),0 0 30px color-mix(in srgb,var(--accent2) 62%,transparent),inset 0 0 8px color-mix(in srgb,#fff 70%,transparent)}
 }
 
-/* --- POLISH 2: neon hero underline ----------------------------------------
-   A short animated cyan->magenta neon bar under the hero/subpage H1. */
-.subpage-hero h1::after,.hero h1::after{
-  content:"";display:block;width:clamp(64px,12vw,120px);height:3px;margin:18px auto 0;border-radius:3px;
+/* ============================================================
+   NEXT-CLASS COUNTDOWN — HUD console w/ clipped corners
+   ============================================================ */
+.next-class{
+  position:relative;border-color:color-mix(in srgb,var(--accent) 40%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 7%,transparent),var(--glass) 60%);
+  box-shadow:0 0 20px color-mix(in srgb,var(--accent) 18%,transparent),inset 0 0 14px color-mix(in srgb,var(--accent) 8%,transparent);
+  -webkit-clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)
+}
+.next-class .nc-unit{
+  background:color-mix(in srgb,var(--accent) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)
+}
+.next-class .nc-unit b{text-shadow:0 0 12px color-mix(in srgb,var(--accent) 60%,transparent)}
+.next-class .nc-date{text-shadow:0 0 10px color-mix(in srgb,var(--accent) 30%,transparent)}
+
+/* ============================================================
+   HOME CONTACT BOX — neon-edged console
+   ============================================================ */
+.home-contact .hc-box{
+  border-color:color-mix(in srgb,var(--accent) 30%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent2) 5%,transparent),var(--glass) 55%);
+  box-shadow:0 0 30px color-mix(in srgb,var(--accent) 12%,transparent),inset 0 0 1px color-mix(in srgb,var(--accent) 40%,transparent)
+}
+.input:focus{box-shadow:0 0 14px color-mix(in srgb,var(--accent) 35%,transparent)}
+
+/* ============================================================
+   CAMPUS SPLIT — Manhattan/Bronx neon list markers
+   ============================================================ */
+.campus-split .campus-col{
+  border-color:color-mix(in srgb,var(--accent) 28%,transparent)
+}
+.campus-split .campus-col .campus-progs li::before{
+  color:var(--accent);text-shadow:0 0 8px color-mix(in srgb,var(--accent) 60%,transparent)
+}
+.campus-split h2 .nowrap-fit{text-shadow:0 0 16px color-mix(in srgb,var(--accent) 40%,transparent)}
+
+/* ============================================================
+   INSTRUCTOR CARDS — RGB-split photo hover + neon scan
+   ============================================================ */
+.ins-card .ins-photo{position:relative;overflow:hidden}
+.ins-card .ins-photo::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,color-mix(in srgb,#000 12%,transparent) 2px 3px);
+  opacity:.4;mix-blend-mode:overlay
+}
+.ins-card:hover .ins-photo img{
+  filter:saturate(1.25) contrast(1.05)
+       drop-shadow(2px 0 0 color-mix(in srgb,var(--accent2) 75%,transparent))
+       drop-shadow(-2px 0 0 color-mix(in srgb,var(--accent) 75%,transparent))
+}
+.ins-card .ins-name{text-shadow:0 0 12px color-mix(in srgb,var(--accent) 30%,transparent)}
+
+/* ============================================================
+   PARTNER CARDS — neon underline name + glow on hover
+   ============================================================ */
+.partner-card{border-color:color-mix(in srgb,var(--accent) 22%,transparent)}
+.partner-card .partner-title{
+  position:relative;display:inline-block;padding-bottom:4px
+}
+.partner-card .partner-title::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
   background:linear-gradient(90deg,var(--accent),var(--accent2));
-  box-shadow:0 0 14px color-mix(in srgb,var(--accent) 70%,transparent),0 0 26px color-mix(in srgb,var(--accent2) 45%,transparent);
-  background-size:200% 100%;animation:abiUnderline 5s ease-in-out infinite
+  box-shadow:0 0 8px var(--accent);transition:width .4s ease
 }
-@keyframes abiUnderline{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.partner-card:hover .partner-title::after{width:100%}
+.partner-card .locations{text-shadow:0 0 8px color-mix(in srgb,var(--accent) 40%,transparent)}
 
-/* --- POLISH 3: card hover neon glow + accent section divider --------------- */
-.card:hover{
-  border-color:color-mix(in srgb,var(--accent) 55%,transparent);
-  box-shadow:0 0 22px color-mix(in srgb,var(--accent) 22%,transparent),0 16px 40px rgba(0,0,0,.45)
+/* ============================================================
+   MEDIA BAND — augments the engine ms-neon-scan style
+   (chromatic-split + neon corner ticks on hover)
+   ============================================================ */
+.ms-neon-scan .m-tile{
+  border-color:color-mix(in srgb,var(--accent) 45%,transparent)
 }
-section + section{position:relative}
-section + section::before{
-  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:min(120px,40%);height:1px;
-  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--accent) 60%,transparent),transparent)
+.ms-neon-scan .m-tile:hover .m-media{
+  filter:saturate(1.35) contrast(1.08)
+       drop-shadow(2px 0 0 color-mix(in srgb,var(--accent2) 60%,transparent))
+       drop-shadow(-2px 0 0 color-mix(in srgb,var(--accent) 60%,transparent))
 }
+.media-band .m-head h2{text-shadow:0 0 18px color-mix(in srgb,var(--accent) 30%,transparent)}
 
-/* --- respect reduced motion ----------------------------------------------- */
+/* ============================================================
+   DETAILS / FAQ — neon marker glow
+   ============================================================ */
+details.card summary::after{text-shadow:0 0 10px color-mix(in srgb,var(--accent) 60%,transparent)}
+
+/* ============================================================
+   FOOTER — neon top edge
+   ============================================================ */
+.site-footer{border-top:1px solid color-mix(in srgb,var(--accent) 28%,transparent);box-shadow:0 -1px 22px color-mix(in srgb,var(--accent) 10%,transparent) inset}
+.footer-logo{box-shadow:0 0 16px color-mix(in srgb,var(--accent) 18%,transparent)}
+
+/* ============================================================
+   RESPECT REDUCED MOTION
+   ============================================================ */
 @media (prefers-reduced-motion:reduce){
+  body::before,body::after{animation:none}
   .lang-toggle button.active{animation:none}
-  .subpage-hero h1::after,.hero h1::after{animation:none}
+  .subpage-hero h1::after,.hero-home h1::after{animation:none}
 }
 </style>
 </head>
@@ -464,7 +693,7 @@ section + section::before{
 </div>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand-logo" href="/" aria-label="American Barber Institute home"><span class="barber-pole" role="img" aria-label="Barber pole"></span><span class="brand-mark logo-dark"><img src="https://assets-lilac-five.vercel.app/logos/site-01-neon.jpeg" alt="American Barber Institute — New York's dedicated barber school" width="200" height="60" decoding="async"></span></a>
+    <a class="brand-logo" href="/" aria-label="American Barber Institute home"><span class="barber-pole" role="img" aria-label="Barber pole"></span><span class="brand-mark logo-dark"><img src="https://assets-lilac-five.vercel.app/logos/site-01-neon-favicon.png" alt="American Barber Institute — New York's dedicated barber school" width="46" height="46" decoding="async"></span></a>
     <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class="active"><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement" class=""><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/blog" class=""><span class="lang-en">Blog</span><span class="lang-es">Blog</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
     <div class="lang-toggle lang-toggle-header" role="group" aria-label="Language / Idioma"><button type="button" data-lang="en" aria-label="English">EN</button><button type="button" data-lang="es" aria-label="Español">ES</button></div>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">

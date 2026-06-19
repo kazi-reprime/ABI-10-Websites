@@ -66,7 +66,43 @@ SITE = {
 #     container's own padding box; media perspective stays inside the engine's .m-grid.
 #   * prefers-reduced-motion: reduce disables the animated glitch + scanline sweep.
 SITE_CSS = (
-    "/* ===== unique polish for 06-neon-grid (magenta neon grid) ===== */"
+    "/* ===== unique polish for 06-neon-grid (magenta particle-network) ===== */"
+    # --- ANIMATED BACKGROUND: perspective grid floor + drifting node-network field.
+    #     Overrides the engine's static .deco-grid with a layered, motion-gated scene.
+    #     Layer A (this element): a deep field of glowing nodes (radial-gradient dots) that
+    #     slowly drifts; Layer B (::before): a 3D perspective grid floor anchored to the bottom;
+    #     Layer C (::after): connecting "network" scan-lines that sweep diagonally. ---
+    ".deco-grid{background-image:"
+    "radial-gradient(circle at 12% 22%,color-mix(in srgb,var(--accent) 60%,transparent) 0,transparent 1.4px),"
+    "radial-gradient(circle at 78% 16%,color-mix(in srgb,var(--accent2) 55%,transparent) 0,transparent 1.4px),"
+    "radial-gradient(circle at 33% 64%,color-mix(in srgb,var(--accent3) 55%,transparent) 0,transparent 1.4px),"
+    "radial-gradient(circle at 88% 72%,color-mix(in srgb,var(--accent) 55%,transparent) 0,transparent 1.4px),"
+    "radial-gradient(circle at 56% 40%,color-mix(in srgb,var(--accent2) 45%,transparent) 0,transparent 1.2px),"
+    "linear-gradient(color-mix(in srgb,var(--accent) 6%,transparent) 1px,transparent 1px),"
+    "linear-gradient(90deg,color-mix(in srgb,var(--accent) 6%,transparent) 1px,transparent 1px);"
+    "background-size:340px 340px,340px 340px,420px 420px,420px 420px,300px 300px,68px 68px,68px 68px;"
+    "-webkit-mask-image:radial-gradient(ellipse 90% 80% at center,black 0,transparent 78%);"
+    "mask-image:radial-gradient(ellipse 90% 80% at center,black 0,transparent 78%)}"
+    # Layer B — 3D perspective grid FLOOR (bottom of viewport), the signature neon-grid plane.
+    ".deco-grid::before{content:'';position:absolute;left:-25%;right:-25%;bottom:0;height:48vh;"
+    "background-image:linear-gradient(color-mix(in srgb,var(--accent) 26%,transparent) 1.5px,transparent 1.5px),"
+    "linear-gradient(90deg,color-mix(in srgb,var(--accent2) 22%,transparent) 1.5px,transparent 1.5px);"
+    "background-size:58px 58px;transform:perspective(420px) rotateX(68deg);transform-origin:bottom center;"
+    "-webkit-mask-image:linear-gradient(180deg,transparent 0,black 55%,black 100%);"
+    "mask-image:linear-gradient(180deg,transparent 0,black 55%,black 100%);opacity:.55}"
+    # Layer C — diagonal network scan ("data flowing between nodes").
+    ".deco-grid::after{content:'';position:absolute;inset:0;"
+    "background:linear-gradient(115deg,transparent 0,color-mix(in srgb,var(--accent) 8%,transparent) 48%,"
+    "color-mix(in srgb,var(--accent2) 9%,transparent) 52%,transparent 100%);"
+    "background-size:300% 300%;mix-blend-mode:screen;opacity:.7}"
+    "@media (prefers-reduced-motion:no-preference){"
+    ".deco-grid{animation:ng-nodes 26s linear infinite}"
+    ".deco-grid::before{animation:ng-floor 7s linear infinite}"
+    ".deco-grid::after{animation:ng-scan 14s ease-in-out infinite}"
+    "@keyframes ng-nodes{from{background-position:0 0,0 0,0 0,0 0,0 0,0 0,0 0}"
+    "to{background-position:340px 200px,-300px 260px,360px -240px,-380px 180px,220px 280px,0 0,0 0}}"
+    "@keyframes ng-floor{from{background-position:0 0}to{background-position:0 58px}}"
+    "@keyframes ng-scan{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}}"
     # --- magenta-glitch bilingual toggle (seed, enhanced) ---
     ".lang-toggle{border-color:var(--accent)}"
     ".lang-toggle button.active{background:var(--accent);color:var(--bg);"
@@ -76,7 +112,31 @@ SITE_CSS = (
     "@keyframes ng-glitch{0%,92%,100%{box-shadow:2px 0 0 var(--accent2),-2px 0 0 var(--accent3),0 0 18px color-mix(in srgb,var(--accent) 55%,transparent)}"
     "94%{box-shadow:-3px 0 0 var(--accent2),3px 0 0 var(--accent3),0 0 22px color-mix(in srgb,var(--accent) 70%,transparent)}"
     "96%{box-shadow:3px 0 0 var(--accent2),-3px 0 0 var(--accent3),0 0 14px color-mix(in srgb,var(--accent) 50%,transparent)}}}"
-    # --- neon grid-line section dividers: thin magenta->cyan rule with a centered node glow ---
+    # --- GLITCH-FLICKER hero headline: chromatic-aberration node text, motion-gated ---
+    ".hero-home h1,.subpage-hero h1{position:relative}"
+    "@media (prefers-reduced-motion:no-preference){.hero-home h1{animation:ng-flicker 7s steps(1) infinite}"
+    "@keyframes ng-flicker{0%,90%,100%{text-shadow:0 0 20px color-mix(in srgb,var(--accent) 40%,transparent)}"
+    "92%{text-shadow:-2px 0 0 var(--accent2),2px 0 0 var(--accent),0 0 28px color-mix(in srgb,var(--accent) 60%,transparent)}"
+    "94%{text-shadow:2px 0 0 var(--accent3),-2px 0 0 var(--accent2),0 0 16px color-mix(in srgb,var(--accent) 50%,transparent)}}}"
+    # --- 3D TILT cards: nodes that lift toward the viewer on hover (network feel) ---
+    ".card,.stat-card{transform-style:preserve-3d}"
+    "@media (hover:hover){"
+    ".card:hover{transform:perspective(700px) rotateX(4deg) rotateY(-4deg) translateY(-5px);"
+    "box-shadow:0 22px 50px rgba(0,0,0,.5),0 0 0 1px color-mix(in srgb,var(--accent) 50%,transparent),"
+    "0 0 30px color-mix(in srgb,var(--accent) 24%,transparent)}"
+    ".stat-card:hover{transform:perspective(700px) rotateX(5deg) translateY(-5px);"
+    "box-shadow:0 0 28px color-mix(in srgb,var(--accent) 24%,transparent)}"
+    ".btn-primary:hover{box-shadow:0 0 24px color-mix(in srgb,var(--accent) 55%,transparent)}"
+    ".btn-ghost:hover{box-shadow:0 0 20px color-mix(in srgb,var(--accent) 45%,transparent)}"
+    ".partner-card:hover,.ins-card:hover{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 40%,transparent),"
+    "0 18px 44px rgba(0,0,0,.5)}}"
+    # --- card corner NODE: a glowing connection point on every card/stat tile ---
+    ".card,.stat-card{position:relative}"
+    ".card::after,.stat-card::after{content:'';position:absolute;top:-3px;left:-3px;width:7px;height:7px;"
+    "border-radius:50%;background:var(--accent);pointer-events:none;"
+    "box-shadow:0 0 10px color-mix(in srgb,var(--accent) 85%,transparent);opacity:.0;transition:opacity .3s}"
+    "@media (hover:hover){.card:hover::after,.stat-card:hover::after{opacity:1}}"
+    # --- neon network section dividers: rule with a centered + two satellite nodes ---
     "section + section{position:relative}"
     "section + section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);"
     "width:min(880px,86%);height:1px;pointer-events:none;"
@@ -84,23 +144,27 @@ SITE_CSS = (
     "color-mix(in srgb,var(--accent2) 60%,transparent) 78%,transparent)}"
     "section + section::after{content:'';position:absolute;top:0;left:50%;width:6px;height:6px;"
     "transform:translate(-50%,-50%) rotate(45deg);pointer-events:none;background:var(--accent);"
-    "box-shadow:0 0 12px color-mix(in srgb,var(--accent) 80%,transparent)}"
-    # --- neon glow on interactive hover (cards, ghost buttons, stat cards) ---
-    "@media (hover:hover){"
-    ".card:hover{box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 0 1px color-mix(in srgb,var(--accent) 45%,transparent),"
-    "0 0 28px color-mix(in srgb,var(--accent) 22%,transparent)}"
-    ".stat-card:hover{box-shadow:0 0 26px color-mix(in srgb,var(--accent) 22%,transparent)}"
-    ".btn-primary:hover{box-shadow:0 0 24px color-mix(in srgb,var(--accent) 55%,transparent)}"
-    ".btn-ghost:hover{box-shadow:0 0 20px color-mix(in srgb,var(--accent) 45%,transparent)}}"
+    "box-shadow:0 0 12px color-mix(in srgb,var(--accent) 80%,transparent),"
+    "-110px 0 0 -1px color-mix(in srgb,var(--accent2) 70%,transparent),"
+    "110px 0 0 -1px color-mix(in srgb,var(--accent3) 70%,transparent)}"
     # --- eyebrow gets a faint neon ring to tie into the grid mood ---
     ".eyebrow{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 16%,transparent),"
     "0 0 16px color-mix(in srgb,var(--accent) 12%,transparent)}"
+    # --- next-class node-unit + home-contact + campus-split network accents ---
+    ".next-class{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 22%,transparent),"
+    "0 0 30px color-mix(in srgb,var(--accent) 12%,transparent)}"
+    ".next-class .nc-unit{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 25%,transparent)}"
+    ".home-contact .hc-box{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 20%,transparent),"
+    "0 0 40px color-mix(in srgb,var(--accent) 10%,transparent)}"
+    ".campus-split .campus-col .campus-progs li::before{color:var(--accent2)}"
     # --- grid-tilt media: keep the 3D node feel but clamp it on small screens so tilted tiles
     #     never push past the viewport; flatten perspective under ~640px ---
     ".ms-grid-tilt .m-tile{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent)}"
     "@media (max-width:640px){.ms-grid-tilt .m-grid{perspective:none}"
     ".ms-grid-tilt .m-tile{transform:translateY(22px)}"
-    ".ms-grid-tilt .m-tile:hover{transform:translateY(-3px)}}"
+    ".ms-grid-tilt .m-tile:hover{transform:translateY(-3px)}"
+    # disable the heaviest bg layer cost on very small screens (perf), keep nodes
+    ".deco-grid::before{opacity:.38;height:38vh}}"
 )
 
 if __name__ == "__main__":

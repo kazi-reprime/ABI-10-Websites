@@ -433,14 +433,14 @@ details.card[open] summary::after{transform:rotate(45deg)}
 
 /* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
 .brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
-.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;flex-shrink:0;position:relative;border-radius:9px;overflow:hidden}
-.brand-logo .brand-mark img{height:46px;width:auto;max-width:200px;object-fit:contain;border-radius:9px;box-shadow:none;border:0}
-.brand-mark.logo-light{background:#fff;padding:3px 7px;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.06)}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;width:46px;flex-shrink:0;position:relative;border-radius:10px;overflow:hidden}
+.brand-logo .brand-mark img{height:100%;width:100%;object-fit:cover;border-radius:10px;box-shadow:none;border:0}
+.brand-mark.logo-light{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.08)}
 .brand-mark.logo-dark{background:transparent}
 .brand-mark.has-ovl .logo-pole-ovl{position:absolute;pointer-events:none;border-radius:3px;background:repeating-linear-gradient(45deg,#e11d2a 0 6px,#fff 6px 12px,var(--accent) 12px 18px,#fff 18px 24px);background-size:100% 34px;animation:poleSpin 1s linear infinite;opacity:.95;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
 .brand-mark.has-ovl + .brand-pole{display:none}
-@media (max-width:760px){.brand-mark,.brand-logo .brand-mark img{height:40px}.brand-logo .brand-mark img{max-width:160px}}
-@media (max-width:480px){.brand-mark,.brand-logo .brand-mark img{height:36px}.brand-logo .brand-mark img{max-width:140px}}
+@media (max-width:760px){.brand-mark{height:42px;width:42px}}
+@media (max-width:480px){.brand-mark{height:38px;width:38px}}
 
 /* EN/ES toggle in the sticky header — ALWAYS visible */
 .lang-toggle-header{flex-shrink:0;margin-left:6px}
@@ -640,8 +640,11 @@ def header_html(active_key="", t=None):
     # sits beside the logo so every header has a moving pole.
     frame_cls = "logo-dark" if t.get("logo_dark_bg") else "logo-light"
     pole = t.get("logo_pole")
-    img = ('<img src="/assets/logo.jpeg" alt="American Barber Institute — New York\'s dedicated barber school" '
-           'width="200" height="60" decoding="async">')
+    # Header uses the square (padded) favicon so every site shows a tidy square logo chip —
+    # the source logos are mixed portrait/landscape and would render as a thin sliver at 46px.
+    # The full detailed logo still appears (larger, contained) in the footer + OG image.
+    img = ('<img src="/assets/favicon.png" alt="American Barber Institute — New York\'s dedicated barber school" '
+           'width="46" height="46" decoding="async">')
     if pole:
         ovl = (f'<span class="logo-pole-ovl" aria-hidden="true" '
                f'style="left:{pole["l"]}%;top:{pole["t"]}%;width:{pole["w"]}%;height:{pole["h"]}%"></span>')

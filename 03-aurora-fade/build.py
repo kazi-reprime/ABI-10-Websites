@@ -144,6 +144,133 @@ SITE_CSS = r"""
 .btn-primary{box-shadow:0 6px 20px color-mix(in srgb,var(--accent) 26%,transparent)}
 .btn-primary:hover{box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 38%,transparent)}
 
+/* --- SIGNATURE: animated aurora gradient-mesh background ---
+   deco-holo is present on every page (z-index:1, below content at z-index:2). The engine
+   ships it as two flat radial gradients; here we layer a soft, slow-drifting iridescent mesh
+   (three pastel aurora orbs) plus a faint diagonal sheen so the whole light page feels alive
+   and airy without ever competing with the dark-on-light text. Pure CSS, motion gated. */
+.deco-holo{
+  background:
+    radial-gradient(46% 38% at 14% 10%,color-mix(in srgb,var(--accent) 14%,transparent) 0,transparent 60%),
+    radial-gradient(42% 36% at 88% 18%,color-mix(in srgb,var(--accent2) 13%,transparent) 0,transparent 62%),
+    radial-gradient(50% 44% at 78% 92%,color-mix(in srgb,var(--accent3) 13%,transparent) 0,transparent 64%),
+    radial-gradient(38% 34% at 24% 94%,color-mix(in srgb,var(--accent) 10%,transparent) 0,transparent 60%);
+}
+.deco-holo::before{
+  content:"";position:absolute;inset:-12%;pointer-events:none;
+  background:
+    radial-gradient(34% 30% at 50% 26%,color-mix(in srgb,var(--accent2) 11%,transparent) 0,transparent 60%),
+    radial-gradient(30% 28% at 20% 66%,color-mix(in srgb,var(--accent3) 10%,transparent) 0,transparent 62%),
+    radial-gradient(36% 32% at 82% 58%,color-mix(in srgb,var(--accent) 10%,transparent) 0,transparent 62%);
+  filter:blur(40px);opacity:.85;
+}
+/* faint iridescent sheen sweeping the whole page (additive, never darkening the light bg) */
+.deco-holo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:.6;
+  background:linear-gradient(115deg,
+    transparent 0%,
+    color-mix(in srgb,var(--accent) 10%,transparent) 32%,
+    color-mix(in srgb,var(--accent2) 9%,transparent) 50%,
+    color-mix(in srgb,var(--accent3) 10%,transparent) 68%,
+    transparent 100%);
+  background-size:300% 100%;
+}
+@media (prefers-reduced-motion:no-preference){
+  .deco-holo::before{animation:af-aurora 26s ease-in-out infinite}
+  .deco-holo::after{animation:af-sheen 22s linear infinite}
+}
+@keyframes af-aurora{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  33%{transform:translate3d(3%,-2%,0) scale(1.06)}
+  66%{transform:translate3d(-3%,2%,0) scale(.97)}
+}
+@keyframes af-sheen{0%{background-position:0 0}100%{background-position:300% 0}}
+
+/* --- airy frosted-glass cards w/ soft float + pastel iridescent edge --- */
+.card,.stat-card{
+  background:linear-gradient(160deg,color-mix(in srgb,#fff 78%,transparent),color-mix(in srgb,#fff 52%,transparent));
+  backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);
+  box-shadow:0 10px 32px color-mix(in srgb,var(--accent) 12%,transparent),inset 0 1px 0 rgba(255,255,255,.6);
+}
+.card:hover,.stat-card:hover{
+  border-color:color-mix(in srgb,var(--accent) 38%,transparent);
+  box-shadow:0 20px 48px color-mix(in srgb,var(--accent) 22%,transparent),inset 0 1px 0 rgba(255,255,255,.7);
+}
+/* full-bleed iridescent gradient border for the home contact box (the page's hero panel) */
+.home-contact .hc-box{
+  background:linear-gradient(160deg,color-mix(in srgb,#fff 82%,transparent),color-mix(in srgb,#fff 58%,transparent));
+  backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+  border-color:transparent;position:relative;
+  box-shadow:0 18px 50px color-mix(in srgb,var(--accent) 16%,transparent);
+}
+.home-contact .hc-box::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;
+  background:linear-gradient(130deg,var(--accent),var(--accent2),var(--accent3),var(--accent));
+  background-size:240% 100%;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;opacity:.7;
+}
+@media (prefers-reduced-motion:no-preference){
+  .home-contact .hc-box::before{animation:af-shimmer 11s linear infinite}
+}
+
+/* --- ghost button: glassy pill that fills with a soft violet on hover --- */
+.btn-ghost{
+  background:color-mix(in srgb,#fff 45%,transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-color:color-mix(in srgb,var(--accent) 55%,transparent);
+}
+.btn-ghost:hover{box-shadow:0 8px 24px color-mix(in srgb,var(--accent) 28%,transparent)}
+
+/* --- stats band: pastel iridescent ribbon, big airy numbers --- */
+.stats-band{position:relative}
+.stat-card .count{
+  background:linear-gradient(100deg,var(--accent),#c026a8 55%,#1786b3);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.stat-card::before{background:linear-gradient(180deg,var(--accent),var(--accent2),var(--accent3))}
+
+/* --- next-class countdown: frosted chip with glowing accent units --- */
+.next-class{
+  background:linear-gradient(160deg,color-mix(in srgb,#fff 80%,transparent),color-mix(in srgb,#fff 55%,transparent));
+  border-color:color-mix(in srgb,var(--accent) 24%,transparent);
+  box-shadow:0 14px 38px color-mix(in srgb,var(--accent) 14%,transparent);
+}
+.next-class .nc-unit{
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 16%,transparent),color-mix(in srgb,var(--accent3) 12%,transparent));
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent);
+}
+
+/* --- campus split + instructor + partner cards: shared frosted treatment, soft photo wells --- */
+.campus-split .campus-col{border-color:color-mix(in srgb,var(--accent) 18%,transparent)}
+.ins-card .ins-photo,.partner-card .img-wrap{position:relative}
+.ins-card .ins-photo::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--accent) 30%,transparent));
+}
+.ins-card:hover .ins-photo::after{opacity:1}
+.partner-card{box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 10%,transparent)}
+.partner-card:hover{box-shadow:0 18px 46px color-mix(in srgb,var(--accent) 20%,transparent)}
+
+/* --- media band tiles: soft rounded glass wells with iridescent hover halo --- */
+.media-band .m-tile{box-shadow:0 12px 34px color-mix(in srgb,var(--accent) 10%,transparent)}
+.media-band .m-tile:hover{box-shadow:0 18px 46px color-mix(in srgb,var(--accent) 24%,transparent)}
+
+/* --- the white logo chip made intentional on the light theme: soft iridescent ring + lift --- */
+.brand-mark.logo-light{
+  box-shadow:0 4px 16px color-mix(in srgb,var(--accent) 18%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);
+}
+
+/* --- nav active/hover pill picks up the iridescent identity --- */
+.primary-nav a:hover,.primary-nav a.active{
+  background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 14%,transparent),color-mix(in srgb,var(--accent2) 12%,transparent));
+}
+
+/* --- airier section rhythm + centered eyebrow accent underline on the home contact --- */
+.home-contact .hc-box .eyebrow-acc::after{margin-left:0}
+
 @keyframes af-shimmer{0%{background-position:0 0}100%{background-position:200% 0}}
 """
 

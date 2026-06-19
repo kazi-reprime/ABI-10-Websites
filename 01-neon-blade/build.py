@@ -61,7 +61,11 @@ SITE = {
 # accent colors use color-mix(in srgb, var(--accent) N%, transparent) — never var(--x)NN.
 SITE_CSS = r"""
 /* ============================================================
-   01-neon-blade — unique polish + responsive fixes (SITE_CSS)
+   01-neon-blade — CYBERPUNK NEON signature look (SITE_CSS)
+   Cyan #00f0ff + magenta #ff2bd6 on near-black. Glitch/scanline
+   overlays, neon-outlined glowing clipped cards, diagonal section
+   skews, animated cyan->magenta underlines + grid scanlines, and
+   RGB-split image hover. Appended last; wins the cascade.
    ============================================================ */
 
 /* --- FIX 1: mobile drawer anchoring (belt-and-suspenders) -----------------
@@ -86,9 +90,159 @@ SITE_CSS = r"""
   .primary-nav::-webkit-scrollbar{display:none}
 }
 
-/* --- POLISH 1: unique cyberpunk neon EN/ES segmented toggle ---------------
-   Glowing neon-outlined switch, cyan default + magenta-tinted active glow,
-   clipped corners. Restyles only .lang-toggle; no markup/JS changes. */
+/* ============================================================
+   SIGNATURE BACKGROUND — animated neon grid + drifting scanline
+   Two fixed pseudo-elements on <body>, GPU-light (transform/opacity
+   only), layered above the engine deco (z-index:1) but behind all
+   content (sections are z-index:2). Gated behind no-preference.
+   ============================================================ */
+body::before{
+  content:"";position:fixed;inset:-2px;z-index:1;pointer-events:none;
+  background-image:
+    linear-gradient(color-mix(in srgb,var(--accent) 9%,transparent) 1px,transparent 1px),
+    linear-gradient(90deg,color-mix(in srgb,var(--accent2) 7%,transparent) 1px,transparent 1px);
+  background-size:46px 46px,46px 46px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 35%,#000 0,transparent 75%);
+  mask-image:radial-gradient(ellipse 90% 80% at 50% 35%,#000 0,transparent 75%);
+  opacity:.5
+}
+body::after{
+  content:"";position:fixed;left:0;right:0;top:0;height:34vh;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--accent) 14%,transparent) 48%,transparent);
+  mix-blend-mode:screen;opacity:.5;transform:translateY(-40vh)
+}
+@media (prefers-reduced-motion:no-preference){
+  body::before{animation:abiGridDrift 24s linear infinite}
+  body::after{animation:abiScanSweep 7.5s linear infinite}
+}
+@keyframes abiGridDrift{to{background-position:46px 46px,-46px -46px}}
+@keyframes abiScanSweep{0%{transform:translateY(-40vh)}100%{transform:translateY(140vh)}}
+
+/* ============================================================
+   HERO — glitch headline + animated neon underline
+   ============================================================ */
+.subpage-hero h1,.hero-home h1{position:relative;isolation:isolate}
+.subpage-hero h1::after,.hero-home h1::after{
+  content:"";display:block;width:clamp(72px,13vw,140px);height:3px;margin:18px auto 0;border-radius:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));
+  box-shadow:0 0 14px color-mix(in srgb,var(--accent) 75%,transparent),0 0 28px color-mix(in srgb,var(--accent2) 50%,transparent);
+  background-size:200% 100%;animation:abiUnderline 5s ease-in-out infinite
+}
+@keyframes abiUnderline{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.eyebrow{
+  position:relative;border-color:color-mix(in srgb,var(--accent) 50%,transparent);
+  background:color-mix(in srgb,var(--accent) 8%,transparent);
+  box-shadow:0 0 12px color-mix(in srgb,var(--accent) 22%,transparent),inset 0 0 8px color-mix(in srgb,var(--accent) 10%,transparent);
+  text-shadow:0 0 8px color-mix(in srgb,var(--accent) 55%,transparent)
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero-home h1{animation:abiGlitch 6.5s steps(1) infinite}
+  @keyframes abiGlitch{
+    0%,93%,100%{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 42%,transparent),0 0 48px color-mix(in srgb,var(--accent) 22%,transparent)}
+    94%{text-shadow:-3px 0 var(--accent2),3px 0 var(--accent)}
+    95%{text-shadow:3px 0 var(--accent2),-3px 0 var(--accent);transform:translateX(1px)}
+    96%{text-shadow:-2px 0 var(--accent),2px 0 var(--accent2)}
+    97%{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 42%,transparent)}
+  }
+}
+
+/* ============================================================
+   SECTIONS — alternating diagonal-skew neon dividers
+   Uses main section:nth-of-type(n) for distinct alternating
+   treatments. Odd sections get a top cyan skewed hairline; even
+   sections get a tinted skewed slab + magenta hairline.
+   ============================================================ */
+main section{position:relative}
+main section:nth-of-type(even)::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,color-mix(in srgb,var(--accent) 5%,transparent),transparent 40%,color-mix(in srgb,var(--accent2) 5%,transparent));
+  transform:skewY(-1.6deg);transform-origin:left;
+  border-top:1px solid color-mix(in srgb,var(--accent2) 30%,transparent);
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 24%,transparent)
+}
+main section:nth-of-type(odd) + section::after,
+main section:nth-of-type(n+2)::after{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%) skewX(-24deg);
+  width:min(160px,46%);height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);
+  box-shadow:0 0 12px color-mix(in srgb,var(--accent) 60%,transparent)
+}
+.eyebrow-acc{text-shadow:0 0 10px color-mix(in srgb,var(--accent) 45%,transparent)}
+
+/* ============================================================
+   CARDS — neon-outlined glowing panels w/ clipped corner
+   ============================================================ */
+.card{
+  position:relative;
+  border-color:color-mix(in srgb,var(--accent) 22%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 5%,transparent),var(--glass) 60%);
+  -webkit-clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+  clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))
+}
+.card::after{
+  content:"";position:absolute;top:0;right:0;width:14px;height:14px;pointer-events:none;
+  background:linear-gradient(225deg,var(--accent2),transparent);opacity:.85
+}
+.card:hover{
+  border-color:var(--accent);
+  box-shadow:0 0 22px color-mix(in srgb,var(--accent) 30%,transparent),
+             0 0 44px color-mix(in srgb,var(--accent2) 16%,transparent),
+             0 16px 40px rgba(0,0,0,.5)
+}
+.eyebrow-acc.eyebrow-acc{display:block}
+
+/* ============================================================
+   BUTTONS — neon pill w/ scan-sweep + glow
+   ============================================================ */
+.btn-primary{
+  background:linear-gradient(120deg,var(--accent),color-mix(in srgb,var(--accent) 70%,var(--accent2)));
+  position:relative;overflow:hidden;
+  box-shadow:0 0 16px color-mix(in srgb,var(--accent) 40%,transparent)
+}
+.btn-primary::before{
+  content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;
+  background:linear-gradient(100deg,transparent,color-mix(in srgb,#fff 70%,transparent),transparent);
+  transform:skewX(-20deg);transition:left .6s ease
+}
+.btn-primary:hover::before{left:160%}
+.btn-primary:hover{box-shadow:0 0 26px var(--accent),0 0 46px color-mix(in srgb,var(--accent2) 40%,transparent),0 14px 28px rgba(0,0,0,.4)}
+.btn-ghost{
+  border-color:var(--accent);color:var(--accent);
+  box-shadow:inset 0 0 12px color-mix(in srgb,var(--accent) 14%,transparent),0 0 10px color-mix(in srgb,var(--accent) 18%,transparent);
+  text-shadow:0 0 8px color-mix(in srgb,var(--accent) 50%,transparent)
+}
+.btn-ghost:hover{
+  background:var(--accent);color:var(--bg);text-shadow:none;
+  box-shadow:0 0 24px var(--accent),0 0 44px color-mix(in srgb,var(--accent2) 35%,transparent)
+}
+
+/* ============================================================
+   STATS BAND — neon HUD tiles, magenta count glow
+   ============================================================ */
+.stat-card{
+  border-color:color-mix(in srgb,var(--accent) 26%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent2) 5%,transparent),var(--glass) 55%)
+}
+.stat-card::before{background:linear-gradient(180deg,var(--accent),var(--accent2));box-shadow:0 0 14px var(--accent)}
+.stat-card:hover{border-color:var(--accent);box-shadow:0 0 26px color-mix(in srgb,var(--accent) 24%,transparent),0 14px 36px rgba(0,0,0,.45)}
+.stat-card .count{text-shadow:0 0 18px color-mix(in srgb,var(--accent) 55%,transparent),0 0 36px color-mix(in srgb,var(--accent2) 30%,transparent)}
+.row-stat .s b{text-shadow:0 0 14px color-mix(in srgb,var(--accent) 45%,transparent)}
+
+/* ============================================================
+   BRAND MARK + BARBER POLE — neon-framed, glowing pole
+   ============================================================ */
+.brand-mark.logo-dark{
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 30%,transparent),0 0 16px color-mix(in srgb,var(--accent) 20%,transparent);
+  background:color-mix(in srgb,var(--accent) 5%,transparent)
+}
+.barber-pole{
+  border-color:color-mix(in srgb,var(--accent) 60%,transparent);
+  box-shadow:0 0 12px color-mix(in srgb,var(--accent) 55%,transparent),0 0 22px color-mix(in srgb,var(--accent2) 28%,transparent),inset 0 0 0 1px rgba(255,255,255,.2)
+}
+
+/* ============================================================
+   EN/ES TOGGLE — neon-outlined clipped segmented switch
+   ============================================================ */
 .lang-toggle{
   position:relative;display:inline-flex;align-items:stretch;
   height:44px;min-height:44px;padding:2px;gap:2px;border-radius:10px;overflow:hidden;
@@ -123,32 +277,107 @@ SITE_CSS = r"""
   50%{box-shadow:0 0 18px var(--accent),0 0 30px color-mix(in srgb,var(--accent2) 62%,transparent),inset 0 0 8px color-mix(in srgb,#fff 70%,transparent)}
 }
 
-/* --- POLISH 2: neon hero underline ----------------------------------------
-   A short animated cyan->magenta neon bar under the hero/subpage H1. */
-.subpage-hero h1::after,.hero h1::after{
-  content:"";display:block;width:clamp(64px,12vw,120px);height:3px;margin:18px auto 0;border-radius:3px;
+/* ============================================================
+   NEXT-CLASS COUNTDOWN — HUD console w/ clipped corners
+   ============================================================ */
+.next-class{
+  position:relative;border-color:color-mix(in srgb,var(--accent) 40%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 7%,transparent),var(--glass) 60%);
+  box-shadow:0 0 20px color-mix(in srgb,var(--accent) 18%,transparent),inset 0 0 14px color-mix(in srgb,var(--accent) 8%,transparent);
+  -webkit-clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)
+}
+.next-class .nc-unit{
+  background:color-mix(in srgb,var(--accent) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)
+}
+.next-class .nc-unit b{text-shadow:0 0 12px color-mix(in srgb,var(--accent) 60%,transparent)}
+.next-class .nc-date{text-shadow:0 0 10px color-mix(in srgb,var(--accent) 30%,transparent)}
+
+/* ============================================================
+   HOME CONTACT BOX — neon-edged console
+   ============================================================ */
+.home-contact .hc-box{
+  border-color:color-mix(in srgb,var(--accent) 30%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--accent2) 5%,transparent),var(--glass) 55%);
+  box-shadow:0 0 30px color-mix(in srgb,var(--accent) 12%,transparent),inset 0 0 1px color-mix(in srgb,var(--accent) 40%,transparent)
+}
+.input:focus{box-shadow:0 0 14px color-mix(in srgb,var(--accent) 35%,transparent)}
+
+/* ============================================================
+   CAMPUS SPLIT — Manhattan/Bronx neon list markers
+   ============================================================ */
+.campus-split .campus-col{
+  border-color:color-mix(in srgb,var(--accent) 28%,transparent)
+}
+.campus-split .campus-col .campus-progs li::before{
+  color:var(--accent);text-shadow:0 0 8px color-mix(in srgb,var(--accent) 60%,transparent)
+}
+.campus-split h2 .nowrap-fit{text-shadow:0 0 16px color-mix(in srgb,var(--accent) 40%,transparent)}
+
+/* ============================================================
+   INSTRUCTOR CARDS — RGB-split photo hover + neon scan
+   ============================================================ */
+.ins-card .ins-photo{position:relative;overflow:hidden}
+.ins-card .ins-photo::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,color-mix(in srgb,#000 12%,transparent) 2px 3px);
+  opacity:.4;mix-blend-mode:overlay
+}
+.ins-card:hover .ins-photo img{
+  filter:saturate(1.25) contrast(1.05)
+       drop-shadow(2px 0 0 color-mix(in srgb,var(--accent2) 75%,transparent))
+       drop-shadow(-2px 0 0 color-mix(in srgb,var(--accent) 75%,transparent))
+}
+.ins-card .ins-name{text-shadow:0 0 12px color-mix(in srgb,var(--accent) 30%,transparent)}
+
+/* ============================================================
+   PARTNER CARDS — neon underline name + glow on hover
+   ============================================================ */
+.partner-card{border-color:color-mix(in srgb,var(--accent) 22%,transparent)}
+.partner-card .partner-title{
+  position:relative;display:inline-block;padding-bottom:4px
+}
+.partner-card .partner-title::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
   background:linear-gradient(90deg,var(--accent),var(--accent2));
-  box-shadow:0 0 14px color-mix(in srgb,var(--accent) 70%,transparent),0 0 26px color-mix(in srgb,var(--accent2) 45%,transparent);
-  background-size:200% 100%;animation:abiUnderline 5s ease-in-out infinite
+  box-shadow:0 0 8px var(--accent);transition:width .4s ease
 }
-@keyframes abiUnderline{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.partner-card:hover .partner-title::after{width:100%}
+.partner-card .locations{text-shadow:0 0 8px color-mix(in srgb,var(--accent) 40%,transparent)}
 
-/* --- POLISH 3: card hover neon glow + accent section divider --------------- */
-.card:hover{
-  border-color:color-mix(in srgb,var(--accent) 55%,transparent);
-  box-shadow:0 0 22px color-mix(in srgb,var(--accent) 22%,transparent),0 16px 40px rgba(0,0,0,.45)
+/* ============================================================
+   MEDIA BAND — augments the engine ms-neon-scan style
+   (chromatic-split + neon corner ticks on hover)
+   ============================================================ */
+.ms-neon-scan .m-tile{
+  border-color:color-mix(in srgb,var(--accent) 45%,transparent)
 }
-section + section{position:relative}
-section + section::before{
-  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:min(120px,40%);height:1px;
-  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--accent) 60%,transparent),transparent)
+.ms-neon-scan .m-tile:hover .m-media{
+  filter:saturate(1.35) contrast(1.08)
+       drop-shadow(2px 0 0 color-mix(in srgb,var(--accent2) 60%,transparent))
+       drop-shadow(-2px 0 0 color-mix(in srgb,var(--accent) 60%,transparent))
 }
+.media-band .m-head h2{text-shadow:0 0 18px color-mix(in srgb,var(--accent) 30%,transparent)}
 
-/* --- respect reduced motion ----------------------------------------------- */
+/* ============================================================
+   DETAILS / FAQ — neon marker glow
+   ============================================================ */
+details.card summary::after{text-shadow:0 0 10px color-mix(in srgb,var(--accent) 60%,transparent)}
+
+/* ============================================================
+   FOOTER — neon top edge
+   ============================================================ */
+.site-footer{border-top:1px solid color-mix(in srgb,var(--accent) 28%,transparent);box-shadow:0 -1px 22px color-mix(in srgb,var(--accent) 10%,transparent) inset}
+.footer-logo{box-shadow:0 0 16px color-mix(in srgb,var(--accent) 18%,transparent)}
+
+/* ============================================================
+   RESPECT REDUCED MOTION
+   ============================================================ */
 @media (prefers-reduced-motion:reduce){
+  body::before,body::after{animation:none}
   .lang-toggle button.active{animation:none}
-  .subpage-hero h1::after,.hero h1::after{animation:none}
+  .subpage-hero h1::after,.hero-home h1::after{animation:none}
 }
 """
 

@@ -33,6 +33,9 @@ def audit_page(site, path):
     # CSS validity (invalid hex-alpha on var())
     bad = re.findall(r'var\(--[a-z0-9]+\)[0-9a-fA-F]{2}\b', html)
     if bad: fail(site, page, f"invalid var()HH CSS x{len(bad)}: {bad[0]}")
+    # NO CODE EXPOSURE: bilingual spans must never leak into an HTML attribute
+    if re.search(r'="[^"<>]*<span class="lang-', html):
+        fail(site, page, "bi() bilingual span leaked into an attribute (use bt())")
     # responsive signals
     if "overflow-x:hidden" not in html: fail(site, page, "body overflow-x:hidden missing")
     if "class=\"burger\"" not in html: fail(site, page, "hamburger missing")
@@ -85,6 +88,45 @@ def audit_site(site):
         if "Call for pricing" in t: fail(site, path.stem, "stale 'Call for pricing'")
         if "abi-assets.vercel.app" in t: fail(site, path.stem, "stale asset host abi-assets")
         if "© 2026 American Barber Institute (ABI)" not in t: fail(site, path.stem, "footer copyright missing")
+
+    # ---- v9 final-changes requirements ----
+    # header: logo image + spinning pole, routed to host, NO text wordmark
+    if "brand-mark" not in idx: fail(site, "index", "header logo (brand-mark) missing")
+    if "assets-lilac-five.vercel.app/logos/" not in idx: fail(site, "index", "logo not routed to asset host")
+    if '<span class="brand-name"' in idx: fail(site, "index", "text wordmark still present in header")
+    if "barber-pole" not in idx and "logo-pole-ovl" not in idx: fail(site, "index", "spinning barber pole missing")
+    # EN/ES toggle always visible in the sticky header
+    if "lang-toggle-header" not in idx: fail(site, "index", "always-visible header EN/ES toggle missing")
+    # mobile sticky bar = Call Now + Become a Barber
+    if "sticky-call" not in idx: fail(site, "index", "mobile sticky bar missing")
+    if "Call Now" not in idx: fail(site, "index", "sticky 'Call Now' action missing")
+    if "Become a Barber" not in idx: fail(site, "index", "sticky 'Become a Barber' action missing")
+    # next-class countdown on home + programs
+    if "data-next-class" not in idx: fail(site, "index", "next-class countdown missing")
+    if "data-next-class" not in prog: fail(site, "programs", "next-class countdown missing")
+    # home contact box (desktop + mobile)
+    if 'id="home-contact"' not in idx: fail(site, "index", "home contact box missing")
+    # Manhattan | Bronx split on home + programs
+    if "campus-split" not in idx: fail(site, "index", "Manhattan|Bronx split missing")
+    if "campus-split" not in prog: fail(site, "programs", "Manhattan|Bronx split missing")
+    # per-site favicon + OG share image
+    if 'rel="icon" type="image/png"' not in idx: fail(site, "index", "per-site PNG favicon missing")
+    if "-og.png" not in idx: fail(site, "index", "per-site OG image missing")
+    # 1-line brand/headings helper present
+    if "nowrap-fit" not in idx and "nowrap-fit" not in prog: fail(site, "index", "1-line nowrap-fit missing")
+    # instructors: 9 real photos + Manhattan/Bronx groups + reconciled-to-source role
+    ins = (d / "instructors.html").read_text(errors="replace") if (d / "instructors.html").exists() else ""
+    ins_imgs = set(re.findall(r'/instructors/[A-Za-z0-9_-]+\.(?:jpe?g|png)', ins))
+    if len(ins_imgs) < 9: fail(site, "instructors", f"only {len(ins_imgs)} instructor images (need 9)")
+    for grp in ("Manhattan Campus", "Bronx Campus"):
+        if grp not in ins: fail(site, "instructors", f"'{grp}' group missing")
+    if "Founding Director, ABI Bronx" not in ins: fail(site, "instructors", "instructor roles not reconciled to live source")
+    # partners: 6 real images + key names
+    part = (d / "partners.html").read_text(errors="replace") if (d / "partners.html").exists() else ""
+    part_imgs = set(re.findall(r'/partners/[A-Za-z0-9_-]+\.(?:jpe?g|png|webp|svg)', part))
+    if len(part_imgs) < 6: fail(site, "partners", f"only {len(part_imgs)} partner images (need 6)")
+    for nm in ("Levels Barbershop", "Diamond Fadez", "NYC Barber Shop Museum"):
+        if nm not in part: fail(site, "partners", f"partner '{nm}' missing")
 
 
 def main():
