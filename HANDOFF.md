@@ -1,6 +1,14 @@
 # ABI 10 Websites — Session Handoff
 
-**Status:** v6 SHIPPED. All 10 sites live. Duplicate header/footer fixed, Haircuts page restored, photos+videos on every page (10 unique animations), per-site EN/ES toggles, **media served from a shared asset host** (sites now deploy at ~760 KB each).
+**Status:** v7 — **per-site architecture + content reconciled to source + mobile responsiveness fixed.** Each site now has its OWN build file (`<slug>/build.py`) importing a shared engine (`_build/abi_engine.py`). The home page is now generated from the same responsive template as every other page (it used to be patched scraped HTML — the root cause of mobile breakage). Content matches the authoritative reference exactly (4 programs, Contagious Diseases = $100, 6 "Why Choose ABI" cards, $150/week banner, source footer). Media still served from the shared asset host (HTML-only deploys).
+
+**v7 architecture (READ THIS):**
+- `_content/content.json` — single source of truth for ALL content. Edit here to change content fleet-wide. DO NOT duplicate content per site.
+- `_build/abi_engine.py` — shared rendering engine: responsive CSS (mobile-first), header/footer/banner, EN/ES toggle, JS, all 11 page builders incl. **home**. Fixing the engine fixes all 10 sites. Mobile nav drawer anchors to `top:100%` (under the sticky header); page-in is opacity-only (so the `position:fixed` sticky call bar isn't broken by a body transform); footer bg is `color-mix(var(--bg) 86%,#000)` (readable on light themes).
+- `<slug>/build.py` (×10) — each site's OWN file: inline `TOKENS` (theme) + `SITE` (identity) + `SITE_CSS` (per-site unique polish, appended last). Run `python3 <slug>/build.py` to rebuild just that site. This is where per-site uniqueness lives (toggle, hero, animations).
+- `_build/scaffold.py` — one-time bootstrap that generated the 10 `<slug>/build.py` files. Re-running OVERWRITES them (resets to defaults) — only run to reset.
+- `_build/build_all.py` — convenience: runs all 10 per-site builds.
+- Old monolith archived at `_archive/build-v5.py`. The `_polish.py` per-site-injection workflow is GONE (polish now lives in each `<slug>/build.py` SITE_CSS; a rebuild no longer wipes it).
 **Asset host:** `https://assets-lilac-five.vercel.app` (Vercel project `assets`, scope `mkknights-projects`) — serves `/showcase/{vid,img}`, `/img`, `/logos`, `/videos`. CORS `*`, immutable cache. All 10 sites reference media from here (`ASSET_BASE` in `build.py`). See `DESIGN-AUDIT.md` for the full fix log.
 **Repo:** https://github.com/kazi-reprime/ABI-10-Websites
 **Working dir:** `/Users/mkazi/ABI-10-Websites`
@@ -89,20 +97,18 @@ The user sends each URL to a different prospect; each must look like the ONLY AB
 
 ```bash
 cd /Users/mkazi/ABI-10-Websites
-python3 _build/build.py
+python3 _build/build_all.py          # all 10 sites
+# OR rebuild a single site (each owns its build file):
+python3 01-neon-blade/build.py
 ```
 
-This regenerates all 10 sites' HTML from `_content/content.json` + `_content/tokens/<slug>.json`.
+This regenerates each site's 11 pages (incl. home) from `_content/content.json` + the site's inline `TOKENS`/`SITE_CSS`.
 **Does NOT touch the asset host** — media lives at `ASSET_BASE` (deploy `assets/` separately).
 
-⚠️ **After ANY rebuild, re-run the per-site polish.** The 10 agents' unique EN/ES toggles + nav-fixes live in `<slug>/_polish.py` (idempotent) and are injected into the GENERATED HTML — a rebuild wipes sub-page toggles. Always run:
-```bash
-for d in 0*-* 10-*; do (cd "$d" && python3 _polish.py); done
-```
-The media-style CSS uses `color-mix()` (a `_fix_css_alpha()` helper converts any `var(--x)HH` — invalid CSS — at build time; agent `_polish.py` blocks may still emit `var(--x)HH`, so a final in-place conversion pass over the HTML is the safe last step).
-
-- To change content for ALL sites: edit `_content/content.json` and re-run build.
-- To re-theme one site: edit `_content/tokens/<slug>.json` and re-run build.
+- **Change content for ALL sites:** edit `_content/content.json`, rebuild.
+- **Re-theme / polish ONE site:** edit that site's `<slug>/build.py` (`TOKENS` for theme, `SITE_CSS` for unique CSS), then `python3 <slug>/build.py`. No other site is affected.
+- **Change responsive behavior / structure for ALL sites:** edit `_build/abi_engine.py`, then `python3 _build/build_all.py`.
+- ✅ No more `_polish.py` re-run dance — per-site polish is baked into each `<slug>/build.py` and survives rebuilds. The engine converts/forbids invalid `var(--x)HH`; verify with `grep -rohE 'var\(--[a-z0-9]+\)[0-9a-fA-F]{2}' <slug>/*.html` (must be empty).
 
 ---
 

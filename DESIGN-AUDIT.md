@@ -6,7 +6,35 @@
 
 ---
 
-## 1. Issues found and fixed
+## 0. v7 — Per-site rebuild, content reconciliation & mobile fixes (latest)
+
+**Scope:** All 10 sites rebuilt on a new architecture; content reconciled to the authoritative reference; mobile responsiveness fixed at the root; 10 parallel agents (one per site) verified + polished.
+
+### 0.1 Architecture — every site now has its own Python build file
+- Split the single monolithic `build.py` into: a shared engine `_build/abi_engine.py` + **one `<slug>/build.py` per site** (inline `TOKENS` + `SITE` + `SITE_CSS`). Each site is independently buildable (`python3 <slug>/build.py`) and independently customizable. Old monolith archived at `_archive/build-v5.py`.
+
+### 0.2 Root-cause fix for "still not mobile responsive"
+- **Root cause:** the home `index.html` was scraped third-party HTML (classes `.wrap/.hero/.neon-sign/.ticker`, `.btn-pri`) surgically patched — it never used the responsive system the sub-pages used. **Fix:** home is now generated from the same mobile-first template as every page. Legacy scraped classes: **0** across all 10 homes.
+- **Engine bug (found by parallel agents 01 & 10, fixed centrally):** `.site-header`'s `backdrop-filter` makes it the containing block for the `position:fixed` nav drawer, so the JS-measured `--nav-top` mis-anchored the drawer ~135px below the header. Fixed by anchoring the drawer to `top:100%` (the header's own bottom edge) — robust to the top-banner wrapping.
+- **Engine bug (agent 10):** `body{animation:pageIn … both}` left a residual `translateY(0)` transform, making `body` the containing block for the fixed sticky call bar → bar pushed off-screen. Fixed: page-in is now opacity-only.
+- **Heading overflow (agent 09):** wrap rule was on `<p>` only → added `overflow-wrap:break-word` to `h1–h4`.
+- **brutal-offset media overflow ~4px at 360px (agent 07):** added a ≤600px clamp in the engine.
+- Mobile system: hamburger ≤1180px (no 11-item clip), drawer scroll-locks the body, tap targets, `clamp()` typography, `overflow-x:hidden`, `100dvh`, `env(safe-area-inset-*)`.
+
+### 0.3 Content reconciled to the authoritative source ("content is king")
+- **Programs 5→4** to match the reference exactly: 500-Hr Master Barber (Manhattan) $5,600 · 500-Hr Master Barber — Bronx $5,600 (was wrongly "540-Hr") · 50-Hr Refresher $1,500 · **3-Hr Contagious Diseases $100** (was "Call for pricing"; dropped the duplicate Bronx-contagious entry).
+- **"Why Choose ABI" 12→6** exact source cards (NY State Licensed; Hands-On from the First Few Weeks; Flexible Schedules; Job Placement Office; Financial Assistance Available; Monthly Start Dates).
+- **Job Placement** rebuilt to source: stats 90%+/500+/30yrs/Free, the 6 source offerings, Jerrick M. quote, Browse-jobs + Own-a-shop cards.
+- **Banner** = "Start Your Barber Journey Today for Only $150 per Week*". **Footer** rebuilt to source (Links/Locations/Contact incl. Bronx (718) 676-0640 + admission@abi.edu/hours, "© 2026 American Barber Institute (ABI)…", GI Bill® trademark note).
+- **Removed invented extras** not in source (e.g. the fabricated career-earnings table). **Kept Partners + Instructors** per instruction. Resources aligned to source (ACCES-VR, GI Bill® & VA, NY State Board, Tools & Supplies).
+- **Light-theme footer contrast (agent 03):** engine footer bg was hardcoded `rgba(0,0,0,.4)` (muddy on light themes) → now `color-mix(var(--bg) 86%,#000)`.
+
+### 0.4 Per-site agent verification
+10 parallel agents each built their site, verified responsiveness (live browser where the shared preview was available, rigorous static audit otherwise), graded WCAG AA contrast (site 03 light theme needed the most fixes — accent darkened to pass AA; site 02 banner red darkened to 4.94:1), and added theme-matched polish in their own `SITE_CSS`. Fleet re-verify after the central engine fixes: **11 pages each · 1 header/1 footer · 0 invalid `var()` CSS · drawer + opacity-page-in + theme footer present on all 10.**
+
+---
+
+## 1. Issues found and fixed (v5/v6 — earlier)
 
 ### 1.1 Duplicate menu bar (and footer) on every home page — FIXED
 - **Symptom (user-reported, with screenshots):** two identical nav rows stacked on each site's home page; the footer was likewise doubled.

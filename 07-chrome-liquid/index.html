@@ -1,6 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
 <title>American Barber Institute · New York's Dedicated Barber School</title>
-<!--ABIv5:head-->
 <meta name="description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
 <meta name="keywords" content="barber school nyc, american barber institute, abi, master barber program, gi bill barber school, escuela de barberia nueva york">
 <meta name="author" content="American Barber Institute">
@@ -19,528 +22,272 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="American Barber Institute · New York's Dedicated Barber School">
 <meta name="twitter:description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
-<meta name="twitter:image" content="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg">
 <meta name="format-detection" content="telephone=yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "American Barber Institute", "alternateName": "ABI", "description": "American Barber Institute (ABI) \u2014 New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill\u00ae accepted. Manhattan & Bronx campuses.", "telephone": "(212) 290-2289", "email": "admission@abi.edu", "foundingDate": "1995", "address": [{"@type": "PostalAddress", "streetAddress": "48 West 39th Street", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10018", "addressCountry": "US"}, {"@type": "PostalAddress", "streetAddress": "121 Westchester Square", "addressLocality": "Bronx", "addressRegion": "NY", "postalCode": "10461", "addressCountry": "US"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.3", "ratingCount": "100"}}</script>
-<style>
-:root {
-  --bg: #ece9e3;
-  --bg2: #ffffff;
-  --ink: #0a0a0a;
-  --mut: #5a5e66;
-  --accent: #1a3cff;
-  --accent2: #0a0a0a;
-  --accent3: #1a3cff;
-  --line: rgba(0,0,0,.16);
-  --glass: rgba(236,233,227,.82);
-  --card-r: 0;
-  --btn-r: 0;
-  --touch: 48px;
-  --safe-top: env(safe-area-inset-top);
-  --safe-bottom: env(safe-area-inset-bottom);
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'Archivo',sans-serif;
-  line-height: 1.65;
-  font-size: 16px;
-  overflow-x: hidden;
-  min-height: 100vh;
-  min-height: 100svh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-bottom: calc(82px + var(--safe-bottom));
-}
-@media (min-width: 981px) { body { padding-bottom: 0; } }
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; display: block; }
-video { max-width: 100%; height: auto; }
-button { font-family: inherit; cursor: pointer; }
-
-h1, h2, h3, h4 { font-family: 'Anton',sans-serif; letter-spacing: .01em; line-height: 1.04; color: var(--ink); }
-h1 { font-size: clamp(2rem, 7vw, 4.6rem); }
-h2 { font-size: clamp(1.5rem, 4.4vw, 2.6rem); }
-h3 { font-size: clamp(1.15rem, 2.8vw, 1.4rem); }
-
-/* Language switcher */
-body.lang-en .lang-es, body.lang-es .lang-en { display: none !important; }
-
-/* Page transitions */
-@media (prefers-reduced-motion: no-preference) {
-  @view-transition { navigation: auto; }
-  body { animation: pageIn .42s cubic-bezier(.2,.8,.2,1) both; }
-  @keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-  .reveal { animation: revealUp .6s cubic-bezier(.2,.8,.2,1) both; }
-  @keyframes revealUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-}
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; } }
-
-/* Background video + overlay */
-.bg-video { position: fixed; inset: 0; width: 100%; height: 100vh; height: 100svh; object-fit: cover; z-index: 0; opacity: .14; pointer-events: none; }
-@media (max-width: 768px) { .bg-video { opacity: .07; } }
-.bg-overlay { position: fixed; inset: 0; background: radial-gradient(ellipse at center, transparent 0, rgba(0,0,0,.4) 70%, var(--bg) 100%); z-index: 1; pointer-events: none; }
-
-.deco-flat { position: fixed; inset: 0; pointer-events: none; z-index: 1; background: linear-gradient(180deg, transparent 0, transparent 70%, #1a3cff0a 100%); }
-
-/* Top banner — centered call buttons + lang toggle */
-.top-banner {
-  position: relative; z-index: 40;
-  background: #1a3cff;
-  color: #ece9e3;
-  padding: 10px 14px calc(10px + var(--safe-top));
-  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
-}
-.cta-call {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 9px 18px; min-height: 44px;
-  background: rgba(0,0,0,.18);
-  color: inherit;
-  border-radius: 999px;
-  font-weight: 800; font-size: .82rem;
-  border: 2px solid currentColor;
-  white-space: nowrap;
-  transition: transform .2s, background .2s;
-}
-.cta-call:hover { background: rgba(0,0,0,.35); transform: translateY(-1px); }
-.cta-call .cta-flag { font-size: .68rem; padding: 2px 7px; border: 1.5px solid currentColor; border-radius: 999px; font-weight: 900; letter-spacing: .08em; }
-.cta-call .cta-label { font-size: .8rem; font-weight: 700; letter-spacing: .04em; }
-.cta-call .cta-num { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .88rem; font-weight: 800; }
-
-.lang-toggle { display: inline-flex; align-items: stretch; height: 38px; border-radius: 999px; border: 2px solid currentColor; overflow: hidden; }
-.lang-toggle button { background: transparent; border: 0; color: inherit; padding: 0 14px; min-width: 44px; cursor: pointer; font-weight: 900; letter-spacing: .12em; font-family: inherit; font-size: .78rem; }
-.lang-toggle button.active { background: rgba(0,0,0,.35); }
-
-/* Header */
-.site-header {
-  position: sticky; top: 0; z-index: 30;
-  background: var(--glass);
-  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
-}
-.header-inner {
-  display: flex; align-items: center; gap: 16px;
-  height: 68px; padding: 0 18px;
-  max-width: 1280px; margin: 0 auto;
-}
-.brand-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-width: 0; }
-.brand-logo img { width: 40px; height: 40px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
-.brand-name { font-family: 'Anton',sans-serif; font-weight: 800; letter-spacing: .02em; line-height: 1.1; display: flex; flex-direction: column; font-size: .92rem; }
-.brand-name .brand-line1 { color: var(--ink); }
-.brand-name .brand-line2 { color: var(--accent); }
-
-.primary-nav {
-  display: flex; align-items: center; gap: 4px;
-  flex: 1; justify-content: center; flex-wrap: nowrap;
-  overflow: hidden;
-}
-.primary-nav a {
-  color: var(--mut); padding: 8px 10px; min-height: 44px;
-  display: inline-flex; align-items: center;
-  font-size: .82rem; font-weight: 600; letter-spacing: .02em;
-  white-space: nowrap;
-  border-radius: 8px;
-  transition: color .2s, background .2s;
-}
-.primary-nav a:hover, .primary-nav a.active { color: var(--accent); background: rgba(255,255,255,.04); }
-
-.burger { width: 48px; height: 48px; display: none; flex-direction: column; gap: 5px; align-items: center; justify-content: center; background: transparent; border: 0; }
-.burger span { width: 26px; height: 2px; background: var(--accent); transition: .2s; border-radius: 2px; }
-.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* Responsive nav — hamburger on tablet/mobile */
-@media (max-width: 1100px) {
-  .primary-nav {
-    position: fixed; inset: 134px 0 auto 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--bg);
-    backdrop-filter: blur(20px);
-    padding: 12px 18px 28px;
-    transform: translateY(-130%); transition: transform .3s ease;
-    box-shadow: 0 24px 48px rgba(0,0,0,.5);
-    max-height: calc(100vh - 134px); overflow-y: auto;
-    border-bottom: 1px solid var(--line);
-  }
-  .primary-nav.open { transform: translateY(0); }
-  .primary-nav a { padding: 16px 8px; border-bottom: 1px solid var(--line); font-size: 1.05rem; min-height: 56px; }
-  .primary-nav a:last-child { border-bottom: 0; }
-  .burger { display: inline-flex; margin-left: auto; }
-}
-@media (max-width: 760px) {
-  .header-inner { height: 64px; padding: 0 14px; }
-  .brand-name { font-size: .85rem; }
-  .top-banner { padding: 8px 10px calc(8px + var(--safe-top)); gap: 6px; }
-  .cta-call { padding: 7px 12px; min-height: 40px; font-size: .76rem; gap: 6px; }
-  .cta-call .cta-num { font-size: .82rem; }
-  .lang-toggle { height: 36px; }
-  .primary-nav { inset: 124px 0 auto 0; max-height: calc(100vh - 124px); }
-}
-@media (max-width: 480px) {
-  .header-inner { height: 60px; padding: 0 12px; }
-  .brand-name .brand-line2 { display: none; }
-  .brand-name { font-size: .8rem; }
-  .brand-logo img { width: 36px; height: 36px; }
-  .top-banner { padding: 7px 8px calc(7px + var(--safe-top)); gap: 5px; }
-  .cta-call { padding: 6px 10px; min-height: 38px; font-size: .7rem; }
-  .cta-call .cta-label { display: none; }
-  .cta-call .cta-num { font-size: .78rem; }
-  .cta-call .cta-flag { font-size: .62rem; padding: 1px 5px; }
-  .primary-nav { inset: 116px 0 auto 0; max-height: calc(100vh - 116px); }
-}
-
-/* Subpage hero */
-.subpage-hero { position: relative; z-index: 2; padding: clamp(48px, 8vw, 100px) 0 clamp(36px, 6vw, 60px); text-align: center; }
-.subpage-hero .container { max-width: 940px; }
-.eyebrow { display: inline-block; padding: 7px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
-.subpage-hero h1 { margin: 22px 0 14px; }
-
-.subpage-hero p.sub { max-width: 720px; margin: 0 auto; color: var(--mut); font-size: clamp(1rem, 2.2vw, 1.12rem); }
-
-section { padding: clamp(36px, 6vw, 64px) 0; position: relative; z-index: 2; }
-section h2 { margin-bottom: 14px; }
-section p.lead { color: var(--mut); max-width: 780px; margin-bottom: 24px; font-size: clamp(1rem, 2.2vw, 1.08rem); }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(14px, 4vw, 28px); position: relative; z-index: 2; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(12px, 2.4vw, 20px); }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(14px, 2.6vw, 22px); }
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(8px, 1.6vw, 14px); }
-
-.card { background: var(--glass); border: 1px solid var(--line); border-radius: var(--card-r); padding: clamp(20px, 3vw, 28px); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: transform .3s, border-color .3s, box-shadow .3s; }
-.card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
-
-.partner-card { overflow: hidden; padding: 0; display: flex; flex-direction: column; }
-.partner-card .img-wrap { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--bg2); }
-.partner-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
-.partner-card:hover .img-wrap img { transform: scale(1.06); }
-.partner-card .img-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.55) 100%); }
-.partner-card .img-wrap .partner-name { position: absolute; left: 18px; bottom: 14px; z-index: 2; font-family: 'Anton',sans-serif; font-size: 1.3rem; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
-.partner-card .body { padding: 22px; }
-.partner-card .locations { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
-.partner-card .desc { color: var(--mut); font-size: .94rem; margin-bottom: 12px; }
-.partner-card .why { font-size: .88rem; color: var(--accent); font-weight: 700; }
-
-.gallery-tile { position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: var(--card-r); background: var(--bg2); border: 1px solid var(--line); cursor: zoom-in; }
-.gallery-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
-.gallery-tile:hover img { transform: scale(1.08); }
-.gallery-tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.4) 100%); opacity: 0; transition: opacity .3s; }
-.gallery-tile:hover::after { opacity: 1; }
-
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 14px 28px; min-height: 48px;
-  border-radius: var(--btn-r);
-  font-weight: 800; font-size: .94rem;
-  text-decoration: none; border: 0;
-  cursor: pointer;
-  transition: transform .2s, filter .2s, background .2s, box-shadow .2s;
-  
-}
-.btn-primary { background: var(--accent); color: var(--bg); }
-.btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.32); }
-.btn-ghost { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
-.btn-ghost:hover { background: var(--accent); color: var(--bg); }
-
-.input { background: var(--bg2); border: 1px solid var(--line); border-radius: var(--card-r); padding: 14px; color: var(--ink); font-size: 1rem; font-family: inherit; min-height: 48px; -webkit-appearance: none; appearance: none; }
-.input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
-
-.eyebrow-acc { color: var(--accent); font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 800; }
-.row-stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 22px 0; }
-.row-stat .s { padding: 18px 14px; border: 1px solid var(--line); border-radius: var(--card-r); background: var(--glass); }
-.row-stat .s b { display: block; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--accent); font-weight: 800; line-height: 1.1; font-family: 'Anton',sans-serif; }
-.row-stat .s small { color: var(--mut); font-size: .82rem; }
-.list-clean { list-style: none; padding: 0; }
-.list-clean li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--mut); }
-.list-clean li:last-child { border-bottom: 0; }
-.list-clean li::before { content: "▸ "; color: var(--accent); font-weight: 800; }
-.contact-strip { display: flex; gap: 14px; flex-wrap: wrap; padding: 16px 18px; border: 1px solid var(--accent); border-radius: var(--card-r); background: var(--glass); margin: 20px 0; }
-.contact-strip a { color: var(--accent); font-weight: 800; }
-
-details.card summary { cursor: pointer; font-weight: 800; font-size: 1.05rem; min-height: 32px; list-style: none; padding-right: 20px; position: relative; }
-details.card summary::-webkit-details-marker { display: none; }
-details.card summary::after { content: "+"; position: absolute; right: 4px; top: 0; color: var(--accent); font-size: 1.4rem; transition: transform .2s; }
-details.card[open] summary::after { transform: rotate(45deg); }
-
-/* Footer */
-.site-footer { padding: clamp(40px, 6vw, 60px) 0 clamp(80px, 9vw, 100px); border-top: 1px solid var(--line); margin-top: 60px; background: rgba(0,0,0,.4); color: var(--mut); position: relative; z-index: 2; font-size: .9rem; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: clamp(20px, 3vw, 32px); margin-bottom: 26px; }
-.footer-grid h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .18em; color: var(--ink); margin-bottom: 12px; font-family: 'Anton',sans-serif; }
-.footer-grid a { display: block; padding: 4px 0; color: var(--mut); }
-.footer-grid a:hover { color: var(--accent); }
-.footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); font-size: .78rem; text-align: center; }
-@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-
-/* Sticky mobile bottom bar */
-.sticky-call { display: none; position: fixed; left: max(12px, var(--safe-bottom)); right: 12px; bottom: calc(12px + var(--safe-bottom)); z-index: 50; gap: 8px; }
-.sticky-call a { flex: 1; padding: 14px 10px; min-height: 52px; border-radius: 999px; font-weight: 800; font-size: .88rem; text-align: center; text-decoration: none; box-shadow: 0 16px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06); display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
-.sticky-call a.en { background: var(--accent); color: var(--bg); }
-.sticky-call a.es { background: var(--bg2); color: var(--ink); border: 2px solid var(--accent); }
-.sticky-call .flag { font-size: .68rem; padding: 1px 6px; border: 1px solid currentColor; border-radius: 999px; font-weight: 900; }
-@media (max-width: 980px) { .sticky-call { display: flex; } }
-
-@media (max-width: 480px) {
-  section { padding: clamp(28px, 5vw, 48px) 0; }
-  .subpage-hero { padding: clamp(36px, 6vw, 70px) 0 clamp(24px, 4vw, 40px); }
-  .row-stat { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .row-stat .s { padding: 14px 10px; }
-  .row-stat .s b { font-size: 1.3rem; }
-}
-
-/* ============ ANIMATED STAT COUNTERS ============ */
-.stats-band { padding: clamp(28px, 5vw, 56px) 0; }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(10px, 2vw, 18px); }
-.stat-card { padding: clamp(22px, 3vw, 32px) clamp(16px, 2.4vw, 22px); border: 1px solid var(--line); border-radius: var(--card-r); background: var(--glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); position: relative; overflow: hidden; transition: transform .3s, border-color .3s; text-align: center; }
-.stat-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-.stat-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
-.stat-card.in::before, .stat-card:hover::before { transform: scaleY(1); }
-.stat-card .count { display: block; font-size: clamp(2.2rem, 7vw, 4rem); font-weight: 900; color: var(--accent); line-height: 1; font-family: 'Anton',sans-serif; letter-spacing: -.02em; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
-.stat-card .label { display: block; font-size: clamp(.78rem, 1.6vw, .92rem); color: var(--mut); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-.stat-card .sublabel { display: block; font-size: .7rem; color: var(--mut); opacity: .65; margin-top: 4px; }
-
-/* ============ RESPONSIVE LOGO (mobile-first) ============ */
-.brand-logo img { width: clamp(34px, 4.6vw, 44px); height: clamp(34px, 4.6vw, 44px); border-radius: clamp(8px, 1vw, 11px); object-fit: cover; flex-shrink: 0; box-shadow: 0 6px 18px rgba(0,0,0,.25); border: 1px solid var(--line); }
-.brand-name { font-size: clamp(.78rem, 1.7vw, .98rem); }
-@media (max-width: 1180px) { .brand-name .brand-line2 { font-size: .82em; } }
-@media (max-width: 760px) { .brand-logo img { width: 38px; height: 38px; } .brand-name { font-size: .85rem; } }
-@media (max-width: 480px) { .brand-logo img { width: 34px; height: 34px; border-radius: 8px; } .brand-name .brand-line1 { font-size: .82rem; } .brand-name .brand-line2 { display: none; } }
-@media (max-width: 360px) { .brand-logo img { width: 32px; height: 32px; } .brand-name { display: none; } }
-
-/* ============ PHONES NEVER HIDDEN ============ */
-.cta-call .cta-num { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-weight: 900; }
-@media (max-width: 480px) { .cta-call .cta-num { font-size: .82rem; } }
-@media (max-width: 360px) { .cta-call { padding: 6px 8px; } .cta-call .cta-num { font-size: .78rem; } }
-
-/* ============ UPGRADED CONTACT FORM ============ */
-.form-grid { display: grid; gap: 14px; }
-.form-grid .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 540px) { .form-grid .row-2 { grid-template-columns: 1fr; } }
-.field-group { display: flex; flex-direction: column; gap: 6px; }
-.field-group label { font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
-.field-group small.hint { font-size: .76rem; color: var(--mut); }
-.radio-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.radio-pill { position: relative; cursor: pointer; }
-.radio-pill input { position: absolute; opacity: 0; pointer-events: none; }
-.radio-pill span { display: inline-block; padding: 10px 18px; min-height: 44px; line-height: 24px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .88rem; font-weight: 700; color: var(--mut); transition: all .2s; user-select: none; }
-.radio-pill input:checked + span { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-.radio-pill:hover span { border-color: var(--accent); color: var(--accent); }
-.form-cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
-.form-cta .privacy { font-size: .78rem; color: var(--mut); flex: 1; min-width: 200px; }
-.hc-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-.hc-pill { display: inline-block; padding: 9px 16px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; color: var(--mut); background: var(--glass); transition: border-color .2s, color .2s; }
-.hc-pill:hover { border-color: var(--accent); color: var(--accent); }
-.media-band{position:relative;z-index:2;padding:clamp(36px,6vw,72px) 0}.media-band .m-head{max-width:760px;margin:0 auto clamp(20px,3vw,34px);text-align:center}.media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}.media-band .m-head h2{margin:10px 0}.media-band .m-head p{color:var(--mut);max-width:640px;margin:0 auto}.m-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(12px,2vw,18px)}.m-tile{position:relative;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);aspect-ratio:4/3;opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}.m-tile.shown{opacity:1}.m-tile .m-media{width:100%;height:100%;object-fit:cover;display:block}.m-tile .m-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:4;font-size:.8rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75);opacity:0;transform:translateY(6px);transition:.3s}.m-tile::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:opacity .3s}.m-tile:hover::after{opacity:1}.m-tile:hover .m-cap{opacity:1;transform:none}.m-vid::before{content:'\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1rem;border:2px solid rgba(255,255,255,.75);transition:.3s;pointer-events:none}.m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}.m-vid.playing::before{opacity:0}@media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}.ms-brutal-offset .m-tile{border:2px solid var(--ink);border-radius:0;transform:translate(18px,18px);box-shadow:-10px 10px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}.ms-brutal-offset .m-tile:hover{box-shadow:-16px 16px 0 var(--accent);transform:translate(2px,-2px)}
-</style>
-<!--/ABIv5:head-->
-<link rel="icon" type="image/png" href="data:image/png;base64,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">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>:root{--bg:#ece9e3;--panel:#ffffff;--ink:#0a0a0a;--mut:#5a5e66;--line:rgba(0,0,0,.16);--accent:#1a3cff;--accent2:#0a0a0a;--annink:#ffffff;--navbg:rgba(236,233,227,.82);--display:'Anton',sans-serif;--body:'Archivo',sans-serif;--maxw:1340px;--cardr:0px;--btnr:0px;--h1tt:uppercase;--glow:rgba(26,60,255,.3);}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body::-webkit-scrollbar{width:9px}body::-webkit-scrollbar-thumb{background:var(--accent);border-radius:9px}
+<style>:root{--bg:#ece9e3;--bg2:#ffffff;--ink:#0a0a0a;--mut:#5a5e66;--accent:#1a3cff;--accent2:#0a0a0a;--accent3:#1a3cff;--line:rgba(0,0,0,.16);--glass:rgba(236,233,227,.82);--card-r:0;--btn-r:0;--font-body:'Archivo',sans-serif;--font-head:'Anton',sans-serif;--head-ls:.01em;--head-lh:1.04;--ribbon-bg:#1a3cff;--ribbon-color:#ece9e3;--touch:48px;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;font-size:16px;overflow-x:hidden;width:100%;max-width:100%;min-height:100vh;min-height:100svh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-bottom:calc(82px + var(--safe-bottom))}
+@media (min-width:981px){body{padding-bottom:0}}
+body.nav-open{overflow:hidden}
 a{color:inherit;text-decoration:none}
-h1,h2,h3,h4{font-family:var(--display);line-height:1.04;font-weight:800}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--maxw,1280px);margin:0 auto;padding:0 clamp(18px,4vw,44px);position:relative;z-index:2}
-.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:700;display:inline-block}
-.accent{color:var(--accent)}.accent2{color:var(--accent2)}
-.ann{position:relative;z-index:40;background:var(--accent);color:var(--annink,#04060c);text-align:center;font-weight:800;font-size:.8rem;letter-spacing:.08em;padding:9px;text-transform:uppercase}
-header{position:sticky;top:0;z-index:35;backdrop-filter:blur(14px);background:var(--navbg);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:18px}
-.brand{display:inline-flex;align-items:center;gap:11px}
-.brand img{height:42px;width:auto}
-.brand .wm{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:.02em}
-.brand .wm b{color:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:24px;font-size:.85rem;font-weight:600;color:var(--mut)}
-.nav-links a{transition:.2s}.nav-links a:hover{color:var(--accent)}
-.nav-cta{padding:11px 22px;border-radius:var(--btnr,40px);background:var(--accent);color:var(--annink,#04060c);font-weight:800;font-size:.82rem;border:0;cursor:pointer;transition:.25s}
-.nav-cta:hover{filter:brightness(1.1);transform:translateY(-2px)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
-.burger span{width:26px;height:2px;background:var(--accent);display:block}
-.mnav{display:none;flex-direction:column;gap:4px;padding:10px clamp(18px,4vw,44px) 18px;background:var(--navbg);border-bottom:1px solid var(--line)}
-.mnav.open{display:flex}
-.mnav a{padding:11px 4px;color:var(--ink);border-bottom:1px solid var(--line);font-weight:600}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:var(--btnr,46px);font-weight:800;font-size:.9rem;cursor:pointer;transition:.25s;border:0;font-family:var(--body)}
-.btn-pri{background:var(--accent);color:var(--annink,#04060c)}
-.btn-pri:hover{transform:translateY(-3px);filter:brightness(1.08)}
-.btn-gho{border:1.5px solid var(--accent2);color:var(--accent2);background:transparent}
-.btn-gho:hover{background:var(--accent2);color:var(--annink,#04060c)}
-section{position:relative;z-index:2;padding:clamp(64px,9vw,104px) 0}
-.sec-head{max-width:680px;margin-bottom:48px}
-.sec-head.center{margin:0 auto 48px;text-align:center}
-.sec-head h2{font-size:clamp(1.9rem,4.8vw,3.5rem);margin:14px 0}
-.sec-head p{color:var(--mut);font-size:1.05rem}
-.hero{position:relative;padding:clamp(50px,7vw,84px) 0 clamp(40px,6vw,70px)}
-.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(28px,4vw,54px);align-items:center}
-.hero.center .hero-grid{grid-template-columns:1fr;text-align:center;justify-items:center}
-.badge{display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:8px 16px;border-radius:30px;margin-bottom:22px}
-.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:pl 1.4s infinite}
-@keyframes pl{50%{opacity:.3}}
-.hero h1{font-size:clamp(2.7rem,7.5vw,5.6rem);text-transform:var(--h1tt,none)}
-.hero h1 .l2{color:var(--accent2)}
-.hero .sub{max-width:520px;color:var(--mut);font-size:1.1rem;margin:22px 0 32px}
-.hero.center .sub{margin-left:auto;margin-right:auto}
-.btn-row{display:flex;gap:15px;flex-wrap:wrap}
-.hero.center .btn-row{justify-content:center}
-.trust{display:flex;align-items:center;gap:14px;margin-top:36px}
-.hero.center .trust{justify-content:center}
-.avatars{display:flex}.avatars img{width:42px;height:42px;border-radius:50%;border:2px solid var(--bg);object-fit:cover;margin-left:-12px}
-.trust small{color:var(--mut);font-size:.8rem}.trust b{display:block;color:var(--ink)}
-.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.chip{background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,16px);padding:22px;transition:.3s}
-.chip:hover{transform:translateY(-5px);border-color:var(--accent)}
-.chip .ic{font-size:1.6rem}.chip b{display:block;margin-top:10px;font-size:1.02rem}.chip small{color:var(--mut)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,16px);padding:30px 22px;text-align:center}
-.stat .num{font-family:var(--display);font-size:clamp(2.1rem,4.4vw,3.2rem);color:var(--accent)}
-.stat .lbl{color:var(--mut);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,54px);align-items:center}
-.two img.feat{border-radius:var(--cardr,16px);width:100%;height:100%;object-fit:cover;max-height:460px}
-.flist{list-style:none;margin-top:22px}
-.flist li{padding:13px 0;border-bottom:1px solid var(--line);display:flex;gap:13px;align-items:center}
-.flist li::before{content:"✓";color:var(--accent);font-weight:900}
-.banner{background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,20px);padding:clamp(28px,4vw,44px)}
-.sub3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:24px}
-.subc{border:1px solid var(--line);border-radius:var(--cardr,14px);padding:18px;background:var(--bg)}
-.subc b{color:var(--accent)}.subc small{color:var(--mut);display:block}
-.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,18px);padding:30px;transition:.3s}
-.card:hover{transform:translateY(-6px);border-color:var(--accent)}
-.card .ic{font-size:1.9rem}
-.card .nb{font-family:var(--display);font-size:2.4rem;color:var(--accent);opacity:.85}
-.card h3{font-size:1.25rem;margin:12px 0 8px}
-.card .big{font-family:var(--display);font-size:1.5rem;color:var(--accent2)}
-.card p,.card .meta{color:var(--mut);font-size:.92rem}
-.earn{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.ecard{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,18px);padding:32px 28px}
-.ecard.feat{border-color:var(--accent)}
-.ecard .flag{position:absolute;top:16px;right:16px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--annink,#04060c);padding:5px 11px;border-radius:20px;font-weight:800}
-.ecard .ic{font-size:1.7rem}.ecard .yr{color:var(--accent2);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:8px}
-.ecard h3{font-size:1.3rem;margin:4px 0 10px}.ecard .money{font-family:var(--display);font-size:1.7rem;color:var(--accent)}
-.ecard p{color:var(--mut);font-size:.88rem;margin-top:10px}
-.disc{color:var(--mut);font-size:.74rem;margin-top:18px;opacity:.7}
-.get-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-.get{display:flex;gap:13px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,14px);padding:18px 20px}
-.get .ck{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--annink,#04060c);display:grid;place-items:center;font-weight:900}
-/* 3D GALLERY */
-.gal-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.gal-track{display:flex;gap:20px;width:max-content;animation:galscroll 38s linear infinite;perspective:1200px}
-.gal-marquee:hover .gal-track{animation-play-state:paused}
-@keyframes galscroll{to{transform:translateX(-50%)}}
-.gcardimg{position:relative;flex:none;width:340px;height:240px;border-radius:var(--cardr,18px);overflow:hidden;border:1px solid var(--line);transition:transform .3s ease,box-shadow .3s ease;transform-style:preserve-3d;box-shadow:0 20px 50px rgba(0,0,0,.4)}
-.gcardimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.gcardimg:hover{box-shadow:0 26px 70px var(--glow,rgba(0,0,0,.5))}
-.gcardimg:hover img{transform:scale(1.08)}
-.gcardimg .cap{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;background:linear-gradient(0deg,rgba(0,0,0,.82),transparent);font-size:.85rem;font-weight:600;letter-spacing:.02em}
-.gcardimg::after{content:"";position:absolute;inset:0;background:var(--galsheen,linear-gradient(120deg,transparent 40%,rgba(255,255,255,.18) 50%,transparent 60%));opacity:0;transition:opacity .4s}
-.gcardimg:hover::after{opacity:1}
-.gal-feat{margin-top:24px;border-radius:var(--cardr,20px);overflow:hidden;border:1px solid var(--line);position:relative;transform-style:preserve-3d;will-change:transform}
-.gal-feat img{width:100%;height:clamp(260px,42vw,520px);object-fit:cover}
-.gal-feat .ov{position:absolute;left:0;bottom:0;padding:40px;max-width:560px}
-.gal-feat .ov h3{font-size:clamp(1.6rem,3.4vw,2.6rem)}
-.gal-feat .ov p{color:#e9edf5;margin-top:8px}
-.gal-feat::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7),transparent 70%);z-index:1}
-.gal-feat .ov{z-index:2;position:absolute}
-.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.t{background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,18px);padding:28px}
-.t .stars{color:var(--accent);letter-spacing:.1em;margin-bottom:10px}
-.t p{font-size:.95rem}.t .who{display:flex;align-items:center;gap:12px;margin-top:18px}
-.t .av{width:42px;height:42px;border-radius:50%;background:var(--accent);color:var(--annink,#04060c);display:grid;place-items:center;font-weight:800}
-.t .who b{font-size:.9rem}.t .who small{color:var(--mut);display:block;font-size:.76rem}
-.rating{display:inline-block;border:1px solid var(--line);padding:9px 18px;border-radius:30px;color:var(--accent);font-weight:700;font-size:.84rem;margin-bottom:14px}
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.price{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,20px);padding:36px 30px}
-.price.pop{border-color:var(--accent)}
-.price .flag{position:absolute;top:-12px;left:30px;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--annink,#04060c);padding:6px 14px;border-radius:20px;font-weight:800}
-.price h3{font-size:1.3rem}.price .when{color:var(--mut);font-size:.84rem;margin:6px 0 18px}
-.price .amt{font-family:var(--display);font-size:2.6rem;color:var(--accent)}
-.price .terms{color:var(--mut);font-size:.82rem;margin:10px 0 22px}.price .btn{width:100%;justify-content:center;font-size:.85rem}
-.loc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.loc{background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,20px);padding:34px}
-.loc h3{font-size:1.4rem;color:var(--accent)}.loc .addr{color:var(--mut);margin:10px 0}
-.loc .ph{display:inline-block;color:var(--accent2);font-weight:700;margin:8px 0}
-.loc .sched{font-size:.82rem;color:var(--mut);border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
-.band{text-align:center;padding:clamp(80px,11vw,120px) 0}
-.band h2{font-size:clamp(2rem,6vw,4.2rem);margin-bottom:18px}
-.band p{color:var(--mut);max-width:600px;margin:0 auto 32px}
-footer{position:relative;z-index:2;border-top:1px solid var(--line);background:var(--panel);padding:60px 0 28px}
-.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
-.foot h4{color:var(--accent);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-.foot a,.foot p{display:block;color:var(--mut);font-size:.88rem;margin-bottom:8px}.foot a:hover{color:var(--accent)}
-.foot .brand{margin-bottom:14px}
-.copy{text-align:center;color:var(--mut);font-size:.76rem;margin-top:44px;border-top:1px solid var(--line);padding-top:22px}
-.reveal{opacity:0;transform:translateY(34px);transition:.78s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
-.prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.prog{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,18px);padding:30px}
-.prog.feat{border-color:var(--accent)}
-.prog .flag{position:absolute;top:16px;right:16px;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--annink,#04060c);padding:5px 11px;border-radius:20px;font-weight:800}
-.prog .meta{color:var(--accent2);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
-.prog h3{font-size:1.25rem;margin:8px 0}.prog .price{font-family:var(--display);font-size:1.5rem;color:var(--accent);margin:4px 0 10px}.prog p{color:var(--mut);font-size:.9rem}
-.req{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:8px}
-.req div{display:flex;gap:11px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,12px);padding:14px 16px;font-size:.9rem}
-.req div::before{content:"▸";color:var(--accent);font-weight:900}
-.faq{max-width:860px;margin:0 auto}
-.faq details{border:1px solid var(--line);border-radius:var(--cardr,12px);background:var(--panel);margin-bottom:12px;overflow:hidden}
-.faq summary{cursor:pointer;padding:18px 22px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--accent);font-size:1.4rem;transition:.3s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq .ans{padding:0 22px 20px;color:var(--mut);font-size:.95rem}
-.partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
-.partners div{border:1px solid var(--line);border-radius:var(--cardr,14px);padding:24px 18px;text-align:center;font-family:var(--display);font-size:1.05rem;background:var(--panel);transition:.3s}
-.partners div:hover{border-color:var(--accent);transform:translateY(-4px)}
-.welcome{background:var(--panel);border:1px solid var(--line);border-radius:var(--cardr,22px);padding:clamp(30px,5vw,56px);max-width:920px;margin:0 auto;text-align:center}
-.welcome p{color:var(--mut);font-size:1.12rem;line-height:1.8;margin:16px 0}.welcome .sig{color:var(--accent);font-weight:700}
-@media(max-width:880px){.nav-links,.nav-cta{display:none}.burger{display:flex}.foot{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-.orb{width:min(360px,82%);aspect-ratio:1;margin:0 auto;border-radius:50%;position:relative;background:conic-gradient(from 0deg,#fff,#9aa0aa,#3a3d44,#cfd3da,#5a5e66,#e9ebee,#3a3d44,#fff);box-shadow:inset -22px -22px 60px rgba(0,0,0,.45),inset 22px 22px 50px rgba(255,255,255,.7),0 34px 80px rgba(0,0,0,.35);animation:spin 14s linear infinite}.orb::after{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.95),transparent 42%)}@keyframes spin{to{transform:rotate(360deg)}}h1,h2,h3{letter-spacing:.01em}.chip,.stat,.card,.ecard,.t,.price,.loc,.banner,.gcardimg,.gal-feat,.two img.feat,.subc,.get{border-width:2px;border-color:#0a0a0a;border-radius:0}.btn,.nav-cta{border-radius:0;border:2px solid #0a0a0a}.btn-pri{border-color:#1a3cff}.mq{overflow:hidden;border-top:2px solid #0a0a0a;border-bottom:2px solid #0a0a0a;background:#0a0a0a;color:#ece9e3}.mq div{display:inline-block;white-space:nowrap;animation:mqs 22s linear infinite;font-family:'Anton';letter-spacing:.1em;padding:8px 0;font-size:1.1rem;text-transform:uppercase}@keyframes mqs{to{transform:translateX(-50%)}}</style><style id="abi-toggle-custom">
-/* ABI 07-chrome-liquid — flat brutalist EN/ES toggle (hard offset-shadow block switch) */
-.lang-toggle{
-  display:inline-flex; align-items:stretch; height:36px;
-  border:2px solid #0a0a0a; border-radius:0; overflow:visible;
-  background:#ece9e3;
-  box-shadow:3px 3px 0 0 #0a0a0a;      /* hard, blur-free brutalist drop */
-  padding:0;
+img{max-width:100%;height:auto;display:block}
+video{max-width:100%}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--font-head);letter-spacing:var(--head-ls);line-height:var(--head-lh);color:var(--ink);overflow-wrap:break-word;word-wrap:break-word}
+h1{font-size:clamp(2rem,7vw,4.4rem)}
+h2{font-size:clamp(1.5rem,4.4vw,2.6rem)}
+h3{font-size:clamp(1.12rem,2.8vw,1.4rem)}
+p{overflow-wrap:break-word;word-wrap:break-word}
+body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
+
+@media (prefers-reduced-motion:no-preference){
+  body{animation:pageIn .42s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes pageIn{from{opacity:0}to{opacity:1}}
+  .reveal{animation:revealUp .6s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes revealUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 }
-.lang-toggle button{
-  position:relative;
-  background:transparent; color:#0a0a0a;
-  border:0; border-radius:0;
-  padding:0 16px; min-width:46px;
-  font-family:inherit; font-weight:900; font-size:.78rem; letter-spacing:.16em;
-  text-transform:uppercase; cursor:pointer;
-  transition:background .12s linear, color .12s linear;
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}}
+
+.bg-video{position:fixed;inset:0;width:100%;height:100vh;height:100svh;object-fit:cover;z-index:0;opacity:.14;pointer-events:none}
+@media (max-width:768px){.bg-video{opacity:.06}}
+.bg-overlay{position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 0,rgba(0,0,0,.4) 70%,var(--bg) 100%);z-index:1;pointer-events:none}
+
+/* ---- decorations (all variants; toggled by the deco element present) ---- */
+.deco-neon{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse 80% 60% at 20% 0%,color-mix(in srgb,var(--accent) 13%,transparent) 0,transparent 50%),radial-gradient(ellipse 60% 50% at 90% 100%,color-mix(in srgb,var(--accent2) 13%,transparent) 0,transparent 50%)}
+.deco-chrome{position:fixed;inset:0;pointer-events:none;z-index:1;background:linear-gradient(135deg,transparent 0,transparent 49%,var(--line) 49%,var(--line) 51%,transparent 51%,transparent 100%);background-size:80px 80px;opacity:.4}
+.deco-holo{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(circle at 25% 25%,color-mix(in srgb,var(--accent) 20%,transparent) 0,transparent 40%),radial-gradient(circle at 75% 75%,color-mix(in srgb,var(--accent2) 20%,transparent) 0,transparent 40%)}
+.deco-hud{position:fixed;inset:0;pointer-events:none;z-index:1;background:repeating-linear-gradient(0deg,transparent 0 3px,color-mix(in srgb,var(--accent2) 4%,transparent) 3px 4px);mix-blend-mode:screen}
+.deco-gold{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse 50% 40% at 50% 0%,color-mix(in srgb,var(--accent) 13%,transparent) 0,transparent 60%)}
+.deco-grid{position:fixed;inset:0;pointer-events:none;z-index:1;background-image:linear-gradient(color-mix(in srgb,var(--accent) 7%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 7%,transparent) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(circle at center,black 0,transparent 70%);mask-image:radial-gradient(circle at center,black 0,transparent 70%)}
+.deco-flat{position:fixed;inset:0;pointer-events:none;z-index:1;background:linear-gradient(180deg,transparent 0,transparent 70%,color-mix(in srgb,var(--accent) 4%,transparent) 100%)}
+.deco-orbs{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.deco-orbs .orb{position:absolute;width:480px;height:480px;border-radius:50%;filter:blur(120px);opacity:.32;animation:orbDrift 20s ease-in-out infinite}
+.deco-orbs .o1{background:var(--accent);top:-20%;left:-10%}
+.deco-orbs .o2{background:var(--accent2);top:40%;right:-10%;animation-delay:-7s}
+.deco-orbs .o3{background:var(--accent3);bottom:-10%;left:30%;animation-delay:-14s}
+@keyframes orbDrift{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-40px)}66%{transform:translate(-30px,30px)}}
+.deco-spotlight{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(circle 560px at var(--spot-x,50%) var(--spot-y,30%),color-mix(in srgb,var(--accent) 13%,transparent) 0,transparent 100%);transition:background .3s}
+.deco-vapor{position:fixed;inset:0;pointer-events:none;z-index:1;perspective:800px;overflow:hidden}
+.deco-vapor::before{content:"";position:absolute;bottom:0;left:-50%;right:-50%;height:50%;background-image:linear-gradient(color-mix(in srgb,var(--accent) 40%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 40%,transparent) 1px,transparent 1px);background-size:50px 50px;transform:rotateX(60deg);-webkit-mask-image:linear-gradient(180deg,transparent 0,black 50%,black 100%);mask-image:linear-gradient(180deg,transparent 0,black 50%,black 100%)}
+.deco-vapor .vsun{position:absolute;left:50%;top:50%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,var(--accent2) 0,var(--accent) 70%,transparent 100%);transform:translate(-50%,-75%);filter:blur(2px);opacity:.22}
+
+/* ---- top banner ---- */
+.top-banner{position:relative;z-index:40;background:var(--ribbon-bg);color:var(--ribbon-color);padding:10px 14px calc(10px + var(--safe-top));display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.promo-line{flex-basis:100%;text-align:center;font-size:.74rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;opacity:.95}
+.cta-call{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;min-height:44px;background:rgba(0,0,0,.18);color:inherit;border-radius:999px;font-weight:800;font-size:.82rem;border:2px solid currentColor;white-space:nowrap;transition:transform .2s,background .2s}
+.cta-call:hover{background:rgba(0,0,0,.35);transform:translateY(-1px)}
+.cta-call .cta-flag{font-size:.66rem;padding:2px 7px;border:1.5px solid currentColor;border-radius:999px;font-weight:900;letter-spacing:.08em}
+.cta-call .cta-label{font-size:.78rem;font-weight:700;letter-spacing:.04em}
+.cta-call .cta-num{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.86rem;font-weight:900}
+.lang-toggle{display:inline-flex;align-items:stretch;height:38px;border-radius:999px;border:2px solid currentColor;overflow:hidden}
+.lang-toggle button{background:transparent;border:0;color:inherit;padding:0 14px;min-width:44px;cursor:pointer;font-weight:900;letter-spacing:.12em;font-family:inherit;font-size:.78rem}
+.lang-toggle button.active{background:rgba(0,0,0,.35)}
+
+/* ---- header ---- */
+.site-header{position:sticky;top:0;z-index:30;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:14px;height:68px;padding:0 18px;max-width:1280px;margin:0 auto}
+.brand-logo{display:flex;align-items:center;gap:12px;flex-shrink:0;min-width:0}
+.brand-logo img{width:clamp(34px,4.6vw,44px);height:clamp(34px,4.6vw,44px);border-radius:clamp(8px,1vw,11px);object-fit:cover;flex-shrink:0;box-shadow:0 6px 18px rgba(0,0,0,.25);border:1px solid var(--line)}
+.brand-name{font-family:var(--font-head);font-weight:800;letter-spacing:.02em;line-height:1.1;display:flex;flex-direction:column;font-size:clamp(.78rem,1.7vw,.98rem)}
+.brand-name .brand-line1{color:var(--ink)}
+.brand-name .brand-line2{color:var(--accent)}
+.primary-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap}
+.primary-nav a{color:var(--mut);padding:8px 9px;min-height:44px;display:inline-flex;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.01em;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
+.primary-nav a:hover,.primary-nav a.active{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.burger{width:48px;height:48px;display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:transparent;border:0;flex-shrink:0}
+.burger span{width:26px;height:2px;background:var(--accent);transition:.2s;border-radius:2px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---- mobile nav drawer: anchored under the header via JS-measured --nav-top
+   (robust to the top-banner wrapping to multiple rows on small screens) ---- */
+@media (max-width:1180px){
+  .primary-nav{position:fixed;left:0;right:0;top:100%;z-index:29;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px calc(24px + var(--safe-bottom));max-height:calc(100dvh - 100%);overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility .25s;box-shadow:0 24px 48px rgba(0,0,0,.5)}
+  .primary-nav.open{opacity:1;visibility:visible;transform:none}
+  .primary-nav a{padding:15px 8px;border-bottom:1px solid var(--line);font-size:1.02rem;min-height:54px;width:100%}
+  .primary-nav a:last-child{border-bottom:0}
+  .burger{display:inline-flex;margin-left:auto}
 }
-/* hard divider slab between the two options */
-.lang-toggle button + button{ border-left:2px solid #0a0a0a; }
-.lang-toggle button:hover{ background:#dad6cd; }
-.lang-toggle button.active{
-  background:#1a3cff; color:#ece9e3;   /* solid blocky active slab */
-  box-shadow:inset 0 0 0 2px #0a0a0a;  /* crisp inner edge, no rounding */
+@media (max-width:760px){
+  .header-inner{height:62px;padding:0 14px}
+  .top-banner{padding:8px 10px calc(8px + var(--safe-top));gap:6px}
+  .promo-line{font-size:.66rem}
+  .cta-call{padding:7px 12px;min-height:40px;font-size:.76rem;gap:6px}
 }
-.lang-toggle button.active:hover{ background:#1a3cff; }
-.lang-toggle button:focus-visible{ outline:3px solid #1a3cff; outline-offset:2px; }
-</style>
-<style id="abi-fix-custom">
-/* ABI 07-chrome-liquid — minor layout safety fixes */
-.top-banner{ row-gap:8px; }
-.lang-toggle{ flex:0 0 auto; }                 /* never let the switch collapse */
 @media (max-width:480px){
-  .lang-toggle{ height:34px; box-shadow:2px 2px 0 0 #0a0a0a; }
-  .lang-toggle button{ padding:0 12px; min-width:42px; letter-spacing:.12em; }
+  .header-inner{height:58px;padding:0 12px}
+  .brand-name .brand-line2{display:none}
+  .top-banner{padding:7px 8px calc(7px + var(--safe-top));gap:5px}
+  .cta-call{padding:6px 10px;min-height:38px;font-size:.72rem}
+  .cta-call .cta-label{display:none}
+  .cta-call .cta-num{font-size:.78rem}
+  .cta-call .cta-flag{font-size:.6rem;padding:1px 5px}
 }
-</style>
-</head><body class="lang-en">
-<!--ABIv5:top-->
+@media (max-width:360px){.brand-name{display:none}.cta-call{padding:6px 8px}.cta-call .cta-num{font-size:.74rem}}
+
+/* ---- hero ---- */
+.subpage-hero{position:relative;z-index:2;padding:clamp(44px,8vw,96px) 0 clamp(30px,5vw,52px);text-align:center}
+.subpage-hero .container{max-width:940px}
+.hero-home{text-align:center;padding:clamp(52px,9vw,120px) 0 clamp(34px,6vw,64px)}
+.eyebrow{display:inline-block;padding:7px 16px;border:1px solid var(--line);border-radius:999px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.subpage-hero h1{margin:20px 0 14px}
+.subpage-hero p.sub{max-width:720px;margin:0 auto;color:var(--mut);font-size:clamp(1rem,2.2vw,1.12rem)}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+
+/* ---- h1 effects (toggled by body hfx-* class) ---- */
+.hfx-glow h1{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 40%,transparent),0 0 48px color-mix(in srgb,var(--accent) 20%,transparent)}
+.hfx-neon h1{text-shadow:0 0 20px color-mix(in srgb,var(--accent) 40%,transparent)}
+.hfx-holo h1{background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3),var(--accent));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:holoflow 8s linear infinite}
+@keyframes holoflow{from{background-position:0 50%}to{background-position:300% 50%}}
+.hfx-gold h1{background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:sheen 6s ease infinite}
+@keyframes sheen{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+.hfx-chrome h1{background:linear-gradient(180deg,#fff 0,var(--mut) 50%,#fff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hfx-vapor h1{text-shadow:3px 3px 0 var(--accent2),-2px -2px 0 var(--accent)}
+.hfx-hud h1 .accent{color:var(--accent)}
+
+section{padding:clamp(34px,6vw,64px) 0;position:relative;z-index:2}
+section h2{margin-bottom:14px}
+section p.lead{color:var(--mut);max-width:780px;margin-bottom:24px;font-size:clamp(1rem,2.2vw,1.08rem)}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(14px,4vw,28px);position:relative;z-index:2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(12px,2.4vw,20px)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(14px,2.6vw,22px)}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(10px,2vw,18px)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(8px,1.6vw,14px)}
+.center{text-align:center}
+
+.card{background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(18px,3vw,28px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.eyebrow-acc{color:var(--accent);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;display:block}
+.price-tag{font-size:1.4rem;font-weight:800;color:var(--accent);margin:8px 0}
+.badge{position:absolute;top:14px;right:14px;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;background:var(--accent);color:var(--bg);padding:5px 10px;border-radius:999px;font-weight:800}
+
+.partner-card{overflow:hidden;padding:0;display:flex;flex-direction:column}
+.partner-card .img-wrap{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg2)}
+.partner-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.partner-card:hover .img-wrap img{transform:scale(1.06)}
+.partner-card .img-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.55) 100%)}
+.partner-card .img-wrap .partner-name{position:absolute;left:18px;bottom:14px;z-index:2;font-family:var(--font-head);font-size:1.3rem;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.partner-card .body{padding:22px}
+.partner-card .locations{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+.partner-card .desc{color:var(--mut);font-size:.94rem;margin-bottom:12px}
+.partner-card .why{font-size:.88rem;color:var(--accent);font-weight:700}
+
+.gallery-tile{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);cursor:zoom-in}
+.gallery-tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.gallery-tile:hover img{transform:scale(1.08)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;min-height:48px;border-radius:var(--btn-r);font-weight:800;font-size:.94rem;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,filter .2s,background .2s,box-shadow .2s;text-align:center}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,0,0,.32)}
+.btn-ghost{border:2px solid var(--accent);color:var(--accent);background:transparent}
+.btn-ghost:hover{background:var(--accent);color:var(--bg)}
+.btn-wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+.input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:var(--card-r);padding:14px;color:var(--ink);font-size:1rem;font-family:inherit;min-height:48px;-webkit-appearance:none;appearance:none}
+.input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.row-stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:22px 0}
+.row-stat .s{padding:18px 14px;border:1px solid var(--line);border-radius:var(--card-r);background:var(--glass)}
+.row-stat .s b{display:block;font-size:clamp(1.4rem,4vw,2rem);color:var(--accent);font-weight:800;line-height:1.1;font-family:var(--font-head)}
+.row-stat .s small{color:var(--mut);font-size:.82rem}
+.list-clean{list-style:none;padding:0}
+.list-clean li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+.list-clean li:last-child{border-bottom:0}
+.list-clean li::before{content:"▸ ";color:var(--accent);font-weight:800}
+details.card{margin-bottom:11px}
+details.card summary{cursor:pointer;font-weight:800;font-size:1.04rem;min-height:32px;list-style:none;padding-right:20px;position:relative}
+details.card summary::-webkit-details-marker{display:none}
+details.card summary::after{content:"+";position:absolute;right:4px;top:0;color:var(--accent);font-size:1.4rem;transition:transform .2s}
+details.card[open] summary::after{transform:rotate(45deg)}
+
+/* ---- stat counters ---- */
+.stats-band{padding:clamp(28px,5vw,56px) 0}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:clamp(10px,2vw,18px)}
+.stat-card{padding:clamp(20px,3vw,32px) clamp(14px,2.4vw,22px);border:1px solid var(--line);border-radius:var(--card-r);background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative;overflow:hidden;transition:transform .3s,border-color .3s;text-align:center}
+.stat-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.stat-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.stat-card.in::before,.stat-card:hover::before{transform:scaleY(1)}
+.stat-card .count{display:block;font-size:clamp(2rem,7vw,3.6rem);font-weight:900;color:var(--accent);line-height:1;font-family:var(--font-head);letter-spacing:-.02em;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.stat-card .label{display:block;font-size:clamp(.76rem,1.6vw,.9rem);color:var(--mut);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.stat-card .sublabel{display:block;font-size:.7rem;color:var(--mut);opacity:.65;margin-top:4px}
+
+/* ---- contact form ---- */
+.form-grid{display:grid;gap:14px}
+.form-grid .row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:540px){.form-grid .row-2{grid-template-columns:1fr}}
+.field-group{display:flex;flex-direction:column;gap:6px}
+.field-group label{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.radio-row{display:flex;gap:8px;flex-wrap:wrap}
+.radio-pill{position:relative;cursor:pointer}
+.radio-pill input{position:absolute;opacity:0;pointer-events:none}
+.radio-pill span{display:inline-block;padding:10px 18px;min-height:44px;line-height:24px;border:1.5px solid var(--line);border-radius:999px;font-size:.88rem;font-weight:700;color:var(--mut);transition:all .2s;user-select:none}
+.radio-pill input:checked+span{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.radio-pill:hover span{border-color:var(--accent);color:var(--accent)}
+.form-cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.form-cta .privacy{font-size:.78rem;color:var(--mut);flex:1;min-width:200px}
+.hc-pills{display:flex;flex-wrap:wrap;gap:10px}
+.hc-pill{display:inline-block;padding:9px 16px;border:1.5px solid var(--line);border-radius:999px;font-size:.86rem;font-weight:700;color:var(--mut);background:var(--glass);transition:border-color .2s,color .2s}
+.hc-pill:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---- CTA band ---- */
+.cta-band{text-align:center}
+.cta-band .quote{max-width:760px;margin:0 auto 8px;font-size:clamp(1.1rem,2.6vw,1.5rem);font-style:italic;color:var(--ink)}
+
+/* ---- footer ---- */
+.site-footer{padding:clamp(40px,6vw,60px) 0 clamp(80px,9vw,100px);border-top:1px solid var(--line);margin-top:50px;background:color-mix(in srgb,var(--bg) 86%,#000);color:var(--mut);position:relative;z-index:2;font-size:.9rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1.1fr 1.2fr;gap:clamp(20px,3vw,32px);margin-bottom:26px}
+.footer-grid h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:var(--ink);margin-bottom:12px;font-family:var(--font-head)}
+.footer-grid a{display:block;padding:4px 0;color:var(--mut)}
+.footer-grid a:hover{color:var(--accent)}
+.footer-grid p{margin-bottom:6px}
+.footer-bottom{padding-top:22px;border-top:1px solid var(--line);font-size:.78rem;text-align:center;line-height:1.7}
+.footer-bottom .tm{opacity:.7;font-size:.72rem}
+@media (max-width:860px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.footer-grid{grid-template-columns:1fr}}
+
+/* ---- sticky mobile call bar ---- */
+.sticky-call{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + var(--safe-bottom));z-index:50;gap:8px}
+.sticky-call a{flex:1;padding:14px 10px;min-height:52px;border-radius:999px;font-weight:800;font-size:.86rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.sticky-call a.en{background:var(--accent);color:var(--bg)}
+.sticky-call a.es{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
+.sticky-call .flag{font-size:.66rem;padding:1px 6px;border:1px solid currentColor;border-radius:999px;font-weight:900}
+@media (max-width:980px){.sticky-call{display:flex}}
+
+@media (max-width:480px){
+  .row-stat{grid-template-columns:1fr 1fr;gap:8px}
+  .row-stat .s{padding:14px 10px}
+  .hero-ctas .btn,.btn-wrap .btn{width:100%}
+}
+
+/* ---- media band ---- */
+.media-band{position:relative;z-index:2;padding:clamp(34px,6vw,72px) 0}
+.media-band .m-head{max-width:760px;margin:0 auto clamp(18px,3vw,34px);text-align:center}
+.media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.media-band .m-head h2{margin:10px 0}
+.media-band .m-head p{color:var(--mut);max-width:640px;margin:0 auto}
+.m-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(12px,2vw,18px)}
+.m-tile{position:relative;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);aspect-ratio:4/3;opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}
+.m-tile.shown{opacity:1}
+.m-tile .m-media{width:100%;height:100%;object-fit:cover;display:block}
+.m-tile .m-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:4;font-size:.8rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75);opacity:0;transform:translateY(6px);transition:.3s}
+.m-tile::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:opacity .3s}
+.m-tile:hover::after{opacity:1}
+.m-tile:hover .m-cap{opacity:1;transform:none}
+.m-vid::before{content:'\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1rem;border:2px solid rgba(255,255,255,.75);transition:.3s;pointer-events:none}
+.m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}
+.m-vid.playing::before{opacity:0}
+@media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}
+.ms-brutal-offset .m-tile{border:2px solid var(--ink);border-radius:0;transform:translate(18px,18px);box-shadow:-10px 10px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}.ms-brutal-offset .m-tile:hover{box-shadow:-16px 16px 0 var(--accent);transform:translate(2px,-2px)}@media (max-width:600px){.ms-brutal-offset .m-tile{transform:translate(7px,7px);box-shadow:-5px 5px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}}/* ===== 07-chrome-liquid · flat brutalist polish ===== */.lang-toggle{border-radius:0;border-width:2px}.lang-toggle button{font-weight:900;transition:background .15s,color .15s}.lang-toggle button.active{background:var(--accent);color:var(--bg)}.card,.stat-card{border:2px solid var(--ink);box-shadow:6px 6px 0 color-mix(in srgb,var(--ink) 88%,transparent)}.card:hover,.stat-card:hover{border-color:var(--accent);box-shadow:8px 8px 0 var(--accent);transform:translate(-2px,-2px)}.eyebrow-acc{position:relative;padding-left:16px}.eyebrow-acc::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:8px;height:18px;background:var(--accent)}.eyebrow-acc.center{padding-left:0}.eyebrow-acc.center::before{display:none}.btn-primary{border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}.btn-primary:hover{filter:none;box-shadow:7px 7px 0 var(--ink);transform:translate(-2px,-2px)}.btn-ghost{border-width:2px;font-weight:900}:root{--mut:#4f535b}@media (max-width:600px){.ms-brutal-offset .m-tile{transform:none;box-shadow:-6px 6px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}.ms-brutal-offset .m-tile:hover{box-shadow:-6px 6px 0 var(--accent);transform:none}.card,.stat-card{box-shadow:4px 4px 0 color-mix(in srgb,var(--ink) 88%,transparent)}.btn-primary{box-shadow:4px 4px 0 var(--ink)}}@media (prefers-reduced-motion:reduce){.card:hover,.stat-card:hover,.btn-primary:hover{transform:none}}</style>
+</head>
+<body class="lang-en ">
+<video class="bg-video" autoplay muted loop playsinline poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" aria-hidden="true"><source src="https://assets-lilac-five.vercel.app/videos/urban_motion_graphic_new_york.mp4" type="video/mp4"></video>
+<div class="bg-overlay"></div>
 <div class="deco-flat" aria-hidden="true"></div>
 <div class="top-banner">
+  <div class="promo-line"><span class="lang-en">Start Your Barber Journey Today for Only $150 per Week*</span><span class="lang-es">Comienza Tu Camino de Barbero Hoy por Solo $150 por Semana*</span></div>
   <a class="cta-call cta-en" href="tel:2122902289" aria-label="Call English admissions">
     <span class="cta-flag">EN</span>
     <span class="cta-label"><span class="lang-en">Call Admissions</span><span class="lang-es">Llama a Admisiones</span></span>
@@ -548,7 +295,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:v
   </a>
   <a class="cta-call cta-es" href="tel:2122900278" aria-label="Call Spanish admissions">
     <span class="cta-flag">ES</span>
-    <span class="cta-label"><span class="lang-en">Llama en Español</span><span class="lang-es">Llama en Español</span></span>
+    <span class="cta-label"><span class="lang-en">En Español</span><span class="lang-es">En Español</span></span>
     <span class="cta-num">(212) 290-0278</span>
   </a>
   <div class="lang-toggle" role="group" aria-label="Language toggle">
@@ -562,221 +309,68 @@ footer{position:relative;z-index:2;border-top:1px solid var(--line);background:v
       <img src="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" alt="ABI">
       <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
     </a>
-    <nav class="primary-nav" id="primary-nav"><a href="/" class="active"><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <nav class="primary-nav" id="primary-nav"><a href="/" class="active"><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement" class=""><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
-<video class="bg-video" autoplay muted loop playsinline aria-hidden="true" poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg"><source src="https://assets-lilac-five.vercel.app/videos/urban_motion_graphic_new_york.mp4" type="video/mp4"></video>
-<!--/ABIv5:top-->
-<div class="ann">NYC'S ONLY DEDICATED BARBER SCHOOL · $150/WEEK · NEXT START JULY 6</div>
-<section class="hero" id="top">
- 
- <div class="wrap hero-grid">
-  <div>
-   <span class="badge">Next Start · Mon, July 6, 2026</span>
-   <h1 class="">Your Future.<br><span class="l2">Start Today.</span></h1>
-   <p class="sub">No fluff. No filler. Just 500 hours of real barbering, real clients, and a real New York State license at the end of it.</p>
-   <div class="btn-row">
-    <a class="btn btn-pri" data-mag href="#contact">Enroll Now ✂</a>
-    <a class="btn btn-gho" data-mag href="#programs">See Programs</a>
-   </div>
-   <div class="trust"><div class="avatars"><img src="https://assets-lilac-five.vercel.app/img/student-avatar-1.jpeg" alt=""><img src="https://assets-lilac-five.vercel.app/img/student-avatar-2.jpeg" alt=""><img src="https://assets-lilac-five.vercel.app/img/student-avatar-3.jpeg" alt=""></div><small><b>Trusted by thousands</b>30+ years of excellence</small></div>
-  </div><div class="hero-visual"><div class="orb"></div></div>
- </div>
-</section>
-
-<section><div class="wrap"><div class="chips"><div class="chip reveal" data-tilt><div class="ic">⚡</div><b>Fast Track</b><small>Day &amp; Evening Classes</small></div><div class="chip reveal" data-tilt><div class="ic">🎓</div><b>NY State</b><small>Licensed Program</small></div><div class="chip reveal" data-tilt><div class="ic">💳</div><b>Financial Assistance</b><small>ACCES-VR, VA &amp; More</small></div><div class="chip reveal" data-tilt><div class="ic">💼</div><b>Career Support</b><small>Job Placement Assistance</small></div></div></div></section>
-
-<section><div class="wrap"><div class="stats"><div class="stat reveal"><div class="num" data-c="30" data-suf="+">0</div><div class="lbl">Years in Business</div></div><div class="stat reveal"><div class="num" data-c="10000" data-suf="+">0</div><div class="lbl">Graduates Trained</div></div><div class="stat reveal"><div class="num" data-c="95" data-suf="%+">0</div><div class="lbl">Graduation Rate</div></div><div class="stat reveal"><div class="num" data-c="4" data-suf=" Mo">0</div><div class="lbl">To Get Licensed</div></div></div></div></section>
-
-<section id="train"><div class="wrap two">
- <div class="reveal"><img class="feat" src="https://assets-lilac-five.vercel.app/img/barbershop-full-shop.jpeg" alt="Barbering at ABI" data-tilt></div>
- <div class="reveal"><span class="eyebrow">Real Skills</span><h2 style="font-size:clamp(1.9rem,4.6vw,3.2rem);margin:14px 0">Hands-On Training That Matters</h2>
- <p style="color:var(--mut)">From the first few weeks, you'll be on the floor learning real barbering skills — not just theory. Our instructors bring decades of professional experience into every session.</p>
- <ul class="flist"><li>Haircutting and modern fades</li><li>Beard work and shaving techniques</li><li>Grooming and styling</li><li>Sanitation and infection control</li><li>Real barbershop skills within the first few weeks</li></ul></div>
+<main>
+  <section class="subpage-hero hero-home">
+    <div class="container">
+      <div class="eyebrow"><span class="lang-en">NY State Licensed</span><span class="lang-es">Licenciada por el Estado de NY</span></div>
+      <h1><span class="lang-en">Become a Barber. Change Your Life.</span><span class="lang-es">Conviértete en Barbero. Cambia Tu Vida.</span></h1>
+      <p class="sub"><span class="lang-en">New York's only dedicated barber school. Licensed by the New York State Department of Education. New classes start the first Monday of every month.</span><span class="lang-es">La única escuela de barbería dedicada de Nueva York. Licenciada por el Departamento de Educación del Estado de Nueva York. Las nuevas clases comienzan el primer lunes de cada mes.</span></p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="/contact"><span class="lang-en">Become a Barber</span><span class="lang-es">Conviértete en Barbero</span> ✂</a><a class="btn btn-ghost" href="/programs"><span class="lang-en">View All Programs</span><span class="lang-es">Ver Todos los Programas</span></a></div>
+    </div>
+  </section>
+  <section><div class="container"><div class="eyebrow-acc"><span class="lang-en">Barber Programs — NYC</span><span class="lang-es">Programas de Barbería — NYC</span></div><h2 style="margin-bottom:8px"><span class="lang-en">Choose your path to a Master Barber License</span><span class="lang-es">Elige tu camino a la Licencia de Maestro Barbero</span></h2><p class="lead"><span class="lang-en">Four state-licensed programs across two NYC campuses. Flexible weekly payment plans on every track.</span><span class="lang-es">Cuatro programas licenciados por el estado en dos campus de NYC. Planes de pago semanales flexibles en cada opción.</span></p><div class="grid"><div class="card" style="position:relative"><span class="badge"><span class="lang-en">Most Popular</span><span class="lang-es">Más Popular</span></span><div class="eyebrow-acc"><span class="lang-en">Manhattan</span><span class="lang-es">Manhattan</span> · <span class="lang-en">500 Hours · ≈ 4 Months</span><span class="lang-es">500 Horas · ≈ 4 Meses</span></div><h3 style="margin:8px 0"><span class="lang-en">500-Hour Master Barber Program</span><span class="lang-es">Programa de Maestro Barbero — 500 Horas</span></h3><div class="price-tag">$5,600</div><p style="color:var(--mut)"><span class="lang-en">Our comprehensive 500-hour Master Barber training program is meticulously designed to equip students with the knowledge and skills necessary to thrive in the competitive world of barbering — from mastering classic techniques to staying updated on the latest trends.</span><span class="lang-es">Nuestro programa integral de Maestro Barbero de 500 horas está meticulosamente diseñado para equipar a los estudiantes con el conocimiento y las habilidades necesarias para prosperar en el competitivo mundo de la barbería — desde dominar las técnicas clásicas hasta mantenerse al día con las últimas tendencias.</span></p></div><div class="card" style="position:relative"><div class="eyebrow-acc"><span class="lang-en">Bronx</span><span class="lang-es">Bronx</span> · <span class="lang-en">500 Hours · ≈ 4 Months</span><span class="lang-es">500 Horas · ≈ 4 Meses</span></div><h3 style="margin:8px 0"><span class="lang-en">500-Hour Master Barber Program — Bronx</span><span class="lang-es">Programa de Maestro Barbero — 500 Horas — Bronx</span></h3><div class="price-tag">$5,600</div><p style="color:var(--mut)"><span class="lang-en">Become a licensed Master Barber in New York State at our Bronx campus. The same comprehensive 500-hour curriculum as Manhattan, with the same flexible payment plans, hands-on training, and job placement assistance. Take control of your income, open your own barbershop, and thrive in a recession-proof industry.</span><span class="lang-es">Conviértete en un Maestro Barbero licenciado del Estado de Nueva York en nuestro campus del Bronx. El mismo currículo integral de 500 horas que en Manhattan, con los mismos planes de pago flexibles, entrenamiento práctico y asistencia de colocación laboral. Toma control de tus ingresos, abre tu propia barbería y prospera en una industria a prueba de recesiones.</span></p></div><div class="card" style="position:relative"><div class="eyebrow-acc"><span class="lang-en">Manhattan</span><span class="lang-es">Manhattan</span> · <span class="lang-en">50 Hours · 2 Weeks</span><span class="lang-es">50 Horas · 2 Semanas</span></div><h3 style="margin:8px 0"><span class="lang-en">50-Hour Barber Refresher Program</span><span class="lang-es">Curso de Actualización de Barbería — 50 Horas</span></h3><div class="price-tag">$1,500</div><p style="color:var(--mut)"><span class="lang-en">Designed for licensed individuals, cosmetologists, hairdressers, and barber apprentices looking to sharpen their skills. Covers classical haircutting, straight razor shaves, fades, tapers, and NY State Board Exam prep.</span><span class="lang-es">Diseñado para personas licenciadas, cosmetólogos, peluqueros y aprendices de barbería que buscan afinar sus habilidades. Cubre corte de cabello clásico, afeitado con navaja, degradados, tapers y preparación para el Examen de la Junta Estatal de NY.</span></p></div><div class="card" style="position:relative"><div class="eyebrow-acc"><span class="lang-en">Manhattan & Bronx</span><span class="lang-es">Manhattan y Bronx</span> · <span class="lang-en">3 Hours · 1 Session</span><span class="lang-es">3 Horas · 1 Sesión</span></div><h3 style="margin:8px 0"><span class="lang-en">3-Hour Contagious Diseases Program</span><span class="lang-es">Programa de Enfermedades Contagiosas — 3 Horas</span></h3><div class="price-tag">$100</div><p style="color:var(--mut)"><span class="lang-en">The required HIV/Contagious Diseases course for the New York State Board of Barbering Exam. Covers bloodborne pathogen safety, sanitation standards, and NY State regulations. Available to all prospective and current students.</span><span class="lang-es">El curso requerido de VIH/Enfermedades Contagiosas para el Examen de la Junta Estatal de Barbería de Nueva York. Cubre seguridad sobre patógenos sanguíneos, normas de sanitización y regulaciones del Estado de NY. Disponible para todos los estudiantes actuales y prospectivos.</span></p></div></div><div class="btn-wrap" style="justify-content:flex-start;margin-top:22px"><a class="btn btn-primary" href="/programs"><span class="lang-en">View All Programs</span><span class="lang-es">Ver Todos los Programas</span></a><a class="btn btn-ghost" href="/programs"><span class="lang-en">Class Schedule</span><span class="lang-es">Horario de Clases</span></a></div></div></section>
+<section class="stats-band"><div class="container"><div class="eyebrow-acc center"><span class="lang-en">By the numbers</span><span class="lang-es">En cifras</span></div><h2 class="center" style="margin-bottom:24px"><span class="lang-en">Built on three decades</span><span class="lang-es">Construido sobre tres décadas</span></h2><div class="stats-grid">
+<div class="stat-card"><b class="count" data-target="30" data-suffix="+">0</b><span class="label"><span class="lang-en">Years in business</span><span class="lang-es">Años en activo</span></span></div>
+<div class="stat-card"><b class="count" data-target="10000" data-suffix="+">0</b><span class="label"><span class="lang-en">Graduates trained</span><span class="lang-es">Graduados entrenados</span></span></div>
+<div class="stat-card"><b class="count" data-target="90" data-suffix="%+">0</b><span class="label"><span class="lang-en">Job placement rate</span><span class="lang-es">Tasa de colocación</span></span></div>
+<div class="stat-card"><b class="count" data-target="2" data-suffix="">0</b><span class="label"><span class="lang-en">NYC campuses</span><span class="lang-es">Campus en NYC</span></span></div>
+</div></div></section>
+<section><div class="container"><div class="eyebrow-acc"><span class="lang-en">Why Choose ABI</span><span class="lang-es">Por Qué Elegir ABI</span></div><h2 style="margin-bottom:18px"><span class="lang-en">Everything you need to succeed</span><span class="lang-es">Todo lo que necesitas para triunfar</span></h2><div class="grid"><div class="card"><h3 style="margin-bottom:8px"><span class="lang-en">NY State Licensed</span><span class="lang-es">Licenciada por el Estado de NY</span></h3><p style="color:var(--mut)"><span class="lang-en">ABI is licensed by the New York State Department of Education.</span><span class="lang-es">ABI está licenciada por el Departamento de Educación del Estado de Nueva York.</span></p></div><div class="card"><h3 style="margin-bottom:8px"><span class="lang-en">Hands-On from the First Few Weeks</span><span class="lang-es">Práctica Desde las Primeras Semanas</span></h3><p style="color:var(--mut)"><span class="lang-en">Work with real clients starting in your first few weeks of class.</span><span class="lang-es">Trabaja con clientes reales desde tus primeras semanas de clase.</span></p></div><div class="card"><h3 style="margin-bottom:8px"><span class="lang-en">Flexible Schedules</span><span class="lang-es">Horarios Flexibles</span></h3><p style="color:var(--mut)"><span class="lang-en">Morning, Afternoon, and Weekend options to fit your life.</span><span class="lang-es">Opciones de mañana, tarde y fin de semana que se ajustan a tu vida.</span></p></div><div class="card"><h3 style="margin-bottom:8px"><span class="lang-en">Job Placement Office</span><span class="lang-es">Oficina de Colocación Laboral</span></h3><p style="color:var(--mut)"><span class="lang-en">Dedicated team to help you land a job after graduation.</span><span class="lang-es">Un equipo dedicado para ayudarte a conseguir empleo después de graduarte.</span></p></div><div class="card"><h3 style="margin-bottom:8px"><span class="lang-en">Financial Assistance Available</span><span class="lang-es">Asistencia Financiera Disponible</span></h3><p style="color:var(--mut)"><span class="lang-en">ACCES-VR, Post-9/11 GI Bill®, and VA benefits accepted.</span><span class="lang-es">Aceptamos ACCES-VR, GI Bill® Post-9/11 y beneficios de la VA.</span></p></div><div class="card"><h3 style="margin-bottom:8px"><span class="lang-en">Monthly Start Dates</span><span class="lang-es">Inicios Mensuales</span></h3><p style="color:var(--mut)"><span class="lang-en">New classes begin every first Monday of the month.</span><span class="lang-es">Las nuevas clases comienzan el primer lunes de cada mes.</span></p></div></div></div></section>
+<section><div class="container"><div class="eyebrow-acc"><span class="lang-en">Schedule & Tuition</span><span class="lang-es">Horario y Matrícula</span></div><h2 style="margin-bottom:14px"><span class="lang-en">Three flexible schedules</span><span class="lang-es">Tres horarios flexibles</span></h2><div class="grid"><div class="card"><div class="eyebrow-acc"><span class="lang-en">Full-Time Morning</span><span class="lang-es">Tiempo Completo · Mañana</span></div><h3 style="margin:8px 0"><span class="lang-en">Mon–Fri</span><span class="lang-es">Lun–Vie</span> · 8:00 AM – 2:00 PM</h3><div class="price-tag">$5,600</div><p style="color:var(--mut);font-size:.92rem"><span class="lang-en">$500 down + 17 weekly payments of $300</span><span class="lang-es">$500 enganche + 17 pagos semanales de $300</span></p></div><div class="card"><div class="eyebrow-acc"><span class="lang-en">Full-Time Afternoon</span><span class="lang-es">Tiempo Completo · Tarde</span></div><h3 style="margin:8px 0"><span class="lang-en">Mon–Fri</span><span class="lang-es">Lun–Vie</span> · 2:00 PM – 8:00 PM</h3><div class="price-tag">$4,600</div><p style="color:var(--mut);font-size:.92rem"><span class="lang-en">$500 down + 16 weekly payments of $250 + $100 final</span><span class="lang-es">$500 enganche + 16 pagos semanales de $250 + $100 final</span></p></div><div class="card"><div class="eyebrow-acc"><span class="lang-en">Weekend</span><span class="lang-es">Fin de Semana</span></div><h3 style="margin:8px 0"><span class="lang-en">Sat & Sun</span><span class="lang-es">Sáb & Dom</span> · 9:00 AM – 7:00 PM</h3><div class="price-tag">$4,600</div><p style="color:var(--mut);font-size:.92rem"><span class="lang-en">$550 down + 27 weekly payments of $150</span><span class="lang-es">$550 enganche + 27 pagos semanales de $150</span></p></div></div></div></section>
+<section><div class="container"><div class="eyebrow-acc"><span class="lang-en">Student voices</span><span class="lang-es">Voces estudiantiles</span></div><h2 style="margin-bottom:18px"><span class="lang-en">What our students say</span><span class="lang-es">Lo que dicen nuestros estudiantes</span></h2><div class="grid"><div class="card"><p style="color:var(--ink);font-style:italic;margin-bottom:10px">“<span class="lang-en">The level of knowledge and training is superb. One of the best teachers around — King David — will show you everything.</span><span class="lang-es">El nivel de conocimiento y entrenamiento es excepcional. Uno de los mejores maestros — King David — te mostrará todo.</span>”</p><p style="font-weight:800">Jerrick Matthews</p><p style="color:var(--accent);font-size:.84rem"><span class="lang-en">Current Student</span><span class="lang-es">Estudiante Actual</span></p></div><div class="card"><p style="color:var(--ink);font-style:italic;margin-bottom:10px">“<span class="lang-en">I have King David as my instructor and he has been awesome. He has 30 years of experience.</span><span class="lang-es">Tengo a King David como mi instructor y ha sido increíble. Tiene 30 años de experiencia.</span>”</p><p style="font-weight:800">Carlos Perez</p><p style="color:var(--accent);font-size:.84rem"><span class="lang-en">Current Student</span><span class="lang-es">Estudiante Actual</span></p></div><div class="card"><p style="color:var(--ink);font-style:italic;margin-bottom:10px">“<span class="lang-en">I'm enrolled and I'm happy with the progress from the teachers and classmates. Nothing but positivity.</span><span class="lang-es">Estoy inscrito y estoy contento con el progreso de los maestros y compañeros. Pura positividad.</span>”</p><p style="font-weight:800">Zyee Fin</p><p style="color:var(--accent);font-size:.84rem"><span class="lang-en">Current Student</span><span class="lang-es">Estudiante Actual</span></p></div><div class="card"><p style="color:var(--ink);font-style:italic;margin-bottom:10px">“<span class="lang-en">The best barber school in New York — real barber culture.</span><span class="lang-es">La mejor escuela de barbería de Nueva York — verdadera cultura de barbero.</span>”</p><p style="font-weight:800">Richard Cacace</p><p style="color:var(--accent);font-size:.84rem"><span class="lang-en">5★ Google Review</span><span class="lang-es">Reseña 5★ Google</span></p></div></div></div></section>
+  <section class="media-band ms-brutal-offset"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">Inside ABI</span><span class="lang-es">Dentro de ABI</span></div><h2><span class="lang-en">This is the floor</span><span class="lang-es">Este es el piso</span></h2><p><span class="lang-en">Step inside our Manhattan and Bronx clinics — where future master barbers train every day.</span><span class="lang-es">Entra a nuestras clínicas de Manhattan y el Bronx — donde los futuros maestros barberos entrenan cada día.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/group-in-blue-smocks-indoors.mp4" poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" aria-label="Group in blue smocks indoors"></video><figcaption class="m-cap">Group in blue smocks indoors</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040820652-img-8701.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/group-in-blue-smocks-instructor.mp4" poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" aria-label="Group in blue smocks instructor"></video><figcaption class="m-cap">Group in blue smocks instructor</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040823325-img-8703.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040825064-img-8704.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1780371662786-whatsapp-image-2026-06-01-at-15-04-51.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1780371665169-whatsapp-image-2026-06-01-at-15-04-52.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1780371665963-whatsapp-image-2026-06-01-at-15-04-53.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
+  <section class="cta-band"><div class="container">
+  <div class="eyebrow-acc"><span class="lang-en">Ready to Begin?</span><span class="lang-es">¿Listo para Empezar?</span></div>
+  <h2 style="margin:10px 0 12px"><span class="lang-en">Ready to Start Your Barber Career?</span><span class="lang-es">¿Listo para Comenzar Tu Carrera de Barbero?</span></h2>
+  <p class="lead" style="margin:0 auto 22px"><span class="lang-en">New classes begin the first Monday of every month. Apply today and take the first step toward your new career.</span><span class="lang-es">Las nuevas clases comienzan el primer lunes de cada mes. Aplica hoy y da el primer paso hacia tu nueva carrera.</span></p>
+  <div class="btn-wrap"><a class="btn btn-primary" href="/contact"><span class="lang-en">Become a Barber</span><span class="lang-es">Conviértete en Barbero</span> ✂</a><a class="btn btn-ghost" href="tel:2122902289"><span class="lang-en">Call Admissions</span><span class="lang-es">Llama a Admisiones</span> · (212) 290-2289</a></div>
 </div></section>
-
-<section><div class="wrap"><div class="banner reveal"><span class="eyebrow">Zero to Pro</span><h3 style="font-size:1.7rem;margin:10px 0">No Experience Needed</h3>
- <p style="color:var(--mut);max-width:620px">Whether you're starting from zero, switching careers, or have some background — we train you from beginner to licensed professional. All you need is the drive to succeed.</p>
- <div class="sub3"><div class="subc"><b>Starting Fresh</b><small>Welcome aboard</small></div><div class="subc"><b>Career Change</b><small>Perfect fit</small></div><div class="subc"><b>Some Experience</b><small>Build on it</small></div></div></div></div></section>
-
-<section id="schedule"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Flexible Schedules</span><h2>Train Around Your Life</h2><p>Three schedule options — morning, afternoon, and weekends — so you can fit your education around your existing commitments.</p></div><div class="cards3"><div class="card reveal" data-tilt><div class="ic">☀️</div><h3>Morning Schedule</h3><div class="big">8:00 AM – 2:00 PM</div><p class="meta">Monday – Friday</p></div><div class="card reveal" data-tilt><div class="ic">🌤️</div><h3>Afternoon Schedule</h3><div class="big">2:00 PM – 8:00 PM</div><p class="meta">Monday – Friday</p></div><div class="card reveal" data-tilt><div class="ic">📅</div><h3>Weekend Schedule</h3><div class="big">9:00 AM – 7:00 PM</div><p class="meta">Saturday &amp; Sunday</p></div></div></div></section>
-
-<section><div class="wrap"><div class="sec-head center"><h2>Become a Barber in 3 Easy Steps</h2></div><div class="cards3"><div class="card reveal"><div class="nb">01</div><h3>Get Started</h3><p>Submit your information to begin your barbering journey.</p></div><div class="card reveal"><div class="nb">02</div><h3>Speak With an Advisor</h3><p>An ABI admissions advisor will answer your questions and review payment plan options that fit your budget.</p></div><div class="card reveal"><div class="nb">03</div><h3>Start Training</h3><p>Complete your enrollment and begin building your barbering career.</p></div></div></div></section>
-
-<section id="why"><div class="wrap"><div class="sec-head"><span class="eyebrow">Why ABI</span><h2>Why Students Choose ABI</h2><p>We're not just a school — we're a community that has been shaping barbers in New York for over three decades.</p></div><div class="cards3"><div class="card reveal" data-tilt><div class="nb">01</div><h3>New York's Only Dedicated Barber School</h3><p>We specialize entirely in barbering — it's all we do and all we know.</p></div><div class="card reveal" data-tilt><div class="nb">02</div><h3>Licensed by the NY State Department of Education (BPSS)</h3><p>Fully accredited so your credentials are recognized throughout New York.</p></div><div class="card reveal" data-tilt><div class="nb">03</div><h3>30+ Years of Proven Results</h3><p>Thousands of graduates have gone on to build successful barbering careers.</p></div><div class="card reveal" data-tilt><div class="nb">04</div><h3>Flexible Schedules for Real Life</h3><p>Morning, afternoon, and weekend classes — train around your life.</p></div><div class="card reveal" data-tilt><div class="nb">05</div><h3>Veterans &amp; GI Bill® Accepted</h3><p>We support veterans through ACCES-VR, Post-9/11 GI Bill®, and VA benefits.</p></div></div></div></section>
-
-<section id="earnings"><div class="wrap"><div class="sec-head"><span class="eyebrow">Career Earnings</span><h2>Barber Career Earnings</h2><p>Barbering allows income growth based on skill, clientele, and consistency.</p></div><div class="earn"><div class="ecard reveal feat"><span class=flag>Most Common</span><div class="ic">✂️</div><div class="yr">Year 1</div><h3>Entry-Level Barber</h3><div class="money">$35,000 – $45,000</div><p>Starting out in a shop, building your client base and refining your technique.</p></div><div class="ecard reveal"><div class="ic">⭐</div><div class="yr">Years 2 – 3</div><h3>Established Barber</h3><div class="money">$50,000 – $70,000</div><p>Loyal clientele, faster service, and increased income as your reputation grows.</p></div><div class="ecard reveal"><div class="ic">🏆</div><div class="yr">Year 3+</div><h3>Booth Renter / Shop Owner</h3><div class="money">$75,000 – $100,000+</div><p>Full control of your schedule and earnings — the path to real entrepreneurship.</p></div></div>
- <p class="disc">Earnings figures are estimates only and are not guaranteed. Actual income will vary based on individual effort, hours worked, location, and market conditions.</p></div></section>
-
-<section><div class="wrap"><div class="sec-head center"><span class="eyebrow">Included in Your Program</span><h2>What You'll Get</h2></div><div class="get-grid"><div class="get reveal"><span class="ck">✓</span>State-approved barber training program</div><div class="get reveal"><span class="ck">✓</span>Full preparation for the NY State Board Exam</div><div class="get reveal"><span class="ck">✓</span>Real hands-on experience within the first few weeks</div><div class="get reveal"><span class="ck">✓</span>Mentorship from seasoned professionals</div><div class="get reveal"><span class="ck">✓</span>Job placement services upon graduation</div><div class="get reveal"><span class="ck">✓</span>Access to both Manhattan &amp; Bronx campuses</div></div></div></section>
-
-<section id="programs"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Programs</span><h2>Choose Your Program</h2><p>NY State-licensed training, new classes the first Monday of every month. Pick the path that fits your goals.</p></div><div class="prog-grid"><div class="prog reveal feat" data-tilt><span class=flag>Flagship</span><div class="meta">500 Hours · ~4 months</div><h3>500-Hour Master Barber</h3><div class="price">$4,600–$5,600</div><p>The complete path to your New York State Master Barber License — cutting, fades, shaves, grooming, sanitation, and full State Board exam prep. Choose morning, afternoon, or weekend.</p></div><div class="prog reveal" data-tilt><div class="meta">50 Hours · 2-week intensive</div><h3>50-Hour Barber Refresher</h3><div class="price">$1,500</div><p>A fast, focused refresher for licensed or returning barbers who want to sharpen technique, speed, and confidence.</p></div><div class="prog reveal" data-tilt><div class="meta">Single session</div><h3>3-Hour Contagious Diseases</h3><div class="price">Call for pricing</div><p>The state-required infection-control certification — a single session you can complete in an afternoon.</p></div></div>
- <div class="sec-head center" style="margin:48px auto 18px"><span class="eyebrow">Enrollment</span><h2 style="font-size:clamp(1.5rem,3.6vw,2.3rem)">What You'll Need to Start</h2></div><div class="req"><div>Social Security Card</div><div>High School Diploma, GED, or pass the ATB exam at ABI</div><div>Must be at least 17 years of age</div><div>Proof of residential address</div><div>Valid photo ID or Driver's License</div><div>$500 down payment (includes $100 registration fee)</div></div></div></section>
-
-<section id="gallery"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Inside ABI</span><h2>On The Floor</h2><p>Shot at ABI — the room, the cohort, the cuts. No stock photos.</p></div></div>
- <div class="gal-marquee"><div class="gal-track"><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barbershop-full-shop.jpeg" alt="Our NYC teaching clinic" loading="lazy"><div class="cap">Our NYC teaching clinic</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barber-hero-cutout.jpeg" alt="Precision on the floor" loading="lazy"><div class="cap">Precision on the floor</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/class-group.jpeg" alt="The current cohort" loading="lazy"><div class="cap">The current cohort</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/hair-art-mohawk.jpg" alt="Student hair art" loading="lazy"><div class="cap">Student hair art</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/graduation-1.jpeg" alt="Graduation day" loading="lazy"><div class="cap">Graduation day</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/certificate-presentation.jpeg" alt="Earning the credential" loading="lazy"><div class="cap">Earning the credential</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barber-hero.jpeg" alt="Mastering the fade" loading="lazy"><div class="cap">Mastering the fade</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barber-battle-trophy.png" alt="Barber battle champions" loading="lazy"><div class="cap">Barber battle champions</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barbershop-full-shop.jpeg" alt="Our NYC teaching clinic" loading="lazy"><div class="cap">Our NYC teaching clinic</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barber-hero-cutout.jpeg" alt="Precision on the floor" loading="lazy"><div class="cap">Precision on the floor</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/class-group.jpeg" alt="The current cohort" loading="lazy"><div class="cap">The current cohort</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/hair-art-mohawk.jpg" alt="Student hair art" loading="lazy"><div class="cap">Student hair art</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/graduation-1.jpeg" alt="Graduation day" loading="lazy"><div class="cap">Graduation day</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/certificate-presentation.jpeg" alt="Earning the credential" loading="lazy"><div class="cap">Earning the credential</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barber-hero.jpeg" alt="Mastering the fade" loading="lazy"><div class="cap">Mastering the fade</div></div><div class="gcardimg"><img src="https://assets-lilac-five.vercel.app/img/barber-battle-trophy.png" alt="Barber battle champions" loading="lazy"><div class="cap">Barber battle champions</div></div></div></div>
- <div class="wrap"><div class="gal-feat reveal" data-tiltfeat><img src="https://assets-lilac-five.vercel.app/img/barbershop-full-shop.jpeg" alt="Our NYC teaching clinic"><div class="ov"><span class="eyebrow">The Floor</span><h3>Our NYC teaching clinic</h3><p>Every student trains in a working barber clinic from the first weeks.</p></div></div></div>
-</section>
-
-<section id="reviews"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Student Stories</span><h2>What Our Students Say</h2><span class="rating">4.3 ★ · 100+ reviews · Google</span></div><div class="t-grid"><div class="t reveal" data-tilt><div class="stars">★★★★★</div><p>“The level of knowledge and training is superb! One of the best teachers around — King David — will show you everything there is to know about barbering.”</p><div class="who"><div class="av">JM</div><div><b>Jerrick Matthews</b><small>Current Student</small></div></div></div><div class="t reveal" data-tilt><div class="stars">★★★★★</div><p>“I have King David as my instructor and he has been awesome!! He has 30 years of experience and gives us great techniques while also polishing up on basic skills.”</p><div class="who"><div class="av">CP</div><div><b>Carlos Perez</b><small>Current Student</small></div></div></div><div class="t reveal" data-tilt><div class="stars">★★★★★</div><p>“The best barber school in New York — way better than other academies. This school is real barber culture and you're going to get so much hands-on practice.”</p><div class="who"><div class="av">RC</div><div><b>Richard Cacace</b><small>Google Review · 5 ★</small></div></div></div><div class="t reveal" data-tilt><div class="stars">★★★★★</div><p>“A great cut at the student clinic. Great that we could help student trainees practice and reach their 500 hours required for graduating.”</p><div class="who"><div class="av">VL</div><div><b>Vincybie Lee</b><small>Client</small></div></div></div><div class="t reveal" data-tilt><div class="stars">★★★★★</div><p>“Donovan gave me a great haircut. He did exactly what I asked. Well worth a low student-clinic rate plus a $7 tip — $10 for a haircut!”</p><div class="who"><div class="av">TB</div><div><b>Tina Banee</b><small>Client</small></div></div></div><div class="t reveal" data-tilt><div class="stars">★★★★★</div><p>“I'm currently enrolled here and I'm happy with the progress from learning from the teachers and classmates. Nothing but positivity and eager to learn more.”</p><div class="who"><div class="av">ZF</div><div><b>Zyee Fin</b><small>Current Student</small></div></div></div></div></div></section>
-
-<section><div class="wrap"><div class="welcome reveal"><span class="eyebrow">A Personal Welcome</span><h2 style="font-size:clamp(1.7rem,4vw,2.6rem);margin-top:10px">Welcome from the Leadership Team</h2><p>“Every great barber I've known started exactly where you are now — curious, a little nervous, and ready to work. At ABI we don't just teach technique; we build the confidence, the discipline, and the community that carry you from your first fade to your own chair. Whether this is a new chapter or a dream you've chased for years, you're welcome here.”</p><div class="sig">— The American Barber Institute Leadership Team</div></div></div></section>
-
-<section id="faq"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Questions</span><h2>Frequently Asked Questions</h2><p>Everything you need to know about programs, enrollment, tuition, and getting started.</p></div><div class="faq"><details class="reveal"><summary>How long does the program take?</summary><div class="ans">The 500-Hour Master Barber Program can be completed in as little as 4 months, depending on your schedule. The 50-Hour Refresher is a 2-week intensive, and the 3-Hour Contagious Diseases course is a single session.</div></details><details class="reveal"><summary>When do new classes start?</summary><div class="ans">New classes begin the first Monday of every month — so you never have to wait long. Apply, gather your documents, and be ready for the next start date.</div></details><details class="reveal"><summary>What are the entrance requirements?</summary><div class="ans">A Social Security card, a High School Diploma / GED (or pass the ATB exam at ABI), proof of address, a valid photo ID, being at least 17, and a $500 down payment (which includes a $100 registration fee).</div></details><details class="reveal"><summary>How much does the program cost?</summary><div class="ans">The 500-Hour program starts at $4,600 (Afternoon and Weekend plans); the Morning plan is $5,600. The 50-Hour Refresher is $1,500. Flexible weekly payment plans are available for every program.</div></details><details class="reveal"><summary>Do you offer payment plans?</summary><div class="ans">Yes. Every program includes a weekly payment plan after your down payment. For example, the Afternoon plan is $500 down, then 16 weekly payments of $250 plus a final $100.</div></details><details class="reveal"><summary>What license will I earn?</summary><div class="ans">On completing the 500-Hour Master Barber Program you'll be fully prepared for the New York State Board of Barbering exam — both written and practical — and your Master Barber License.</div></details><details class="reveal"><summary>Do you offer job placement?</summary><div class="ans">Yes. On graduation you'll meet with our Job Placement Office, who help you explore opportunities, connect with employers, and take the next steps in your career.</div></details><details class="reveal"><summary>Do you accept GI Bill® or VA benefits?</summary><div class="ans">Yes. ABI accepts the Post-9/11 GI Bill® and VA education benefits, as well as ACCES-VR vocational rehabilitation funding for those who qualify.</div></details><details class="reveal"><summary>Is ABI licensed by the state?</summary><div class="ans">Yes. American Barber Institute is licensed by the New York State Department of Education and has served New York for over 30 years.</div></details><details class="reveal"><summary>Can I get a haircut at ABI?</summary><div class="ans">Yes — the public is welcome for affordable student haircuts (supervised by licensed instructors). It's a great way to help trainees reach their required hours while getting a quality cut.</div></details></div></div></section>
-
-<section><div class="wrap"><div class="sec-head center"><span class="eyebrow">Our Partners</span><h2>Where Our Graduates Work</h2><p>Real shops. Real careers. One school behind every chair.</p></div><div class="partners"><div class="reveal">Levels Barbershop</div><div class="reveal">Diamond Fadez</div><div class="reveal">Untouchable Cutz</div><div class="reveal">Expo Gentlemen Salon</div><div class="reveal">Otis & Finn</div><div class="reveal">NYC Barber Shop Museum</div></div></div></section>
-
-<section id="tuition"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Tuition</span><h2>Flexible Payment Plans</h2><p>All plans include NY State Board Exam prep, hands-on training, and job placement support.</p></div><div class="price-grid"><div class="price reveal"><h3>Full-Time Morning</h3><div class="when">Mon – Fri · 8:00 AM – 2:00 PM</div><div class="amt">$5,600</div><div class="terms">$500 down + 17 weekly payments of $300</div><a class="btn btn-pri" href="#contact">Enroll Now ✂</a></div><div class="price reveal pop"><span class=flag>Most Popular</span><h3>Full-Time Afternoon</h3><div class="when">Mon – Fri · 2:00 PM – 8:00 PM</div><div class="amt">$4,600</div><div class="terms">$500 down + 16 weekly payments of $250 + final $100</div><a class="btn btn-pri" href="#contact">Enroll Now ✂</a></div><div class="price reveal"><h3>Weekend</h3><div class="when">Sat &amp; Sun · 9:00 AM – 7:00 PM</div><div class="amt">$4,600</div><div class="terms">$550 down + 27 weekly payments of $150</div><a class="btn btn-pri" href="#contact">Enroll Now ✂</a></div></div>
- <p class="disc" style="text-align:center">ACCES-VR &amp; GI Bill® accepted.</p></div></section>
-
-<section id="campus"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Visit &amp; Contact Us</span><h2>Reserve Your Seat Today</h2><p>Seats are limited. Visit a campus, call the nearest location, or apply online — final enrollment is completed in person before classes begin.</p></div><div class="loc-grid"><div class="loc reveal"><h3>Manhattan Campus</h3><div class="addr">48 West 39th Street<br>New York, NY 10018</div><a class="ph" href="tel:2122902289">(212) 290-2289</a><div class="sched">Morning 8:00 AM–2:00 PM · Afternoon 2:00 PM–8:00 PM (Mon–Fri)<br>Weekend 9:00 AM–7:00 PM (Sat &amp; Sun)</div></div><div class="loc reveal"><h3>Bronx Campus</h3><div class="addr">121 Westchester Square<br>Bronx, NY 10461</div><a class="ph" href="tel:7186760640">(718) 676-0640</a><div class="sched">Morning 8:00 AM–2:00 PM · Afternoon 2:00 PM–8:00 PM (Mon–Fri)<br>Weekend 9:00 AM–7:00 PM (Sat &amp; Sun)</div></div></div></div></section>
-
-<section class="band" id="contact"><div class="wrap reveal"><span class="eyebrow">Don't Wait — Seats Fill Fast</span><h2>Stop Waiting. Start in 4 Months.</h2><p>Two campuses. One dedicated school. Thirty years of barbers who started exactly where you are.</p><div class="btn-row" style="justify-content:center"><a class="btn btn-pri" href="tel:2122902289">Apply Today ✂</a><a class="btn btn-gho" href="tel:2122902289">Call Us</a></div></div></section>
-
-<script>
-(function(){
- var mq=document.getElementById('mnav');var bg=document.getElementById('burger');
- if(bg)bg.addEventListener('click',function(){mq.classList.toggle('open');});
- if(mq)mq.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mq.classList.remove('open');});});
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
- document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=((i%3)*0.07)+'s';io.observe(el);});
- var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,goal=+el.dataset.c,suf=el.dataset.suf||'+',t0=null,d=1650;function st(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/d,1);var e2=1-Math.pow(1-p,3);el.textContent=Math.floor(goal*e2).toLocaleString()+suf;if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);cio.unobserve(el);});},{threshold:.5});
- document.querySelectorAll('.num').forEach(function(el){cio.observe(el);});
- // 3D tilt
- var touch=matchMedia('(hover:none)').matches;
- if(!touch)document.querySelectorAll('[data-tilt]').forEach(function(el){
-   el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-0.5,py=(e.clientY-r.top)/r.height-0.5;el.style.transform='perspective(800px) rotateY('+(px*10)+'deg) rotateX('+(-py*10)+'deg) translateZ(6px)';});
-   el.addEventListener('mouseleave',function(){el.style.transform='';});
- });
- // magnetic
- if(!touch)document.querySelectorAll('[data-mag]').forEach(function(el){
-   el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();el.style.transform='translate('+((e.clientX-r.left-r.width/2)*0.3)+'px,'+((e.clientY-r.top-r.height/2)*0.3)+'px)';});
-   el.addEventListener('mouseleave',function(){el.style.transform='';});
- });
-})();
-
-(function(){var f=document.querySelector('[data-tiltfeat]');if(!f||matchMedia('(hover:none)').matches)return;
-f.addEventListener('mousemove',function(e){var r=f.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;f.style.transform='perspective(1000px) rotateY('+(px*5)+'deg) rotateX('+(-py*5)+'deg)';});
-f.addEventListener('mouseleave',function(){f.style.transform='';});})();
-</script><script>
-(function(){
-  var nav = document.querySelector('.nav-links');
-  if (!nav) return;
-  var burger = document.querySelector('.burger');
-  if (!burger) {
-    burger = document.createElement('button');
-    burger.className = 'burger';
-    burger.setAttribute('aria-label','Toggle navigation');
-    burger.setAttribute('aria-expanded','false');
-    burger.innerHTML = '<span></span><span></span><span></span>';
-    var navwrap = document.querySelector('header .nav') || document.querySelector('header > div') || document.querySelector('header');
-    if (navwrap) navwrap.appendChild(burger);
-  }
-  function close(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
-  function toggle(){ var open = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', open ? 'true' : 'false'); }
-  burger.addEventListener('click', toggle);
-  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
-  document.addEventListener('keydown', function(e){ if (e.key==='Escape') close(); });
-})();
-</script>
-<script>
-(function(){
-  var nav = document.querySelector('.nav-links');
-  if (!nav) return;
-  var burger = document.querySelector('.burger');
-  if (!burger) {
-    burger = document.createElement('button');
-    burger.className = 'burger';
-    burger.setAttribute('aria-label','Toggle navigation');
-    burger.setAttribute('aria-expanded','false');
-    burger.innerHTML = '<span></span><span></span><span></span>';
-    var nw = document.querySelector('header .nav') || document.querySelector('header > div') || document.querySelector('header');
-    if (nw) nw.appendChild(burger);
-  }
-  function cl(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
-  burger.addEventListener('click', function(){ var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o ? 'true':'false'); });
-  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', cl); });
-  document.addEventListener('keydown', function(e){ if (e.key==='Escape') cl(); });
-})();
-</script>
-<a class="sticky-call" href="tel:2122902289" aria-label="Call admissions">
-<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A18 18 0 0 1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/></svg>
-Call admissions · (212) 290-2289
-</a>
-<script>
-(function() {
-  // ── Language switcher ─────────────────────────────────
-  var saved = localStorage.getItem('abi_lang') || 'en';
-  document.body.classList.remove('lang-en','lang-es');
-  document.body.classList.add('lang-' + saved);
-  document.documentElement.lang = saved;
-  // wire up toggle buttons (any with .lang-toggle button)
-  function setLang(lang) {
-    document.body.classList.remove('lang-en','lang-es');
-    document.body.classList.add('lang-' + lang);
-    document.documentElement.lang = lang;
-    localStorage.setItem('abi_lang', lang);
-    document.querySelectorAll('.lang-toggle button').forEach(function(b) {
-      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-    });
-  }
-  document.querySelectorAll('.lang-toggle button').forEach(function(b) {
-    b.addEventListener('click', function() { setLang(this.getAttribute('data-lang')); });
-    if (b.getAttribute('data-lang') === saved) b.classList.add('active');
-  });
-
-  // ── Hamburger ─────────────────────────────────
-  var nav = document.querySelector('.nav-links');
-  if (!nav) return;
-  var burger = document.querySelector('.burger');
-  if (!burger) {
-    burger = document.createElement('button');
-    burger.className = 'burger';
-    burger.setAttribute('aria-label','Toggle navigation');
-    burger.setAttribute('aria-expanded','false');
-    burger.innerHTML = '<span></span><span></span><span></span>';
-    var nw = document.querySelector('header .nav') || document.querySelector('header > div') || document.querySelector('header');
-    if (nw) nw.appendChild(burger);
-  }
-  function cl(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
-  burger.addEventListener('click', function(){ var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o ? 'true':'false'); });
-  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', cl); });
-  document.addEventListener('keydown', function(e){ if (e.key==='Escape') cl(); });
-})();
-</script>
-<!--ABIv5:bottom-->
-<section class="media-band ms-brutal-offset"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">Inside ABI</span><span class="lang-es">Dentro de ABI</span></div><h2><span class="lang-en">This is the floor</span><span class="lang-es">Este es el piso</span></h2><p><span class="lang-en">Step inside our Manhattan and Bronx clinics — where future master barbers train every day.</span><span class="lang-es">Entra a nuestras clínicas de Manhattan y el Bronx — donde los futuros maestros barberos entrenan cada día.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/group-in-blue-smocks-indoors.mp4" poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" aria-label="Group in blue smocks indoors"></video><figcaption class="m-cap">Group in blue smocks indoors</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040820652-img-8701.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/group-in-blue-smocks-instructor.mp4" poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" aria-label="Group in blue smocks instructor"></video><figcaption class="m-cap">Group in blue smocks instructor</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040823325-img-8703.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040825064-img-8704.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1780371662786-whatsapp-image-2026-06-01-at-15-04-51.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1780371665169-whatsapp-image-2026-06-01-at-15-04-52.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1780371665963-whatsapp-image-2026-06-01-at-15-04-53.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
+</main>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <h4>American Barber Institute</h4>
-        <p><span class="lang-en">New York's only dedicated barber school. 30+ years. 10,000+ graduates.</span><span class="lang-es">La única escuela de barbería dedicada en NY. 30+ años. 10,000+ graduados.</span></p>
-        <p style="margin-top:10px;font-size:.85rem"><span class="lang-en">Licensed by NY State Dept. of Education (BPSS). GI Bill® · ACCES-VR.</span><span class="lang-es">Licenciada por el Depto. de Educación de NY (BPSS). GI Bill® · ACCES-VR.</span></p>
+        <p><span class="lang-en">New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.</span><span class="lang-es">La única escuela de barbería dedicada de Nueva York. Licenciada por el Departamento de Educación del Estado de Nueva York. Cambiando vidas por más de 30 años.</span></p>
+        <p style="margin-top:10px;font-size:.85rem"><span class="lang-en">GI Bill® · ACCES-VR · VA benefits accepted.</span><span class="lang-es">GI Bill® · ACCES-VR · beneficios de la VA aceptados.</span></p>
       </div>
       <div>
-        <h4><span class="lang-en">Pages</span><span class="lang-es">Páginas</span></h4>
-        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+        <h4><span class="lang-en">Links</span><span class="lang-es">Enlaces</span></h4>
+        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement"><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+      </div>
+      <div>
+        <h4><span class="lang-en">Locations</span><span class="lang-es">Ubicaciones</span></h4>
+        <p><b>Manhattan</b><br>48 West 39th Street<br>New York, NY 10018</p>
+        <p style="margin-top:8px"><b>Bronx</b><br>121 Westchester Square<br>Bronx, NY 10461</p>
       </div>
       <div>
         <h4><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4>
-        <a href="tel:2122902289">Manhattan EN · (212) 290-2289</a>
-        <a href="tel:2122900278">Manhattan ES · (212) 290-0278</a>
-        <a href="tel:7186760640">Bronx · (718) 676-0640</a>
+        <a href="tel:2122902289">(212) 290-2289 <span class="lang-en">(English)</span><span class="lang-es">(Inglés)</span></a>
+        <a href="tel:2122900278">(212) 290-0278 (Español)</a>
+        <a href="tel:7186760640">(718) 676-0640 (Bronx)</a>
         <a href="mailto:admission@abi.edu">admission@abi.edu</a>
-      </div>
-      <div>
-        <h4><span class="lang-en">Campuses</span><span class="lang-es">Campus</span></h4>
-        <p>48 W 39th St, NY 10018</p>
-        <p>121 Westchester Sq, Bronx 10461</p>
-        <p style="margin-top:8px;font-size:.85rem">Mon–Fri 8AM–8PM · Sat–Sun 9AM–7PM</p>
+        <div style="margin-top:10px;font-size:.82rem"><p><span class="lang-en">Monday – Friday: 8:00 AM – 8:00 PM</span><span class="lang-es">Lunes – Viernes: 8:00 AM – 8:00 PM</span></p><p><span class="lang-en">Saturday: 9:00 AM – 7:00 PM</span><span class="lang-es">Sábado: 9:00 AM – 7:00 PM</span></p><p><span class="lang-en">Sunday: 9:00 AM – 7:00 PM</span><span class="lang-es">Domingo: 9:00 AM – 7:00 PM</span></p></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 American Barber Institute. <span class="lang-en">All rights reserved.</span><span class="lang-es">Todos los derechos reservados.</span></span>
+      <span><span class="lang-en">© 2026 American Barber Institute (ABI). All Rights Reserved. Licensed by the NY State Dept. of Education.</span><span class="lang-es">© 2026 American Barber Institute (ABI). Todos los derechos reservados. Licenciada por el Depto. de Educación del Estado de NY.</span></span>
+      <div class="tm" style="margin-top:6px"><span class="lang-en">*GI BILL® is a registered trademark of the U.S. Department of Veterans Affairs.</span><span class="lang-es">*GI BILL® es una marca registrada del Departamento de Asuntos de Veteranos de EE. UU.</span></div>
     </div>
   </div>
 </footer>
@@ -785,105 +379,89 @@ Call admissions · (212) 290-2289
   <a class="es" href="tel:2122900278"><span class="flag">ES</span> (212) 290-0278</a>
 </div>
 <script>
-(function() {
-  // Language switcher
+(function(){
   var saved = localStorage.getItem('abi_lang') || 'en';
   document.body.classList.remove('lang-en','lang-es');
   document.body.classList.add('lang-' + saved);
   document.documentElement.lang = saved;
-  function setLang(lang) {
+  function setLang(lang){
     document.body.classList.remove('lang-en','lang-es');
     document.body.classList.add('lang-' + lang);
     document.documentElement.lang = lang;
     localStorage.setItem('abi_lang', lang);
-    document.querySelectorAll('.lang-toggle button').forEach(function(b) {
-      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
   }
-  document.querySelectorAll('.lang-toggle button').forEach(function(b) {
-    b.addEventListener('click', function() { setLang(this.getAttribute('data-lang')); });
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(this.getAttribute('data-lang')); });
     if (b.getAttribute('data-lang') === saved) b.classList.add('active');
   });
 
-  // Hamburger
+  // Hamburger drawer — anchor it under the header by measuring header.bottom (robust to a
+  // top-banner that wraps to 2-3 rows on small screens).
   var nav = document.querySelector('.primary-nav');
   var burger = document.querySelector('.burger');
-  if (nav && burger) {
-    function close() { nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow = ''; }
-    burger.addEventListener('click', function() {
+  var header = document.querySelector('.site-header');
+  function setNavTop(){ if (header) document.documentElement.style.setProperty('--nav-top', Math.max(0, header.getBoundingClientRect().bottom) + 'px'); }
+  if (nav && burger){
+    function close(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.classList.remove('nav-open'); }
+    burger.addEventListener('click', function(){
+      setNavTop();
       var open = nav.classList.toggle('open');
-      burger.setAttribute('aria-expanded', open ? 'true':'false');
-      document.body.style.overflow = open ? 'hidden' : '';
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
     });
-    nav.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', close); });
-    document.addEventListener('keydown', function(e) { if (e.key==='Escape') close(); });
+    nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+    window.addEventListener('resize', function(){ setNavTop(); if (window.innerWidth > 1180) close(); });
   }
 
-  // Spotlight follow (only used by noir-spotlight decoration)
-  if (document.querySelector('.deco-spotlight')) {
+  if (document.querySelector('.deco-spotlight')){
     var el = document.querySelector('.deco-spotlight');
-    document.addEventListener('mousemove', function(e) {
+    document.addEventListener('mousemove', function(e){
       el.style.setProperty('--spot-x', e.clientX + 'px');
       el.style.setProperty('--spot-y', e.clientY + 'px');
     });
   }
 
-  // Reveal on scroll
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('reveal'); io.unobserve(e.target); } });
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('reveal'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    document.querySelectorAll('section, .card, .row-stat .s').forEach(function(el) { io.observe(el); });
-  }
+    document.querySelectorAll('section, .card').forEach(function(el){ io.observe(el); });
 
-  // Animated counters
-  if ('IntersectionObserver' in window) {
-    var counters = document.querySelectorAll('.stat-card .count[data-target]');
-    var countObs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(en) {
+    var countObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
         if (!en.isIntersecting) return;
-        var el = en.target;
-        var target = parseInt(el.getAttribute('data-target'), 10) || 0;
-        var suffix = el.getAttribute('data-suffix') || '';
-        var prefix = el.getAttribute('data-prefix') || '';
-        var dur = 1400;
+        var el = en.target, target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        var suffix = el.getAttribute('data-suffix') || '', prefix = el.getAttribute('data-prefix') || '';
         var start = performance.now();
         el.parentElement.classList.add('in');
-        function step(t) {
-          var p = Math.min(1, (t - start) / dur);
-          var eased = 1 - Math.pow(1 - p, 3);
-          var n = Math.floor(target * eased);
-          el.textContent = prefix + n.toLocaleString() + suffix;
-          if (p < 1) requestAnimationFrame(step);
-          else el.textContent = prefix + target.toLocaleString() + suffix;
+        function step(t){
+          var p = Math.min(1, (t - start) / 1400), eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.floor(target * eased).toLocaleString() + suffix;
+          if (p < 1) requestAnimationFrame(step); else el.textContent = prefix + target.toLocaleString() + suffix;
         }
         requestAnimationFrame(step);
         countObs.unobserve(el);
       });
     }, { threshold: 0.5 });
-    counters.forEach(function(c) { countObs.observe(c); });
-  }
+    document.querySelectorAll('.stat-card .count[data-target]').forEach(function(c){ countObs.observe(c); });
 
-  // Media tiles: reveal on scroll + lazy-load/play videos (keeps pages fast)
-  if ('IntersectionObserver' in window) {
-    var mio = new IntersectionObserver(function(entries) {
-      entries.forEach(function(en) {
+    var mio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
         if (!en.isIntersecting) return;
-        var tile = en.target;
-        tile.classList.add('shown');
+        var tile = en.target; tile.classList.add('shown');
         var v = tile.querySelector('video[data-src]');
-        if (v && !v.getAttribute('data-loaded')) {
-          v.setAttribute('data-loaded', '1');
-          v.src = v.getAttribute('data-src');
-          var pr = v.play();
-          if (pr && pr.then) { pr.then(function() { tile.classList.add('playing'); }).catch(function() {}); }
+        if (v && !v.getAttribute('data-loaded')){
+          v.setAttribute('data-loaded','1'); v.src = v.getAttribute('data-src');
+          var pr = v.play(); if (pr && pr.then) pr.then(function(){ tile.classList.add('playing'); }).catch(function(){});
         }
         mio.unobserve(tile);
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.m-tile').forEach(function(t) { mio.observe(t); });
+    document.querySelectorAll('.m-tile').forEach(function(t){ mio.observe(t); });
   }
 })();
 </script>
-<!--/ABIv5:bottom-->
-</body></html>
+</body>
+</html>
