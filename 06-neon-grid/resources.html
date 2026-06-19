@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
 <title>Resources · Veterans · ACCES-VR · ABI</title>
 <meta name="description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
-<meta name="keywords" content="barber school nyc, american barber institute, abi, barber school new york, master barber program, master barber license ny, barber academy nyc, gi bill barber school, escuela de barberia nueva york, escuela barberia manhattan">
+<meta name="keywords" content="barber school nyc, american barber institute, abi, master barber program, gi bill barber school, escuela de barberia nueva york">
 <meta name="author" content="American Barber Institute">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="/">
@@ -24,112 +24,372 @@
 <meta name="twitter:description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
 <meta name="twitter:image" content="/assets/logo.jpeg">
 <meta name="format-detection" content="telephone=yes">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "American Barber Institute", "alternateName": "ABI", "url": "/", "description": "American Barber Institute (ABI) \u2014 New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill\u00ae accepted. Manhattan & Bronx campuses.", "telephone": "(212) 290-2289", "email": "admission@abi.edu", "foundingDate": "1995", "address": [{"@type": "PostalAddress", "streetAddress": "48 West 39th Street", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10018", "addressCountry": "US"}, {"@type": "PostalAddress", "streetAddress": "121 Westchester Square", "addressLocality": "Bronx", "addressRegion": "NY", "postalCode": "10461", "addressCountry": "US"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.3", "ratingCount": "100"}}</script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "American Barber Institute", "alternateName": "ABI", "description": "American Barber Institute (ABI) \u2014 New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill\u00ae accepted. Manhattan & Bronx campuses.", "telephone": "(212) 290-2289", "email": "admission@abi.edu", "foundingDate": "1995", "address": [{"@type": "PostalAddress", "streetAddress": "48 West 39th Street", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10018", "addressCountry": "US"}, {"@type": "PostalAddress", "streetAddress": "121 Westchester Square", "addressLocality": "Bronx", "addressRegion": "NY", "postalCode": "10461", "addressCountry": "US"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.3", "ratingCount": "100"}}</script>
 <style>
-:root { --accent: #ff2bd6; --bg: #07080d; --bg2: #0d1018; --ink: #e9ecff; --mut: #8b91b8; --line: rgba(255,255,255,.08); }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { background: var(--bg); color: var(--ink); font-family: -apple-system, 'Segoe UI', system-ui, sans-serif; line-height: 1.65; overflow-x: hidden; min-height: 100vh; }
+:root {
+  --bg: #05060a;
+  --bg2: rgba(13,18,28,.6);
+  --ink: #e8f6ff;
+  --mut: #9fb6c6;
+  --accent: #00f0ff;
+  --accent2: #ff2bd6;
+  --accent3: #7b5cff;
+  --line: rgba(0,240,255,.18);
+  --glass: rgba(5,6,10,.6);
+  --card-r: 14px;
+  --btn-r: 40px;
+  --touch: 48px;
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Space Grotesk',sans-serif;
+  line-height: 1.65;
+  font-size: 16px;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: calc(82px + var(--safe-bottom));
+}
+@media (min-width: 981px) { body { padding-bottom: 0; } }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
-.bg-video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: .12; pointer-events: none; }
+video { max-width: 100%; height: auto; }
+button { font-family: inherit; cursor: pointer; }
+
+h1, h2, h3, h4 { font-family: 'Orbitron',sans-serif; letter-spacing: .02em; line-height: 1.04; color: var(--ink); }
+h1 { font-size: clamp(2rem, 7vw, 4.6rem); }
+h2 { font-size: clamp(1.5rem, 4.4vw, 2.6rem); }
+h3 { font-size: clamp(1.15rem, 2.8vw, 1.4rem); }
+
+/* Language switcher */
+body.lang-en .lang-es, body.lang-es .lang-en { display: none !important; }
+
+/* Page transitions */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  body { animation: pageIn .42s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { animation: revealUp .6s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes revealUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; } }
+
+/* Background video + overlay */
+.bg-video { position: fixed; inset: 0; width: 100%; height: 100vh; height: 100svh; object-fit: cover; z-index: 0; opacity: .14; pointer-events: none; }
 @media (max-width: 768px) { .bg-video { opacity: .07; } }
-.bg-overlay { position: fixed; inset: 0; background: radial-gradient(ellipse at center, transparent 0, rgba(0,0,0,.5) 70%, var(--bg) 100%); z-index: 1; pointer-events: none; }
-header { position: sticky; top: 0; z-index: 30; background: rgba(7,8,13,.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 70px; max-width: 1180px; margin: 0 auto; padding: 0 24px; gap: 14px; }
-.logo { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: .04em; font-size: 1rem; }
-.logo img { width: 38px; height: 38px; border-radius: 10px; object-fit: cover; }
-.nav-links { display: flex; gap: 16px; font-size: .85rem; font-weight: 600; color: var(--mut); }
-.nav-links a { transition: .2s; padding: 6px 2px; white-space: nowrap; }
-.nav-links a:hover, .nav-links a.active { color: var(--accent); }
-.subpage-hero { padding: 90px 0 50px; text-align: center; position: relative; }
-.eyebrow { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: 30px; font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); }
-.subpage-hero h1 { font-family: 'Arial Black', system-ui; font-size: clamp(2.1rem, 6.4vw, 3.8rem); margin: 22px 0 14px; line-height: 1.05; letter-spacing: -.02em; }
-.subpage-hero p.sub { max-width: 720px; margin: 0 auto; color: var(--mut); font-size: 1.06rem; }
-section { padding: 50px 0; position: relative; z-index: 2; }
-section h2 { font-family: 'Arial Black', system-ui; font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.1; margin-bottom: 12px; letter-spacing: -.02em; }
-section p.lead { color: var(--mut); max-width: 760px; margin-bottom: 24px; font-size: 1.02rem; }
-.card { background: rgba(20,20,30,.55); border: 1px solid var(--line); border-radius: 18px; padding: 26px; backdrop-filter: blur(8px); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: 40px; font-weight: 700; font-size: .94rem; min-height: 48px; transition: .2s; cursor: pointer; border: 0; }
+.bg-overlay { position: fixed; inset: 0; background: radial-gradient(ellipse at center, transparent 0, rgba(0,0,0,.4) 70%, var(--bg) 100%); z-index: 1; pointer-events: none; }
+
+.deco-grid { position: fixed; inset: 0; pointer-events: none; z-index: 1; background-image: linear-gradient(#00f0ff11 1px, transparent 1px), linear-gradient(90deg, #00f0ff11 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(circle at center, black 0, transparent 70%); }
+
+/* Top banner — centered call buttons + lang toggle */
+.top-banner {
+  position: relative; z-index: 40;
+  background: #00f0ff;
+  color: #04060c;
+  padding: 10px 14px calc(10px + var(--safe-top));
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+}
+.cta-call {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px; min-height: 44px;
+  background: rgba(0,0,0,.18);
+  color: inherit;
+  border-radius: 999px;
+  font-weight: 800; font-size: .82rem;
+  border: 2px solid currentColor;
+  white-space: nowrap;
+  transition: transform .2s, background .2s;
+}
+.cta-call:hover { background: rgba(0,0,0,.35); transform: translateY(-1px); }
+.cta-call .cta-flag { font-size: .68rem; padding: 2px 7px; border: 1.5px solid currentColor; border-radius: 999px; font-weight: 900; letter-spacing: .08em; }
+.cta-call .cta-label { font-size: .8rem; font-weight: 700; letter-spacing: .04em; }
+.cta-call .cta-num { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .88rem; font-weight: 800; }
+
+.lang-toggle { display: inline-flex; align-items: stretch; height: 38px; border-radius: 999px; border: 2px solid currentColor; overflow: hidden; }
+.lang-toggle button { background: transparent; border: 0; color: inherit; padding: 0 14px; min-width: 44px; cursor: pointer; font-weight: 900; letter-spacing: .12em; font-family: inherit; font-size: .78rem; }
+.lang-toggle button.active { background: rgba(0,0,0,.35); }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--glass);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex; align-items: center; gap: 16px;
+  height: 68px; padding: 0 18px;
+  max-width: 1280px; margin: 0 auto;
+}
+.brand-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-width: 0; }
+.brand-logo img { width: 40px; height: 40px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+.brand-name { font-family: 'Orbitron',sans-serif; font-weight: 800; letter-spacing: .02em; line-height: 1.1; display: flex; flex-direction: column; font-size: .92rem; }
+.brand-name .brand-line1 { color: var(--ink); }
+.brand-name .brand-line2 { color: var(--accent); }
+
+.primary-nav {
+  display: flex; align-items: center; gap: 4px;
+  flex: 1; justify-content: center; flex-wrap: nowrap;
+  overflow: hidden;
+}
+.primary-nav a {
+  color: var(--mut); padding: 8px 10px; min-height: 44px;
+  display: inline-flex; align-items: center;
+  font-size: .82rem; font-weight: 600; letter-spacing: .02em;
+  white-space: nowrap;
+  border-radius: 8px;
+  transition: color .2s, background .2s;
+}
+.primary-nav a:hover, .primary-nav a.active { color: var(--accent); background: rgba(255,255,255,.04); }
+
+.burger { width: 48px; height: 48px; display: none; flex-direction: column; gap: 5px; align-items: center; justify-content: center; background: transparent; border: 0; }
+.burger span { width: 26px; height: 2px; background: var(--accent); transition: .2s; border-radius: 2px; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Responsive nav — hamburger on tablet/mobile */
+@media (max-width: 1100px) {
+  .primary-nav {
+    position: fixed; inset: 134px 0 auto 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--bg);
+    backdrop-filter: blur(20px);
+    padding: 12px 18px 28px;
+    transform: translateY(-130%); transition: transform .3s ease;
+    box-shadow: 0 24px 48px rgba(0,0,0,.5);
+    max-height: calc(100vh - 134px); overflow-y: auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .primary-nav.open { transform: translateY(0); }
+  .primary-nav a { padding: 16px 8px; border-bottom: 1px solid var(--line); font-size: 1.05rem; min-height: 56px; }
+  .primary-nav a:last-child { border-bottom: 0; }
+  .burger { display: inline-flex; margin-left: auto; }
+}
+@media (max-width: 760px) {
+  .header-inner { height: 64px; padding: 0 14px; }
+  .brand-name { font-size: .85rem; }
+  .top-banner { padding: 8px 10px calc(8px + var(--safe-top)); gap: 6px; }
+  .cta-call { padding: 7px 12px; min-height: 40px; font-size: .76rem; gap: 6px; }
+  .cta-call .cta-num { font-size: .82rem; }
+  .lang-toggle { height: 36px; }
+  .primary-nav { inset: 124px 0 auto 0; max-height: calc(100vh - 124px); }
+}
+@media (max-width: 480px) {
+  .header-inner { height: 60px; padding: 0 12px; }
+  .brand-name .brand-line2 { display: none; }
+  .brand-name { font-size: .8rem; }
+  .brand-logo img { width: 36px; height: 36px; }
+  .top-banner { padding: 7px 8px calc(7px + var(--safe-top)); gap: 5px; }
+  .cta-call { padding: 6px 10px; min-height: 38px; font-size: .7rem; }
+  .cta-call .cta-label { display: none; }
+  .cta-call .cta-num { font-size: .78rem; }
+  .cta-call .cta-flag { font-size: .62rem; padding: 1px 5px; }
+  .primary-nav { inset: 116px 0 auto 0; max-height: calc(100vh - 116px); }
+}
+
+/* Subpage hero */
+.subpage-hero { position: relative; z-index: 2; padding: clamp(48px, 8vw, 100px) 0 clamp(36px, 6vw, 60px); text-align: center; }
+.subpage-hero .container { max-width: 940px; }
+.eyebrow { display: inline-block; padding: 7px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
+.subpage-hero h1 { margin: 22px 0 14px; }
+h1, .subpage-hero h1 { text-shadow: 0 0 20px #00f0ff66; }
+.subpage-hero p.sub { max-width: 720px; margin: 0 auto; color: var(--mut); font-size: clamp(1rem, 2.2vw, 1.12rem); }
+
+section { padding: clamp(36px, 6vw, 64px) 0; position: relative; z-index: 2; }
+section h2 { margin-bottom: 14px; }
+section p.lead { color: var(--mut); max-width: 780px; margin-bottom: 24px; font-size: clamp(1rem, 2.2vw, 1.08rem); }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(14px, 4vw, 28px); position: relative; z-index: 2; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(12px, 2.4vw, 20px); }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(14px, 2.6vw, 22px); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(8px, 1.6vw, 14px); }
+
+.card { background: var(--glass); border: 1px solid var(--line); border-radius: var(--card-r); padding: clamp(20px, 3vw, 28px); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: transform .3s, border-color .3s, box-shadow .3s; }
+.card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+
+.partner-card { overflow: hidden; padding: 0; display: flex; flex-direction: column; }
+.partner-card .img-wrap { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--bg2); }
+.partner-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.partner-card:hover .img-wrap img { transform: scale(1.06); }
+.partner-card .img-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.55) 100%); }
+.partner-card .img-wrap .partner-name { position: absolute; left: 18px; bottom: 14px; z-index: 2; font-family: 'Orbitron',sans-serif; font-size: 1.3rem; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+.partner-card .body { padding: 22px; }
+.partner-card .locations { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+.partner-card .desc { color: var(--mut); font-size: .94rem; margin-bottom: 12px; }
+.partner-card .why { font-size: .88rem; color: var(--accent); font-weight: 700; }
+
+.gallery-tile { position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: var(--card-r); background: var(--bg2); border: 1px solid var(--line); cursor: zoom-in; }
+.gallery-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.gallery-tile:hover img { transform: scale(1.08); }
+.gallery-tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.4) 100%); opacity: 0; transition: opacity .3s; }
+.gallery-tile:hover::after { opacity: 1; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 28px; min-height: 48px;
+  border-radius: var(--btn-r);
+  font-weight: 800; font-size: .94rem;
+  text-decoration: none; border: 0;
+  cursor: pointer;
+  transition: transform .2s, filter .2s, background .2s, box-shadow .2s;
+  
+}
 .btn-primary { background: var(--accent); color: var(--bg); }
-.btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,.4); }
-.btn-ghost { border: 1px solid var(--line); color: var(--ink); background: transparent; }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-.input { background: rgba(20,20,30,.6); border: 1px solid var(--line); border-radius: 12px; padding: 14px; color: var(--ink); font-size: 1rem; font-family: inherit; }
+.btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.32); }
+.btn-ghost { border: 2px solid var(--accent); color: var(--accent); background: transparent; }
+.btn-ghost:hover { background: var(--accent); color: var(--bg); }
+
+.input { background: var(--bg2); border: 1px solid var(--line); border-radius: var(--card-r); padding: 14px; color: var(--ink); font-size: 1rem; font-family: inherit; min-height: 48px; -webkit-appearance: none; appearance: none; }
 .input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
-.eyebrow-acc { color: var(--accent); font-size: .7rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 800; }
-.row-stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 22px 0; }
-.row-stat .s { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
-.row-stat .s b { display: block; font-size: 1.7rem; color: var(--accent); font-weight: 800; line-height: 1.1; }
-.row-stat .s small { color: var(--mut); font-size: .8rem; }
+
+.eyebrow-acc { color: var(--accent); font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 800; }
+.row-stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 22px 0; }
+.row-stat .s { padding: 18px 14px; border: 1px solid var(--line); border-radius: var(--card-r); background: var(--glass); }
+.row-stat .s b { display: block; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--accent); font-weight: 800; line-height: 1.1; font-family: 'Orbitron',sans-serif; }
+.row-stat .s small { color: var(--mut); font-size: .82rem; }
 .list-clean { list-style: none; padding: 0; }
-.list-clean li { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--mut); }
+.list-clean li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--mut); }
 .list-clean li:last-child { border-bottom: 0; }
-.list-clean li::before { content: "▸"; color: var(--accent); margin-right: 10px; font-weight: 800; }
-.contact-strip { display: flex; gap: 14px; flex-wrap: wrap; padding: 18px; border: 1px solid var(--accent); border-radius: 16px; background: rgba(255,255,255,.03); margin: 20px 0; }
-.contact-strip a { color: var(--accent); font-weight: 700; }
-footer { padding: 60px 0 100px; border-top: 1px solid var(--line); margin-top: 60px; color: var(--mut); font-size: .9rem; position: relative; z-index: 2; background: rgba(0,0,0,.4); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 30px; }
-.footer-grid h4 { font-size: .85rem; text-transform: uppercase; letter-spacing: .15em; color: var(--ink); margin-bottom: 12px; }
+.list-clean li::before { content: "▸ "; color: var(--accent); font-weight: 800; }
+.contact-strip { display: flex; gap: 14px; flex-wrap: wrap; padding: 16px 18px; border: 1px solid var(--accent); border-radius: var(--card-r); background: var(--glass); margin: 20px 0; }
+.contact-strip a { color: var(--accent); font-weight: 800; }
+
+details.card summary { cursor: pointer; font-weight: 800; font-size: 1.05rem; min-height: 32px; list-style: none; padding-right: 20px; position: relative; }
+details.card summary::-webkit-details-marker { display: none; }
+details.card summary::after { content: "+"; position: absolute; right: 4px; top: 0; color: var(--accent); font-size: 1.4rem; transition: transform .2s; }
+details.card[open] summary::after { transform: rotate(45deg); }
+
+/* Footer */
+.site-footer { padding: clamp(40px, 6vw, 60px) 0 clamp(80px, 9vw, 100px); border-top: 1px solid var(--line); margin-top: 60px; background: rgba(0,0,0,.4); color: var(--mut); position: relative; z-index: 2; font-size: .9rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: clamp(20px, 3vw, 32px); margin-bottom: 26px; }
+.footer-grid h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .18em; color: var(--ink); margin-bottom: 12px; font-family: 'Orbitron',sans-serif; }
 .footer-grid a { display: block; padding: 4px 0; color: var(--mut); }
 .footer-grid a:hover { color: var(--accent); }
-.footer-bottom { display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 12px; font-size: .8rem; }
-@media (max-width: 980px) { .nav-cta { display: none; } .footer-grid { grid-template-columns: 1fr 1fr; } .subpage-hero { padding: 70px 0 40px; } body { padding-bottom: 72px; } }
+.footer-bottom { padding-top: 24px; border-top: 1px solid var(--line); font-size: .78rem; text-align: center; }
+@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+
+/* Sticky mobile bottom bar */
+.sticky-call { display: none; position: fixed; left: max(12px, var(--safe-bottom)); right: 12px; bottom: calc(12px + var(--safe-bottom)); z-index: 50; gap: 8px; }
+.sticky-call a { flex: 1; padding: 14px 10px; min-height: 52px; border-radius: 999px; font-weight: 800; font-size: .88rem; text-align: center; text-decoration: none; box-shadow: 0 16px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06); display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.sticky-call a.en { background: var(--accent); color: var(--bg); }
+.sticky-call a.es { background: var(--bg2); color: var(--ink); border: 2px solid var(--accent); }
+.sticky-call .flag { font-size: .68rem; padding: 1px 6px; border: 1px solid currentColor; border-radius: 999px; font-weight: 900; }
+@media (max-width: 980px) { .sticky-call { display: flex; } }
+
+@media (max-width: 480px) {
+  section { padding: clamp(28px, 5vw, 48px) 0; }
+  .subpage-hero { padding: clamp(36px, 6vw, 70px) 0 clamp(24px, 4vw, 40px); }
+  .row-stat { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .row-stat .s { padding: 14px 10px; }
+  .row-stat .s b { font-size: 1.3rem; }
+}
+
+/* ============ ANIMATED STAT COUNTERS ============ */
+.stats-band { padding: clamp(28px, 5vw, 56px) 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(10px, 2vw, 18px); }
+.stat-card { padding: clamp(22px, 3vw, 32px) clamp(16px, 2.4vw, 22px); border: 1px solid var(--line); border-radius: var(--card-r); background: var(--glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); position: relative; overflow: hidden; transition: transform .3s, border-color .3s; text-align: center; }
+.stat-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.stat-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.stat-card.in::before, .stat-card:hover::before { transform: scaleY(1); }
+.stat-card .count { display: block; font-size: clamp(2.2rem, 7vw, 4rem); font-weight: 900; color: var(--accent); line-height: 1; font-family: 'Orbitron',sans-serif; letter-spacing: -.02em; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+.stat-card .label { display: block; font-size: clamp(.78rem, 1.6vw, .92rem); color: var(--mut); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.stat-card .sublabel { display: block; font-size: .7rem; color: var(--mut); opacity: .65; margin-top: 4px; }
+
+/* ============ RESPONSIVE LOGO (mobile-first) ============ */
+.brand-logo img { width: clamp(34px, 4.6vw, 44px); height: clamp(34px, 4.6vw, 44px); border-radius: clamp(8px, 1vw, 11px); object-fit: cover; flex-shrink: 0; box-shadow: 0 6px 18px rgba(0,0,0,.25); border: 1px solid var(--line); }
+.brand-name { font-size: clamp(.78rem, 1.7vw, .98rem); }
+@media (max-width: 1180px) { .brand-name .brand-line2 { font-size: .82em; } }
+@media (max-width: 760px) { .brand-logo img { width: 38px; height: 38px; } .brand-name { font-size: .85rem; } }
+@media (max-width: 480px) { .brand-logo img { width: 34px; height: 34px; border-radius: 8px; } .brand-name .brand-line1 { font-size: .82rem; } .brand-name .brand-line2 { display: none; } }
+@media (max-width: 360px) { .brand-logo img { width: 32px; height: 32px; } .brand-name { display: none; } }
+
+/* ============ PHONES NEVER HIDDEN ============ */
+.cta-call .cta-num { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-weight: 900; }
+@media (max-width: 480px) { .cta-call .cta-num { font-size: .82rem; } }
+@media (max-width: 360px) { .cta-call { padding: 6px 8px; } .cta-call .cta-num { font-size: .78rem; } }
+
+/* ============ UPGRADED CONTACT FORM ============ */
+.form-grid { display: grid; gap: 14px; }
+.form-grid .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 540px) { .form-grid .row-2 { grid-template-columns: 1fr; } }
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+.field-group label { font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
+.field-group small.hint { font-size: .76rem; color: var(--mut); }
+.radio-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.radio-pill { position: relative; cursor: pointer; }
+.radio-pill input { position: absolute; opacity: 0; pointer-events: none; }
+.radio-pill span { display: inline-block; padding: 10px 18px; min-height: 44px; line-height: 24px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .88rem; font-weight: 700; color: var(--mut); transition: all .2s; user-select: none; }
+.radio-pill input:checked + span { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.radio-pill:hover span { border-color: var(--accent); color: var(--accent); }
+.form-cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+.form-cta .privacy { font-size: .78rem; color: var(--mut); flex: 1; min-width: 200px; }
 </style>
 </head>
 <body class="lang-en">
 <video class="bg-video" autoplay muted loop playsinline poster="/assets/logo.jpeg" aria-hidden="true"><source src="/assets/bg.mp4" type="video/mp4"></video>
 <div class="bg-overlay"></div>
-<header>
-  <div class="nav">
-    <a class="logo" href="/"><img src="/assets/logo.jpeg" alt="American Barber Institute"><span>American Barber Institute</span></a>
-    <nav class="nav-links"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class="active"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
-    <div class="call-row">
-      <a class="call-btn" href="tel:2122902289" aria-label="Call English"><span class="flag">EN</span><span class="lang-en">Call</span><span class="lang-es">Llama</span><span class="num">(212) 290-2289</span></a>
-      <a class="call-btn" href="tel:2122900278" aria-label="Llamar Español"><span class="flag">ES</span><span class="lang-en">Call ES</span><span class="lang-es">Llama</span><span class="num">(212) 290-0278</span></a>
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-label="English">EN</button>
-        <button type="button" data-lang="es" aria-label="Español">ES</button>
-      </div>
-    </div>
-    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<div class="deco-grid" aria-hidden="true"></div>
+<div class="top-banner">
+  <a class="cta-call cta-en" href="tel:2122902289" aria-label="Call English admissions">
+    <span class="cta-flag">EN</span>
+    <span class="cta-label"><span class="lang-en">Call Admissions</span><span class="lang-es">Llama a Admisiones</span></span>
+    <span class="cta-num">(212) 290-2289</span>
+  </a>
+  <a class="cta-call cta-es" href="tel:2122900278" aria-label="Call Spanish admissions">
+    <span class="cta-flag">ES</span>
+    <span class="cta-label"><span class="lang-en">Llama en Español</span><span class="lang-es">Llama en Español</span></span>
+    <span class="cta-num">(212) 290-0278</span>
+  </a>
+  <div class="lang-toggle" role="group" aria-label="Language toggle">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="es">ES</button>
+  </div>
+</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand-logo" href="/" aria-label="American Barber Institute home">
+      <img src="/assets/logo.jpeg" alt="ABI">
+      <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
+    </a>
+    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class="active"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
-<section class="subpage-hero">
-  <div class="wrap">
-    <div class="eyebrow"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></div>
-    <h1><span class="lang-en">Everything you need to start.</span><span class="lang-es">Todo lo que necesitas para empezar.</span></h1>
-    <p class="sub"><span class="lang-en">Veterans benefits. ACCES-VR. NY State licensing. Tools.</span><span class="lang-es">Beneficios para Veteranos. ACCES-VR. Licencias del Estado de NY. Herramientas.</span></p>
-  </div>
-</section>
-<section><div class="wrap"><div class="grid-2"><div class="card"><h3 style="font-size:1.25rem;margin-bottom:10px"><span class="lang-en">Veterans & GI Bill® Benefits</span><span class="lang-es">Beneficios para Veteranos y GI Bill®</span></h3><p style="color:var(--mut);font-size:1rem;line-height:1.7;margin-bottom:14px"><span class="lang-en">ABI is approved to certify enrollment for veteran education benefits. We accept:</span><span class="lang-es">ABI está aprobado para certificar la inscripción para los beneficios educativos de veteranos. Aceptamos:</span></p><ul class="list-clean"><li><span class="lang-en">Post-9/11 GI Bill® (Chapter 33)</span><span class="lang-es">GI Bill® Post-9/11 (Capítulo 33)</span></li><li><span class="lang-en">VR&E — Vocational Rehab & Employment (Chapter 31)</span><span class="lang-es">VR&E — Rehabilitación Vocacional & Empleo (Capítulo 31)</span></li><li><span class="lang-en">Montgomery GI Bill® (Active Duty & Reserve)</span><span class="lang-es">Montgomery GI Bill® (Servicio Activo & Reserva)</span></li><li><span class="lang-en">DEA — Dependents' Educational Assistance (Chapter 35)</span><span class="lang-es">DEA — Asistencia Educativa para Dependientes (Capítulo 35)</span></li></ul><p style="color:var(--mut);font-size:.92rem;margin-top:14px"><span class="lang-en">Talk to admissions about certifying your benefits before your start date.</span><span class="lang-es">Habla con admisiones para certificar tus beneficios antes de tu fecha de inicio.</span></p></div><div class="card"><h3 style="font-size:1.25rem;margin-bottom:10px">ACCES-VR</h3><p style="color:var(--mut);font-size:1rem;line-height:1.7;margin-bottom:14px"><span class="lang-en">ACCES-VR is a New York State program that supports individuals with documented disabilities in obtaining and maintaining employment.</span><span class="lang-es">ACCES-VR es un programa del Estado de Nueva York que apoya a personas con discapacidades documentadas para obtener y mantener empleo.</span></p><ul class="list-clean"><li><span class="lang-en">Coverage may include tuition, tools, and supplies</span><span class="lang-es">La cobertura puede incluir matrícula, herramientas y suministros</span></li><li><span class="lang-en">Contact your local ACCES-VR office to begin</span><span class="lang-es">Contacta tu oficina local de ACCES-VR para comenzar</span></li><li><span class="lang-en">ABI assists with referral and certification</span><span class="lang-es">ABI ayuda con la referencia y certificación</span></li></ul></div><div class="card"><h3 style="font-size:1.25rem;margin-bottom:10px"><span class="lang-en">NY State Board of Barbering</span><span class="lang-es">Junta Estatal de Barbería de NY</span></h3><ul class="list-clean"><li><span class="lang-en">500-hour program covers written and practical exam prep</span><span class="lang-es">El programa de 500 horas cubre la preparación del examen escrito y práctico</span></li><li><span class="lang-en">Master Barber License required to practice professionally in New York</span><span class="lang-es">Se requiere la Licencia de Maestro Barbero para ejercer profesionalmente en Nueva York</span></li></ul></div><div class="card"><h3 style="font-size:1.25rem;margin-bottom:10px"><span class="lang-en">Tools & Supplies</span><span class="lang-es">Herramientas & Suministros</span></h3><ul class="list-clean"><li><span class="lang-en">Students purchase their own tools, books, and supplies</span><span class="lang-es">Los estudiantes compran sus propias herramientas, libros y suministros</span></li><li><span class="lang-en">ABI provides a detailed tools list at registration</span><span class="lang-es">ABI proporciona una lista detallada de herramientas en la inscripción</span></li><li><span class="lang-en">Buy from ABI or approved suppliers</span><span class="lang-es">Compra a ABI o a proveedores aprobados</span></li></ul></div></div></div></section>
-<section><div class="wrap" style="text-align:center"><h2 style="margin-bottom:14px"><span class="lang-en">Still have questions?</span><span class="lang-es">¿Aún tienes preguntas?</span></h2><a class="btn btn-primary" href="/contact"><span class="lang-en">Talk to Admissions</span><span class="lang-es">Habla con Admisiones</span></a> <a class="btn btn-ghost" href="/faq" style="margin-left:8px"><span class="lang-en">Read FAQ</span><span class="lang-es">Leer Preguntas</span></a></div></section>
-<footer>
-  <div class="wrap">
+<main>
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="eyebrow"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></div>
+      <h1><span class="lang-en">Everything you need to start.</span><span class="lang-es">Todo lo que necesitas para empezar.</span></h1>
+      <p class="sub"><span class="lang-en">Veterans benefits. ACCES-VR. NY State licensing. Tools.</span><span class="lang-es">Beneficios para Veteranos. ACCES-VR. Licencias. Herramientas.</span></p>
+    </div>
+  </section>
+  <section><div class="container"><div class="grid-2"><div class="card"><h3 style="margin-bottom:10px"><span class="lang-en">Veterans & GI Bill® Benefits</span><span class="lang-es">Beneficios para Veteranos y GI Bill®</span></h3><p style="color:var(--mut);margin-bottom:14px"><span class="lang-en">ABI is approved to certify enrollment for veteran education benefits. We accept:</span><span class="lang-es">ABI está aprobado para certificar la inscripción para los beneficios educativos de veteranos. Aceptamos:</span></p><ul class="list-clean"><li><span class="lang-en">Post-9/11 GI Bill® (Chapter 33)</span><span class="lang-es">GI Bill® Post-9/11 (Capítulo 33)</span></li><li><span class="lang-en">VR&E — Vocational Rehab & Employment (Chapter 31)</span><span class="lang-es">VR&E — Rehabilitación Vocacional & Empleo (Capítulo 31)</span></li><li><span class="lang-en">Montgomery GI Bill® (Active Duty & Reserve)</span><span class="lang-es">Montgomery GI Bill® (Servicio Activo & Reserva)</span></li><li><span class="lang-en">DEA — Dependents' Educational Assistance (Chapter 35)</span><span class="lang-es">DEA — Asistencia Educativa para Dependientes (Capítulo 35)</span></li></ul><p style="color:var(--mut);font-size:.92rem;margin-top:14px"><span class="lang-en">Talk to admissions about certifying your benefits before your start date.</span><span class="lang-es">Habla con admisiones para certificar tus beneficios antes de tu fecha de inicio.</span></p></div><div class="card"><h3 style="margin-bottom:10px">ACCES-VR</h3><p style="color:var(--mut);margin-bottom:14px"><span class="lang-en">ACCES-VR is a New York State program that supports individuals with documented disabilities in obtaining and maintaining employment.</span><span class="lang-es">ACCES-VR es un programa del Estado de Nueva York que apoya a personas con discapacidades documentadas para obtener y mantener empleo.</span></p><ul class="list-clean"><li><span class="lang-en">Coverage may include tuition, tools, and supplies</span><span class="lang-es">La cobertura puede incluir matrícula, herramientas y suministros</span></li><li><span class="lang-en">Contact your local ACCES-VR office to begin</span><span class="lang-es">Contacta tu oficina local de ACCES-VR para comenzar</span></li><li><span class="lang-en">ABI assists with referral and certification</span><span class="lang-es">ABI ayuda con la referencia y certificación</span></li></ul></div><div class="card"><h3 style="margin-bottom:10px"><span class="lang-en">NY State Board of Barbering</span><span class="lang-es">Junta Estatal de Barbería de NY</span></h3><ul class="list-clean"><li><span class="lang-en">500-hour program covers written and practical exam prep</span><span class="lang-es">El programa de 500 horas cubre la preparación del examen escrito y práctico</span></li><li><span class="lang-en">Master Barber License required to practice professionally in New York</span><span class="lang-es">Se requiere la Licencia de Maestro Barbero para ejercer profesionalmente en Nueva York</span></li></ul></div><div class="card"><h3 style="margin-bottom:10px"><span class="lang-en">Tools & Supplies</span><span class="lang-es">Herramientas & Suministros</span></h3><ul class="list-clean"><li><span class="lang-en">Students purchase their own tools, books, and supplies</span><span class="lang-es">Los estudiantes compran sus propias herramientas, libros y suministros</span></li><li><span class="lang-en">ABI provides a detailed tools list at registration</span><span class="lang-es">ABI proporciona una lista detallada de herramientas en la inscripción</span></li><li><span class="lang-en">Buy from ABI or approved suppliers</span><span class="lang-es">Compra a ABI o a proveedores aprobados</span></li></ul></div></div></div></section>
+<section><div class="container" style="text-align:center"><h2 style="margin-bottom:14px"><span class="lang-en">Still have questions?</span><span class="lang-es">¿Aún tienes preguntas?</span></h2><a class="btn btn-primary" href="/contact"><span class="lang-en">Talk to Admissions</span><span class="lang-es">Habla con Admisiones</span></a> <a class="btn btn-ghost" href="/faq" style="margin-left:8px"><span class="lang-en">Read FAQ</span><span class="lang-es">Leer Preguntas</span></a></div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
     <div class="footer-grid">
       <div>
         <h4>American Barber Institute</h4>
-        <p style="margin-bottom:10px"><span class="lang-en">New York's only dedicated barber school. 30+ years. 10,000+ graduates.</span><span class="lang-es">La única escuela de barbería dedicada en NY. 30+ años. 10,000+ graduados.</span></p>
-        <p style="font-size:.85rem"><span class="lang-en">Licensed by NY State Department of Education (BPSS). GI Bill® accepted. ACCES-VR accepted.</span><span class="lang-es">Licenciada por el Departamento de Educación del Estado de NY (BPSS). GI Bill® aceptado. ACCES-VR aceptado.</span></p>
+        <p><span class="lang-en">New York's only dedicated barber school. 30+ years. 10,000+ graduates.</span><span class="lang-es">La única escuela de barbería dedicada en NY. 30+ años. 10,000+ graduados.</span></p>
+        <p style="margin-top:10px;font-size:.85rem"><span class="lang-en">Licensed by NY State Dept. of Education (BPSS). GI Bill® · ACCES-VR.</span><span class="lang-es">Licenciada por el Depto. de Educación de NY (BPSS). GI Bill® · ACCES-VR.</span></p>
       </div>
       <div>
-        <h4><span class="lang-en">School</span><span class="lang-es">Escuela</span></h4>
-        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a>
-        <a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a>
-        <a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a>
-        <a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a>
-      </div>
-      <div>
-        <h4><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></h4>
-        <a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a>
-        <a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a>
-        <a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a>
-        <a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a>
-        <a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a>
+        <h4><span class="lang-en">Pages</span><span class="lang-es">Páginas</span></h4>
+        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
       </div>
       <div>
         <h4><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4>
@@ -138,98 +398,29 @@ footer { padding: 60px 0 100px; border-top: 1px solid var(--line); margin-top: 6
         <a href="tel:7186760640">Bronx · (718) 676-0640</a>
         <a href="mailto:admission@abi.edu">admission@abi.edu</a>
       </div>
+      <div>
+        <h4><span class="lang-en">Campuses</span><span class="lang-es">Campus</span></h4>
+        <p>48 W 39th St, NY 10018</p>
+        <p>121 Westchester Sq, Bronx 10461</p>
+        <p style="margin-top:8px;font-size:.85rem">Mon–Fri 8AM–8PM · Sat–Sun 9AM–7PM</p>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 American Barber Institute. <span class="lang-en">All rights reserved.</span><span class="lang-es">Todos los derechos reservados.</span></span>
-      <span><span class="lang-en">Licensed by NY State Dept. of Education · GI Bill® accepted</span><span class="lang-es">Licenciada por el Depto. de Educación de NY · GI Bill® aceptado</span></span>
     </div>
   </div>
 </footer>
-<div class="sticky-call">
-  <a class="en" href="tel:2122902289" aria-label="Call English"><span class="flag">EN</span> (212) 290-2289</a>
-  <a class="es" href="tel:2122900278" aria-label="Llamar Español"><span class="flag">ES</span> (212) 290-0278</a>
+<div class="sticky-call" role="region" aria-label="Quick call">
+  <a class="en" href="tel:2122902289"><span class="flag">EN</span> (212) 290-2289</a>
+  <a class="es" href="tel:2122900278"><span class="flag">ES</span> (212) 290-0278</a>
 </div>
-<style>
-/* mobile-first responsive + bilingual switcher + dual call buttons */
-:root { --abi-touch: 44px; --abi-accent: #ff2bd6; }
-html { -webkit-text-size-adjust: 100%; }
-body { overflow-x: hidden; }
-img { max-width: 100%; height: auto; display: block; }
-video { max-width: 100%; height: auto; }
-button, .btn, a.btn, .nav-cta, a.nav-cta { min-height: var(--abi-touch); display: inline-flex; align-items: center; justify-content: center; }
-/* Bilingual: hide opposite language. Default = lang-en. */
-body.lang-en .lang-es, body.lang-es .lang-en { display: none !important; }
-.lang-en, .lang-es { /* keep default display */ }
-
-/* Language toggle button — top right */
-.lang-toggle { display: inline-flex; align-items: center; height: 36px; border-radius: 30px; border: 1px solid var(--abi-accent); overflow: hidden; font-size: .78rem; font-weight: 800; letter-spacing: .12em; }
-.lang-toggle button { background: transparent; border: 0; color: var(--abi-accent); padding: 0 12px; height: 34px; cursor: pointer; font-weight: 800; letter-spacing: .12em; font-family: inherit; }
-.lang-toggle button.active { background: var(--abi-accent); color: #04060c; }
-.lang-toggle button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
-
-/* Dual call buttons in header */
-.call-row { display: flex; gap: 8px; align-items: center; flex-wrap: nowrap; }
-.call-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 30px; border: 1px solid var(--abi-accent); color: var(--abi-accent); font-weight: 700; font-size: .78rem; text-decoration: none; min-height: 38px; transition: .2s; white-space: nowrap; }
-.call-btn:hover { background: var(--abi-accent); color: #04060c; }
-.call-btn .flag { font-size: .7rem; opacity: .85; padding: 2px 6px; border: 1px solid currentColor; border-radius: 10px; }
-.call-btn .num { font-family: ui-monospace, monospace; font-size: .82rem; }
-
-.burger { width: var(--abi-touch); height: var(--abi-touch); display: none; flex-direction: column; gap: 5px; cursor: pointer; align-items: center; justify-content: center; background: transparent; border: 0; padding: 0; }
-.burger span { width: 26px; height: 2px; background: currentColor; transition: .2s; }
-.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-@media (max-width: 1100px) {
-  .call-btn .num { display: none; }
-  .call-btn .flag { font-size: .68rem; }
-}
-@media (max-width: 980px) {
-  .nav-links { position: fixed !important; inset: 70px 0 auto 0 !important; flex-direction: column !important; align-items: stretch !important; gap: 0 !important; background: rgba(8,8,14,.97) !important; backdrop-filter: blur(20px); padding: 12px 18px 22px !important; transform: translateY(-110%); transition: transform .28s ease; box-shadow: 0 18px 36px rgba(0,0,0,.45); z-index: 24; display: flex !important; max-height: calc(100vh - 70px); overflow-y: auto; }
-  .nav-links a { padding: 14px 6px !important; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 1rem !important; min-height: var(--abi-touch); display: flex !important; align-items: center; }
-  .nav-links a:last-child { border-bottom: 0; }
-  .nav-links.open { transform: translateY(0); }
-  .burger { display: inline-flex; color: var(--abi-accent); }
-  .call-row { gap: 4px; }
-  .call-btn { padding: 6px 10px; min-height: 36px; font-size: .72rem; }
-  .call-btn .num { display: none; }
-  h1 { font-size: clamp(2.1rem, 9vw, 3.4rem) !important; }
-  h2 { font-size: clamp(1.55rem, 6.4vw, 2.2rem) !important; }
-  .wrap, .container { padding-left: 18px !important; padding-right: 18px !important; }
-  section { padding-top: 48px !important; padding-bottom: 48px !important; }
-  .hero { min-height: 86vh !important; padding-top: 80px !important; padding-bottom: 40px !important; }
-  .btn-row, .actions, .hero-actions { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; }
-  .btn-row > *, .actions > *, .hero-actions > * { width: 100%; text-align: center; }
-  .grid, [class*="grid"] { grid-template-columns: 1fr !important; }
-  .ticker { font-size: .65rem !important; }
-  body { padding-bottom: 72px; }
-  .sticky-call { display: flex !important; }
-}
-@media (max-width: 480px) {
-  .wrap, .container { padding-left: 14px !important; padding-right: 14px !important; }
-  .call-btn span:not(.flag) { display: none; }
-  .call-btn .flag { margin: 0; }
-}
-@media (min-width: 981px) { .burger { display: none !important; } }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; } }
-.bg-video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: .14; pointer-events: none; }
-@media (max-width: 768px) { .bg-video { opacity: .08; } }
-.hero-logo-mark { max-width: 84px; max-height: 84px; border-radius: 20px; }
-
-/* Sticky call bar at bottom on mobile */
-.sticky-call { display: none; position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 50; gap: 8px; align-items: stretch; }
-.sticky-call a { flex: 1; padding: 14px 12px; border-radius: 999px; font-weight: 800; font-size: .9rem; text-align: center; text-decoration: none; box-shadow: 0 16px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06); display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
-.sticky-call a.en { background: var(--abi-accent); color: #06070c; }
-.sticky-call a.es { background: #1a1d24; color: #fff; border: 1px solid var(--abi-accent); }
-</style>
 <script>
 (function() {
-  // ── Language switcher ─────────────────────────────────
+  // Language switcher
   var saved = localStorage.getItem('abi_lang') || 'en';
   document.body.classList.remove('lang-en','lang-es');
   document.body.classList.add('lang-' + saved);
   document.documentElement.lang = saved;
-  // wire up toggle buttons (any with .lang-toggle button)
   function setLang(lang) {
     document.body.classList.remove('lang-en','lang-es');
     document.body.classList.add('lang-' + lang);
@@ -244,23 +435,64 @@ body.lang-en .lang-es, body.lang-es .lang-en { display: none !important; }
     if (b.getAttribute('data-lang') === saved) b.classList.add('active');
   });
 
-  // ── Hamburger ─────────────────────────────────
-  var nav = document.querySelector('.nav-links');
-  if (!nav) return;
+  // Hamburger
+  var nav = document.querySelector('.primary-nav');
   var burger = document.querySelector('.burger');
-  if (!burger) {
-    burger = document.createElement('button');
-    burger.className = 'burger';
-    burger.setAttribute('aria-label','Toggle navigation');
-    burger.setAttribute('aria-expanded','false');
-    burger.innerHTML = '<span></span><span></span><span></span>';
-    var nw = document.querySelector('header .nav') || document.querySelector('header > div') || document.querySelector('header');
-    if (nw) nw.appendChild(burger);
+  if (nav && burger) {
+    function close() { nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow = ''; }
+    burger.addEventListener('click', function() {
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true':'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    nav.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', close); });
+    document.addEventListener('keydown', function(e) { if (e.key==='Escape') close(); });
   }
-  function cl(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
-  burger.addEventListener('click', function(){ var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o ? 'true':'false'); });
-  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', cl); });
-  document.addEventListener('keydown', function(e){ if (e.key==='Escape') cl(); });
+
+  // Spotlight follow (only used by noir-spotlight decoration)
+  if (document.querySelector('.deco-spotlight')) {
+    var el = document.querySelector('.deco-spotlight');
+    document.addEventListener('mousemove', function(e) {
+      el.style.setProperty('--spot-x', e.clientX + 'px');
+      el.style.setProperty('--spot-y', e.clientY + 'px');
+    });
+  }
+
+  // Reveal on scroll
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('reveal'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('section, .card, .row-stat .s').forEach(function(el) { io.observe(el); });
+  }
+
+  // Animated counters
+  if ('IntersectionObserver' in window) {
+    var counters = document.querySelectorAll('.stat-card .count[data-target]');
+    var countObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        var suffix = el.getAttribute('data-suffix') || '';
+        var prefix = el.getAttribute('data-prefix') || '';
+        var dur = 1400;
+        var start = performance.now();
+        el.parentElement.classList.add('in');
+        function step(t) {
+          var p = Math.min(1, (t - start) / dur);
+          var eased = 1 - Math.pow(1 - p, 3);
+          var n = Math.floor(target * eased);
+          el.textContent = prefix + n.toLocaleString() + suffix;
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = prefix + target.toLocaleString() + suffix;
+        }
+        requestAnimationFrame(step);
+        countObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function(c) { countObs.observe(c); });
+  }
 })();
 </script>
 </body>
