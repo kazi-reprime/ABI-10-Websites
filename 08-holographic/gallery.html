@@ -339,6 +339,119 @@ details.card[open] summary::after { transform: rotate(45deg); }
 .radio-pill:hover span { border-color: var(--accent); color: var(--accent); }
 .form-cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
 .form-cta .privacy { font-size: .78rem; color: var(--mut); flex: 1; min-width: 200px; }
+.hc-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.hc-pill { display: inline-block; padding: 9px 16px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; color: var(--mut); background: var(--glass); transition: border-color .2s, color .2s; }
+.hc-pill:hover { border-color: var(--accent); color: var(--accent); }
+.media-band{position:relative;z-index:2;padding:clamp(36px,6vw,72px) 0}.media-band .m-head{max-width:760px;margin:0 auto clamp(20px,3vw,34px);text-align:center}.media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}.media-band .m-head h2{margin:10px 0}.media-band .m-head p{color:var(--mut);max-width:640px;margin:0 auto}.m-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(12px,2vw,18px)}.m-tile{position:relative;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);aspect-ratio:4/3;opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}.m-tile.shown{opacity:1}.m-tile .m-media{width:100%;height:100%;object-fit:cover;display:block}.m-tile .m-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:4;font-size:.8rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75);opacity:0;transform:translateY(6px);transition:.3s}.m-tile::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:opacity .3s}.m-tile:hover::after{opacity:1}.m-tile:hover .m-cap{opacity:1;transform:none}.m-vid::before{content:'\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1rem;border:2px solid rgba(255,255,255,.75);transition:.3s;pointer-events:none}.m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}.m-vid.playing::before{opacity:0}@media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}.ms-glass-rotate .m-grid{perspective:1200px}.ms-glass-rotate .m-tile{border-radius:16px;transform:rotateY(22deg) translateY(24px);transform-origin:left}.ms-glass-rotate .m-tile.shown{transform:none}.ms-glass-rotate .m-tile::after{background:linear-gradient(120deg,color-mix(in srgb, var(--accent) 20%, transparent),transparent 40%,color-mix(in srgb, var(--accent2) 20%, transparent));opacity:.55}.ms-glass-rotate .m-tile:hover{transform:rotateY(-8deg);box-shadow:0 20px 50px color-mix(in srgb, var(--accent) 25%, transparent)}
+</style>
+<style id="abi-toggle-custom">
+/* ===== Iridescent Glass language toggle — frosted holographic capsule ===== */
+.lang-toggle{
+  position:relative;
+  display:inline-flex;
+  align-items:stretch;
+  height:38px;
+  padding:3px;
+  gap:2px;
+  border-radius:999px;
+  overflow:hidden;
+  isolation:isolate;
+  border:1px solid rgba(124,232,255,.40);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.02)),
+    rgba(12,11,26,.55);
+  backdrop-filter:blur(12px) saturate(1.4);
+  -webkit-backdrop-filter:blur(12px) saturate(1.4);
+  box-shadow:
+    0 6px 22px rgba(8,6,24,.45),
+    inset 0 1px 0 rgba(255,255,255,.22);
+}
+/* holographic sheen — slow drifting aurora behind the buttons */
+.lang-toggle::before{
+  content:"";
+  position:absolute; inset:-40%;
+  z-index:0; pointer-events:none;
+  background:
+    conic-gradient(from 0deg,
+      rgba(124,232,255,.35), rgba(167,139,250,.30),
+      rgba(34,211,238,.28),  rgba(124,232,255,.35));
+  filter:blur(10px);
+  opacity:.55;
+  animation:abiHoloSpin 9s linear infinite;
+}
+/* thin top-edge light streak */
+.lang-toggle::after{
+  content:"";
+  position:absolute; left:6%; right:6%; top:0; height:42%;
+  z-index:1; pointer-events:none;
+  border-radius:999px;
+  background:linear-gradient(180deg, rgba(255,255,255,.30), transparent);
+  opacity:.6;
+}
+@keyframes abiHoloSpin{ to{ transform:rotate(1turn); } }
+
+.lang-toggle button{
+  position:relative;
+  z-index:2;
+  background:transparent;
+  border:0;
+  color:rgba(255,255,255,.82);
+  padding:0 16px;
+  min-width:46px;
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:900;
+  font-size:.74rem;
+  letter-spacing:.16em;
+  border-radius:999px;
+  transition:color .25s ease, transform .15s ease, text-shadow .25s ease;
+}
+.lang-toggle button:hover{ color:#fff; transform:translateY(-1px); }
+.lang-toggle button:focus-visible{
+  outline:2px solid #7ce8ff;
+  outline-offset:2px;
+}
+
+/* active = glowing iridescent ring + frosted fill */
+.lang-toggle button.active{
+  color:#06121a;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
+  background:
+    linear-gradient(135deg, #7ce8ff 0%, #a78bfa 55%, #22d3ee 100%);
+  box-shadow:
+    0 0 0 1.5px rgba(124,232,255,.85),
+    0 0 14px rgba(124,232,255,.55),
+    0 0 26px rgba(167,139,250,.40),
+    inset 0 1px 0 rgba(255,255,255,.55);
+}
+@media (prefers-reduced-motion: reduce){
+  .lang-toggle::before{ animation:none; }
+}
+</style>
+<style id="abi-fix-custom">
+/* ===== Layout fix: desktop nav clipping (1101-1280px) =====
+   Above the 1100px hamburger breakpoint the inline .primary-nav holds all
+   11 links inside flex:1 + overflow:hidden, alongside the brand and two
+   phone CTAs + toggle. On narrower desktops the row overflows and the last
+   links (FAQ / Contact) are silently clipped. Tighten spacing and allow
+   graceful horizontal scroll so every link stays reachable. */
+@media (min-width:1101px) and (max-width:1280px){
+  .primary-nav{
+    overflow-x:auto;
+    overflow-y:hidden;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    justify-content:flex-start;
+    -webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,#000 92%,transparent);
+  }
+  .primary-nav::-webkit-scrollbar{ display:none; }
+  .primary-nav a{
+    padding:8px 7px;
+    font-size:.78rem;
+    letter-spacing:0;
+  }
+}
 </style>
 </head>
 <body class="lang-en">
@@ -367,7 +480,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       <img src="/assets/logo.jpeg" alt="ABI">
       <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
     </a>
-    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class="active"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class="active"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -381,7 +494,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       <p class="sub"><span class="lang-en">A glimpse inside the American Barber Institute. Real students. Real chairs. Real fades.</span><span class="lang-es">Un vistazo al interior de American Barber Institute. Estudiantes reales. Sillas reales. Degradados reales.</span></p>
     </div>
   </section>
-  <section><div class="container"><div class="gallery-grid"><a class="gallery-tile" href="/assets/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902051735-whatsapp-image-2026-05-02-at-10.11.12-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902051735-whatsapp-image-2026-05-02-at-10.11.12-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902052974-whatsapp-image-2026-05-02-at-10.11.45-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902052974-whatsapp-image-2026-05-02-at-10.11.45-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902054092-whatsapp-image-2026-05-02-at-10.12.00-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902054092-whatsapp-image-2026-05-02-at-10.12.00-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902054817-whatsapp-image-2026-05-02-at-10.12.11-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902054817-whatsapp-image-2026-05-02-at-10.12.11-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902055856-whatsapp-image-2026-05-02-at-10.12.22-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902055856-whatsapp-image-2026-05-02-at-10.12.22-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040802276-af8d48ad-1d4b-4e8c-b2d9-f0841e0b7278.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040802276-af8d48ad-1d4b-4e8c-b2d9-f0841e0b7278.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040803049-c25a402e-5cad-48d3-a611-5175d963cd4e.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040803049-c25a402e-5cad-48d3-a611-5175d963cd4e.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040804122-ea2fc4b0-928e-4e36-b1e9-14c6e92ba41a.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040804122-ea2fc4b0-928e-4e36-b1e9-14c6e92ba41a.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040806062-img_0854.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040806062-img_0854.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040807130-img_3181.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040807130-img_3181.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040808153-img_5656.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040808153-img_5656.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040809214-img_8676.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040809214-img_8676.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040811026-img_8677.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040811026-img_8677.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040812374-img_8680.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040812374-img_8680.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040813900-img_8697.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040813900-img_8697.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040815419-img_8698.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040815419-img_8698.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040816945-img_8699.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040816945-img_8699.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040818460-img_8700.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040818460-img_8700.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040820652-img_8701.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040820652-img_8701.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040823325-img_8703.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040823325-img_8703.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040825064-img_8704.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040825064-img_8704.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1780371662786-whatsapp-image-2026-06-01-at-15.04.51.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1780371662786-whatsapp-image-2026-06-01-at-15.04.51.jpeg" loading="lazy" alt="ABI student work"></a></div></div></section><section><div class="container" style="text-align:center"><a class="btn btn-primary" href="/contact"><span class="lang-en">Visit Our Campus</span><span class="lang-es">Visita Nuestro Campus</span></a></div></section>
+  <section><div class="container"><div class="gallery-grid"><a class="gallery-tile" href="/assets/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902051735-whatsapp-image-2026-05-02-at-10.11.12-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902051735-whatsapp-image-2026-05-02-at-10.11.12-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902052974-whatsapp-image-2026-05-02-at-10.11.45-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902052974-whatsapp-image-2026-05-02-at-10.11.45-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902054092-whatsapp-image-2026-05-02-at-10.12.00-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902054092-whatsapp-image-2026-05-02-at-10.12.00-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902054817-whatsapp-image-2026-05-02-at-10.12.11-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902054817-whatsapp-image-2026-05-02-at-10.12.11-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1777902055856-whatsapp-image-2026-05-02-at-10.12.22-pm.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1777902055856-whatsapp-image-2026-05-02-at-10.12.22-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040802276-af8d48ad-1d4b-4e8c-b2d9-f0841e0b7278.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040802276-af8d48ad-1d4b-4e8c-b2d9-f0841e0b7278.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040803049-c25a402e-5cad-48d3-a611-5175d963cd4e.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040803049-c25a402e-5cad-48d3-a611-5175d963cd4e.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040804122-ea2fc4b0-928e-4e36-b1e9-14c6e92ba41a.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040804122-ea2fc4b0-928e-4e36-b1e9-14c6e92ba41a.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040806062-img_0854.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040806062-img_0854.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040807130-img_3181.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040807130-img_3181.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040808153-img_5656.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040808153-img_5656.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040809214-img_8676.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040809214-img_8676.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040811026-img_8677.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040811026-img_8677.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040812374-img_8680.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040812374-img_8680.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040813900-img_8697.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040813900-img_8697.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040815419-img_8698.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040815419-img_8698.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040816945-img_8699.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040816945-img_8699.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040818460-img_8700.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040818460-img_8700.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040820652-img_8701.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040820652-img_8701.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040823325-img_8703.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040823325-img_8703.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1778040825064-img_8704.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1778040825064-img_8704.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="/assets/img/1780371662786-whatsapp-image-2026-06-01-at-15.04.51.jpeg" target="_blank" rel="noopener"><img src="/assets/img/1780371662786-whatsapp-image-2026-06-01-at-15.04.51.jpeg" loading="lazy" alt="ABI student work"></a></div></div></section><section><div class="container" style="text-align:center"><a class="btn btn-primary" href="/contact"><span class="lang-en">Visit Our Campus</span><span class="lang-es">Visita Nuestro Campus</span></a></div></section><section class="media-band ms-glass-rotate"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">More from the shop</span><span class="lang-es">Más de la barbería</span></div><h2><span class="lang-en">In motion</span><span class="lang-es">En movimiento</span></h2><p><span class="lang-en">Clips and frames from the clinic, the classroom, and graduation day.</span><span class="lang-es">Clips e imágenes de la clínica, el aula y el día de graduación.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="/assets/showcase/vid/men-on-wall-posters.mp4" poster="/assets/logo.jpeg" aria-label="Men on wall posters"></video><figcaption class="m-cap">Men on wall posters</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902050518-whatsapp-image-2026-05-02-at-10-11-04-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="/assets/showcase/vid/men-outside-barbershop-posing.mp4" poster="/assets/logo.jpeg" aria-label="Men outside barbershop posing"></video><figcaption class="m-cap">Men outside barbershop posing</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902051735-whatsapp-image-2026-05-02-at-10-11-12-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="/assets/showcase/vid/men-posing-near-window.mp4" poster="/assets/logo.jpeg" aria-label="Men posing near window"></video><figcaption class="m-cap">Men posing near window</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902052974-whatsapp-image-2026-05-02-at-10-11-45-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902054092-whatsapp-image-2026-05-02-at-10-12-00-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902054817-whatsapp-image-2026-05-02-at-10-12-11-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902055856-whatsapp-image-2026-05-02-at-10-12-22-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040802276-af8d48ad-1d4b-4e8c-b2d9-f0841e0b7278.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="container">
@@ -393,7 +506,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       </div>
       <div>
         <h4><span class="lang-en">Pages</span><span class="lang-es">Páginas</span></h4>
-        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
       </div>
       <div>
         <h4><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4>
@@ -496,6 +609,26 @@ details.card[open] summary::after { transform: rotate(45deg); }
       });
     }, { threshold: 0.5 });
     counters.forEach(function(c) { countObs.observe(c); });
+  }
+
+  // Media tiles: reveal on scroll + lazy-load/play videos (keeps pages fast)
+  if ('IntersectionObserver' in window) {
+    var mio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var tile = en.target;
+        tile.classList.add('shown');
+        var v = tile.querySelector('video[data-src]');
+        if (v && !v.getAttribute('data-loaded')) {
+          v.setAttribute('data-loaded', '1');
+          v.src = v.getAttribute('data-src');
+          var pr = v.play();
+          if (pr && pr.then) { pr.then(function() { tile.classList.add('playing'); }).catch(function() {}); }
+        }
+        mio.unobserve(tile);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.m-tile').forEach(function(t) { mio.observe(t); });
   }
 })();
 </script>

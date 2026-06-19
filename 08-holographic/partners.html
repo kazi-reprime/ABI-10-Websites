@@ -339,6 +339,119 @@ details.card[open] summary::after { transform: rotate(45deg); }
 .radio-pill:hover span { border-color: var(--accent); color: var(--accent); }
 .form-cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
 .form-cta .privacy { font-size: .78rem; color: var(--mut); flex: 1; min-width: 200px; }
+.hc-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.hc-pill { display: inline-block; padding: 9px 16px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; color: var(--mut); background: var(--glass); transition: border-color .2s, color .2s; }
+.hc-pill:hover { border-color: var(--accent); color: var(--accent); }
+.media-band{position:relative;z-index:2;padding:clamp(36px,6vw,72px) 0}.media-band .m-head{max-width:760px;margin:0 auto clamp(20px,3vw,34px);text-align:center}.media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}.media-band .m-head h2{margin:10px 0}.media-band .m-head p{color:var(--mut);max-width:640px;margin:0 auto}.m-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(12px,2vw,18px)}.m-tile{position:relative;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);aspect-ratio:4/3;opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}.m-tile.shown{opacity:1}.m-tile .m-media{width:100%;height:100%;object-fit:cover;display:block}.m-tile .m-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:4;font-size:.8rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75);opacity:0;transform:translateY(6px);transition:.3s}.m-tile::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:opacity .3s}.m-tile:hover::after{opacity:1}.m-tile:hover .m-cap{opacity:1;transform:none}.m-vid::before{content:'\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1rem;border:2px solid rgba(255,255,255,.75);transition:.3s;pointer-events:none}.m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}.m-vid.playing::before{opacity:0}@media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}.ms-glass-rotate .m-grid{perspective:1200px}.ms-glass-rotate .m-tile{border-radius:16px;transform:rotateY(22deg) translateY(24px);transform-origin:left}.ms-glass-rotate .m-tile.shown{transform:none}.ms-glass-rotate .m-tile::after{background:linear-gradient(120deg,color-mix(in srgb, var(--accent) 20%, transparent),transparent 40%,color-mix(in srgb, var(--accent2) 20%, transparent));opacity:.55}.ms-glass-rotate .m-tile:hover{transform:rotateY(-8deg);box-shadow:0 20px 50px color-mix(in srgb, var(--accent) 25%, transparent)}
+</style>
+<style id="abi-toggle-custom">
+/* ===== Iridescent Glass language toggle — frosted holographic capsule ===== */
+.lang-toggle{
+  position:relative;
+  display:inline-flex;
+  align-items:stretch;
+  height:38px;
+  padding:3px;
+  gap:2px;
+  border-radius:999px;
+  overflow:hidden;
+  isolation:isolate;
+  border:1px solid rgba(124,232,255,.40);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.02)),
+    rgba(12,11,26,.55);
+  backdrop-filter:blur(12px) saturate(1.4);
+  -webkit-backdrop-filter:blur(12px) saturate(1.4);
+  box-shadow:
+    0 6px 22px rgba(8,6,24,.45),
+    inset 0 1px 0 rgba(255,255,255,.22);
+}
+/* holographic sheen — slow drifting aurora behind the buttons */
+.lang-toggle::before{
+  content:"";
+  position:absolute; inset:-40%;
+  z-index:0; pointer-events:none;
+  background:
+    conic-gradient(from 0deg,
+      rgba(124,232,255,.35), rgba(167,139,250,.30),
+      rgba(34,211,238,.28),  rgba(124,232,255,.35));
+  filter:blur(10px);
+  opacity:.55;
+  animation:abiHoloSpin 9s linear infinite;
+}
+/* thin top-edge light streak */
+.lang-toggle::after{
+  content:"";
+  position:absolute; left:6%; right:6%; top:0; height:42%;
+  z-index:1; pointer-events:none;
+  border-radius:999px;
+  background:linear-gradient(180deg, rgba(255,255,255,.30), transparent);
+  opacity:.6;
+}
+@keyframes abiHoloSpin{ to{ transform:rotate(1turn); } }
+
+.lang-toggle button{
+  position:relative;
+  z-index:2;
+  background:transparent;
+  border:0;
+  color:rgba(255,255,255,.82);
+  padding:0 16px;
+  min-width:46px;
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:900;
+  font-size:.74rem;
+  letter-spacing:.16em;
+  border-radius:999px;
+  transition:color .25s ease, transform .15s ease, text-shadow .25s ease;
+}
+.lang-toggle button:hover{ color:#fff; transform:translateY(-1px); }
+.lang-toggle button:focus-visible{
+  outline:2px solid #7ce8ff;
+  outline-offset:2px;
+}
+
+/* active = glowing iridescent ring + frosted fill */
+.lang-toggle button.active{
+  color:#06121a;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
+  background:
+    linear-gradient(135deg, #7ce8ff 0%, #a78bfa 55%, #22d3ee 100%);
+  box-shadow:
+    0 0 0 1.5px rgba(124,232,255,.85),
+    0 0 14px rgba(124,232,255,.55),
+    0 0 26px rgba(167,139,250,.40),
+    inset 0 1px 0 rgba(255,255,255,.55);
+}
+@media (prefers-reduced-motion: reduce){
+  .lang-toggle::before{ animation:none; }
+}
+</style>
+<style id="abi-fix-custom">
+/* ===== Layout fix: desktop nav clipping (1101-1280px) =====
+   Above the 1100px hamburger breakpoint the inline .primary-nav holds all
+   11 links inside flex:1 + overflow:hidden, alongside the brand and two
+   phone CTAs + toggle. On narrower desktops the row overflows and the last
+   links (FAQ / Contact) are silently clipped. Tighten spacing and allow
+   graceful horizontal scroll so every link stays reachable. */
+@media (min-width:1101px) and (max-width:1280px){
+  .primary-nav{
+    overflow-x:auto;
+    overflow-y:hidden;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    justify-content:flex-start;
+    -webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,#000 92%,transparent);
+  }
+  .primary-nav::-webkit-scrollbar{ display:none; }
+  .primary-nav a{
+    padding:8px 7px;
+    font-size:.78rem;
+    letter-spacing:0;
+  }
+}
 </style>
 </head>
 <body class="lang-en">
@@ -367,7 +480,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       <img src="/assets/logo.jpeg" alt="ABI">
       <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
     </a>
-    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class="active"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class="active"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -382,7 +495,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
     </div>
   </section>
   <section><div class="container"><div class="grid-2"><div class="card partner-card"><div class="img-wrap"><img src="/assets/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" loading="lazy" alt="Levels Barbershop"><div class="partner-name">Levels Barbershop</div></div><div class="body"><div class="locations">Manhattan · Brooklyn · Orange County, NY</div><p class="desc"><span class="lang-en">Founded 1996 on 125th Street in Harlem. Multi-location empire including The Antique Barber product line and Barber World TV. Several Nuru-family co-owners are ABI graduates; many licensed barbers on staff are alumni.</span><span class="lang-es">Fundada en 1996 en la calle 125 en Harlem. Imperio multi-locación que incluye la línea de productos The Antique Barber y Barber World TV. Varios co-dueños de la familia Nuru son graduados de ABI; muchos barberos licenciados en el equipo son ex-alumnos.</span></p><p class="why">→ <span class="lang-en">Proof that ABI graduates can build iconic businesses.</span><span class="lang-es">Prueba de que los graduados de ABI pueden construir negocios icónicos.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="/assets/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" loading="lazy" alt="Diamond Fadez"><div class="partner-name">Diamond Fadez</div></div><div class="body"><div class="locations">308 West 39th Street, NYC</div><p class="desc"><span class="lang-en">Combined barbershop and tattoo studio one block from ABI's Manhattan campus. Owner Mike is an ABI graduate; his brother Richard teaches at ABI as a bilingual instructor.</span><span class="lang-es">Barbería y estudio de tatuajes combinados a una cuadra del campus de Manhattan de ABI. El dueño Mike es graduado de ABI; su hermano Richard enseña en ABI como instructor bilingüe.</span></p><p class="why">→ <span class="lang-en">Two generations of one family — taught and now teaching.</span><span class="lang-es">Dos generaciones de una familia — enseñados y ahora enseñando.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="/assets/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" loading="lazy" alt="Untouchable Cutz"><div class="partner-name">Untouchable Cutz</div></div><div class="body"><div class="locations">Staten Island, NY</div><p class="desc"><span class="lang-en">Respected modern barbershop with a team carrying 50+ combined years of experience. Owner Jimmy opened shop within two years of earning his ABI license.</span><span class="lang-es">Barbería moderna respetada con un equipo que acumula más de 50 años combinados de experiencia. El dueño Jimmy abrió su tienda dos años después de obtener su licencia de ABI.</span></p><p class="why">→ <span class="lang-en">Rapid entrepreneurial success.</span><span class="lang-es">Éxito empresarial rápido.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="/assets/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" loading="lazy" alt="Expo Gentlemen Salon"><div class="partner-name">Expo Gentlemen Salon</div></div><div class="body"><div class="locations">Staten Island · Brooklyn</div><p class="desc"><span class="lang-en">Multi-location established salon. Owner Joe consistently hires ABI graduates to staff both locations.</span><span class="lang-es">Salón multi-locación establecido. El dueño Joe contrata consistentemente graduados de ABI para ambas ubicaciones.</span></p><p class="why">→ <span class="lang-en">Trust built through consistent graduate performance.</span><span class="lang-es">Confianza construida a través del desempeño consistente de los graduados.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="/assets/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" loading="lazy" alt="Otis & Finn"><div class="partner-name">Otis & Finn</div></div><div class="body"><div class="locations">Long Island City · Court Square · Greenpoint · Williamsburg</div><p class="desc"><span class="lang-en">State-of-the-art barbershop featured in GQ, BuzzFeed, HuffPost, FOX5, PIX11. ABI graduate James Cavanaugh featured in the official bio.</span><span class="lang-es">Barbería de vanguardia destacada en GQ, BuzzFeed, HuffPost, FOX5 y PIX11. El graduado de ABI James Cavanaugh aparece en la biografía oficial.</span></p><p class="why">→ <span class="lang-en">Employers publicly recognize and invest in alumni talent.</span><span class="lang-es">Empleadores reconocen y invierten públicamente en el talento ex-alumno.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="/assets/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" loading="lazy" alt="NYC Barber Shop Museum"><div class="partner-name">NYC Barber Shop Museum</div></div><div class="body"><div class="locations">Columbus Ave & E 70th St, Manhattan · Sunny Isles, Miami</div><p class="desc"><span class="lang-en">The first museum of its kind — a working barbershop housing century-old artifacts. Operated by fourth-generation Master Barber Arthur Rubinoff. 501(c)(3) non-profit.</span><span class="lang-es">El primer museo de su tipo — una barbería en funcionamiento que alberga artefactos centenarios. Operada por el Maestro Barbero de cuarta generación Arthur Rubinoff. Sin fines de lucro 501(c)(3).</span></p><p class="why">→ <span class="lang-en">Four-generation professional standard. School-to-master pipeline.</span><span class="lang-es">Estándar profesional de cuatro generaciones. Tubería de escuela a maestro.</span></p></div></div></div></div></section>
-<section><div class="container" style="text-align:center"><h2 style="margin-bottom:10px"><span class="lang-en">Your path to one of these chairs</span><span class="lang-es">Tu camino a una de estas sillas</span></h2><p class="lead" style="margin:0 auto 20px"><span class="lang-en">Our Job Placement Office connects every graduate with our partner network.</span><span class="lang-es">Nuestra Oficina de Colocación Laboral conecta a cada graduado con nuestra red.</span></p><a class="btn btn-primary" href="/job-placement"><span class="lang-en">See job placement</span><span class="lang-es">Ver colocación laboral</span></a> <a class="btn btn-ghost" href="/contact" style="margin-left:8px"><span class="lang-en">Talk to Admissions</span><span class="lang-es">Habla con Admisiones</span></a></div></section>
+<section><div class="container" style="text-align:center"><h2 style="margin-bottom:10px"><span class="lang-en">Your path to one of these chairs</span><span class="lang-es">Tu camino a una de estas sillas</span></h2><p class="lead" style="margin:0 auto 20px"><span class="lang-en">Our Job Placement Office connects every graduate with our partner network.</span><span class="lang-es">Nuestra Oficina de Colocación Laboral conecta a cada graduado con nuestra red.</span></p><a class="btn btn-primary" href="/job-placement"><span class="lang-en">See job placement</span><span class="lang-es">Ver colocación laboral</span></a> <a class="btn btn-ghost" href="/contact" style="margin-left:8px"><span class="lang-en">Talk to Admissions</span><span class="lang-es">Habla con Admisiones</span></a></div></section><section class="media-band ms-glass-rotate"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">The network</span><span class="lang-es">La red</span></div><h2><span class="lang-en">Where the craft leads</span><span class="lang-es">A dónde lleva el oficio</span></h2><p><span class="lang-en">From our chairs to shops across the five boroughs and beyond.</span><span class="lang-es">De nuestras sillas a barberías en los cinco condados y más allá.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="/assets/showcase/vid/men-posing-near-window.mp4" poster="/assets/logo.jpeg" aria-label="Men posing near window"></video><figcaption class="m-cap">Men posing near window</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902054092-whatsapp-image-2026-05-02-at-10-12-00-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902054817-whatsapp-image-2026-05-02-at-10-12-11-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1777902055856-whatsapp-image-2026-05-02-at-10-12-22-pm.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="container">
@@ -394,7 +507,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       </div>
       <div>
         <h4><span class="lang-en">Pages</span><span class="lang-es">Páginas</span></h4>
-        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
       </div>
       <div>
         <h4><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4>
@@ -497,6 +610,26 @@ details.card[open] summary::after { transform: rotate(45deg); }
       });
     }, { threshold: 0.5 });
     counters.forEach(function(c) { countObs.observe(c); });
+  }
+
+  // Media tiles: reveal on scroll + lazy-load/play videos (keeps pages fast)
+  if ('IntersectionObserver' in window) {
+    var mio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var tile = en.target;
+        tile.classList.add('shown');
+        var v = tile.querySelector('video[data-src]');
+        if (v && !v.getAttribute('data-loaded')) {
+          v.setAttribute('data-loaded', '1');
+          v.src = v.getAttribute('data-src');
+          var pr = v.play();
+          if (pr && pr.then) { pr.then(function() { tile.classList.add('playing'); }).catch(function() {}); }
+        }
+        mio.unobserve(tile);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.m-tile').forEach(function(t) { mio.observe(t); });
   }
 })();
 </script>

@@ -334,6 +334,55 @@ details.card[open] summary::after { transform: rotate(45deg); }
 .radio-pill:hover span { border-color: var(--accent); color: var(--accent); }
 .form-cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
 .form-cta .privacy { font-size: .78rem; color: var(--mut); flex: 1; min-width: 200px; }
+.hc-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.hc-pill { display: inline-block; padding: 9px 16px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; color: var(--mut); background: var(--glass); transition: border-color .2s, color .2s; }
+.hc-pill:hover { border-color: var(--accent); color: var(--accent); }
+.media-band{position:relative;z-index:2;padding:clamp(36px,6vw,72px) 0}.media-band .m-head{max-width:760px;margin:0 auto clamp(20px,3vw,34px);text-align:center}.media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}.media-band .m-head h2{margin:10px 0}.media-band .m-head p{color:var(--mut);max-width:640px;margin:0 auto}.m-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(12px,2vw,18px)}.m-tile{position:relative;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);aspect-ratio:4/3;opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}.m-tile.shown{opacity:1}.m-tile .m-media{width:100%;height:100%;object-fit:cover;display:block}.m-tile .m-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:4;font-size:.8rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75);opacity:0;transform:translateY(6px);transition:.3s}.m-tile::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:opacity .3s}.m-tile:hover::after{opacity:1}.m-tile:hover .m-cap{opacity:1;transform:none}.m-vid::before{content:'\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1rem;border:2px solid rgba(255,255,255,.75);transition:.3s;pointer-events:none}.m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}.m-vid.playing::before{opacity:0}@media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}.ms-neon-scan .m-tile{border-color:var(--accent);transform:translateY(26px) skewX(-2.5deg)}.ms-neon-scan .m-tile.shown{transform:none}.ms-neon-scan .m-tile::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,#ffffff0d 2px 3px)}.ms-neon-scan .m-tile:hover{box-shadow:0 0 22px var(--accent),0 0 46px var(--accent2)} .ms-neon-scan .m-tile:hover .m-media{filter:saturate(1.3) contrast(1.06)}
+</style>
+<style id="abi-toggle-custom">
+/* === Cyberpunk Neon Blade — unique EN/ES segmented switch === */
+.lang-toggle{
+  position:relative;display:inline-flex;align-items:stretch;
+  height:38px;padding:2px;gap:2px;border-radius:10px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(0,240,255,.06),rgba(255,43,214,.05));
+  border:1.5px solid rgba(0,240,255,.55);
+  box-shadow:0 0 0 1px rgba(0,240,255,.18),0 0 14px rgba(0,240,255,.30),
+             inset 0 0 10px rgba(0,240,255,.12);
+  -webkit-clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px);
+  clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px);
+}
+.lang-toggle button{
+  position:relative;z-index:1;background:transparent;border:0;
+  color:rgba(0,240,255,.78);padding:0 14px;min-width:44px;cursor:pointer;
+  font-weight:900;letter-spacing:.18em;font-family:inherit;font-size:.74rem;
+  border-radius:8px;text-shadow:0 0 6px rgba(0,240,255,.35);
+  transition:color .22s ease,text-shadow .22s ease,background .22s ease;
+}
+.lang-toggle button:hover{color:#bff7ff;text-shadow:0 0 10px rgba(0,240,255,.7);}
+.lang-toggle button.active{
+  color:#03060a;
+  background:linear-gradient(135deg,#00f0ff 0%,#36f7ff 45%,#ff2bd6 140%);
+  text-shadow:none;
+  box-shadow:0 0 12px rgba(0,240,255,.85),0 0 22px rgba(255,43,214,.45),
+             inset 0 0 6px rgba(255,255,255,.55);
+  animation:abiTogGlow 2.4s ease-in-out infinite;
+}
+@keyframes abiTogGlow{
+  0%,100%{box-shadow:0 0 12px rgba(0,240,255,.85),0 0 22px rgba(255,43,214,.40),inset 0 0 6px rgba(255,255,255,.55);}
+  50%{box-shadow:0 0 18px rgba(0,240,255,1),0 0 30px rgba(255,43,214,.62),inset 0 0 8px rgba(255,255,255,.7);}
+}
+@media (prefers-reduced-motion:reduce){.lang-toggle button.active{animation:none;}}
+</style>
+<style id="abi-fix-custom">
+/* === Layout fix: prevent .primary-nav clipping links (1100-1280px) === */
+@media (min-width:1101px){
+  .primary-nav{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;}
+  .primary-nav::-webkit-scrollbar{display:none;}
+}
+@media (min-width:1101px) and (max-width:1280px){
+  .primary-nav{gap:2px;}
+  .primary-nav a{padding:8px 7px;font-size:.78rem;letter-spacing:0;}
+}
 </style>
 </head>
 <body class="lang-en">
@@ -362,7 +411,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       <img src="/assets/logo.jpeg" alt="ABI">
       <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
     </a>
-    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement" class="active"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement" class="active"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -377,7 +426,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
     </div>
   </section>
   <section><div class="container"><div class="grid-2"><div><h2><span class="lang-en">What our Job Placement Office does</span><span class="lang-es">Qué hace nuestra Oficina de Colocación Laboral</span></h2><ul class="list-clean"><li><span class="lang-en">1-on-1 career counseling on graduation</span><span class="lang-es">Consejería de carrera 1-a-1 al graduarte</span></li><li><span class="lang-en">Direct referrals to our partner shops</span><span class="lang-es">Referencias directas a nuestras barberías aliadas</span></li><li><span class="lang-en">Resume and portfolio review</span><span class="lang-es">Revisión de currículum y portafolio</span></li><li><span class="lang-en">Mock interviews</span><span class="lang-es">Entrevistas simuladas</span></li><li><span class="lang-en">Booth-rental vs. employment guidance</span><span class="lang-es">Orientación sobre alquiler vs. empleo</span></li><li><span class="lang-en">Shop-owner mentorship for grads who want their own</span><span class="lang-es">Mentoría de dueño de tienda para graduados que quieren la suya</span></li></ul></div><div class="card"><h3 style="margin-bottom:10px"><span class="lang-en">The outcome</span><span class="lang-es">El resultado</span></h3><p style="color:var(--mut);line-height:1.7"><span class="lang-en">Many of our partner shops are owned by alumni. Many of their licensed staff are alumni. Our placement office runs the pipeline you'll step into the day you pass the State Board.</span><span class="lang-es">Muchas de nuestras barberías aliadas son propiedad de ex-alumnos. Muchos de sus empleados licenciados son ex-alumnos. Nuestra oficina de colocación maneja la tubería en la que entras el día que apruebas el Estado.</span></p><a class="btn btn-primary" style="margin-top:18px" href="/partners"><span class="lang-en">See partner shops →</span><span class="lang-es">Ver barberías aliadas →</span></a></div></div></div></section>
-<section><div class="container" style="text-align:center"><a class="btn btn-primary" href="/contact"><span class="lang-en">Apply Today</span><span class="lang-es">Aplica Hoy</span></a> <a class="btn btn-ghost" href="/programs" style="margin-left:8px"><span class="lang-en">See Programs</span><span class="lang-es">Ver Programas</span></a></div></section>
+<section><div class="container" style="text-align:center"><a class="btn btn-primary" href="/contact"><span class="lang-en">Apply Today</span><span class="lang-es">Aplica Hoy</span></a> <a class="btn btn-ghost" href="/programs" style="margin-left:8px"><span class="lang-en">See Programs</span><span class="lang-es">Ver Programas</span></a></div></section><section class="media-band ms-neon-scan"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">Chair to career</span><span class="lang-es">De la silla a la carrera</span></div><h2><span class="lang-en">Built to work</span><span class="lang-es">Listos para trabajar</span></h2><p><span class="lang-en">Graduates step straight onto working floors across New York.</span><span class="lang-es">Los graduados pasan directo a pisos de trabajo en Nueva York.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="/assets/showcase/vid/five-men-waving-and-smiling.mp4" poster="/assets/logo.jpeg" aria-label="Five men waving and smiling"></video><figcaption class="m-cap">Five men waving and smiling</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040808153-img-5656.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040809214-img-8676-2.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040809214-img-8676.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040811026-img-8677.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="container">
@@ -389,7 +438,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       </div>
       <div>
         <h4><span class="lang-en">Pages</span><span class="lang-es">Páginas</span></h4>
-        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
       </div>
       <div>
         <h4><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4>
@@ -492,6 +541,26 @@ details.card[open] summary::after { transform: rotate(45deg); }
       });
     }, { threshold: 0.5 });
     counters.forEach(function(c) { countObs.observe(c); });
+  }
+
+  // Media tiles: reveal on scroll + lazy-load/play videos (keeps pages fast)
+  if ('IntersectionObserver' in window) {
+    var mio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var tile = en.target;
+        tile.classList.add('shown');
+        var v = tile.querySelector('video[data-src]');
+        if (v && !v.getAttribute('data-loaded')) {
+          v.setAttribute('data-loaded', '1');
+          v.src = v.getAttribute('data-src');
+          var pr = v.play();
+          if (pr && pr.then) { pr.then(function() { tile.classList.add('playing'); }).catch(function() {}); }
+        }
+        mio.unobserve(tile);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.m-tile').forEach(function(t) { mio.observe(t); });
   }
 })();
 </script>

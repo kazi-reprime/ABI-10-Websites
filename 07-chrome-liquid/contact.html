@@ -334,6 +334,47 @@ details.card[open] summary::after { transform: rotate(45deg); }
 .radio-pill:hover span { border-color: var(--accent); color: var(--accent); }
 .form-cta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
 .form-cta .privacy { font-size: .78rem; color: var(--mut); flex: 1; min-width: 200px; }
+.hc-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.hc-pill { display: inline-block; padding: 9px 16px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; color: var(--mut); background: var(--glass); transition: border-color .2s, color .2s; }
+.hc-pill:hover { border-color: var(--accent); color: var(--accent); }
+.media-band{position:relative;z-index:2;padding:clamp(36px,6vw,72px) 0}.media-band .m-head{max-width:760px;margin:0 auto clamp(20px,3vw,34px);text-align:center}.media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}.media-band .m-head h2{margin:10px 0}.media-band .m-head p{color:var(--mut);max-width:640px;margin:0 auto}.m-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(12px,2vw,18px)}.m-tile{position:relative;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);aspect-ratio:4/3;opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}.m-tile.shown{opacity:1}.m-tile .m-media{width:100%;height:100%;object-fit:cover;display:block}.m-tile .m-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:4;font-size:.8rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75);opacity:0;transform:translateY(6px);transition:.3s}.m-tile::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:opacity .3s}.m-tile:hover::after{opacity:1}.m-tile:hover .m-cap{opacity:1;transform:none}.m-vid::before{content:'\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1rem;border:2px solid rgba(255,255,255,.75);transition:.3s;pointer-events:none}.m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}.m-vid.playing::before{opacity:0}@media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}.ms-brutal-offset .m-tile{border:2px solid var(--ink);border-radius:0;transform:translate(18px,18px);box-shadow:-10px 10px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}.ms-brutal-offset .m-tile:hover{box-shadow:-16px 16px 0 var(--accent);transform:translate(2px,-2px)}
+</style>
+<style id="abi-toggle-custom">
+/* ABI 07-chrome-liquid — flat brutalist EN/ES toggle (hard offset-shadow block switch) */
+.lang-toggle{
+  display:inline-flex; align-items:stretch; height:36px;
+  border:2px solid #0a0a0a; border-radius:0; overflow:visible;
+  background:#ece9e3;
+  box-shadow:3px 3px 0 0 #0a0a0a;      /* hard, blur-free brutalist drop */
+  padding:0;
+}
+.lang-toggle button{
+  position:relative;
+  background:transparent; color:#0a0a0a;
+  border:0; border-radius:0;
+  padding:0 16px; min-width:46px;
+  font-family:inherit; font-weight:900; font-size:.78rem; letter-spacing:.16em;
+  text-transform:uppercase; cursor:pointer;
+  transition:background .12s linear, color .12s linear;
+}
+/* hard divider slab between the two options */
+.lang-toggle button + button{ border-left:2px solid #0a0a0a; }
+.lang-toggle button:hover{ background:#dad6cd; }
+.lang-toggle button.active{
+  background:#1a3cff; color:#ece9e3;   /* solid blocky active slab */
+  box-shadow:inset 0 0 0 2px #0a0a0a;  /* crisp inner edge, no rounding */
+}
+.lang-toggle button.active:hover{ background:#1a3cff; }
+.lang-toggle button:focus-visible{ outline:3px solid #1a3cff; outline-offset:2px; }
+</style>
+<style id="abi-fix-custom">
+/* ABI 07-chrome-liquid — minor layout safety fixes */
+.top-banner{ row-gap:8px; }
+.lang-toggle{ flex:0 0 auto; }                 /* never let the switch collapse */
+@media (max-width:480px){
+  .lang-toggle{ height:34px; box-shadow:2px 2px 0 0 #0a0a0a; }
+  .lang-toggle button{ padding:0 12px; min-width:42px; letter-spacing:.12em; }
+}
 </style>
 </head>
 <body class="lang-en">
@@ -362,7 +403,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       <img src="/assets/logo.jpeg" alt="ABI">
       <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
     </a>
-    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class="active"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement" class=""><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact" class="active"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -396,7 +437,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
 <div class="field-group"><label for="f-funding"><span class="lang-en">Funding (optional)</span><span class="lang-es">Financiamiento (opcional)</span></label><select id="f-funding" name="funding" class="input"><option><span class="lang-en">Self-pay / weekly plan</span><span class="lang-es">Pago propio / plan semanal</span></option><option>GI Bill® (Post-9/11 / VR&E / Montgomery / DEA)</option><option>ACCES-VR</option><option><span class="lang-en">Not sure yet</span><span class="lang-es">Aún no estoy seguro</span></option></select></div>
 <div class="field-group"><label for="f-msg"><span class="lang-en">What would you like to know?</span><span class="lang-es">¿Qué te gustaría saber?</span></label><textarea id="f-msg" name="message" placeholder="<span class="lang-en">Optional — any questions for admissions</span><span class="lang-es">Opcional — preguntas para admisiones</span>" rows="4" class="input" style="resize:vertical"></textarea></div>
 <div class="form-cta"><button type="submit" class="btn btn-primary"><span class="lang-en">Send to admissions</span><span class="lang-es">Enviar a admisiones</span></button><p class="privacy"><span class="lang-en">We respond same-day during business hours. Never spam.</span><span class="lang-es">Respondemos el mismo día en horario laboral. Nunca spam.</span></p></div>
-</form></div></div></section>
+</form></div></div></section><section class="media-band ms-brutal-offset"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">Come see us</span><span class="lang-es">Ven a vernos</span></div><h2><span class="lang-en">Two campuses, one craft</span><span class="lang-es">Dos campus, un oficio</span></h2><p><span class="lang-en">Walk in, watch a cut, and meet the team in Manhattan or the Bronx.</span><span class="lang-es">Ven, mira un corte y conoce al equipo en Manhattan o el Bronx.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="/assets/showcase/vid/barber-grooms-beard-straight-razor.mp4" poster="/assets/logo.jpeg" aria-label="Barber grooms beard straight razor"></video><figcaption class="m-cap">Barber grooms beard straight razor</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040808153-img-5656.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040809214-img-8676-2.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/1778040809214-img-8676.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="container">
@@ -408,7 +449,7 @@ details.card[open] summary::after { transform: rotate(45deg); }
       </div>
       <div>
         <h4><span class="lang-en">Pages</span><span class="lang-es">Páginas</span></h4>
-        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/job-placement"><span class="lang-en">Job Placement</span><span class="lang-es">Colocación Laboral</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQ</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
       </div>
       <div>
         <h4><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4>
@@ -511,6 +552,26 @@ details.card[open] summary::after { transform: rotate(45deg); }
       });
     }, { threshold: 0.5 });
     counters.forEach(function(c) { countObs.observe(c); });
+  }
+
+  // Media tiles: reveal on scroll + lazy-load/play videos (keeps pages fast)
+  if ('IntersectionObserver' in window) {
+    var mio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var tile = en.target;
+        tile.classList.add('shown');
+        var v = tile.querySelector('video[data-src]');
+        if (v && !v.getAttribute('data-loaded')) {
+          v.setAttribute('data-loaded', '1');
+          v.src = v.getAttribute('data-src');
+          var pr = v.play();
+          if (pr && pr.then) { pr.then(function() { tile.classList.add('playing'); }).catch(function() {}); }
+        }
+        mio.unobserve(tile);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.m-tile').forEach(function(t) { mio.observe(t); });
   }
 })();
 </script>

@@ -17,12 +17,14 @@ def bi(d):
     if isinstance(d, str): return d
     return f'<span class="lang-en">{d.get("en","")}</span><span class="lang-es">{d.get("es","")}</span>'
 
-# Nav minus haircuts (removed per user request)
+# Nav — haircuts restored per user request (student-clinic haircuts page is wanted; the $3 price is de-emphasized)
 NAV_ITEMS = [
     ("home","/"), ("about","/about"), ("programs","/programs"), ("instructors","/instructors"),
-    ("gallery","/gallery"), ("partners","/partners"),
+    ("gallery","/gallery"), ("partners","/partners"), ("haircuts","/haircuts"),
     ("jobplacement","/job-placement"), ("resources","/resources"), ("faq","/faq"), ("contact","/contact")
 ]
+# Stable page order for deterministic media rotation across sites
+PAGE_ORDER = ["home","about","programs","instructors","gallery","partners","haircuts","jobplacement","resources","faq","contact"]
 
 BRAND_TITLE = "American Barber Institute · New York's Dedicated Barber School"
 BRAND_DESC_EN = "American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses."
@@ -34,6 +36,7 @@ PAGE_TITLES = {
     "/instructors":"Instructors · American Barber Institute",
     "/gallery":"Gallery · American Barber Institute",
     "/partners":"Partner Shops · American Barber Institute",
+    "/haircuts":"Student Haircuts · American Barber Institute · NYC",
     "/job-placement":"Job Placement · American Barber Institute",
     "/resources":"Resources · Veterans · ACCES-VR · ABI",
     "/faq":"Frequently Asked Questions · American Barber Institute",
@@ -43,6 +46,107 @@ PAGE_TITLES = {
 # Per-site partner image assignments (deterministic) — gallery imgs ordered consistently
 GALLERY_FILES = sorted([f for f in os.listdir(SRC_ASSETS/"img") if f.lower().endswith(('.jpeg','.jpg','.png'))])
 PARTNER_IMGS = GALLERY_FILES[:6] if len(GALLERY_FILES) >= 6 else GALLERY_FILES * 2
+
+# ============== MEDIA SHOWCASE ENGINE ==============
+# Real barbershop photos + videos, spread across EVERY page with a per-site signature animation.
+SHOWCASE_DIR = SRC_ASSETS / "showcase"
+def _ls(sub):
+    d = SHOWCASE_DIR / sub
+    return sorted([f for f in os.listdir(d) if not f.startswith('.')]) if d.exists() else []
+SHOWCASE_VID = _ls("vid")
+# Favor descriptively-named photos first (nicer captions), then the rest
+_IMG_ALL = _ls("img")
+SHOWCASE_IMG = [f for f in _IMG_ALL if f[0].isalpha()] + [f for f in _IMG_ALL if not f[0].isalpha()]
+
+def pick(pool, start, count):
+    return [pool[(start + i) % len(pool)] for i in range(count)] if pool else []
+
+def caption(fn):
+    s = re.sub(r'\.(mp4|jpe?g|png)$', '', fn, flags=re.I)
+    s = re.sub(r'-2$', '', s)
+    if re.search(r'whatsapp|img-\d|^\d', s):   # opaque export names -> generic
+        return "American Barber Institute"
+    s = s.replace('client-s', "client's").replace('-', ' ').strip()
+    return s[:1].upper() + s[1:] if s else "American Barber Institute"
+
+# Per-page bilingual headings for the media band (generic barbershop-life language — never "AI")
+MEDIA_HEADINGS = {
+    "_default": {"eyb":{"en":"Inside ABI","es":"Dentro de ABI"},"h2":{"en":"Life on the clinic floor","es":"La vida en el piso clínico"},"p":{"en":"Real students, real chairs, real cuts — a look inside American Barber Institute.","es":"Estudiantes reales, sillas reales, cortes reales — un vistazo dentro de American Barber Institute."}},
+    "home": {"eyb":{"en":"Inside ABI","es":"Dentro de ABI"},"h2":{"en":"This is the floor","es":"Este es el piso"},"p":{"en":"Step inside our Manhattan and Bronx clinics — where future master barbers train every day.","es":"Entra a nuestras clínicas de Manhattan y el Bronx — donde los futuros maestros barberos entrenan cada día."}},
+    "about": {"eyb":{"en":"Our people","es":"Nuestra gente"},"h2":{"en":"Three decades, one craft","es":"Tres décadas, un oficio"},"p":{"en":"The faces, the chairs, and the community behind 10,000+ graduates.","es":"Los rostros, las sillas y la comunidad detrás de más de 10,000 graduados."}},
+    "programs": {"eyb":{"en":"In training","es":"En entrenamiento"},"h2":{"en":"What your day looks like","es":"Cómo es tu día"},"p":{"en":"Hands-on from week one — fades, beard work, straight-razor, and the full board-exam path.","es":"Práctico desde la primera semana — degradados, barba, navaja y el camino completo al examen."}},
+    "instructors": {"eyb":{"en":"Masters at work","es":"Maestros en acción"},"h2":{"en":"Learn beside the best","es":"Aprende junto a los mejores"},"p":{"en":"Master barbers on the floor with you, every cut, every day.","es":"Maestros barberos en el piso contigo, en cada corte, cada día."}},
+    "gallery": {"eyb":{"en":"More from the shop","es":"Más de la barbería"},"h2":{"en":"In motion","es":"En movimiento"},"p":{"en":"Clips and frames from the clinic, the classroom, and graduation day.","es":"Clips e imágenes de la clínica, el aula y el día de graduación."}},
+    "partners": {"eyb":{"en":"The network","es":"La red"},"h2":{"en":"Where the craft leads","es":"A dónde lleva el oficio"},"p":{"en":"From our chairs to shops across the five boroughs and beyond.","es":"De nuestras sillas a barberías en los cinco condados y más allá."}},
+    "haircuts": {"eyb":{"en":"See a cut in action","es":"Mira un corte en acción"},"h2":{"en":"Fresh cuts, real students","es":"Cortes frescos, estudiantes reales"},"p":{"en":"Every cut in our student clinic is supervised by a NY-licensed instructor.","es":"Cada corte en nuestra clínica estudiantil es supervisado por un instructor licenciado de NY."}},
+    "jobplacement": {"eyb":{"en":"Chair to career","es":"De la silla a la carrera"},"h2":{"en":"Built to work","es":"Listos para trabajar"},"p":{"en":"Graduates step straight onto working floors across New York.","es":"Los graduados pasan directo a pisos de trabajo en Nueva York."}},
+    "resources": {"eyb":{"en":"Real support","es":"Apoyo real"},"h2":{"en":"We've got your back","es":"Te respaldamos"},"p":{"en":"Veterans, ACCES-VR, licensing — and a community around you.","es":"Veteranos, ACCES-VR, licencias — y una comunidad a tu alrededor."}},
+    "faq": {"eyb":{"en":"A look inside","es":"Un vistazo adentro"},"h2":{"en":"Still curious?","es":"¿Aún con curiosidad?"},"p":{"en":"See the floor for yourself before you ask.","es":"Mira el piso por ti mismo antes de preguntar."}},
+    "contact": {"eyb":{"en":"Come see us","es":"Ven a vernos"},"h2":{"en":"Two campuses, one craft","es":"Dos campus, un oficio"},"p":{"en":"Walk in, watch a cut, and meet the team in Manhattan or the Bronx.","es":"Ven, mira un corte y conoce al equipo en Manhattan o el Bronx."}},
+}
+
+def media_band(t, site_index, page_key, n_vid=1, n_img=4):
+    """Render a media showcase section for a page. Lazy-loaded; site-unique animation via ms-<style>."""
+    if not SHOWCASE_VID and not SHOWCASE_IMG:
+        return ""
+    style = t.get("media_style", "fade")
+    pi = PAGE_ORDER.index(page_key) if page_key in PAGE_ORDER else 0
+    vids = pick(SHOWCASE_VID, site_index * 3 + pi * 2, n_vid)
+    imgs = pick(SHOWCASE_IMG, site_index * 5 + pi * 3 + 2, n_img)
+    h = MEDIA_HEADINGS.get(page_key, MEDIA_HEADINGS["_default"])
+    items, mx = [], max(len(vids), len(imgs))
+    for k in range(mx):              # interleave video, image, video, image ...
+        if k < len(vids): items.append(("vid", vids[k]))
+        if k < len(imgs): items.append(("img", imgs[k]))
+    tiles = []
+    for kind, fn in items:
+        cap = caption(fn)
+        if kind == "vid":
+            tiles.append(f'<figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="/assets/showcase/vid/{fn}" poster="/assets/logo.jpeg" aria-label="{cap}"></video><figcaption class="m-cap">{cap}</figcaption></figure>')
+        else:
+            tiles.append(f'<figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="/assets/showcase/img/{fn}" alt="{cap}"><figcaption class="m-cap">{cap}</figcaption></figure>')
+    return (f'<section class="media-band ms-{style}"><div class="container">'
+            f'<div class="m-head"><div class="eyb">{bi(h["eyb"])}</div><h2>{bi(h["h2"])}</h2><p>{bi(h["p"])}</p></div>'
+            f'<div class="m-grid">{"".join(tiles)}</div></div></section>')
+
+# Per-site signature media animation treatments (10 distinct). Base + one style block.
+MEDIA_STYLE_CSS = {
+    "neon-scan": ".ms-neon-scan .m-tile{border-color:var(--accent);transform:translateY(26px) skewX(-2.5deg)}.ms-neon-scan .m-tile.shown{transform:none}.ms-neon-scan .m-tile::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,#ffffff0d 2px 3px)}.ms-neon-scan .m-tile:hover{box-shadow:0 0 22px var(--accent),0 0 46px var(--accent2)} .ms-neon-scan .m-tile:hover .m-media{filter:saturate(1.3) contrast(1.06)}",
+    "metal-slab": ".ms-metal-slab .m-tile{border:2px solid var(--line);border-radius:4px;transform:translateX(-44px)}.ms-metal-slab .m-tile:nth-child(even){transform:translateX(44px)}.ms-metal-slab .m-tile.shown{transform:none}.ms-metal-slab .m-tile::before{content:'';position:absolute;top:0;left:-70%;width:45%;height:100%;z-index:3;pointer-events:none;background:linear-gradient(100deg,transparent,#ffffff59,transparent);transform:skewX(-20deg);transition:left .65s}.ms-metal-slab .m-tile:hover::before{left:130%}",
+    "holo-float": ".ms-holo-float .m-tile{border:0;border-radius:18px;transform:translateY(30px) scale(.96)}.ms-holo-float .m-tile.shown{transform:none;animation:mfloat 7s ease-in-out infinite}.ms-holo-float .m-tile:nth-child(even).shown{animation-delay:-3.5s}.ms-holo-float .m-tile::after{background:linear-gradient(140deg,var(--accent)2e,transparent 45%,var(--accent2)2e);opacity:.5}@keyframes mfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}",
+    "hud-reticle": ".ms-hud-reticle .m-tile{border-color:var(--accent2);border-radius:6px;transform:translateY(24px)}.ms-hud-reticle .m-tile.shown{transform:none}.ms-hud-reticle .m-tile::before{content:'';position:absolute;inset:8px;z-index:3;pointer-events:none;border:1px solid var(--accent)66;clip-path:polygon(0 0,22px 0,22px 2px,2px 2px,2px 22px,0 22px,0 100%,22px 100%,22px calc(100% - 2px),2px calc(100% - 2px),2px calc(100% - 22px),0 calc(100% - 22px));}.ms-hud-reticle .m-tile:hover{box-shadow:0 0 0 1px var(--accent),0 14px 36px #000}",
+    "gold-curtain": ".ms-gold-curtain .m-tile{transform:translateY(26px)}.ms-gold-curtain .m-tile.shown{transform:none}.ms-gold-curtain .m-tile::before{content:'';position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(90deg,var(--accent),#7a5a17);transform:scaleX(1);transform-origin:right;transition:transform .8s cubic-bezier(.7,0,.2,1)}.ms-gold-curtain .m-tile.shown::before{transform:scaleX(0)}.ms-gold-curtain .m-tile .m-media{transform:scale(1.12);transition:transform 1.2s}.ms-gold-curtain .m-tile.shown .m-media{transform:scale(1)}.ms-gold-curtain .m-tile{border-color:var(--accent)55}",
+    "grid-tilt": ".ms-grid-tilt .m-grid{perspective:1100px}.ms-grid-tilt .m-tile{transform:translateY(30px) rotateX(12deg);transform-style:preserve-3d}.ms-grid-tilt .m-tile.shown{transform:none}.ms-grid-tilt .m-tile{border-color:var(--accent)4d}.ms-grid-tilt .m-tile:hover{transform:rotateX(-6deg) rotateY(6deg) translateY(-4px);box-shadow:0 22px 50px var(--accent)40}",
+    "brutal-offset": ".ms-brutal-offset .m-tile{border:2px solid var(--ink);border-radius:0;transform:translate(18px,18px);box-shadow:-10px 10px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}.ms-brutal-offset .m-tile:hover{box-shadow:-16px 16px 0 var(--accent);transform:translate(2px,-2px)}",
+    "glass-rotate": ".ms-glass-rotate .m-grid{perspective:1200px}.ms-glass-rotate .m-tile{border-radius:16px;transform:rotateY(22deg) translateY(24px);transform-origin:left}.ms-glass-rotate .m-tile.shown{transform:none}.ms-glass-rotate .m-tile::after{background:linear-gradient(120deg,var(--accent)33,transparent 40%,var(--accent2)33);opacity:.55}.ms-glass-rotate .m-tile:hover{transform:rotateY(-8deg);box-shadow:0 20px 50px var(--accent)40}",
+    "spotlight-cine": ".ms-spotlight-cine .m-tile{transform:translateY(26px);filter:brightness(.6)}.ms-spotlight-cine .m-tile.shown{transform:none;filter:brightness(1)}.ms-spotlight-cine .m-tile{transition:opacity .7s,transform .7s,filter 1s}.ms-spotlight-cine .m-tile .m-media{transform:scale(1.08);transition:transform 6s ease-out}.ms-spotlight-cine .m-tile.shown .m-media{transform:scale(1)}.ms-spotlight-cine .m-tile::before{content:'';position:absolute;left:0;right:0;top:0;height:8%;z-index:3;background:#000;box-shadow:0 92vh 0 0 #000 inset;pointer-events:none;opacity:.0}.ms-spotlight-cine .m-tile:hover{box-shadow:0 0 60px var(--accent)55}",
+    "vhs-flip": ".ms-vhs-flip .m-grid{perspective:1000px}.ms-vhs-flip .m-tile{transform:rotateX(-25deg) translateY(28px);transform-origin:bottom}.ms-vhs-flip .m-tile.shown{transform:none}.ms-vhs-flip .m-tile::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,#0000001a 2px 4px);mix-blend-mode:overlay}.ms-vhs-flip .m-tile:hover .m-media{filter:hue-rotate(8deg) saturate(1.25)}.ms-vhs-flip .m-tile:hover{box-shadow:3px 0 0 var(--accent2),-3px 0 0 var(--accent)}",
+}
+
+def _fix_css_alpha(css):
+    # Convert invalid `var(--x)HH` (hex-alpha appended to a var() output) into valid color-mix().
+    def repl(m):
+        var, hexa = m.group(1), m.group(2)
+        return f'color-mix(in srgb, var(--{var}) {round(int(hexa,16)/255*100)}%, transparent)'
+    return re.sub(r'var\(--([a-z0-9]+)\)([0-9a-fA-F]{2})\b', repl, css)
+
+def media_css(t):
+    style = t.get("media_style", "fade")
+    base = (".media-band{position:relative;z-index:2;padding:clamp(36px,6vw,72px) 0}"
+            ".media-band .m-head{max-width:760px;margin:0 auto clamp(20px,3vw,34px);text-align:center}"
+            ".media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}"
+            ".media-band .m-head h2{margin:10px 0}.media-band .m-head p{color:var(--mut);max-width:640px;margin:0 auto}"
+            ".m-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(12px,2vw,18px)}"
+            ".m-tile{position:relative;overflow:hidden;border-radius:var(--card-r);background:var(--bg2);border:1px solid var(--line);aspect-ratio:4/3;opacity:0;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}"
+            ".m-tile.shown{opacity:1}"
+            ".m-tile .m-media{width:100%;height:100%;object-fit:cover;display:block}"
+            ".m-tile .m-cap{position:absolute;left:12px;right:12px;bottom:10px;z-index:4;font-size:.8rem;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75);opacity:0;transform:translateY(6px);transition:.3s}"
+            ".m-tile::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));opacity:0;transition:opacity .3s}"
+            ".m-tile:hover::after{opacity:1}.m-tile:hover .m-cap{opacity:1;transform:none}"
+            ".m-vid::before{content:'\\25B6';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:1rem;border:2px solid rgba(255,255,255,.75);transition:.3s;pointer-events:none}"
+            ".m-vid:hover::before{background:var(--accent);color:var(--bg);transform:translate(-50%,-50%) scale(1.08)}.m-vid.playing::before{opacity:0}"
+            "@media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}")
+    return _fix_css_alpha(base + MEDIA_STYLE_CSS.get(style, ""))
 
 def head_meta(page_path):
     title = PAGE_TITLES.get(page_path, BRAND_TITLE)
@@ -546,6 +650,10 @@ details.card[open] summary::after {{ transform: rotate(45deg); }}
 .radio-pill:hover span {{ border-color: var(--accent); color: var(--accent); }}
 .form-cta {{ display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }}
 .form-cta .privacy {{ font-size: .78rem; color: var(--mut); flex: 1; min-width: 200px; }}
+.hc-pills {{ display: flex; flex-wrap: wrap; gap: 10px; }}
+.hc-pill {{ display: inline-block; padding: 9px 16px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .86rem; font-weight: 700; color: var(--mut); background: var(--glass); transition: border-color .2s, color .2s; }}
+.hc-pill:hover {{ border-color: var(--accent); color: var(--accent); }}
+{media_css(t)}
 </style>'''
 
 # ============== JS — hamburger + lang + page transition ==============
@@ -628,6 +736,26 @@ JS = '''<script>
     }, { threshold: 0.5 });
     counters.forEach(function(c) { countObs.observe(c); });
   }
+
+  // Media tiles: reveal on scroll + lazy-load/play videos (keeps pages fast)
+  if ('IntersectionObserver' in window) {
+    var mio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var tile = en.target;
+        tile.classList.add('shown');
+        var v = tile.querySelector('video[data-src]');
+        if (v && !v.getAttribute('data-loaded')) {
+          v.setAttribute('data-loaded', '1');
+          v.src = v.getAttribute('data-src');
+          var pr = v.play();
+          if (pr && pr.then) { pr.then(function() { tile.classList.add('playing'); }).catch(function() {}); }
+        }
+        mio.unobserve(tile);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.m-tile').forEach(function(t) { mio.observe(t); });
+  }
 })();
 </script>'''
 
@@ -664,7 +792,11 @@ SUBPAGE_TPL = '''<!DOCTYPE html>
 </body>
 </html>'''
 
-def render_subpage(tokens, page_key, pdata):
+def render_subpage(tokens, page_key, pdata, site_index=0):
+    # Append a media showcase to every page (counts vary so pages don't look identical)
+    nvm = {"gallery": (3, 8), "about": (2, 5), "haircuts": (2, 6), "faq": (1, 3), "contact": (1, 3)}
+    nv, ni = nvm.get(page_key, (1, 4))
+    body = pdata["body"] + media_band(tokens, site_index, page_key, n_vid=nv, n_img=ni)
     return SUBPAGE_TPL.format(
         title=PAGE_TITLES[pdata["path"]],
         head_meta=head_meta(pdata["path"]),
@@ -673,7 +805,7 @@ def render_subpage(tokens, page_key, pdata):
         decoration=decoration_layer(tokens),
         top_banner=top_banner(),
         header=header_html(page_key),
-        eyebrow=pdata["eyebrow"], h1=pdata["h1"], sub=pdata["sub"], body=pdata["body"],
+        eyebrow=pdata["eyebrow"], h1=pdata["h1"], sub=pdata["sub"], body=body,
         footer=footer_html(),
         sticky_call=sticky_call(),
         js=JS,
@@ -821,6 +953,31 @@ def p_contact():
 <div class="form-cta"><button type="submit" class="btn btn-primary">{bi({"en":"Send to admissions","es":"Enviar a admisiones"})}</button><p class="privacy">{bi({"en":"We respond same-day during business hours. Never spam.","es":"Respondemos el mismo día en horario laboral. Nunca spam."})}</p></div>
 </form></div></div></section>'''}
 
+def p_haircuts():
+    hc = CONTENT["haircut_clinic"]
+    c1, c2 = CONTENT["campuses"]
+    services = "".join(f'<span class="hc-pill">{bi(s)}</span>' for s in hc["services"])
+    steps = [
+        ({"en":"Call or walk in","es":"Llama o ven sin cita"}, {"en":f"Book by phone at {hc['booking_phone']}, or walk in based on availability.","es":f"Reserva por teléfono al {hc['booking_phone']}, o ven sin cita según disponibilidad."}),
+        ({"en":"Tell us your style","es":"Dinos tu estilo"}, {"en":"Consult with your student barber about exactly the cut you want.","es":"Consulta con tu barbero estudiante sobre el corte exacto que quieres."}),
+        ({"en":"Relax — you're supervised","es":"Relájate — bajo supervisión"}, {"en":"Every cut is supervised by a NY-licensed instructor on the floor.","es":"Cada corte es supervisado por un instructor licenciado de NY en el piso."}),
+    ]
+    step_cards = "".join(f'<div class="card"><div style="font-size:2rem;color:var(--accent);font-weight:800;line-height:1;font-family:inherit">0{i+1}</div><h3 style="margin:8px 0">{bi(tt)}</h3><p style="color:var(--mut);font-size:.94rem">{bi(dd)}</p></div>' for i,(tt,dd) in enumerate(steps))
+    return {"path":"/haircuts",
+        "eyebrow": bi({"en":"Student Clinic","es":"Clínica Estudiantil"}),
+        "h1": bi({"en":"Get a fresh cut at ABI.","es":"Recibe un corte fresco en ABI."}),
+        "sub": bi(hc["intro"]),
+        "body": f'''<section><div class="container"><div class="eyebrow-acc">{bi({"en":"How it works","es":"Cómo funciona"})}</div><h2 style="margin-bottom:18px">{bi({"en":"Three steps to the chair","es":"Tres pasos al sillón"})}</h2><div class="grid">{step_cards}</div></div></section>
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Styles available","es":"Estilos disponibles"})}</div><h2 style="margin-bottom:16px">{bi({"en":"Every cut, every style","es":"Cada corte, cada estilo"})}</h2><div class="hc-pills">{services}</div></div></section>
+<section><div class="container"><div class="grid-2">
+<div class="card"><h3 style="margin-bottom:10px">{bi({"en":"Visit us","es":"Visítanos"})}</h3><p style="color:var(--mut);margin-bottom:8px">{bi(c1["name"])} — 48 W 39th St · {bi(c2["name"])} — 121 Westchester Sq</p>
+<p style="margin-bottom:6px"><a href="tel:{tel(hc["booking_phone"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{hc["booking_phone"]}</a></p>
+<p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{hc["hours"]}</p>
+<a class="btn btn-primary" href="tel:{tel(hc["booking_phone"])}">{bi({"en":"Book a chair","es":"Reserva un asiento"})}</a></div>
+<div class="card"><h3 style="margin-bottom:10px">{bi({"en":"What to expect","es":"Qué esperar"})}</h3><p style="color:var(--mut);line-height:1.7">{bi(hc["what_to_expect"])}</p><p style="color:var(--mut);font-size:.84rem;margin-top:12px;opacity:.85">{bi({"en":"Haircuts are performed by students under the supervision of licensed instructors. Student barbers are not yet licensed professionals.","es":"Los cortes son realizados por estudiantes bajo la supervisión de instructores licenciados. Los barberos estudiantes aún no son profesionales licenciados."})}</p></div>
+</div></div></section>
+<section><div class="container" style="text-align:center"><h2 style="margin-bottom:12px">{bi({"en":"Want to be on the other side of the chair?","es":"¿Quieres estar del otro lado del sillón?"})}</h2><a class="btn btn-primary" href="/contact">{bi(UI["become_barber"])} — {bi(UI["lets_do_it"])}</a> <a class="btn btn-ghost" href="/programs" style="margin-left:8px">{bi(UI["see_programs"])}</a></div></section>'''}
+
 # ============== ASSET BUNDLER ==============
 def bundle_assets(site, site_dir):
     a = site_dir / "assets"; (a/"img").mkdir(parents=True, exist_ok=True)
@@ -832,6 +989,16 @@ def bundle_assets(site, site_dir):
         if f.lower().endswith(('.jpeg','.jpg','.png')):
             dst = a / "img" / f
             if not dst.exists(): shutil.copy2(SRC_ASSETS / "img" / f, dst)
+    # Showcase media (real barbershop videos + photos) for the per-page media bands
+    if SHOWCASE_DIR.exists():
+        for sub in ("vid", "img"):
+            srcd = SHOWCASE_DIR / sub
+            if not srcd.exists(): continue
+            dstd = a / "showcase" / sub; dstd.mkdir(parents=True, exist_ok=True)
+            for f in os.listdir(srcd):
+                if f.startswith('.'): continue
+                dst = dstd / f
+                if not dst.exists(): shutil.copy2(srcd / f, dst)
 
 # ============== INDEX HTML SURGERY ==============
 def strip_old_injection(html):
@@ -857,31 +1024,56 @@ def fix_paths(html):
     html = html.replace("../assets/", "/assets/")
     return html
 
+def scrub_price(html):
+    """De-emphasize the '$3 haircut' per user request (keep the Haircuts page, drop the price number).
+    Negative lookahead (?![\\d,]) protects $300, $3,000, $35,000, $500, etc."""
+    html = re.sub(r'\(typically[^)]*\$3(?![\d,])[^)]*\)', '(supervised by licensed instructors)', html)
+    html = re.sub(r'Only \$3(?![\d,])[^.<]*\.', 'A great cut at the student clinic.', html)
+    html = re.sub(r'\$3(?![\d,])', 'a low student-clinic rate', html)
+    return html
+
 def replace_title(html):
     return re.sub(r'<title>[^<]*</title>', f'<title>{BRAND_TITLE}</title>', html, count=1)
 
 def inject_into_head(html, extras):
     return re.sub(r'</title>', lambda m: m.group(0) + "\n" + extras, html, count=1)
 
-# Inject top-banner + new header BEFORE the existing header. Strip nav from existing header.
-def add_v5_chrome(html, tokens):
-    # Insert before </head>: add view-transition meta + extra meta tags
-    head_extras = head_meta("/") + "\n" + jsonld() + "\n" + css_for_site(tokens)
+# Inject v5 chrome IDEMPOTENTLY: strip any prior chrome, then inject exactly one of each
+# (sentinel-wrapped). This permanently fixes the stacked duplicate header/footer/body-class bug.
+def add_v5_chrome(html, tokens, site_index=0):
+    # 1) Remove any previously-injected chrome so re-runs never stack
+    for tag in ("head", "top", "bottom"):
+        html = re.sub(rf'<!--ABIv5:{tag}-->.*?<!--/ABIv5:{tag}-->\s*', '', html, flags=re.DOTALL)
+    html = re.sub(r'<header\b[^>]*>.*?</header>\s*', '', html, flags=re.DOTALL)   # all headers (original + injected)
+    html = re.sub(r'<footer\b[^>]*>.*?</footer>\s*', '', html, flags=re.DOTALL)   # all footers
+    html = re.sub(r'<div class="sticky-call"[^>]*>.*?</div>\s*', '', html, flags=re.DOTALL)
+    html = re.sub(r'<video class="bg-video"[^>]*>.*?</video>\s*', '', html, flags=re.DOTALL)
+    html = re.sub(r'<section class="media-band[^"]*">.*?</section>\s*', '', html, flags=re.DOTALL)
+    html = re.sub(r'<!-- ABI v5 INJECTED -->\s*', '', html)
+
+    # 2) Head extras (wrapped sentinel region)
+    head_extras = "<!--ABIv5:head-->\n" + head_meta("/") + "\n" + jsonld() + "\n" + css_for_site(tokens) + "\n<!--/ABIv5:head-->"
     html = inject_into_head(html, head_extras)
-    # Inject decoration layer + top banner + new header right after <body>
-    new_chrome = decoration_layer(tokens) + "\n" + top_banner() + "\n" + header_html("home")
-    # Match <body...> and insert
-    html = re.sub(r'<body[^>]*>', lambda m: m.group(0).replace('<body', '<body class="lang-en"', 1) if 'class=' not in m.group(0) else m.group(0).replace('class="', 'class="lang-en ', 1), html, count=1)
-    html = re.sub(r'(<body[^>]*>)', lambda m: m.group(0) + "\n" + new_chrome, html, count=1)
-    # Remove the existing site's <header>...</header> (since we have our own now)
-    html = re.sub(r'<header(?![^>]*site-header)[^>]*>.*?</header>', '', html, count=1, flags=re.DOTALL)
-    # Inject bg video after our header
+
+    # 3) Body class: exactly one lang-en (idempotent — fixes "lang-en lang-en lang-en")
+    def _bodyfix(m):
+        tag = m.group(0)
+        if 'class=' in tag:
+            return re.sub(r'class="[^"]*"', 'class="lang-en"', tag, count=1)
+        return tag.replace('<body', '<body class="lang-en"', 1)
+    html = re.sub(r'<body[^>]*>', _bodyfix, html, count=1)
+
+    # 4) Top chrome: decoration + banner + ONE header + bg video (wrapped)
     vid = '<video class="bg-video" autoplay muted loop playsinline aria-hidden="true" poster="/assets/logo.jpeg"><source src="/assets/bg.mp4" type="video/mp4"></video>'
-    html = re.sub(r'(</header>)', lambda m: m.group(0) + "\n" + vid, html, count=1)
-    # Inject sticky call + JS before </body>
-    html = html.replace('</body>', f'{footer_html()}\n{sticky_call()}\n{JS}\n</body>', 1)
-    html = html.replace('</head>', '<!-- ABI v5 INJECTED -->\n</head>', 1)
-    # Update viewport meta to include maximum-scale=5
+    top = "<!--ABIv5:top-->\n" + decoration_layer(tokens) + "\n" + top_banner() + "\n" + header_html("home") + "\n" + vid + "\n<!--/ABIv5:top-->"
+    html = re.sub(r'(<body[^>]*>)', lambda m: m.group(0) + "\n" + top, html, count=1)
+
+    # 5) Bottom chrome: home media band + ONE footer + sticky + JS (wrapped)
+    band = media_band(tokens, site_index, "home", n_vid=2, n_img=6)
+    bottom = "<!--ABIv5:bottom-->\n" + band + "\n" + footer_html() + "\n" + sticky_call() + "\n" + JS + "\n<!--/ABIv5:bottom-->"
+    html = html.replace('</body>', bottom + "\n</body>", 1)
+
+    # 6) viewport
     html = re.sub(r'<meta name="viewport"[^>]*>', '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">', html, count=1)
     return html
 
@@ -890,26 +1082,29 @@ def build_site(site):
     site_dir = ROOT / slug
     if not site_dir.exists(): return
     tokens = load_tokens(slug)
+    site_index = SITES.index(site)
 
     # Bundle assets
     bundle_assets(site, site_dir)
 
-    # Enhance index.html
+    # Enhance index.html (idempotent — safe to re-run)
     idx = site_dir / "index.html"
     html = idx.read_text(encoding="utf-8", errors="replace")
     html = strip_old_injection(html)
     html = replace_title(html)
     html = fix_paths(html)
-    html = add_v5_chrome(html, tokens)
+    html = scrub_price(html)
+    html = add_v5_chrome(html, tokens, site_index)
     idx.write_text(html, encoding="utf-8")
 
-    # Sub-pages (no haircuts)
+    # Sub-pages (haircuts restored)
     pages_def = [
         ("about.html", "about", p_about),
         ("programs.html", "programs", p_programs),
         ("instructors.html", "instructors", p_instructors),
         ("gallery.html", "gallery", lambda: p_gallery(site_dir)),
         ("partners.html", "partners", p_partners),
+        ("haircuts.html", "haircuts", p_haircuts),
         ("job-placement.html", "jobplacement", p_jobplacement),
         ("resources.html", "resources", p_resources),
         ("faq.html", "faq", p_faq),
@@ -917,15 +1112,11 @@ def build_site(site):
     ]
     for fname, key, fn in pages_def:
         pdata = fn()
-        (site_dir / fname).write_text(render_subpage(tokens, key, pdata), encoding="utf-8")
+        (site_dir / fname).write_text(render_subpage(tokens, key, pdata, site_index), encoding="utf-8")
 
-    # Remove haircuts if present
-    hc = site_dir / "haircuts.html"
-    if hc.exists(): hc.unlink()
-
-    # Sitemap (no haircuts)
+    # Sitemap (haircuts included)
     base = f"https://{site['vercel_name']}.vercel.app"
-    paths = ["/", "/about", "/programs", "/instructors", "/gallery", "/partners", "/job-placement", "/resources", "/faq", "/contact"]
+    paths = ["/", "/about", "/programs", "/instructors", "/gallery", "/partners", "/haircuts", "/job-placement", "/resources", "/faq", "/contact"]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for p in paths:
         sm += f'  <url><loc>{base}{p}</loc><changefreq>weekly</changefreq><priority>{"1.0" if p=="/" else "0.7"}</priority></url>\n'
