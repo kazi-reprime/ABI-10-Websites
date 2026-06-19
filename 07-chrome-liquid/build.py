@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 07-chrome-liquid ----
 TOKENS = {
     "slug": "07-chrome-liquid",
+    "logo_dark_bg": False,
     "bg": "#ece9e3",
     "bg2": "#ffffff",
     "ink": "#0a0a0a",
@@ -46,9 +47,11 @@ TOKENS = {
 SITE = {
     "slug": "07-chrome-liquid",
     "vercel_name": "abi-app-7",
-    "logo": "logo_for_american_barber_institute_2.jpeg",
+    "logo": "site-07-mono.jpeg",
     "video": "urban_motion_graphic_new_york.mp4",
-    "site_index": 6
+    "site_index": 6,
+    "favicon": "site-07-mono-favicon.png",
+    "og": "site-07-mono-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; safe to expand) ----

@@ -2,257 +2,1616 @@
   "brand": {
     "name": "American Barber Institute",
     "short": "ABI",
-    "tagline": {"en":"Your Future. Your Career. Start Today.","es":"Tu Futuro. Tu Carrera. Empieza Hoy."},
-    "subtitle": {"en":"Become a licensed barber in as little as 17 weeks. Hands-on training. Real skills. Real opportunities.","es":"Conviértete en barbero licenciado en tan solo 17 semanas. Entrenamiento práctico. Habilidades reales. Oportunidades reales."},
-    "promo": {"en":"Start Your Barber Journey Today for Only $150 per Week*","es":"Comienza Tu Camino de Barbero Hoy por Solo $150 por Semana*"},
+    "tagline": {
+      "en": "Your Future. Your Career. Start Today.",
+      "es": "Tu Futuro. Tu Carrera. Empieza Hoy."
+    },
+    "subtitle": {
+      "en": "Become a licensed barber in as little as 17 weeks. Hands-on training. Real skills. Real opportunities.",
+      "es": "Conviértete en barbero licenciado en tan solo 17 semanas. Entrenamiento práctico. Habilidades reales. Oportunidades reales."
+    },
+    "promo": {
+      "en": "Start Your Barber Journey Today for Only $150 per Week*",
+      "es": "Comienza Tu Camino de Barbero Hoy por Solo $150 por Semana*"
+    },
     "phone_manhattan": "(212) 290-2289",
     "phone_manhattan_es": "(212) 290-0278",
     "phone_bronx": "(718) 676-0640",
     "phone_haircut_booking": "(856) 316-1551",
     "email": "admission@abi.edu",
-    "next_start_short": {"en":"First Monday of every month","es":"El primer lunes de cada mes"},
+    "next_start_short": {
+      "en": "First Monday of every month",
+      "es": "El primer lunes de cada mes"
+    },
     "years_in_business": "30+",
     "graduates": "10,000+",
     "rating": "4.3",
     "reviews": "100+",
-    "next_start_date": {"en":"Monday, July 6, 2026","es":"Lunes, 6 de julio de 2026"},
+    "next_start_date": {
+      "en": "Monday, July 6, 2026",
+      "es": "Lunes, 6 de julio de 2026"
+    },
     "weeks_to_license": "17",
-    "facility": {"en":"Modern campus in Midtown Manhattan","es":"Campus moderno en Midtown Manhattan"},
-    "license_authority": {"en":"New York State Department of Education (BPSS)","es":"Departamento de Educación del Estado de Nueva York (BPSS)"}
+    "facility": {
+      "en": "Modern campus in Midtown Manhattan",
+      "es": "Campus moderno en Midtown Manhattan"
+    },
+    "license_authority": {
+      "en": "New York State Department of Education (BPSS)",
+      "es": "Departamento de Educación del Estado de Nueva York (BPSS)"
+    }
   },
   "social": [
-    {"name":"Facebook","url":"https://www.facebook.com/Abi.Education/","icon":"facebook"},
-    {"name":"Instagram","url":"https://www.instagram.com/americanbarberinstitute/","icon":"instagram"},
-    {"name":"YouTube","url":"https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ","icon":"youtube"},
-    {"name":"X","url":"https://x.com/amerbarberedu","icon":"x"},
-    {"name":"Pinterest","url":"https://www.pinterest.com/alexzholendz/american-barber-institute/","icon":"pinterest"}
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/Abi.Education/",
+      "icon": "facebook"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/americanbarberinstitute/",
+      "icon": "instagram"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ",
+      "icon": "youtube"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/amerbarberedu",
+      "icon": "x"
+    },
+    {
+      "name": "Pinterest",
+      "url": "https://www.pinterest.com/alexzholendz/american-barber-institute/",
+      "icon": "pinterest"
+    }
   ],
   "ui": {
-    "apply_now": {"en":"Apply Now","es":"Aplica Ahora"},
-    "apply_today": {"en":"Apply Today","es":"Aplica Hoy"},
-    "call_english": {"en":"Call (English)","es":"Llamar (Inglés)"},
-    "call_spanish": {"en":"Call (Spanish)","es":"Llamar (Español)"},
-    "call_admissions": {"en":"Call Admissions","es":"Llama a Admisiones"},
-    "send_message": {"en":"Send a Message","es":"Enviar un Mensaje"},
-    "read_faq": {"en":"Read FAQ","es":"Leer Preguntas"},
-    "see_programs": {"en":"See Programs","es":"Ver Programas"},
-    "view_all_programs": {"en":"View All Programs","es":"Ver Todos los Programas"},
-    "class_schedule": {"en":"Class Schedule","es":"Horario de Clases"},
-    "talk_admissions": {"en":"Talk to Admissions","es":"Habla con Admisiones"},
-    "get_directions": {"en":"Get Directions","es":"Obtener Direcciones"},
-    "visit_campus": {"en":"Visit Our Campus","es":"Visita Nuestro Campus"},
-    "book_chair": {"en":"Book a Chair","es":"Reserva un Asiento"},
-    "become_barber": {"en":"Become a Barber","es":"Conviértete en Barbero"},
-    "lets_do_it": {"en":"Let's Do It","es":"¡Adelante!"},
-    "details": {"en":"Details","es":"Detalles"},
-    "language": {"en":"Language","es":"Idioma"}
+    "apply_now": {
+      "en": "Apply Now",
+      "es": "Aplica Ahora"
+    },
+    "apply_today": {
+      "en": "Apply Today",
+      "es": "Aplica Hoy"
+    },
+    "call_english": {
+      "en": "Call (English)",
+      "es": "Llamar (Inglés)"
+    },
+    "call_spanish": {
+      "en": "Call (Spanish)",
+      "es": "Llamar (Español)"
+    },
+    "call_admissions": {
+      "en": "Call Admissions",
+      "es": "Llama a Admisiones"
+    },
+    "send_message": {
+      "en": "Send a Message",
+      "es": "Enviar un Mensaje"
+    },
+    "read_faq": {
+      "en": "Read FAQ",
+      "es": "Leer Preguntas"
+    },
+    "see_programs": {
+      "en": "See Programs",
+      "es": "Ver Programas"
+    },
+    "view_all_programs": {
+      "en": "View All Programs",
+      "es": "Ver Todos los Programas"
+    },
+    "class_schedule": {
+      "en": "Class Schedule",
+      "es": "Horario de Clases"
+    },
+    "talk_admissions": {
+      "en": "Talk to Admissions",
+      "es": "Habla con Admisiones"
+    },
+    "get_directions": {
+      "en": "Get Directions",
+      "es": "Obtener Direcciones"
+    },
+    "visit_campus": {
+      "en": "Visit Our Campus",
+      "es": "Visita Nuestro Campus"
+    },
+    "book_chair": {
+      "en": "Book a Chair",
+      "es": "Reserva un Asiento"
+    },
+    "become_barber": {
+      "en": "Become a Barber",
+      "es": "Conviértete en Barbero"
+    },
+    "lets_do_it": {
+      "en": "Let's Do It",
+      "es": "¡Adelante!"
+    },
+    "details": {
+      "en": "Details",
+      "es": "Detalles"
+    },
+    "language": {
+      "en": "Language",
+      "es": "Idioma"
+    }
   },
   "nav": {
-    "home":         {"en":"Home","es":"Inicio"},
-    "about":        {"en":"About","es":"Acerca de"},
-    "programs":     {"en":"Programs","es":"Programas"},
-    "resources":    {"en":"Resources","es":"Recursos"},
-    "faq":          {"en":"FAQs","es":"Preguntas Frecuentes"},
-    "jobplacement": {"en":"Jobs","es":"Empleos"},
-    "haircuts":     {"en":"Haircuts","es":"Cortes de Cabello"},
-    "gallery":      {"en":"Gallery","es":"Galería"},
-    "blog":         {"en":"Blog","es":"Blog"},
-    "partners":     {"en":"Partners","es":"Aliados"},
-    "instructors":  {"en":"Instructors","es":"Instructores"},
-    "contact":      {"en":"Contact","es":"Contacto"}
+    "home": {
+      "en": "Home",
+      "es": "Inicio"
+    },
+    "about": {
+      "en": "About",
+      "es": "Acerca de"
+    },
+    "programs": {
+      "en": "Programs",
+      "es": "Programas"
+    },
+    "resources": {
+      "en": "Resources",
+      "es": "Recursos"
+    },
+    "faq": {
+      "en": "FAQs",
+      "es": "Preguntas Frecuentes"
+    },
+    "jobplacement": {
+      "en": "Jobs",
+      "es": "Empleos"
+    },
+    "haircuts": {
+      "en": "Haircuts",
+      "es": "Cortes de Cabello"
+    },
+    "gallery": {
+      "en": "Gallery",
+      "es": "Galería"
+    },
+    "blog": {
+      "en": "Blog",
+      "es": "Blog"
+    },
+    "partners": {
+      "en": "Partners",
+      "es": "Aliados"
+    },
+    "instructors": {
+      "en": "Instructors",
+      "es": "Instructores"
+    },
+    "contact": {
+      "en": "Contact",
+      "es": "Contacto"
+    }
   },
   "campuses": [
-    {"name":{"en":"Manhattan","es":"Manhattan"},"address":"48 West 39th Street, New York, NY 10018","phone":"(212) 290-2289","hours":{"en":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM","es":"Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM"}},
-    {"name":{"en":"Bronx","es":"Bronx"},"address":"121 Westchester Square, Bronx, NY 10461","phone":"(718) 676-0640","hours":{"en":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM","es":"Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM"}}
+    {
+      "name": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "address": "48 West 39th Street, New York, NY 10018",
+      "phone": "(212) 290-2289",
+      "hours": {
+        "en": "Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM",
+        "es": "Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM"
+      }
+    },
+    {
+      "name": {
+        "en": "Bronx",
+        "es": "Bronx"
+      },
+      "address": "121 Westchester Square, Bronx, NY 10461",
+      "phone": "(718) 676-0640",
+      "hours": {
+        "en": "Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM",
+        "es": "Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM"
+      }
+    }
   ],
   "programs": [
-    {"campus":{"en":"Manhattan","es":"Manhattan"},"name":{"en":"500-Hour Master Barber Program","es":"Programa de Maestro Barbero — 500 Horas"},"duration":{"en":"500 Hours · ≈ 4 Months","es":"500 Horas · ≈ 4 Meses"},"summary":{"en":"Our comprehensive 500-hour Master Barber training program is meticulously designed to equip students with the knowledge and skills necessary to thrive in the competitive world of barbering — from mastering classic techniques to staying updated on the latest trends.","es":"Nuestro programa integral de Maestro Barbero de 500 horas está meticulosamente diseñado para equipar a los estudiantes con el conocimiento y las habilidades necesarias para prosperar en el competitivo mundo de la barbería — desde dominar las técnicas clásicas hasta mantenerse al día con las últimas tendencias."},"price":"$5,600","badge":{"en":"Most Popular","es":"Más Popular"},"flagship":true},
-    {"campus":{"en":"Bronx","es":"Bronx"},"name":{"en":"500-Hour Master Barber Program — Bronx","es":"Programa de Maestro Barbero — 500 Horas — Bronx"},"duration":{"en":"500 Hours · ≈ 4 Months","es":"500 Horas · ≈ 4 Meses"},"summary":{"en":"Become a licensed Master Barber in New York State at our Bronx campus. The same comprehensive 500-hour curriculum as Manhattan, with the same flexible payment plans, hands-on training, and job placement assistance. Take control of your income, open your own barbershop, and thrive in a recession-proof industry.","es":"Conviértete en un Maestro Barbero licenciado del Estado de Nueva York en nuestro campus del Bronx. El mismo currículo integral de 500 horas que en Manhattan, con los mismos planes de pago flexibles, entrenamiento práctico y asistencia de colocación laboral. Toma control de tus ingresos, abre tu propia barbería y prospera en una industria a prueba de recesiones."},"price":"$5,600"},
-    {"campus":{"en":"Manhattan","es":"Manhattan"},"name":{"en":"50-Hour Barber Refresher Program","es":"Curso de Actualización de Barbería — 50 Horas"},"duration":{"en":"50 Hours · 2 Weeks","es":"50 Horas · 2 Semanas"},"summary":{"en":"Designed for licensed individuals, cosmetologists, hairdressers, and barber apprentices looking to sharpen their skills. Covers classical haircutting, straight razor shaves, fades, tapers, and NY State Board Exam prep.","es":"Diseñado para personas licenciadas, cosmetólogos, peluqueros y aprendices de barbería que buscan afinar sus habilidades. Cubre corte de cabello clásico, afeitado con navaja, degradados, tapers y preparación para el Examen de la Junta Estatal de NY."},"price":"$1,500"},
-    {"campus":{"en":"Manhattan & Bronx","es":"Manhattan y Bronx"},"name":{"en":"3-Hour Contagious Diseases Program","es":"Programa de Enfermedades Contagiosas — 3 Horas"},"duration":{"en":"3 Hours · 1 Session","es":"3 Horas · 1 Sesión"},"summary":{"en":"The required HIV/Contagious Diseases course for the New York State Board of Barbering Exam. Covers bloodborne pathogen safety, sanitation standards, and NY State regulations. Available to all prospective and current students.","es":"El curso requerido de VIH/Enfermedades Contagiosas para el Examen de la Junta Estatal de Barbería de Nueva York. Cubre seguridad sobre patógenos sanguíneos, normas de sanitización y regulaciones del Estado de NY. Disponible para todos los estudiantes actuales y prospectivos."},"price":"$100"}
+    {
+      "campus": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "name": {
+        "en": "500-Hour Master Barber Program",
+        "es": "Programa de Maestro Barbero — 500 Horas"
+      },
+      "duration": {
+        "en": "500 Hours · ≈ 4 Months",
+        "es": "500 Horas · ≈ 4 Meses"
+      },
+      "summary": {
+        "en": "Our comprehensive 500-hour Master Barber training program is meticulously designed to equip students with the knowledge and skills necessary to thrive in the competitive world of barbering — from mastering classic techniques to staying updated on the latest trends.",
+        "es": "Nuestro programa integral de Maestro Barbero de 500 horas está meticulosamente diseñado para equipar a los estudiantes con el conocimiento y las habilidades necesarias para prosperar en el competitivo mundo de la barbería — desde dominar las técnicas clásicas hasta mantenerse al día con las últimas tendencias."
+      },
+      "price": "$5,600",
+      "badge": {
+        "en": "Most Popular",
+        "es": "Más Popular"
+      },
+      "flagship": true
+    },
+    {
+      "campus": {
+        "en": "Bronx",
+        "es": "Bronx"
+      },
+      "name": {
+        "en": "500-Hour Master Barber Program — Bronx",
+        "es": "Programa de Maestro Barbero — 500 Horas — Bronx"
+      },
+      "duration": {
+        "en": "500 Hours · ≈ 4 Months",
+        "es": "500 Horas · ≈ 4 Meses"
+      },
+      "summary": {
+        "en": "Become a licensed Master Barber in New York State at our Bronx campus. The same comprehensive 500-hour curriculum as Manhattan, with the same flexible payment plans, hands-on training, and job placement assistance. Take control of your income, open your own barbershop, and thrive in a recession-proof industry.",
+        "es": "Conviértete en un Maestro Barbero licenciado del Estado de Nueva York en nuestro campus del Bronx. El mismo currículo integral de 500 horas que en Manhattan, con los mismos planes de pago flexibles, entrenamiento práctico y asistencia de colocación laboral. Toma control de tus ingresos, abre tu propia barbería y prospera en una industria a prueba de recesiones."
+      },
+      "price": "$5,600"
+    },
+    {
+      "campus": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "name": {
+        "en": "50-Hour Barber Refresher Program",
+        "es": "Curso de Actualización de Barbería — 50 Horas"
+      },
+      "duration": {
+        "en": "50 Hours · 2 Weeks",
+        "es": "50 Horas · 2 Semanas"
+      },
+      "summary": {
+        "en": "Designed for licensed individuals, cosmetologists, hairdressers, and barber apprentices looking to sharpen their skills. Covers classical haircutting, straight razor shaves, fades, tapers, and NY State Board Exam prep.",
+        "es": "Diseñado para personas licenciadas, cosmetólogos, peluqueros y aprendices de barbería que buscan afinar sus habilidades. Cubre corte de cabello clásico, afeitado con navaja, degradados, tapers y preparación para el Examen de la Junta Estatal de NY."
+      },
+      "price": "$1,500"
+    },
+    {
+      "campus": {
+        "en": "Manhattan & Bronx",
+        "es": "Manhattan y Bronx"
+      },
+      "name": {
+        "en": "3-Hour Contagious Diseases Program",
+        "es": "Programa de Enfermedades Contagiosas — 3 Horas"
+      },
+      "duration": {
+        "en": "3 Hours · 1 Session",
+        "es": "3 Horas · 1 Sesión"
+      },
+      "summary": {
+        "en": "The required HIV/Contagious Diseases course for the New York State Board of Barbering Exam. Covers bloodborne pathogen safety, sanitation standards, and NY State regulations. Available to all prospective and current students.",
+        "es": "El curso requerido de VIH/Enfermedades Contagiosas para el Examen de la Junta Estatal de Barbería de Nueva York. Cubre seguridad sobre patógenos sanguíneos, normas de sanitización y regulaciones del Estado de NY. Disponible para todos los estudiantes actuales y prospectivos."
+      },
+      "price": "$100"
+    }
   ],
   "schedules": [
-    {"label":{"en":"Full-Time Morning","es":"Tiempo Completo · Mañana"},"days":{"en":"Mon–Fri","es":"Lun–Vie"},"time":"8:00 AM – 2:00 PM","tuition":"$5,600","plan":{"en":"$500 down + 17 weekly payments of $300","es":"$500 enganche + 17 pagos semanales de $300"}},
-    {"label":{"en":"Full-Time Afternoon","es":"Tiempo Completo · Tarde"},"days":{"en":"Mon–Fri","es":"Lun–Vie"},"time":"2:00 PM – 8:00 PM","tuition":"$4,600","plan":{"en":"$500 down + 16 weekly payments of $250 + $100 final","es":"$500 enganche + 16 pagos semanales de $250 + $100 final"}},
-    {"label":{"en":"Weekend","es":"Fin de Semana"},"days":{"en":"Sat & Sun","es":"Sáb & Dom"},"time":"9:00 AM – 7:00 PM","tuition":"$4,600","plan":{"en":"$550 down + 27 weekly payments of $150","es":"$550 enganche + 27 pagos semanales de $150"}}
+    {
+      "label": {
+        "en": "Full-Time Morning",
+        "es": "Tiempo Completo · Mañana"
+      },
+      "days": {
+        "en": "Mon–Fri",
+        "es": "Lun–Vie"
+      },
+      "time": "8:00 AM – 2:00 PM",
+      "tuition": "$5,600",
+      "plan": {
+        "en": "$500 down + 17 weekly payments of $300",
+        "es": "$500 enganche + 17 pagos semanales de $300"
+      }
+    },
+    {
+      "label": {
+        "en": "Full-Time Afternoon",
+        "es": "Tiempo Completo · Tarde"
+      },
+      "days": {
+        "en": "Mon–Fri",
+        "es": "Lun–Vie"
+      },
+      "time": "2:00 PM – 8:00 PM",
+      "tuition": "$4,600",
+      "plan": {
+        "en": "$500 down + 16 weekly payments of $250 + $100 final",
+        "es": "$500 enganche + 16 pagos semanales de $250 + $100 final"
+      }
+    },
+    {
+      "label": {
+        "en": "Weekend",
+        "es": "Fin de Semana"
+      },
+      "days": {
+        "en": "Sat & Sun",
+        "es": "Sáb & Dom"
+      },
+      "time": "9:00 AM – 7:00 PM",
+      "tuition": "$4,600",
+      "plan": {
+        "en": "$550 down + 27 weekly payments of $150",
+        "es": "$550 enganche + 27 pagos semanales de $150"
+      }
+    }
   ],
   "requirements": [
-    {"en":"Social Security card","es":"Tarjeta de Seguro Social"},
-    {"en":"High School Diploma, GED, or pass the ATB exam at ABI","es":"Diploma de Preparatoria, GED, o aprobar el examen ATB en ABI"},
-    {"en":"Minimum age 17","es":"Edad mínima de 17 años"},
-    {"en":"Proof of residential address","es":"Comprobante de domicilio"},
-    {"en":"Valid photo ID or driver's license","es":"Identificación con foto válida o licencia de conducir"},
-    {"en":"$500 down payment (includes $100 registration fee)","es":"$500 de enganche (incluye $100 de cuota de inscripción)"}
+    {
+      "en": "Social Security card",
+      "es": "Tarjeta de Seguro Social"
+    },
+    {
+      "en": "High School Diploma, GED, or pass the ATB exam at ABI",
+      "es": "Diploma de Preparatoria, GED, o aprobar el examen ATB en ABI"
+    },
+    {
+      "en": "Minimum age 17",
+      "es": "Edad mínima de 17 años"
+    },
+    {
+      "en": "Proof of residential address",
+      "es": "Comprobante de domicilio"
+    },
+    {
+      "en": "Valid photo ID or driver's license",
+      "es": "Identificación con foto válida o licencia de conducir"
+    },
+    {
+      "en": "$500 down payment (includes $100 registration fee)",
+      "es": "$500 de enganche (incluye $100 de cuota de inscripción)"
+    }
   ],
   "enrollment_steps": [
-    {"step":1,"title":{"en":"Apply","es":"Aplica"},"desc":{"en":"Submit your information online or call admissions. The whole form takes less than two minutes.","es":"Envía tu información en línea o llama a admisiones. El formulario completo toma menos de dos minutos."}},
-    {"step":2,"title":{"en":"Speak with an advisor","es":"Habla con un asesor"},"desc":{"en":"An admissions advisor walks you through tuition, GI Bill / ACCES-VR, and the schedule that fits your life.","es":"Un asesor de admisiones te explica la matrícula, GI Bill / ACCES-VR, y el horario que se ajusta a tu vida."}},
-    {"step":3,"title":{"en":"Start training","es":"Comienza el entrenamiento"},"desc":{"en":"New cohorts start the first Monday of every month. Step onto the clinic floor.","es":"Las nuevas generaciones comienzan el primer lunes de cada mes. Pisa el piso de la clínica."}}
+    {
+      "step": 1,
+      "title": {
+        "en": "Apply",
+        "es": "Aplica"
+      },
+      "desc": {
+        "en": "Submit your information online or call admissions. The whole form takes less than two minutes.",
+        "es": "Envía tu información en línea o llama a admisiones. El formulario completo toma menos de dos minutos."
+      }
+    },
+    {
+      "step": 2,
+      "title": {
+        "en": "Speak with an advisor",
+        "es": "Habla con un asesor"
+      },
+      "desc": {
+        "en": "An admissions advisor walks you through tuition, GI Bill / ACCES-VR, and the schedule that fits your life.",
+        "es": "Un asesor de admisiones te explica la matrícula, GI Bill / ACCES-VR, y el horario que se ajusta a tu vida."
+      }
+    },
+    {
+      "step": 3,
+      "title": {
+        "en": "Start training",
+        "es": "Comienza el entrenamiento"
+      },
+      "desc": {
+        "en": "New cohorts start the first Monday of every month. Step onto the clinic floor.",
+        "es": "Las nuevas generaciones comienzan el primer lunes de cada mes. Pisa el piso de la clínica."
+      }
+    }
   ],
   "why_choose": [
-    {"title":{"en":"NY State Licensed","es":"Licenciada por el Estado de NY"},"desc":{"en":"ABI is licensed by the New York State Department of Education.","es":"ABI está licenciada por el Departamento de Educación del Estado de Nueva York."}},
-    {"title":{"en":"Hands-On from the First Few Weeks","es":"Práctica Desde las Primeras Semanas"},"desc":{"en":"Work with real clients starting in your first few weeks of class.","es":"Trabaja con clientes reales desde tus primeras semanas de clase."}},
-    {"title":{"en":"Flexible Schedules","es":"Horarios Flexibles"},"desc":{"en":"Morning, Afternoon, and Weekend options to fit your life.","es":"Opciones de mañana, tarde y fin de semana que se ajustan a tu vida."}},
-    {"title":{"en":"Job Placement Office","es":"Oficina de Colocación Laboral"},"desc":{"en":"Dedicated team to help you land a job after graduation.","es":"Un equipo dedicado para ayudarte a conseguir empleo después de graduarte."}},
-    {"title":{"en":"Financial Assistance Available","es":"Asistencia Financiera Disponible"},"desc":{"en":"ACCES-VR, Post-9/11 GI Bill®, and VA benefits accepted.","es":"Aceptamos ACCES-VR, GI Bill® Post-9/11 y beneficios de la VA."}},
-    {"title":{"en":"Monthly Start Dates","es":"Inicios Mensuales"},"desc":{"en":"New classes begin every first Monday of the month.","es":"Las nuevas clases comienzan el primer lunes de cada mes."}}
+    {
+      "title": {
+        "en": "NY State Licensed",
+        "es": "Licenciada por el Estado de NY"
+      },
+      "desc": {
+        "en": "ABI is licensed by the New York State Department of Education.",
+        "es": "ABI está licenciada por el Departamento de Educación del Estado de Nueva York."
+      }
+    },
+    {
+      "title": {
+        "en": "Hands-On from the First Few Weeks",
+        "es": "Práctica Desde las Primeras Semanas"
+      },
+      "desc": {
+        "en": "Work with real clients starting in your first few weeks of class.",
+        "es": "Trabaja con clientes reales desde tus primeras semanas de clase."
+      }
+    },
+    {
+      "title": {
+        "en": "Flexible Schedules",
+        "es": "Horarios Flexibles"
+      },
+      "desc": {
+        "en": "Morning, Afternoon, and Weekend options to fit your life.",
+        "es": "Opciones de mañana, tarde y fin de semana que se ajustan a tu vida."
+      }
+    },
+    {
+      "title": {
+        "en": "Job Placement Office",
+        "es": "Oficina de Colocación Laboral"
+      },
+      "desc": {
+        "en": "Dedicated team to help you land a job after graduation.",
+        "es": "Un equipo dedicado para ayudarte a conseguir empleo después de graduarte."
+      }
+    },
+    {
+      "title": {
+        "en": "Financial Assistance Available",
+        "es": "Asistencia Financiera Disponible"
+      },
+      "desc": {
+        "en": "ACCES-VR, Post-9/11 GI Bill®, and VA benefits accepted.",
+        "es": "Aceptamos ACCES-VR, GI Bill® Post-9/11 y beneficios de la VA."
+      }
+    },
+    {
+      "title": {
+        "en": "Monthly Start Dates",
+        "es": "Inicios Mensuales"
+      },
+      "desc": {
+        "en": "New classes begin every first Monday of the month.",
+        "es": "Las nuevas clases comienzan el primer lunes de cada mes."
+      }
+    }
   ],
   "career_earnings": {
-    "headline": {"en":"Barber Career Earnings","es":"Ingresos de una Carrera de Barbero"},
-    "note": {"en":"Earnings vary by experience, location, hours, and clientele. Figures are industry estimates, not guarantees.","es":"Los ingresos varían según la experiencia, ubicación, horas y clientela. Las cifras son estimaciones de la industria, no garantías."},
+    "headline": {
+      "en": "Barber Career Earnings",
+      "es": "Ingresos de una Carrera de Barbero"
+    },
+    "note": {
+      "en": "Earnings vary by experience, location, hours, and clientele. Figures are industry estimates, not guarantees.",
+      "es": "Los ingresos varían según la experiencia, ubicación, horas y clientela. Las cifras son estimaciones de la industria, no garantías."
+    },
     "tiers": [
-      {"stage":{"en":"Entry-Level Barber","es":"Barbero Principiante"},"window":{"en":"Year 1","es":"Año 1"},"range":"$35,000–$45,000/yr"},
-      {"stage":{"en":"Established Barber","es":"Barbero Establecido"},"window":{"en":"Years 2–3","es":"Años 2–3"},"range":"$50,000–$70,000/yr"},
-      {"stage":{"en":"Booth Renter / Shop Owner","es":"Inquilino de Silla / Dueño"},"window":{"en":"Year 3+","es":"Año 3+"},"range":"$75,000+/yr"}
+      {
+        "stage": {
+          "en": "Entry-Level Barber",
+          "es": "Barbero Principiante"
+        },
+        "window": {
+          "en": "Year 1",
+          "es": "Año 1"
+        },
+        "range": "$35,000–$45,000/yr"
+      },
+      {
+        "stage": {
+          "en": "Established Barber",
+          "es": "Barbero Establecido"
+        },
+        "window": {
+          "en": "Years 2–3",
+          "es": "Años 2–3"
+        },
+        "range": "$50,000–$70,000/yr"
+      },
+      {
+        "stage": {
+          "en": "Booth Renter / Shop Owner",
+          "es": "Inquilino de Silla / Dueño"
+        },
+        "window": {
+          "en": "Year 3+",
+          "es": "Año 3+"
+        },
+        "range": "$75,000+/yr"
+      }
     ]
   },
   "instructors": [
-    {"name":"David \"King David\" Ayeoribe","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Lead Senior Instructor & Director","es":"Instructor Principal Senior & Director"},"bio":{"en":"Over 50 years of barbering experience and more than 30 years of teaching. The longest-serving barber instructor in New York City. King David has personally trained generations of master barbers — from first-timers to shop owners across the five boroughs.","es":"Más de 50 años de experiencia en barbería y más de 30 años enseñando. El instructor de barbería con más antigüedad en la ciudad de Nueva York. King David ha entrenado personalmente a generaciones de maestros barberos — desde principiantes hasta dueños de tienda en los cinco condados."},"tags":[{"en":"Founding faculty","es":"Profesorado fundador"},{"en":"30+ years teaching","es":"30+ años enseñando"},{"en":"NY State licensed","es":"Licenciado por el Estado de NY"}]},
-    {"name":"Harold \"Barkim\" Brown","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Decades of professional barbering and a relentless eye for detail. Barkim runs the floor like a working shop — fast, exact, and patient with every student. Featured on Barber World TV (Episode 007).","es":"Décadas de barbería profesional y un ojo implacable para el detalle. Barkim dirige el piso como una tienda en funcionamiento — rápido, exacto, y paciente con cada estudiante. Apareció en Barber World TV (Episodio 007)."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Clinic-floor lead","es":"Líder del piso clínico"}]},
-    {"name":"Barry Brown","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Brings deep experience from the NY barber scene to a curriculum focused on modern fades, beard work, and the discipline of running a real chair.","es":"Aporta profunda experiencia de la escena barberil de NY a un currículo enfocado en degradados modernos, trabajo de barba, y la disciplina de manejar un sillón real."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Fade specialist","es":"Especialista en degradados"}]},
-    {"name":"Freddie Liciaga","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"A working-floor master barber on the ABI Manhattan teaching team, bringing real shop experience to every clinic session.","es":"Un maestro barbero del equipo docente de ABI en Manhattan, que aporta experiencia real de barbería a cada sesión de clínica."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"}]},
-    {"name":"Benny Santamaria","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Instructor","es":"Instructor"},"bio":{"en":"Manhattan-team instructor focused on fundamentals, sanitation, and building student confidence from the first cut.","es":"Instructor del equipo de Manhattan enfocado en los fundamentos, la sanitización y desarrollar la confianza del estudiante desde el primer corte."},"tags":[{"en":"Instructor","es":"Instructor"}]},
-    {"name":"Richard Cancel","team":{"en":"Manhattan","es":"Manhattan"},"role":{"en":"Bilingual Instructor","es":"Instructor Bilingüe"},"bio":{"en":"English and Spanish instruction. Richard's brother Mike owns Diamond Fadez just one block from our Manhattan campus — a two-generation family story rooted in ABI.","es":"Instrucción en inglés y español. El hermano de Richard, Mike, es dueño de Diamond Fadez a solo una cuadra de nuestro campus de Manhattan — una historia familiar de dos generaciones arraigada en ABI."},"tags":[{"en":"Bilingual ES + EN","es":"Bilingüe ES + EN"}]},
-    {"name":"Truth \"The Barber Artist\" Quinones","team":{"en":"Bronx","es":"Bronx"},"role":{"en":"Master Instructor","es":"Maestro Instructor"},"bio":{"en":"Leads the Bronx teaching floor with an artist's eye for detail, design work, and modern styling.","es":"Lidera el piso docente del Bronx con ojo de artista para el detalle, el trabajo de diseño y el estilismo moderno."},"tags":[{"en":"Master Barber","es":"Maestro Barbero"},{"en":"Design work","es":"Trabajo de diseño"}]},
-    {"name":"Osvaldy \"Mr. O\" Rodriguez","team":{"en":"Bronx","es":"Bronx"},"role":{"en":"Instructor","es":"Instructor"},"bio":{"en":"Bronx-team instructor with bilingual instruction and a patient, hands-on teaching style.","es":"Instructor del equipo del Bronx con instrucción bilingüe y un estilo de enseñanza paciente y práctico."},"tags":[{"en":"Bilingual ES + EN","es":"Bilingüe ES + EN"}]},
-    {"name":"Noah Vera","team":{"en":"Bronx","es":"Bronx"},"role":{"en":"Instructor","es":"Instructor"},"bio":{"en":"Bronx-team instructor coaching students through fades, line work, and NY State Board Exam prep.","es":"Instructor del equipo del Bronx que guía a los estudiantes en degradados, líneas y preparación para el examen de la Junta Estatal de NY."},"tags":[{"en":"Instructor","es":"Instructor"}]}
+    {
+      "name": "David \"King David\" Ayeoribe",
+      "team": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "role": {
+        "en": "Lead Senior Instructor & Director",
+        "es": "Instructor Principal Senior y Director"
+      },
+      "bio": {
+        "en": "Affectionately known to generations of barbers as “King David,” David Ayeoribe is a living cornerstone of American Barber Institute and one of the most respected names in New York barbering education. With over 50 years behind the chair and more than 30 years teaching, David is widely recognized as the longest-serving barber instructor in New York City.",
+        "es": "Conocido cariñosamente por generaciones de barberos como “King David”, David Ayeoribe es una pieza clave de American Barber Institute y uno de los nombres más respetados en la educación de barbería de Nueva York. Con más de 50 años detrás de la silla y más de 30 años enseñando, David es ampliamente reconocido como el instructor de barbería con más años de servicio en la ciudad de Nueva York."
+      },
+      "image": "david-ayeoribe.jpeg",
+      "tags": [
+        {
+          "en": "Founding faculty",
+          "es": "Profesorado fundador"
+        },
+        {
+          "en": "30+ years teaching",
+          "es": "30+ años enseñando"
+        },
+        {
+          "en": "NY State licensed",
+          "es": "Licenciado por el Estado de NY"
+        }
+      ]
+    },
+    {
+      "name": "Harold \"Barkim\" Brown",
+      "team": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "role": {
+        "en": "Lead Instructor",
+        "es": "Instructor Principal"
+      },
+      "bio": {
+        "en": "Harold “Barkim” Brown is a Queens native, a master barber, and the kind of teacher students remember for the rest of their careers. Known around the shop as the best one-armed barber in the world, Harold has turned every doubt ever thrown at him into fuel — and now pours that same energy into the next generation of barbers.",
+        "es": "Harold “Barkim” Brown es nativo de Queens, un maestro barbero y la clase de maestro que los estudiantes recuerdan por el resto de su carrera. Conocido en el oficio como el mejor barbero con un solo brazo del mundo, Harold ha convertido cada duda que le lanzaron en combustible — y ahora vierte esa misma energía en la próxima generación de barberos."
+      },
+      "image": "harold-barkim-brown.jpeg",
+      "tags": [
+        {
+          "en": "Master Barber",
+          "es": "Maestro Barbero"
+        },
+        {
+          "en": "Clinic-floor lead",
+          "es": "Líder del piso clínico"
+        }
+      ]
+    },
+    {
+      "name": "Barry Brown",
+      "team": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "role": {
+        "en": "Instructor",
+        "es": "Instructor"
+      },
+      "bio": {
+        "en": "Barry Brown’s story with barbering started long before he ever walked into a classroom. He began cutting hair as a young man and quickly proved what was already obvious to anyone who saw him work: barbering was in his blood.",
+        "es": "La historia de Barry Brown con la barbería comenzó mucho antes de que pisara un salón de clases. Empezó a cortar cabello de joven y rápidamente demostró lo que era obvio para cualquiera que lo viera trabajar: la barbería corría por su sangre."
+      },
+      "image": "barry-brown.jpeg",
+      "tags": [
+        {
+          "en": "Master Barber",
+          "es": "Maestro Barbero"
+        },
+        {
+          "en": "Fade specialist",
+          "es": "Especialista en degradados"
+        }
+      ]
+    },
+    {
+      "name": "Freddie Liciaga",
+      "team": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "role": {
+        "en": "Bilingual Instructor",
+        "es": "Instructor Bilingüe"
+      },
+      "bio": {
+        "en": "Freddie Liciaga’s journey at American Barber Institute is the kind of story that defines what ABI is all about. Before he ever stood at the front of a classroom, Freddie sat in one — and from day one, he stood out.",
+        "es": "El recorrido de Freddie Liciaga en American Barber Institute es la clase de historia que define lo que es ABI. Antes de pararse al frente de un salón de clases, Freddie estuvo sentado en uno — y desde el primer día destacó."
+      },
+      "image": "freddie-liciaga.jpeg",
+      "tags": [
+        {
+          "en": "Master Barber",
+          "es": "Maestro Barbero"
+        }
+      ]
+    },
+    {
+      "name": "Benny Santamaria",
+      "team": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "role": {
+        "en": "Bilingual Instructor",
+        "es": "Instructor Bilingüe"
+      },
+      "bio": {
+        "en": "As a young man, Benny Santamaria faced a real crossroads: grind through odd jobs for the rest of his life, or commit fully to mastering a craft. Benny chose the craft. He chose barbering. And he never looked back.",
+        "es": "De joven, Benny Santamaria enfrentó una verdadera encrucijada: pasar el resto de su vida en trabajos sueltos, o comprometerse por completo a dominar un oficio. Benny eligió el oficio. Eligió la barbería. Y nunca miró atrás."
+      },
+      "image": "benny-santamaria.jpeg",
+      "tags": [
+        {
+          "en": "Instructor",
+          "es": "Instructor"
+        }
+      ]
+    },
+    {
+      "name": "Richard Cancel",
+      "team": {
+        "en": "Manhattan",
+        "es": "Manhattan"
+      },
+      "role": {
+        "en": "Bilingual Instructor",
+        "es": "Instructor Bilingüe"
+      },
+      "bio": {
+        "en": "Richard Cancel’s story begins with family, inspiration, and a pair of clippers. As a young man, Richard watched his older brother Mike build an entire life around the craft — more than 30 years in the barbering business, mentoring others along the way, and earning a reputation that speaks for itself. To Richard, Mike wasn’t just a brother — he was a mentor, a model, and the reason Richard ever picked up a pair of clippers in the first place.",
+        "es": "La historia de Richard Cancel comienza con familia, inspiración y un par de clippers. De joven, Richard observó a su hermano mayor Mike construir toda una vida alrededor del oficio — más de 30 años en el negocio de la barbería, mentorizando a otros en el camino y ganando una reputación que habla por sí sola. Para Richard, Mike no era solo un hermano — era un mentor, un modelo y la razón por la que Richard tomó los clippers por primera vez."
+      },
+      "image": "richard-cancel.jpeg",
+      "tags": [
+        {
+          "en": "Bilingual ES + EN",
+          "es": "Bilingüe ES + EN"
+        }
+      ]
+    },
+    {
+      "name": "Truth \"The Barber Artist\" Quinones",
+      "team": {
+        "en": "Bronx",
+        "es": "Bronx"
+      },
+      "role": {
+        "en": "Founding Director, ABI Bronx",
+        "es": "Director Fundador, ABI Bronx"
+      },
+      "bio": {
+        "en": "Truth Quinones — known across the industry as Truth The Barber Artist — has spent over four decades behind the chair. Since beginning his career in 1985, he has earned a reputation for precision, innovation, and elevating the barbering profession wherever he goes.",
+        "es": "Truth Quinones — conocido en la industria como Truth The Barber Artist — ha pasado más de cuatro décadas detrás de la silla. Desde que comenzó su carrera en 1985, ha ganado una reputación por su precisión, innovación y por elevar la profesión de la barbería donde quiera que va."
+      },
+      "image": "truth-quinones.jpeg",
+      "tags": [
+        {
+          "en": "Master Barber",
+          "es": "Maestro Barbero"
+        },
+        {
+          "en": "Design work",
+          "es": "Trabajo de diseño"
+        }
+      ]
+    },
+    {
+      "name": "Osvaldy \"Mr. O\" Rodriguez",
+      "team": {
+        "en": "Bronx",
+        "es": "Bronx"
+      },
+      "role": {
+        "en": "Instructor",
+        "es": "Instructor"
+      },
+      "bio": {
+        "en": "Known to his students and peers simply as “Mr. O,” Osvaldy Rodriguez is proof that age is no measure of mastery. At just 23 years old, Mr. O is already a Licensed Master Barber, licensed instructor, and award-winning competitor — with more than 8 years of professional barbering experience to his name.",
+        "es": "Conocido por sus estudiantes y compañeros simplemente como “Mr. O”, Osvaldy Rodriguez es la prueba de que la edad no es medida de la maestría. Con apenas 23 años, Mr. O ya es Master Barber con licencia, instructor con licencia y competidor premiado — con más de 8 años de experiencia profesional en la barbería."
+      },
+      "image": "osvaldy-rodriguez.jpeg",
+      "tags": [
+        {
+          "en": "Bilingual ES + EN",
+          "es": "Bilingüe ES + EN"
+        }
+      ]
+    },
+    {
+      "name": "Noah Vera",
+      "team": {
+        "en": "Bronx",
+        "es": "Bronx"
+      },
+      "role": {
+        "en": "Bilingual Instructor, ABI Bronx",
+        "es": "Instructor Bilingüe, ABI Bronx"
+      },
+      "bio": {
+        "en": "At just 23 years old, Noah Vera is proof that age is no measure of mastery. A Licensed Master Barber, licensed instructor, and seasoned professional with more than 8 years behind the chair, Noah is part of the new generation of NYC barbering — and he has already earned his place at the top of it.",
+        "es": "Con apenas 23 años, Noah Vera es la prueba de que la edad no es medida de la maestría. Master Barber con licencia, instructor con licencia y profesional experimentado con más de 8 años detrás de la silla, Noah es parte de la nueva generación de la barbería de NYC — y ya se ha ganado su lugar en la cima."
+      },
+      "image": "noah-vera.jpeg",
+      "tags": [
+        {
+          "en": "Instructor",
+          "es": "Instructor"
+        }
+      ]
+    }
   ],
   "testimonials": [
-    {"name":"Jerrick Matthews","role":{"en":"Current Student","es":"Estudiante Actual"},"quote":{"en":"The level of knowledge and training is superb. One of the best teachers around — King David — will show you everything.","es":"El nivel de conocimiento y entrenamiento es excepcional. Uno de los mejores maestros — King David — te mostrará todo."}},
-    {"name":"Carlos Perez","role":{"en":"Current Student","es":"Estudiante Actual"},"quote":{"en":"I have King David as my instructor and he has been awesome. He has 30 years of experience.","es":"Tengo a King David como mi instructor y ha sido increíble. Tiene 30 años de experiencia."}},
-    {"name":"Zyee Fin","role":{"en":"Current Student","es":"Estudiante Actual"},"quote":{"en":"I'm enrolled and I'm happy with the progress from the teachers and classmates. Nothing but positivity.","es":"Estoy inscrito y estoy contento con el progreso de los maestros y compañeros. Pura positividad."}},
-    {"name":"Richard Cacace","role":{"en":"5★ Google Review","es":"Reseña 5★ Google"},"quote":{"en":"The best barber school in New York — real barber culture.","es":"La mejor escuela de barbería de Nueva York — verdadera cultura de barbero."}}
+    {
+      "name": "Jerrick Matthews",
+      "role": {
+        "en": "Current Student",
+        "es": "Estudiante Actual"
+      },
+      "quote": {
+        "en": "The level of knowledge and training is superb. One of the best teachers around — King David — will show you everything.",
+        "es": "El nivel de conocimiento y entrenamiento es excepcional. Uno de los mejores maestros — King David — te mostrará todo."
+      }
+    },
+    {
+      "name": "Carlos Perez",
+      "role": {
+        "en": "Current Student",
+        "es": "Estudiante Actual"
+      },
+      "quote": {
+        "en": "I have King David as my instructor and he has been awesome. He has 30 years of experience.",
+        "es": "Tengo a King David como mi instructor y ha sido increíble. Tiene 30 años de experiencia."
+      }
+    },
+    {
+      "name": "Zyee Fin",
+      "role": {
+        "en": "Current Student",
+        "es": "Estudiante Actual"
+      },
+      "quote": {
+        "en": "I'm enrolled and I'm happy with the progress from the teachers and classmates. Nothing but positivity.",
+        "es": "Estoy inscrito y estoy contento con el progreso de los maestros y compañeros. Pura positividad."
+      }
+    },
+    {
+      "name": "Richard Cacace",
+      "role": {
+        "en": "5★ Google Review",
+        "es": "Reseña 5★ Google"
+      },
+      "quote": {
+        "en": "The best barber school in New York — real barber culture.",
+        "es": "La mejor escuela de barbería de Nueva York — verdadera cultura de barbero."
+      }
+    }
   ],
   "partners": [
-    {"name":"Levels Barbershop","locations":"Manhattan · Brooklyn · Orange County, NY","desc":{"en":"Founded 1996 on 125th Street in Harlem. Multi-location empire including The Antique Barber product line and Barber World TV. Several Nuru-family co-owners are ABI graduates; many licensed barbers on staff are alumni.","es":"Fundada en 1996 en la calle 125 en Harlem. Imperio multi-locación que incluye la línea de productos The Antique Barber y Barber World TV. Varios co-dueños de la familia Nuru son graduados de ABI; muchos barberos licenciados en el equipo son ex-alumnos."},"why":{"en":"Proof that ABI graduates can build iconic businesses.","es":"Prueba de que los graduados de ABI pueden construir negocios icónicos."}},
-    {"name":"Diamond Fadez","locations":"308 West 39th Street, NYC","desc":{"en":"Combined barbershop and tattoo studio one block from ABI's Manhattan campus. Owner Mike is an ABI graduate; his brother Richard teaches at ABI as a bilingual instructor.","es":"Barbería y estudio de tatuajes combinados a una cuadra del campus de Manhattan de ABI. El dueño Mike es graduado de ABI; su hermano Richard enseña en ABI como instructor bilingüe."},"why":{"en":"Two generations of one family — taught and now teaching.","es":"Dos generaciones de una familia — enseñados y ahora enseñando."}},
-    {"name":"Untouchable Cutz","locations":"Staten Island, NY","desc":{"en":"Respected modern barbershop with a team carrying 50+ combined years of experience. Owner Jimmy opened shop within two years of earning his ABI license.","es":"Barbería moderna respetada con un equipo que acumula más de 50 años combinados de experiencia. El dueño Jimmy abrió su tienda dos años después de obtener su licencia de ABI."},"why":{"en":"Rapid entrepreneurial success.","es":"Éxito empresarial rápido."}},
-    {"name":"Expo Gentlemen Salon","locations":"Staten Island · Brooklyn","desc":{"en":"Multi-location established salon. Owner Joe consistently hires ABI graduates to staff both locations.","es":"Salón multi-locación establecido. El dueño Joe contrata consistentemente graduados de ABI para ambas ubicaciones."},"why":{"en":"Trust built through consistent graduate performance.","es":"Confianza construida a través del desempeño consistente de los graduados."}},
-    {"name":"Otis & Finn","locations":"Long Island City · Court Square · Greenpoint · Williamsburg","desc":{"en":"State-of-the-art barbershop featured in GQ, BuzzFeed, HuffPost, FOX5, PIX11. ABI graduate James Cavanaugh featured in the official bio.","es":"Barbería de vanguardia destacada en GQ, BuzzFeed, HuffPost, FOX5 y PIX11. El graduado de ABI James Cavanaugh aparece en la biografía oficial."},"why":{"en":"Employers publicly recognize and invest in alumni talent.","es":"Empleadores reconocen y invierten públicamente en el talento ex-alumno."}},
-    {"name":"NYC Barber Shop Museum","locations":"Columbus Ave & E 70th St, Manhattan · Sunny Isles, Miami","desc":{"en":"The first museum of its kind — a working barbershop housing century-old artifacts. Operated by fourth-generation Master Barber Arthur Rubinoff. 501(c)(3) non-profit.","es":"El primer museo de su tipo — una barbería en funcionamiento que alberga artefactos centenarios. Operada por el Maestro Barbero de cuarta generación Arthur Rubinoff. Sin fines de lucro 501(c)(3)."},"why":{"en":"Four-generation professional standard. School-to-master pipeline.","es":"Estándar profesional de cuatro generaciones. Tubería de escuela a maestro."}}
+    {
+      "name": "Levels Barbershop",
+      "locations": "Manhattan · Brooklyn · Orange County, NY",
+      "desc": {
+        "en": "Levels Barbershop was founded in 1996 on 125th Street in Harlem by Kamal Nuru. Today it spans Manhattan, Brooklyn, and Orange County, NY — alongside The Antique Barber product line, Barber World TV media platform, and the annual NYC Barber Battle.\n\nSeveral of the Nuru family co-owners are proud ABI graduates. Approximately 15 years ago, they earned their licenses with us before going on to help build one of the most iconic names in NYC barbering. Many of the licensed barbers working at Levels today are also ABI alumni — placed there by graduates who came before them.\n\nThe relationship is alive today: Barber World TV featured ABI Lead Instructor Harold \"Barkim\" Brown on Episode 007, sharing his story with the wider industry.",
+        "es": "Levels Barbershop fue fundada en 1996 en la Calle 125 de Harlem por Kamal Nuru. Hoy se extiende por Manhattan, Brooklyn y Orange County, NY — junto a la línea de productos The Antique Barber, la plataforma de medios Barber World TV y la batalla anual NYC Barber Battle.\n\nVarios de los copropietarios de la familia Nuru son orgullosos graduados de ABI. Hace aproximadamente 15 años obtuvieron su licencia con nosotros antes de ayudar a construir uno de los nombres más icónicos de la barbería neoyorquina. Muchos de los barberos con licencia que trabajan hoy en Levels también son alumnos de ABI — colocados allí por graduados que vinieron antes.\n\nLa relación sigue viva hoy: Barber World TV presentó al instructor principal de ABI, Harold \"Barkim\" Brown, en el Episodio 007, compartiendo su historia con la industria."
+      },
+      "why": {
+        "en": "Train at ABI. Earn your license. Build something that lasts.",
+        "es": "Estudia en ABI. Obtén tu licencia. Construye algo que perdure."
+      },
+      "phone": null,
+      "image": "levels-barbershop.png"
+    },
+    {
+      "name": "Diamond Fadez",
+      "locations": "308 W 39th Street, NYC",
+      "desc": {
+        "en": "Diamond Fadez Barbershop sits one block from ABI's flagship campus at 308 West 39th Street — a unique combined barbershop and tattoo studio that customers call \"the best barbershop in the city.\"\n\nThe shop is owned by Mike — a proud ABI graduate and the older brother of current ABI bilingual instructor Richard Cancel. Mike's success is also why Richard came back to ABI as a teacher: same school, same craft, two generations of one family training the next wave of barbers.",
+        "es": "Diamond Fadez Barbershop se encuentra a una cuadra del campus principal de ABI, en el 308 West 39th Street — un estudio combinado de barbería y tatuajes que los clientes llaman \"la mejor barbería de la ciudad\".\n\nLa barbería es propiedad de Mike — un orgulloso graduado de ABI y hermano mayor del actual instructor bilingüe de ABI, Richard Cancel. El éxito de Mike también es la razón por la que Richard regresó a ABI como maestro: misma escuela, mismo oficio, dos generaciones de una familia formando a la próxima ola de barberos."
+      },
+      "why": {
+        "en": "One school. One block. One family. Generations of master barbers.",
+        "es": "Una escuela. Una cuadra. Una familia. Generaciones de maestros barberos."
+      },
+      "phone": "(646) 370-3474",
+      "image": "diamond-fadez.webp"
+    },
+    {
+      "name": "Untouchable Cutz",
+      "locations": "Staten Island, NY",
+      "desc": {
+        "en": "When Jimmy walked into ABI, he was already on a different level — super advanced from day one, asking questions, pushing boundaries, building friendships with everyone who taught him.\n\nJust two years after earning his ABI license, Jimmy opened his own shop.\n\nApproximately 15 years later, Untouchable Cutz is one of Staten Island's most respected barbershops — a beautiful modern space backed by a team carrying 50+ combined years of barbering experience. Over the years, Jimmy has hired many ABI graduates, and his shop now offers private tutoring and weekly grooming classes — passing the craft on to the next generation.",
+        "es": "Cuando Jimmy entró a ABI, ya estaba en otro nivel — súper avanzado desde el primer día, haciendo preguntas, retando los límites, construyendo amistades con cada persona que lo enseñaba.\n\nSolo dos años después de obtener su licencia de ABI, Jimmy abrió su propia barbería.\n\nAproximadamente 15 años después, Untouchable Cutz es una de las barberías más respetadas de Staten Island — un hermoso espacio moderno respaldado por un equipo con más de 50 años combinados de experiencia. A lo largo de los años, Jimmy ha contratado a muchos graduados de ABI, y su barbería hoy ofrece tutorías privadas y clases semanales de grooming — pasando el oficio a la próxima generación."
+      },
+      "why": {
+        "en": "From license to ownership in two years. The grind never stops.",
+        "es": "De la licencia a la propiedad en dos años. El esfuerzo nunca para."
+      },
+      "phone": null,
+      "image": "untouchable-cutz.png"
+    },
+    {
+      "name": "Expo Gentlemen Salon",
+      "locations": "Staten Island: 326 New Dorp Lane",
+      "desc": {
+        "en": "Not every ABI story is about a graduate who opened their own shop. Some of the most important stories are about the owners who hire our graduates.\n\nJoe isn't an ABI graduate — and he didn't have to be. As the established entrepreneur behind Expo Gentlemen Salon, with locations in Staten Island and Brooklyn, Joe has built two thriving shops by trusting American Barber Institute to send him the talent he needs, year after year.\n\nMultiple ABI alumni anchor the team across both locations. The relationship is built on something simple: every graduate ABI sends, performs. That trust has held for years — and it's why, when Joe needs to hire, he calls ABI first.",
+        "es": "No todas las historias de ABI son sobre un graduado que abrió su propia barbería. Algunas de las historias más importantes son sobre los dueños que contratan a nuestros graduados.\n\nJoe no es un graduado de ABI — y no necesitaba serlo. Como el empresario establecido detrás de Expo Gentlemen Salon, con sedes en Staten Island y Brooklyn, Joe ha construido dos barberías prósperas confiando en American Barber Institute para enviarle el talento que necesita, año tras año.\n\nVarios alumnos de ABI son la base del equipo en ambas sedes. La relación se basa en algo simple: cada graduado que ABI envía, rinde. Esa confianza se ha mantenido por años — y es por eso que, cuando Joe necesita contratar, llama a ABI primero."
+      },
+      "why": {
+        "en": "For every ABI grad who becomes an owner, many more walk into established shops like Joe's and build real careers.",
+        "es": "Por cada graduado de ABI que se convierte en dueño, muchos más entran a barberías establecidas como la de Joe y construyen carreras reales."
+      },
+      "phone": "(718) 980-1100",
+      "image": "expo-gentlemen-salon.jpg"
+    },
+    {
+      "name": "Otis & Finn",
+      "locations": "LIC · Court Square · Greenpoint · Williamsburg",
+      "desc": {
+        "en": "Otis & Finn Barbershop is one of NYC's most celebrated state-of-the-art barbershops — featured in GQ, BuzzFeed, HuffPost, FOX5, and PIX11 — with four locations across Long Island City, Court Square, Greenpoint, and Williamsburg.\n\nABI graduates are part of the team that has earned Otis & Finn its reputation for classic, high-quality barbering and a radically inclusive community space. One of those graduates, James Cavanaugh — a native New Yorker working out of the Greenpoint location — has been cutting hair professionally for five years since earning his license at ABI. Otis & Finn proudly names ABI on his official bio page.",
+        "es": "Otis & Finn Barbershop es una de las barberías más celebradas y vanguardistas de NYC — presentada en GQ, BuzzFeed, HuffPost, FOX5 y PIX11 — con cuatro sedes en Long Island City, Court Square, Greenpoint y Williamsburg.\n\nLos graduados de ABI son parte del equipo que le ha ganado a Otis & Finn su reputación por una barbería clásica y de alta calidad y un espacio comunitario radicalmente inclusivo. Uno de esos graduados, James Cavanaugh — un neoyorquino nativo que trabaja en la sede de Greenpoint — ha cortado cabello profesionalmente durante cinco años desde que obtuvo su licencia en ABI. Otis & Finn nombra orgullosamente a ABI en su página oficial de biografía."
+      },
+      "why": {
+        "en": "That's the kind of partnership ABI graduates step into: shops that back their alumni publicly, invest in continuing education, and treat their team as the brand.",
+        "es": "Ese es el tipo de alianza al que entran los graduados de ABI: barberías que respaldan públicamente a sus alumnos, invierten en educación continua y tratan a su equipo como la marca."
+      },
+      "phone": null,
+      "image": "otis-and-finn.png"
+    },
+    {
+      "name": "NYC Barber Shop Museum",
+      "locations": "Columbus Ave & E 70th St, Manhattan",
+      "desc": {
+        "en": "On Manhattan's Upper West Side, NYC Barber Shop Museum — operated under REAMIR & Co. on Columbus Avenue and East 70th Street, with a second location in Sunny Isles, Miami — is the first museum of its kind in New York City and a working barbershop where every cut is performed surrounded by more than a century of barbering history.\n\nBehind the chairs is Master Barber Arthur Rubinoff — a fourth-generation barber whose lineage stretches from Fergana, Uzbekistan, to the Upper West Side. After his father Rubin passed in 2003, Arthur traveled the world tracking down more than a thousand artifacts — including his great-grandfather's original tools and a 1929 chair believed to have been used by James Dean — and opened the museum in June 2018. The shop earned New York Style Magazine's Best Barbershop award in 2015 and now operates as a 501(c)(3) non-profit.\n\nFor years, ABI and Arthur Rubinoff have shared a pipeline. Alex, owner of ABI, has placed graduates with the NYC Barber Shop Museum — building one of the rarest things in this industry: a trusted, ongoing relationship between a school and a master. For ABI students, working there isn't simply a job. It's a benchmark — where the standards of four generations of master barbering become the standards a young barber carries for the rest of their career.",
+        "es": "En el Upper West Side de Manhattan, NYC Barber Shop Museum — operado bajo REAMIR & Co. en Columbus Avenue y la Calle 70 Este, con una segunda sede en Sunny Isles, Miami — es el primer museo de su tipo en la ciudad de Nueva York y una barbería en funcionamiento donde cada corte se realiza rodeado de más de un siglo de historia de la barbería.\n\nDetrás de las sillas está el Maestro Barbero Arthur Rubinoff — un barbero de cuarta generación cuyo linaje se extiende desde Fergana, Uzbekistán, hasta el Upper West Side. Tras la muerte de su padre Rubin en 2003, Arthur viajó por el mundo rastreando más de mil artefactos — incluidas las herramientas originales de su bisabuelo y una silla de 1929 que se cree fue usada por James Dean — y abrió el museo en junio de 2018. La barbería ganó el premio Best Barbershop de New York Style Magazine en 2015 y hoy opera como una organización sin fines de lucro 501(c)(3).\n\nPor años, ABI y Arthur Rubinoff han compartido un pipeline. Alex, dueño de ABI, ha colocado graduados con el NYC Barber Shop Museum — construyendo una de las cosas más raras de esta industria: una relación confiable y continua entre una escuela y un maestro. Para los estudiantes de ABI, trabajar allí no es simplemente un trabajo. Es un punto de referencia — donde los estándares de cuatro generaciones de maestros barberos se convierten en los estándares que un joven barbero llevará por el resto de su carrera."
+      },
+      "why": {
+        "en": "To learn at ABI is to step into a craft. To work at the NYC Barber Shop Museum is to step into a lineage.",
+        "es": "Estudiar en ABI es entrar en un oficio. Trabajar en el NYC Barber Shop Museum es entrar en un linaje."
+      },
+      "phone": null,
+      "image": "nyc-barber-shop-museum.svg"
+    }
   ],
   "haircut_clinic": {
     "price": "$3",
     "booking_phone": "(856) 316-1551",
-    "intro": {"en":"Get an affordable student haircut at ABI — just $3. Help our trainee barbers practice, reach their required training hours, and perfect their craft. Every cut is performed by a student under the supervision of a NY-licensed instructor.","es":"Recibe un corte de cabello estudiantil asequible en ABI — solo $3. Ayuda a nuestros barberos en formación a practicar, alcanzar sus horas de entrenamiento requeridas y perfeccionar su oficio. Cada corte lo realiza un estudiante bajo la supervisión de un instructor licenciado de NY."},
+    "intro": {
+      "en": "Get an affordable student haircut at ABI — just $3. Help our trainee barbers practice, reach their required training hours, and perfect their craft. Every cut is performed by a student under the supervision of a NY-licensed instructor.",
+      "es": "Recibe un corte de cabello estudiantil asequible en ABI — solo $3. Ayuda a nuestros barberos en formación a practicar, alcanzar sus horas de entrenamiento requeridas y perfeccionar su oficio. Cada corte lo realiza un estudiante bajo la supervisión de un instructor licenciado de NY."
+    },
     "services": [
-      {"en":"Classic Tapers","es":"Tapers Clásicos"},{"en":"Low / Mid / High Fades","es":"Degradados Bajo / Medio / Alto"},{"en":"Caesars","es":"Caesars"},{"en":"Flat Tops","es":"Flat Tops"},{"en":"Shape-Ups","es":"Delineados"},{"en":"Razor Lineups","es":"Líneas con Navaja"},{"en":"Beard Trims","es":"Recortes de Barba"},{"en":"Hot Shaves","es":"Afeitados Calientes"},{"en":"Shampoos & Blowouts","es":"Champú & Secado"},{"en":"Mohawks","es":"Mohawks"},{"en":"Afro Cuts","es":"Cortes Afro"},{"en":"Pompadours","es":"Pompadours"},{"en":"Bald-Head Shaves","es":"Afeitados de Cabeza"},{"en":"Scissor Cuts","es":"Cortes con Tijera"},{"en":"Clipper Cuts","es":"Cortes con Máquina"},{"en":"Fohawks","es":"Fohawks"}
+      {
+        "en": "Classic Tapers",
+        "es": "Tapers Clásicos"
+      },
+      {
+        "en": "Low / Mid / High Fades",
+        "es": "Degradados Bajo / Medio / Alto"
+      },
+      {
+        "en": "Caesars",
+        "es": "Caesars"
+      },
+      {
+        "en": "Flat Tops",
+        "es": "Flat Tops"
+      },
+      {
+        "en": "Shape-Ups",
+        "es": "Delineados"
+      },
+      {
+        "en": "Razor Lineups",
+        "es": "Líneas con Navaja"
+      },
+      {
+        "en": "Beard Trims",
+        "es": "Recortes de Barba"
+      },
+      {
+        "en": "Hot Shaves",
+        "es": "Afeitados Calientes"
+      },
+      {
+        "en": "Shampoos & Blowouts",
+        "es": "Champú & Secado"
+      },
+      {
+        "en": "Mohawks",
+        "es": "Mohawks"
+      },
+      {
+        "en": "Afro Cuts",
+        "es": "Cortes Afro"
+      },
+      {
+        "en": "Pompadours",
+        "es": "Pompadours"
+      },
+      {
+        "en": "Bald-Head Shaves",
+        "es": "Afeitados de Cabeza"
+      },
+      {
+        "en": "Scissor Cuts",
+        "es": "Cortes con Tijera"
+      },
+      {
+        "en": "Clipper Cuts",
+        "es": "Cortes con Máquina"
+      },
+      {
+        "en": "Fohawks",
+        "es": "Fohawks"
+      }
     ],
     "hours": "Mon–Fri 8:00 AM – 8:00 PM",
-    "what_to_expect": {"en":"Call ahead or walk in based on availability. Consult with your student barber on the style you want. All work is supervised by licensed instructors.","es":"Llama con anticipación o ven sin cita según disponibilidad. Consulta con tu barbero estudiante sobre el estilo que quieres. Todo el trabajo es supervisado por instructores licenciados."}
+    "what_to_expect": {
+      "en": "Call ahead or walk in based on availability. Consult with your student barber on the style you want. All work is supervised by licensed instructors.",
+      "es": "Llama con anticipación o ven sin cita según disponibilidad. Consulta con tu barbero estudiante sobre el estilo que quieres. Todo el trabajo es supervisado por instructores licenciados."
+    }
   },
   "job_placement": {
-    "headline": {"en":"We Help You Land Your Dream Job","es":"Te Ayudamos a Conseguir el Trabajo de Tus Sueños"},
-    "intro": {"en":"At ABI, your journey doesn't end at graduation. Our dedicated job placement team works with you to connect with top barbershops across New York City and beyond.","es":"En ABI, tu camino no termina con la graduación. Nuestro equipo dedicado de colocación laboral trabaja contigo para conectarte con las mejores barberías de la ciudad de Nueva York y más allá."},
+    "headline": {
+      "en": "We Help You Land Your Dream Job",
+      "es": "Te Ayudamos a Conseguir el Trabajo de Tus Sueños"
+    },
+    "intro": {
+      "en": "At ABI, your journey doesn't end at graduation. Our dedicated job placement team works with you to connect with top barbershops across New York City and beyond.",
+      "es": "En ABI, tu camino no termina con la graduación. Nuestro equipo dedicado de colocación laboral trabaja contigo para conectarte con las mejores barberías de la ciudad de Nueva York y más allá."
+    },
     "stats": [
-      {"value":"90%+","label":{"en":"Job placement rate","es":"Tasa de colocación laboral"}},
-      {"value":"500+","label":{"en":"Partner barbershops","es":"Barberías aliadas"}},
-      {"value":{"en":"30 yrs","es":"30 años"},"label":{"en":"Industry connections","es":"Conexiones en la industria"}},
-      {"value":{"en":"Free","es":"Gratis"},"label":{"en":"Placement assistance","es":"Asistencia de colocación"}}
+      {
+        "value": "90%+",
+        "label": {
+          "en": "Job placement rate",
+          "es": "Tasa de colocación laboral"
+        }
+      },
+      {
+        "value": "500+",
+        "label": {
+          "en": "Partner barbershops",
+          "es": "Barberías aliadas"
+        }
+      },
+      {
+        "value": {
+          "en": "30 yrs",
+          "es": "30 años"
+        },
+        "label": {
+          "en": "Industry connections",
+          "es": "Conexiones en la industria"
+        }
+      },
+      {
+        "value": {
+          "en": "Free",
+          "es": "Gratis"
+        },
+        "label": {
+          "en": "Placement assistance",
+          "es": "Asistencia de colocación"
+        }
+      }
     ],
     "services": [
-      {"en":"One-on-one career counseling with our job placement office","es":"Consejería de carrera 1-a-1 con nuestra oficina de colocación laboral"},
-      {"en":"Resume and portfolio building guidance","es":"Orientación para construir tu currículum y portafolio"},
-      {"en":"Interview preparation and coaching","es":"Preparación y entrenamiento para entrevistas"},
-      {"en":"Direct connections to partner barbershops in NYC and beyond","es":"Conexiones directas con barberías aliadas en NYC y más allá"},
-      {"en":"Access to exclusive job listings posted only for ABI graduates","es":"Acceso a ofertas de empleo exclusivas publicadas solo para graduados de ABI"},
-      {"en":"Support for barbers who want to open their own shop","es":"Apoyo para barberos que quieren abrir su propia barbería"}
+      {
+        "en": "One-on-one career counseling with our job placement office",
+        "es": "Consejería de carrera 1-a-1 con nuestra oficina de colocación laboral"
+      },
+      {
+        "en": "Resume and portfolio building guidance",
+        "es": "Orientación para construir tu currículum y portafolio"
+      },
+      {
+        "en": "Interview preparation and coaching",
+        "es": "Preparación y entrenamiento para entrevistas"
+      },
+      {
+        "en": "Direct connections to partner barbershops in NYC and beyond",
+        "es": "Conexiones directas con barberías aliadas en NYC y más allá"
+      },
+      {
+        "en": "Access to exclusive job listings posted only for ABI graduates",
+        "es": "Acceso a ofertas de empleo exclusivas publicadas solo para graduados de ABI"
+      },
+      {
+        "en": "Support for barbers who want to open their own shop",
+        "es": "Apoyo para barberos que quieren abrir su propia barbería"
+      }
     ],
-    "testimonial": {"quote":{"en":"ABI didn't just train me to cut hair — they helped me find a shop and launch my career within two weeks of graduating.","es":"ABI no solo me enseñó a cortar cabello — me ayudaron a encontrar una barbería y lanzar mi carrera dos semanas después de graduarme."},"name":"Jerrick M.","role":{"en":"ABI Graduate","es":"Graduado de ABI"}},
-    "browse": {"title":{"en":"Browse Job Opportunities","es":"Explora Oportunidades de Empleo"},"desc":{"en":"View current job openings at barbershops actively seeking ABI graduates.","es":"Ve las vacantes actuales en barberías que buscan activamente graduados de ABI."}},
-    "employers": {"title":{"en":"Own a Barbershop?","es":"¿Tienes una Barbería?"},"desc":{"en":"Register your shop to hire ABI graduates and post job opportunities for our students.","es":"Registra tu barbería para contratar graduados de ABI y publicar oportunidades para nuestros estudiantes."}}
+    "testimonial": {
+      "quote": {
+        "en": "ABI didn't just train me to cut hair — they helped me find a shop and launch my career within two weeks of graduating.",
+        "es": "ABI no solo me enseñó a cortar cabello — me ayudaron a encontrar una barbería y lanzar mi carrera dos semanas después de graduarme."
+      },
+      "name": "Jerrick M.",
+      "role": {
+        "en": "ABI Graduate",
+        "es": "Graduado de ABI"
+      }
+    },
+    "browse": {
+      "title": {
+        "en": "Browse Job Opportunities",
+        "es": "Explora Oportunidades de Empleo"
+      },
+      "desc": {
+        "en": "View current job openings at barbershops actively seeking ABI graduates.",
+        "es": "Ve las vacantes actuales en barberías que buscan activamente graduados de ABI."
+      }
+    },
+    "employers": {
+      "title": {
+        "en": "Own a Barbershop?",
+        "es": "¿Tienes una Barbería?"
+      },
+      "desc": {
+        "en": "Register your shop to hire ABI graduates and post job opportunities for our students.",
+        "es": "Registra tu barbería para contratar graduados de ABI y publicar oportunidades para nuestros estudiantes."
+      }
+    }
   },
   "resources": {
     "accesvr": {
       "title": "ACCES-VR Financial Assistance",
-      "intro": {"en":"ACCES-VR (Adult Career and Continuing Education Services – Vocational Rehabilitation) is a New York State program that supports individuals with disabilities in obtaining and maintaining employment. If you qualify, you could receive financial assistance to pursue your barbering career at ABI at no cost to you.","es":"ACCES-VR (Servicios de Educación Profesional y Continua para Adultos – Rehabilitación Vocacional) es un programa del Estado de Nueva York que apoya a personas con discapacidades para obtener y mantener empleo. Si calificas, podrías recibir asistencia financiera para seguir tu carrera de barbería en ABI sin costo para ti."},
-      "items": [{"en":"Available to individuals with documented disabilities","es":"Disponible para personas con discapacidades documentadas"},{"en":"Covers tuition, tools, and supplies in some cases","es":"Cubre matrícula, herramientas y suministros en algunos casos"},{"en":"Contact your local ACCES-VR office to apply","es":"Contacta tu oficina local de ACCES-VR para aplicar"},{"en":"ABI can assist you with the referral process","es":"ABI puede ayudarte con el proceso de referencia"}]
+      "intro": {
+        "en": "ACCES-VR (Adult Career and Continuing Education Services – Vocational Rehabilitation) is a New York State program that supports individuals with disabilities in obtaining and maintaining employment. If you qualify, you could receive financial assistance to pursue your barbering career at ABI at no cost to you.",
+        "es": "ACCES-VR (Servicios de Educación Profesional y Continua para Adultos – Rehabilitación Vocacional) es un programa del Estado de Nueva York que apoya a personas con discapacidades para obtener y mantener empleo. Si calificas, podrías recibir asistencia financiera para seguir tu carrera de barbería en ABI sin costo para ti."
+      },
+      "items": [
+        {
+          "en": "Available to individuals with documented disabilities",
+          "es": "Disponible para personas con discapacidades documentadas"
+        },
+        {
+          "en": "Covers tuition, tools, and supplies in some cases",
+          "es": "Cubre matrícula, herramientas y suministros en algunos casos"
+        },
+        {
+          "en": "Contact your local ACCES-VR office to apply",
+          "es": "Contacta tu oficina local de ACCES-VR para aplicar"
+        },
+        {
+          "en": "ABI can assist you with the referral process",
+          "es": "ABI puede ayudarte con el proceso de referencia"
+        }
+      ]
     },
     "veterans": {
-      "title": {"en":"GI Bill® & VA Benefits","es":"GI Bill® y Beneficios de la VA"},
-      "intro": {"en":"American Barber Institute accepts Post-9/11 GI Bill® education benefits and other VA education programs. Veterans and eligible dependents may be able to cover all or part of their tuition at ABI.","es":"American Barber Institute acepta los beneficios educativos del GI Bill® Post-9/11 y otros programas educativos de la VA. Los veteranos y dependientes elegibles pueden cubrir todo o parte de su matrícula en ABI."},
-      "items": [{"en":"Post-9/11 GI Bill® (Chapter 33) accepted","es":"GI Bill® Post-9/11 (Capítulo 33) aceptado"},{"en":"VR&E (Chapter 31) for veterans with service-connected disabilities","es":"VR&E (Capítulo 31) para veteranos con discapacidades relacionadas al servicio"},{"en":"Montgomery GI Bill® and DEA (Chapter 35) also accepted","es":"Montgomery GI Bill® y DEA (Capítulo 35) también aceptados"},{"en":"ABI will certify your enrollment with the VA","es":"ABI certificará tu inscripción con la VA"}]
+      "title": {
+        "en": "GI Bill® & VA Benefits",
+        "es": "GI Bill® y Beneficios de la VA"
+      },
+      "intro": {
+        "en": "American Barber Institute accepts Post-9/11 GI Bill® education benefits and other VA education programs. Veterans and eligible dependents may be able to cover all or part of their tuition at ABI.",
+        "es": "American Barber Institute acepta los beneficios educativos del GI Bill® Post-9/11 y otros programas educativos de la VA. Los veteranos y dependientes elegibles pueden cubrir todo o parte de su matrícula en ABI."
+      },
+      "items": [
+        {
+          "en": "Post-9/11 GI Bill® (Chapter 33) accepted",
+          "es": "GI Bill® Post-9/11 (Capítulo 33) aceptado"
+        },
+        {
+          "en": "VR&E (Chapter 31) for veterans with service-connected disabilities",
+          "es": "VR&E (Capítulo 31) para veteranos con discapacidades relacionadas al servicio"
+        },
+        {
+          "en": "Montgomery GI Bill® and DEA (Chapter 35) also accepted",
+          "es": "Montgomery GI Bill® y DEA (Capítulo 35) también aceptados"
+        },
+        {
+          "en": "ABI will certify your enrollment with the VA",
+          "es": "ABI certificará tu inscripción con la VA"
+        }
+      ]
     },
     "licensing": {
-      "title": {"en":"NY State Board of Barbering","es":"Junta Estatal de Barbería de NY"},
-      "intro": {"en":"ABI prepares every student for the New York State Board of Barbering Examination. Upon passing, graduates receive their Master Barber License, which is required to practice barbering professionally in New York.","es":"ABI prepara a cada estudiante para el Examen de la Junta Estatal de Barbería de Nueva York. Al aprobar, los graduados reciben su Licencia de Maestro Barbero, requerida para ejercer la barbería profesionalmente en Nueva York."},
-      "items": [{"en":"Full exam prep included in the 500-Hour program","es":"Preparación completa para el examen incluida en el programa de 500 horas"},{"en":"Written and practical components covered","es":"Componentes escritos y prácticos cubiertos"},{"en":"Licensure required to work in any NY barbershop","es":"Se requiere licencia para trabajar en cualquier barbería de NY"},{"en":"ABI graduates are exam-ready upon completion","es":"Los graduados de ABI están listos para el examen al completar"}]
+      "title": {
+        "en": "NY State Board of Barbering",
+        "es": "Junta Estatal de Barbería de NY"
+      },
+      "intro": {
+        "en": "ABI prepares every student for the New York State Board of Barbering Examination. Upon passing, graduates receive their Master Barber License, which is required to practice barbering professionally in New York.",
+        "es": "ABI prepara a cada estudiante para el Examen de la Junta Estatal de Barbería de Nueva York. Al aprobar, los graduados reciben su Licencia de Maestro Barbero, requerida para ejercer la barbería profesionalmente en Nueva York."
+      },
+      "items": [
+        {
+          "en": "Full exam prep included in the 500-Hour program",
+          "es": "Preparación completa para el examen incluida en el programa de 500 horas"
+        },
+        {
+          "en": "Written and practical components covered",
+          "es": "Componentes escritos y prácticos cubiertos"
+        },
+        {
+          "en": "Licensure required to work in any NY barbershop",
+          "es": "Se requiere licencia para trabajar en cualquier barbería de NY"
+        },
+        {
+          "en": "ABI graduates are exam-ready upon completion",
+          "es": "Los graduados de ABI están listos para el examen al completar"
+        }
+      ]
     },
     "tools": {
-      "title": {"en":"Tools & Supplies","es":"Herramientas & Suministros"},
-      "intro": {"en":"Students are responsible for purchasing their own barbering tools, books, and supplies. These can be purchased directly from ABI at registration or from other approved suppliers.","es":"Los estudiantes son responsables de comprar sus propias herramientas, libros y suministros de barbería. Se pueden comprar directamente en ABI durante la inscripción o con otros proveedores aprobados."},
-      "items": [{"en":"A detailed tools list is provided upon registration","es":"Se proporciona una lista detallada de herramientas en la inscripción"},{"en":"Tools available for purchase directly at ABI","es":"Herramientas disponibles para compra directamente en ABI"},{"en":"Third-party suppliers are also accepted","es":"También se aceptan proveedores externos"},{"en":"Ask your advisor about cost estimates","es":"Pregunta a tu asesor sobre estimados de costo"}]
+      "title": {
+        "en": "Tools & Supplies",
+        "es": "Herramientas & Suministros"
+      },
+      "intro": {
+        "en": "Students are responsible for purchasing their own barbering tools, books, and supplies. These can be purchased directly from ABI at registration or from other approved suppliers.",
+        "es": "Los estudiantes son responsables de comprar sus propias herramientas, libros y suministros de barbería. Se pueden comprar directamente en ABI durante la inscripción o con otros proveedores aprobados."
+      },
+      "items": [
+        {
+          "en": "A detailed tools list is provided upon registration",
+          "es": "Se proporciona una lista detallada de herramientas en la inscripción"
+        },
+        {
+          "en": "Tools available for purchase directly at ABI",
+          "es": "Herramientas disponibles para compra directamente en ABI"
+        },
+        {
+          "en": "Third-party suppliers are also accepted",
+          "es": "También se aceptan proveedores externos"
+        },
+        {
+          "en": "Ask your advisor about cost estimates",
+          "es": "Pregunta a tu asesor sobre estimados de costo"
+        }
+      ]
     }
   },
   "faqs": [
-    {"q":{"en":"How long does the Master Barber program take?","es":"¿Cuánto dura el programa de Maestro Barbero?"},"a":{"en":"The 500-Hour Master Barber program can be completed in as little as 4 months full-time. The Weekend track typically completes in 6–7 months. The 50-Hour Refresher is a 2-week intensive.","es":"El Programa de Maestro Barbero de 500 Horas se puede completar en tan solo 4 meses a tiempo completo. La opción de Fin de Semana usualmente termina en 6–7 meses. El Curso de Actualización de 50 Horas es un intensivo de 2 semanas."}},
-    {"q":{"en":"Do I need prior experience to enroll?","es":"¿Necesito experiencia previa para inscribirme?"},"a":{"en":"No prior barbering experience is required. We train you from the fundamentals to advanced fading, beard work, and chair-side business skills.","es":"No se requiere experiencia previa. Te entrenamos desde los fundamentos hasta degradados avanzados, trabajo de barba y habilidades de negocio."}},
-    {"q":{"en":"When do new classes start?","es":"¿Cuándo empiezan las nuevas clases?"},"a":{"en":"New classes begin the first Monday of every month. Apply, gather your documents, and be ready for the next start date.","es":"Las nuevas clases empiezan el primer lunes de cada mes. Aplica, reúne tus documentos, y prepárate para la próxima fecha."}},
-    {"q":{"en":"What are the entrance requirements?","es":"¿Cuáles son los requisitos de ingreso?"},"a":{"en":"A Social Security card, a High School Diploma or GED (or pass the ATB exam at ABI), proof of address, a valid photo ID, being at least 17, and a $500 down payment.","es":"Tarjeta de Seguro Social, Diploma de Preparatoria o GED (o aprobar el examen ATB en ABI), comprobante de domicilio, identificación con foto válida, tener al menos 17 años, y un enganche de $500."}},
-    {"q":{"en":"How much does the program cost?","es":"¿Cuánto cuesta el programa?"},"a":{"en":"The 500-Hour Master Barber program is $5,600 (Afternoon and Weekend tracks are $4,600). The 50-Hour Refresher is $1,500, and the 3-Hour Contagious Diseases course is $100.","es":"El Programa de Maestro Barbero de 500 Horas cuesta $5,600 (las opciones de Tarde y Fin de Semana son $4,600). El Curso de Actualización de 50 Horas es $1,500, y el curso de Enfermedades Contagiosas de 3 Horas es $100."}},
-    {"q":{"en":"Do you offer payment plans?","es":"¿Ofrecen planes de pago?"},"a":{"en":"Yes. Every program includes a weekly payment plan after your down payment — starting at only $150 per week.","es":"Sí. Cada programa incluye un plan de pago semanal después de tu enganche — desde solo $150 por semana."}},
-    {"q":{"en":"What license will I earn?","es":"¿Qué licencia obtendré?"},"a":{"en":"On completing the 500-Hour Master Barber program you'll be fully prepared for the NY State Board of Barbering exam and your Master Barber License.","es":"Al completar el programa de Maestro Barbero de 500 Horas estarás totalmente preparado para el examen de la Junta Estatal de Barbería de NY y tu Licencia de Maestro Barbero."}},
-    {"q":{"en":"Do you offer job placement?","es":"¿Ofrecen asistencia de colocación laboral?"},"a":{"en":"Yes. On graduation you'll meet with our Job Placement Office for 1-on-1 counseling, partner-shop referrals, resume review, and mock interviews.","es":"Sí. Al graduarte te reunirás con nuestra Oficina de Colocación Laboral para consejería 1-a-1, referencias a barberías aliadas, revisión de currículum, y entrevistas simuladas."}},
-    {"q":{"en":"Do you accept GI Bill® or VA benefits?","es":"¿Aceptan beneficios del GI Bill® o de la VA?"},"a":{"en":"Yes. ABI accepts the Post-9/11 GI Bill® (Ch. 33), VR&E (Ch. 31), Montgomery, and DEA (Ch. 35). We certify your enrollment with the VA.","es":"Sí. ABI acepta el GI Bill® Post-9/11 (Cap. 33), VR&E (Cap. 31), Montgomery, y DEA (Cap. 35). Certificamos tu inscripción con la VA."}},
-    {"q":{"en":"What is ACCES-VR?","es":"¿Qué es ACCES-VR?"},"a":{"en":"ACCES-VR is the NY State Adult Career and Continuing Education Services — Vocational Rehabilitation program. Coverage may include tuition, tools, and supplies.","es":"ACCES-VR es el programa de Rehabilitación Vocacional del Estado de NY. La cobertura puede incluir matrícula, herramientas, y suministros."}},
-    {"q":{"en":"Is ABI licensed by the state?","es":"¿Está ABI licenciada por el estado?"},"a":{"en":"Yes. American Barber Institute is licensed by the NY State Department of Education and has served NY for over 30 years.","es":"Sí. American Barber Institute está licenciada por el Departamento de Educación del Estado de NY y ha servido a NY por más de 30 años."}},
-    {"q":{"en":"Can I get a haircut at ABI?","es":"¿Puedo obtener un corte de cabello en ABI?"},"a":{"en":"Yes. The public is welcome for affordable student-clinic haircuts, every cut supervised by a licensed instructor. See our Haircuts page or book at (856) 316-1551.","es":"Sí. El público es bienvenido a cortes de cabello asequibles en la clínica estudiantil, cada corte supervisado por un instructor licenciado. Visita nuestra página de Cortes o reserva al (856) 316-1551."}},
-    {"q":{"en":"Do I need to buy my own tools?","es":"¿Necesito comprar mis propias herramientas?"},"a":{"en":"Yes. Students are responsible for their own barbering tools, books, and supplies. ABI provides a detailed tools list at registration.","es":"Sí. Los estudiantes son responsables de sus propias herramientas, libros y suministros. ABI proporciona una lista detallada de herramientas en la inscripción."}},
-    {"q":{"en":"Do you offer Spanish-speaking admissions?","es":"¿Tienen admisiones en español?"},"a":{"en":"Yes. Call (212) 290-0278 to speak with Spanish admissions at the Manhattan campus.","es":"Sí. Llama al (212) 290-0278 para hablar con admisiones en español en el campus de Manhattan."}},
-    {"q":{"en":"How big are the classes?","es":"¿Qué tan grandes son las clases?"},"a":{"en":"We keep instructor-to-student ratios low so every student gets real hands-on time. You learn by chair time in a working clinic.","es":"Mantenemos proporciones bajas de instructor a estudiante para que cada estudiante obtenga tiempo real de práctica. Aprendes por tiempo en la silla en una clínica en funcionamiento."}}
+    {
+      "q": {
+        "en": "How long does the Master Barber program take?",
+        "es": "¿Cuánto dura el programa de Maestro Barbero?"
+      },
+      "a": {
+        "en": "The 500-Hour Master Barber program can be completed in as little as 4 months full-time. The Weekend track typically completes in 6–7 months. The 50-Hour Refresher is a 2-week intensive.",
+        "es": "El Programa de Maestro Barbero de 500 Horas se puede completar en tan solo 4 meses a tiempo completo. La opción de Fin de Semana usualmente termina en 6–7 meses. El Curso de Actualización de 50 Horas es un intensivo de 2 semanas."
+      }
+    },
+    {
+      "q": {
+        "en": "Do I need prior experience to enroll?",
+        "es": "¿Necesito experiencia previa para inscribirme?"
+      },
+      "a": {
+        "en": "No prior barbering experience is required. We train you from the fundamentals to advanced fading, beard work, and chair-side business skills.",
+        "es": "No se requiere experiencia previa. Te entrenamos desde los fundamentos hasta degradados avanzados, trabajo de barba y habilidades de negocio."
+      }
+    },
+    {
+      "q": {
+        "en": "When do new classes start?",
+        "es": "¿Cuándo empiezan las nuevas clases?"
+      },
+      "a": {
+        "en": "New classes begin the first Monday of every month. Apply, gather your documents, and be ready for the next start date.",
+        "es": "Las nuevas clases empiezan el primer lunes de cada mes. Aplica, reúne tus documentos, y prepárate para la próxima fecha."
+      }
+    },
+    {
+      "q": {
+        "en": "What are the entrance requirements?",
+        "es": "¿Cuáles son los requisitos de ingreso?"
+      },
+      "a": {
+        "en": "A Social Security card, a High School Diploma or GED (or pass the ATB exam at ABI), proof of address, a valid photo ID, being at least 17, and a $500 down payment.",
+        "es": "Tarjeta de Seguro Social, Diploma de Preparatoria o GED (o aprobar el examen ATB en ABI), comprobante de domicilio, identificación con foto válida, tener al menos 17 años, y un enganche de $500."
+      }
+    },
+    {
+      "q": {
+        "en": "How much does the program cost?",
+        "es": "¿Cuánto cuesta el programa?"
+      },
+      "a": {
+        "en": "The 500-Hour Master Barber program is $5,600 (Afternoon and Weekend tracks are $4,600). The 50-Hour Refresher is $1,500, and the 3-Hour Contagious Diseases course is $100.",
+        "es": "El Programa de Maestro Barbero de 500 Horas cuesta $5,600 (las opciones de Tarde y Fin de Semana son $4,600). El Curso de Actualización de 50 Horas es $1,500, y el curso de Enfermedades Contagiosas de 3 Horas es $100."
+      }
+    },
+    {
+      "q": {
+        "en": "Do you offer payment plans?",
+        "es": "¿Ofrecen planes de pago?"
+      },
+      "a": {
+        "en": "Yes. Every program includes a weekly payment plan after your down payment — starting at only $150 per week.",
+        "es": "Sí. Cada programa incluye un plan de pago semanal después de tu enganche — desde solo $150 por semana."
+      }
+    },
+    {
+      "q": {
+        "en": "What license will I earn?",
+        "es": "¿Qué licencia obtendré?"
+      },
+      "a": {
+        "en": "On completing the 500-Hour Master Barber program you'll be fully prepared for the NY State Board of Barbering exam and your Master Barber License.",
+        "es": "Al completar el programa de Maestro Barbero de 500 Horas estarás totalmente preparado para el examen de la Junta Estatal de Barbería de NY y tu Licencia de Maestro Barbero."
+      }
+    },
+    {
+      "q": {
+        "en": "Do you offer job placement?",
+        "es": "¿Ofrecen asistencia de colocación laboral?"
+      },
+      "a": {
+        "en": "Yes. On graduation you'll meet with our Job Placement Office for 1-on-1 counseling, partner-shop referrals, resume review, and mock interviews.",
+        "es": "Sí. Al graduarte te reunirás con nuestra Oficina de Colocación Laboral para consejería 1-a-1, referencias a barberías aliadas, revisión de currículum, y entrevistas simuladas."
+      }
+    },
+    {
+      "q": {
+        "en": "Do you accept GI Bill® or VA benefits?",
+        "es": "¿Aceptan beneficios del GI Bill® o de la VA?"
+      },
+      "a": {
+        "en": "Yes. ABI accepts the Post-9/11 GI Bill® (Ch. 33), VR&E (Ch. 31), Montgomery, and DEA (Ch. 35). We certify your enrollment with the VA.",
+        "es": "Sí. ABI acepta el GI Bill® Post-9/11 (Cap. 33), VR&E (Cap. 31), Montgomery, y DEA (Cap. 35). Certificamos tu inscripción con la VA."
+      }
+    },
+    {
+      "q": {
+        "en": "What is ACCES-VR?",
+        "es": "¿Qué es ACCES-VR?"
+      },
+      "a": {
+        "en": "ACCES-VR is the NY State Adult Career and Continuing Education Services — Vocational Rehabilitation program. Coverage may include tuition, tools, and supplies.",
+        "es": "ACCES-VR es el programa de Rehabilitación Vocacional del Estado de NY. La cobertura puede incluir matrícula, herramientas, y suministros."
+      }
+    },
+    {
+      "q": {
+        "en": "Is ABI licensed by the state?",
+        "es": "¿Está ABI licenciada por el estado?"
+      },
+      "a": {
+        "en": "Yes. American Barber Institute is licensed by the NY State Department of Education and has served NY for over 30 years.",
+        "es": "Sí. American Barber Institute está licenciada por el Departamento de Educación del Estado de NY y ha servido a NY por más de 30 años."
+      }
+    },
+    {
+      "q": {
+        "en": "Can I get a haircut at ABI?",
+        "es": "¿Puedo obtener un corte de cabello en ABI?"
+      },
+      "a": {
+        "en": "Yes. The public is welcome for affordable student-clinic haircuts, every cut supervised by a licensed instructor. See our Haircuts page or book at (856) 316-1551.",
+        "es": "Sí. El público es bienvenido a cortes de cabello asequibles en la clínica estudiantil, cada corte supervisado por un instructor licenciado. Visita nuestra página de Cortes o reserva al (856) 316-1551."
+      }
+    },
+    {
+      "q": {
+        "en": "Do I need to buy my own tools?",
+        "es": "¿Necesito comprar mis propias herramientas?"
+      },
+      "a": {
+        "en": "Yes. Students are responsible for their own barbering tools, books, and supplies. ABI provides a detailed tools list at registration.",
+        "es": "Sí. Los estudiantes son responsables de sus propias herramientas, libros y suministros. ABI proporciona una lista detallada de herramientas en la inscripción."
+      }
+    },
+    {
+      "q": {
+        "en": "Do you offer Spanish-speaking admissions?",
+        "es": "¿Tienen admisiones en español?"
+      },
+      "a": {
+        "en": "Yes. Call (212) 290-0278 to speak with Spanish admissions at the Manhattan campus.",
+        "es": "Sí. Llama al (212) 290-0278 para hablar con admisiones en español en el campus de Manhattan."
+      }
+    },
+    {
+      "q": {
+        "en": "How big are the classes?",
+        "es": "¿Qué tan grandes son las clases?"
+      },
+      "a": {
+        "en": "We keep instructor-to-student ratios low so every student gets real hands-on time. You learn by chair time in a working clinic.",
+        "es": "Mantenemos proporciones bajas de instructor a estudiante para que cada estudiante obtenga tiempo real de práctica. Aprendes por tiempo en la silla en una clínica en funcionamiento."
+      }
+    }
   ],
   "blog": {
-    "eyebrow": {"en":"ABI Journal","es":"Diario ABI"},
-    "headline": {"en":"Insights from the Chair","es":"Perspectivas desde el Sillón"},
-    "intro": {"en":"Barbering tips, career advice, student stories, and news from New York's premier dedicated barber school.","es":"Consejos de barbería, orientación profesional, historias de estudiantes y noticias de la principal escuela de barbería dedicada de Nueva York."},
-    "featured": {"slug":"what-happens-after-barber-school","iso":"2023-12-14","date":{"en":"December 14, 2023","es":"14 de diciembre de 2023"},"read":{"en":"2 min read","es":"2 min de lectura"},"title":{"en":"First Things First: What Happens After Barber School","es":"Lo Primero es lo Primero: Qué Pasa Después de la Escuela de Barbería"},"excerpt":{"en":"Earning back your investment in barber school starts with one move: get to work. Here's how to build experience, grow your income, and turn cutting hair into a career.","es":"Recuperar tu inversión en la escuela de barbería empieza con un solo paso: ponerte a trabajar. Así construyes experiencia, aumentas tus ingresos y conviertes el corte de cabello en una carrera."},"body":[
-      {"en":"Graduating from barber school is the start line, not the finish. The fastest way to earn back your tuition is simple: get behind a chair and start cutting. Paid chair time — even at an entry rate — builds the speed, consistency, and clientele that turn a license into a living.","es":"Graduarte de la escuela de barbería es la línea de salida, no la meta. La forma más rápida de recuperar tu inversión es simple: ponte detrás de un sillón y empieza a cortar. El tiempo pagado en el sillón — incluso a una tarifa inicial — construye la velocidad, la consistencia y la clientela que convierten una licencia en un sustento."},
-      {"en":"Treat your first job as paid practice. Say yes to walk-ins, learn every regular's name, and rebook them before they leave the chair. A barber who fills their own chair is never short of work — and word of mouth in this trade travels fast.","es":"Trata tu primer empleo como práctica pagada. Di que sí a los clientes sin cita, aprende el nombre de cada cliente habitual y vuelve a agendarlos antes de que dejen el sillón. Un barbero que llena su propio sillón nunca le falta trabajo — y en este oficio el boca a boca viaja rápido."},
-      {"en":"From there, income compounds. Raise your rates as your book fills, add services like beard work and hot-towel shaves, and reinvest in your tools. Within a couple of years, booth rental or owning your own shop becomes a realistic next step.","es":"A partir de ahí, los ingresos se multiplican. Sube tus tarifas a medida que se llena tu agenda, agrega servicios como trabajo de barba y afeitados con toalla caliente, y reinvierte en tus herramientas. En un par de años, alquilar un puesto o abrir tu propia barbería se vuelve un siguiente paso realista."}
-    ]},
+    "eyebrow": {
+      "en": "ABI Journal",
+      "es": "Diario ABI"
+    },
+    "headline": {
+      "en": "Insights from the Chair",
+      "es": "Perspectivas desde el Sillón"
+    },
+    "intro": {
+      "en": "Barbering tips, career advice, student stories, and news from New York's premier dedicated barber school.",
+      "es": "Consejos de barbería, orientación profesional, historias de estudiantes y noticias de la principal escuela de barbería dedicada de Nueva York."
+    },
+    "featured": {
+      "slug": "what-happens-after-barber-school",
+      "iso": "2023-12-14",
+      "date": {
+        "en": "December 14, 2023",
+        "es": "14 de diciembre de 2023"
+      },
+      "read": {
+        "en": "2 min read",
+        "es": "2 min de lectura"
+      },
+      "title": {
+        "en": "First Things First: What Happens After Barber School",
+        "es": "Lo Primero es lo Primero: Qué Pasa Después de la Escuela de Barbería"
+      },
+      "excerpt": {
+        "en": "Earning back your investment in barber school starts with one move: get to work. Here's how to build experience, grow your income, and turn cutting hair into a career.",
+        "es": "Recuperar tu inversión en la escuela de barbería empieza con un solo paso: ponerte a trabajar. Así construyes experiencia, aumentas tus ingresos y conviertes el corte de cabello en una carrera."
+      },
+      "body": [
+        {
+          "en": "Graduating from barber school is the start line, not the finish. The fastest way to earn back your tuition is simple: get behind a chair and start cutting. Paid chair time — even at an entry rate — builds the speed, consistency, and clientele that turn a license into a living.",
+          "es": "Graduarte de la escuela de barbería es la línea de salida, no la meta. La forma más rápida de recuperar tu inversión es simple: ponte detrás de un sillón y empieza a cortar. El tiempo pagado en el sillón — incluso a una tarifa inicial — construye la velocidad, la consistencia y la clientela que convierten una licencia en un sustento."
+        },
+        {
+          "en": "Treat your first job as paid practice. Say yes to walk-ins, learn every regular's name, and rebook them before they leave the chair. A barber who fills their own chair is never short of work — and word of mouth in this trade travels fast.",
+          "es": "Trata tu primer empleo como práctica pagada. Di que sí a los clientes sin cita, aprende el nombre de cada cliente habitual y vuelve a agendarlos antes de que dejen el sillón. Un barbero que llena su propio sillón nunca le falta trabajo — y en este oficio el boca a boca viaja rápido."
+        },
+        {
+          "en": "From there, income compounds. Raise your rates as your book fills, add services like beard work and hot-towel shaves, and reinvest in your tools. Within a couple of years, booth rental or owning your own shop becomes a realistic next step.",
+          "es": "A partir de ahí, los ingresos se multiplican. Sube tus tarifas a medida que se llena tu agenda, agrega servicios como trabajo de barba y afeitados con toalla caliente, y reinvierte en tus herramientas. En un par de años, alquilar un puesto o abrir tu propia barbería se vuelve un siguiente paso realista."
+        }
+      ]
+    },
     "highlights": [
-      {"tag":{"en":"Flagship Program","es":"Programa Insignia"},"title":{"en":"500-Hour Master Barber Program","es":"Programa de Maestro Barbero — 500 Horas"},"desc":{"en":"New York State licensed — full NY Board Exam prep, hands-on training within the first few weeks, and job placement support after graduation.","es":"Licenciado por el Estado de Nueva York — preparación completa para el examen, entrenamiento práctico desde las primeras semanas y apoyo de colocación laboral al graduarte."},"meta":{"en":"500 Hours","es":"500 Horas"}},
-      {"tag":{"en":"For Licensed Barbers","es":"Para Barberos Licenciados"},"title":{"en":"50-Hour Barber Refresher Course","es":"Curso de Actualización de Barbería — 50 Horas"},"desc":{"en":"Sharpen your skills, learn the latest techniques, and stay current with industry trends. Designed for working barbers who want to level up.","es":"Afina tus habilidades, aprende las últimas técnicas y mantente al día con las tendencias. Diseñado para barberos en activo que quieren mejorar."},"meta":{"en":"50 Hours","es":"50 Horas"}}
+      {
+        "tag": {
+          "en": "Flagship Program",
+          "es": "Programa Insignia"
+        },
+        "title": {
+          "en": "500-Hour Master Barber Program",
+          "es": "Programa de Maestro Barbero — 500 Horas"
+        },
+        "desc": {
+          "en": "New York State licensed — full NY Board Exam prep, hands-on training within the first few weeks, and job placement support after graduation.",
+          "es": "Licenciado por el Estado de Nueva York — preparación completa para el examen, entrenamiento práctico desde las primeras semanas y apoyo de colocación laboral al graduarte."
+        },
+        "meta": {
+          "en": "500 Hours",
+          "es": "500 Horas"
+        }
+      },
+      {
+        "tag": {
+          "en": "For Licensed Barbers",
+          "es": "Para Barberos Licenciados"
+        },
+        "title": {
+          "en": "50-Hour Barber Refresher Course",
+          "es": "Curso de Actualización de Barbería — 50 Horas"
+        },
+        "desc": {
+          "en": "Sharpen your skills, learn the latest techniques, and stay current with industry trends. Designed for working barbers who want to level up.",
+          "es": "Afina tus habilidades, aprende las últimas técnicas y mantente al día con las tendencias. Diseñado para barberos en activo que quieren mejorar."
+        },
+        "meta": {
+          "en": "50 Hours",
+          "es": "50 Horas"
+        }
+      }
     ],
     "articles": [
-      {"slug":"are-barbershops-profitable","iso":"2023-12-12","date":{"en":"December 12, 2023","es":"12 de diciembre de 2023"},"title":{"en":"Are Barbershops Profitable? Everything You Need to Know","es":"¿Son Rentables las Barberías? Todo lo que Necesitas Saber"},"excerpt":{"en":"Yes — barbershops can be very profitable, but only with the right approach. Here's how skill, location, structure, and revenue streams shape your bottom line.","es":"Sí — las barberías pueden ser muy rentables, pero solo con el enfoque correcto. Así influyen la habilidad, la ubicación, la estructura y las fuentes de ingreso en tus ganancias."},"body":[
-        {"en":"Barbershops are one of the most resilient small businesses there is. People need haircuts in every economy, the overhead is low compared to most retail, and a skilled barber's time converts directly into revenue. But profitability is never automatic — it comes down to how the shop is run.","es":"Las barberías son uno de los negocios pequeños más resistentes que existen. La gente necesita cortes de cabello en cualquier economía, los gastos generales son bajos comparados con la mayoría del comercio, y el tiempo de un barbero hábil se convierte directamente en ingresos. Pero la rentabilidad nunca es automática — depende de cómo se maneje el local."},
-        {"en":"Three levers matter most: location (foot traffic and the right neighborhood), structure (commission staff vs. booth rental vs. owner-operator), and added revenue streams (beard services, product sales, memberships). Shops that track their numbers and rebook clients consistently outperform the ones that just open the doors and wait.","es":"Tres palancas importan más: la ubicación (tráfico peatonal y el barrio correcto), la estructura (personal a comisión vs. alquiler de puesto vs. dueño-operador) y las fuentes de ingreso adicionales (servicios de barba, venta de productos, membresías). Las barberías que miden sus números y reagendan clientes de forma constante superan a las que solo abren las puertas y esperan."}
-      ]},
-      {"slug":"modern-day-barbering-problems","iso":"2023-12-10","date":{"en":"December 10, 2023","es":"10 de diciembre de 2023"},"title":{"en":"Modern-Day Barbering Problems — and How to Overcome Them","es":"Problemas de la Barbería Moderna — y Cómo Superarlos"},"excerpt":{"en":"From staff shortages to keeping up with trends, today's barbershop owners face real challenges. Here are practical fixes that protect your craft and your business.","es":"Desde la falta de personal hasta seguir las tendencias, los dueños de barbería enfrentan retos reales hoy. Aquí hay soluciones prácticas que protegen tu oficio y tu negocio."},"body":[
-        {"en":"The biggest challenges modern shops face are staffing, no-shows, and staying current. Good barbers are in demand, so retaining them means fair pay, a clean culture, and room to grow. No-shows quietly drain a chair's earnings — a simple booking deposit or reminder system fixes most of it.","es":"Los mayores retos que enfrentan las barberías modernas son el personal, las ausencias y mantenerse al día. Los buenos barberos tienen demanda, así que retenerlos significa pago justo, una cultura limpia y espacio para crecer. Las ausencias drenan silenciosamente las ganancias de un sillón — un simple depósito de reserva o un sistema de recordatorios resuelve la mayoría."},
-        {"en":"Keeping up with trends doesn't mean chasing every fad — it means continued education. Master barbers who keep learning new fades, textures, and tools stay booked. That's exactly why a refresher course or strong foundational training pays for itself many times over.","es":"Mantenerse al día con las tendencias no significa perseguir cada moda — significa educación continua. Los maestros barberos que siguen aprendiendo nuevos degradados, texturas y herramientas se mantienen ocupados. Por eso un curso de actualización o una base de formación sólida se paga muchas veces."}
-      ]},
-      {"slug":"how-to-market-your-barbershop","iso":"2023-12-08","date":{"en":"December 8, 2023","es":"8 de diciembre de 2023"},"title":{"en":"How to Successfully Market Your Barbershop","es":"Cómo Promocionar tu Barbería con Éxito"},"excerpt":{"en":"Open doors don't fill chairs — marketing does. Here's how to use social media, referrals, your website, and discount days to grow a steady client base.","es":"Las puertas abiertas no llenan los sillones — el marketing sí. Así usas las redes sociales, las referencias, tu sitio web y los días de descuento para crear una clientela estable."},"body":[
-        {"en":"In barbering, your best marketing is the work itself. Post real before-and-after cuts on Instagram and TikTok, tag your clients, and let the fades speak. A consistent feed plus a simple, mobile-friendly booking page turns followers into appointments.","es":"En la barbería, tu mejor marketing es el trabajo mismo. Publica cortes reales de antes y después en Instagram y TikTok, etiqueta a tus clientes y deja que los degradados hablen. Un feed constante más una página de reservas simple y adaptada al móvil convierte seguidores en citas."},
-        {"en":"Layer on referrals and retention: reward clients who bring a friend, run a slow-day discount to fill mid-week chairs, and always rebook before the client leaves. Marketing that compounds beats one-off promotions every time.","es":"Suma referencias y retención: recompensa a los clientes que traen a un amigo, ofrece un descuento en días lentos para llenar sillones entre semana y siempre reagenda antes de que el cliente se vaya. El marketing que se acumula vence a las promociones aisladas siempre."}
-      ]},
-      {"slug":"women-in-barbering","iso":"2023-12-07","date":{"en":"December 7, 2023","es":"7 de diciembre de 2023"},"title":{"en":"Women in Barbering: Breaking Barriers & the Benefits of Barber School","es":"Mujeres en la Barbería: Rompiendo Barreras y los Beneficios de la Escuela"},"excerpt":{"en":"More women than ever are entering barbering and redefining the profession. Here's how to step into the industry with confidence, build loyal clients, and grow.","es":"Más mujeres que nunca están entrando a la barbería y redefiniendo la profesión. Así entras a la industria con confianza, creas clientes leales y creces."},"body":[
-        {"en":"Barbering has never been more open. Women are entering the trade in record numbers and building some of the most loyal client books in the business. Skill, professionalism, and a great chair-side experience are what clients remember — not who is holding the clippers.","es":"La barbería nunca ha estado tan abierta. Las mujeres están entrando al oficio en números récord y construyendo algunas de las clientelas más leales del negocio. La habilidad, el profesionalismo y una gran experiencia en el sillón son lo que los clientes recuerdan — no quién sostiene la máquina."},
-        {"en":"A structured barber program is the great equalizer: it gives you the fundamentals, the licensing prep, and the hands-on clinic time to walk into any shop with confidence. From there, your craft and your consistency build the career.","es":"Un programa de barbería estructurado es el gran igualador: te da los fundamentos, la preparación para la licencia y el tiempo práctico de clínica para entrar a cualquier barbería con confianza. A partir de ahí, tu oficio y tu consistencia construyen la carrera."}
-      ]},
-      {"slug":"abi-graduates-high-incomes","iso":"2023-12-06","date":{"en":"December 6, 2023","es":"6 de diciembre de 2023"},"title":{"en":"Did You Know ABI Graduates Can Earn High Incomes Cutting Hair?","es":"¿Sabías que los Graduados de ABI Pueden Ganar Altos Ingresos Cortando Cabello?"},"excerpt":{"en":"ABI graduates don't just learn to cut hair — they learn to build a career. Here's how skill, clientele, multiple income streams, and presence drive earning potential.","es":"Los graduados de ABI no solo aprenden a cortar cabello — aprenden a construir una carrera. Así la habilidad, la clientela, las múltiples fuentes de ingreso y la presencia impulsan el potencial de ganancias."},"body":[
-        {"en":"A skilled barber's income isn't capped by an hourly wage — it scales with speed, clientele, and reputation. Established barbers in busy NYC shops routinely build strong full-time incomes, and the top earners add booth ownership, product lines, and content to the mix.","es":"El ingreso de un barbero hábil no está limitado por un salario por hora — escala con la velocidad, la clientela y la reputación. Los barberos establecidos en barberías concurridas de NYC construyen ingresos sólidos a tiempo completo de forma rutinaria, y los que más ganan suman la propiedad de un puesto, líneas de productos y contenido."},
-        {"en":"It starts with training that makes you fast and versatile. ABI's clinic-first approach puts you on real heads early, so by graduation you're not just licensed — you're employable from day one, with the technique to grow your book quickly.","es":"Comienza con una formación que te hace rápido y versátil. El enfoque centrado en la clínica de ABI te pone en cabezas reales temprano, así que al graduarte no solo tienes licencia — eres empleable desde el primer día, con la técnica para hacer crecer tu clientela rápidamente."}
-      ]},
-      {"slug":"affordable-excellence-abi","iso":"2023-12-06","date":{"en":"December 6, 2023","es":"6 de diciembre de 2023"},"title":{"en":"Affordable Excellence: The American Barber Institute in New York","es":"Excelencia Accesible: American Barber Institute en Nueva York"},"excerpt":{"en":"NYC barber school tuition often exceeds $10,000. American Barber Institute keeps quality training affordable — around $5,600 — with weekly payment plans that fit your life.","es":"La matrícula de escuelas de barbería en NYC suele superar los $10,000. American Barber Institute mantiene la formación de calidad accesible — alrededor de $5,600 — con planes de pago semanales que se ajustan a tu vida."},"body":[
-        {"en":"Quality training shouldn't put you in deep debt. Many NYC barber programs run well over $10,000, but ABI keeps the 500-Hour Master Barber program around $5,600 — without cutting corners on instruction or clinic time.","es":"La formación de calidad no debería endeudarte profundamente. Muchos programas de barbería en NYC superan ampliamente los $10,000, pero ABI mantiene el programa de Maestro Barbero de 500 Horas alrededor de $5,600 — sin recortar en instrucción ni en tiempo de clínica."},
-        {"en":"Flexible weekly payment plans — starting at just $150 a week — mean you can train while you keep your life running. Add GI Bill® and ACCES-VR options, and a career in barbering becomes genuinely accessible.","es":"Los planes de pago semanales flexibles — desde solo $150 a la semana — significan que puedes entrenar mientras mantienes tu vida en marcha. Suma las opciones de GI Bill® y ACCES-VR, y una carrera en la barbería se vuelve genuinamente accesible."}
-      ]},
-      {"slug":"benefits-of-enrolling-abi","iso":"2023-12-05","date":{"en":"December 5, 2023","es":"5 de diciembre de 2023"},"title":{"en":"Exploring the Benefits of Enrolling in the American Barber Institute","es":"Explorando los Beneficios de Inscribirte en American Barber Institute"},"excerpt":{"en":"Choosing the right barber school shapes your career. Here's what ABI's 500-hour Master Barber program delivers — hands-on training, NYC licensing prep, and real career support.","es":"Elegir la escuela de barbería correcta moldea tu carrera. Esto es lo que ofrece el programa de Maestro Barbero de 500 horas de ABI — entrenamiento práctico, preparación para la licencia de NYC y apoyo profesional real."},"body":[
-        {"en":"The school you choose shapes the barber you become. ABI is New York's only dedicated barber school — no distractions, just the craft, taught by master barbers with decades on the floor. You train on real clients from your first few weeks, not on mannequins for months.","es":"La escuela que eliges moldea al barbero en que te conviertes. ABI es la única escuela dedicada a la barbería de Nueva York — sin distracciones, solo el oficio, enseñado por maestros barberos con décadas en el piso. Entrenas con clientes reales desde tus primeras semanas, no con maniquíes durante meses."},
-        {"en":"Beyond technique, you get full NY State Board exam prep, flexible morning/afternoon/weekend schedules, financial-aid options, and a Job Placement Office that connects graduates with partner shops across the city. It's training built to end in a career, not just a certificate.","es":"Más allá de la técnica, obtienes preparación completa para el examen de la Junta Estatal de NY, horarios flexibles de mañana/tarde/fin de semana, opciones de ayuda financiera y una Oficina de Colocación Laboral que conecta a los graduados con barberías aliadas por toda la ciudad. Es una formación construida para terminar en una carrera, no solo en un certificado."}
-      ]}
+      {
+        "slug": "are-barbershops-profitable",
+        "iso": "2023-12-12",
+        "date": {
+          "en": "December 12, 2023",
+          "es": "12 de diciembre de 2023"
+        },
+        "title": {
+          "en": "Are Barbershops Profitable? Everything You Need to Know",
+          "es": "¿Son Rentables las Barberías? Todo lo que Necesitas Saber"
+        },
+        "excerpt": {
+          "en": "Yes — barbershops can be very profitable, but only with the right approach. Here's how skill, location, structure, and revenue streams shape your bottom line.",
+          "es": "Sí — las barberías pueden ser muy rentables, pero solo con el enfoque correcto. Así influyen la habilidad, la ubicación, la estructura y las fuentes de ingreso en tus ganancias."
+        },
+        "body": [
+          {
+            "en": "Barbershops are one of the most resilient small businesses there is. People need haircuts in every economy, the overhead is low compared to most retail, and a skilled barber's time converts directly into revenue. But profitability is never automatic — it comes down to how the shop is run.",
+            "es": "Las barberías son uno de los negocios pequeños más resistentes que existen. La gente necesita cortes de cabello en cualquier economía, los gastos generales son bajos comparados con la mayoría del comercio, y el tiempo de un barbero hábil se convierte directamente en ingresos. Pero la rentabilidad nunca es automática — depende de cómo se maneje el local."
+          },
+          {
+            "en": "Three levers matter most: location (foot traffic and the right neighborhood), structure (commission staff vs. booth rental vs. owner-operator), and added revenue streams (beard services, product sales, memberships). Shops that track their numbers and rebook clients consistently outperform the ones that just open the doors and wait.",
+            "es": "Tres palancas importan más: la ubicación (tráfico peatonal y el barrio correcto), la estructura (personal a comisión vs. alquiler de puesto vs. dueño-operador) y las fuentes de ingreso adicionales (servicios de barba, venta de productos, membresías). Las barberías que miden sus números y reagendan clientes de forma constante superan a las que solo abren las puertas y esperan."
+          }
+        ]
+      },
+      {
+        "slug": "modern-day-barbering-problems",
+        "iso": "2023-12-10",
+        "date": {
+          "en": "December 10, 2023",
+          "es": "10 de diciembre de 2023"
+        },
+        "title": {
+          "en": "Modern-Day Barbering Problems — and How to Overcome Them",
+          "es": "Problemas de la Barbería Moderna — y Cómo Superarlos"
+        },
+        "excerpt": {
+          "en": "From staff shortages to keeping up with trends, today's barbershop owners face real challenges. Here are practical fixes that protect your craft and your business.",
+          "es": "Desde la falta de personal hasta seguir las tendencias, los dueños de barbería enfrentan retos reales hoy. Aquí hay soluciones prácticas que protegen tu oficio y tu negocio."
+        },
+        "body": [
+          {
+            "en": "The biggest challenges modern shops face are staffing, no-shows, and staying current. Good barbers are in demand, so retaining them means fair pay, a clean culture, and room to grow. No-shows quietly drain a chair's earnings — a simple booking deposit or reminder system fixes most of it.",
+            "es": "Los mayores retos que enfrentan las barberías modernas son el personal, las ausencias y mantenerse al día. Los buenos barberos tienen demanda, así que retenerlos significa pago justo, una cultura limpia y espacio para crecer. Las ausencias drenan silenciosamente las ganancias de un sillón — un simple depósito de reserva o un sistema de recordatorios resuelve la mayoría."
+          },
+          {
+            "en": "Keeping up with trends doesn't mean chasing every fad — it means continued education. Master barbers who keep learning new fades, textures, and tools stay booked. That's exactly why a refresher course or strong foundational training pays for itself many times over.",
+            "es": "Mantenerse al día con las tendencias no significa perseguir cada moda — significa educación continua. Los maestros barberos que siguen aprendiendo nuevos degradados, texturas y herramientas se mantienen ocupados. Por eso un curso de actualización o una base de formación sólida se paga muchas veces."
+          }
+        ]
+      },
+      {
+        "slug": "how-to-market-your-barbershop",
+        "iso": "2023-12-08",
+        "date": {
+          "en": "December 8, 2023",
+          "es": "8 de diciembre de 2023"
+        },
+        "title": {
+          "en": "How to Successfully Market Your Barbershop",
+          "es": "Cómo Promocionar tu Barbería con Éxito"
+        },
+        "excerpt": {
+          "en": "Open doors don't fill chairs — marketing does. Here's how to use social media, referrals, your website, and discount days to grow a steady client base.",
+          "es": "Las puertas abiertas no llenan los sillones — el marketing sí. Así usas las redes sociales, las referencias, tu sitio web y los días de descuento para crear una clientela estable."
+        },
+        "body": [
+          {
+            "en": "In barbering, your best marketing is the work itself. Post real before-and-after cuts on Instagram and TikTok, tag your clients, and let the fades speak. A consistent feed plus a simple, mobile-friendly booking page turns followers into appointments.",
+            "es": "En la barbería, tu mejor marketing es el trabajo mismo. Publica cortes reales de antes y después en Instagram y TikTok, etiqueta a tus clientes y deja que los degradados hablen. Un feed constante más una página de reservas simple y adaptada al móvil convierte seguidores en citas."
+          },
+          {
+            "en": "Layer on referrals and retention: reward clients who bring a friend, run a slow-day discount to fill mid-week chairs, and always rebook before the client leaves. Marketing that compounds beats one-off promotions every time.",
+            "es": "Suma referencias y retención: recompensa a los clientes que traen a un amigo, ofrece un descuento en días lentos para llenar sillones entre semana y siempre reagenda antes de que el cliente se vaya. El marketing que se acumula vence a las promociones aisladas siempre."
+          }
+        ]
+      },
+      {
+        "slug": "women-in-barbering",
+        "iso": "2023-12-07",
+        "date": {
+          "en": "December 7, 2023",
+          "es": "7 de diciembre de 2023"
+        },
+        "title": {
+          "en": "Women in Barbering: Breaking Barriers & the Benefits of Barber School",
+          "es": "Mujeres en la Barbería: Rompiendo Barreras y los Beneficios de la Escuela"
+        },
+        "excerpt": {
+          "en": "More women than ever are entering barbering and redefining the profession. Here's how to step into the industry with confidence, build loyal clients, and grow.",
+          "es": "Más mujeres que nunca están entrando a la barbería y redefiniendo la profesión. Así entras a la industria con confianza, creas clientes leales y creces."
+        },
+        "body": [
+          {
+            "en": "Barbering has never been more open. Women are entering the trade in record numbers and building some of the most loyal client books in the business. Skill, professionalism, and a great chair-side experience are what clients remember — not who is holding the clippers.",
+            "es": "La barbería nunca ha estado tan abierta. Las mujeres están entrando al oficio en números récord y construyendo algunas de las clientelas más leales del negocio. La habilidad, el profesionalismo y una gran experiencia en el sillón son lo que los clientes recuerdan — no quién sostiene la máquina."
+          },
+          {
+            "en": "A structured barber program is the great equalizer: it gives you the fundamentals, the licensing prep, and the hands-on clinic time to walk into any shop with confidence. From there, your craft and your consistency build the career.",
+            "es": "Un programa de barbería estructurado es el gran igualador: te da los fundamentos, la preparación para la licencia y el tiempo práctico de clínica para entrar a cualquier barbería con confianza. A partir de ahí, tu oficio y tu consistencia construyen la carrera."
+          }
+        ]
+      },
+      {
+        "slug": "abi-graduates-high-incomes",
+        "iso": "2023-12-06",
+        "date": {
+          "en": "December 6, 2023",
+          "es": "6 de diciembre de 2023"
+        },
+        "title": {
+          "en": "Did You Know ABI Graduates Can Earn High Incomes Cutting Hair?",
+          "es": "¿Sabías que los Graduados de ABI Pueden Ganar Altos Ingresos Cortando Cabello?"
+        },
+        "excerpt": {
+          "en": "ABI graduates don't just learn to cut hair — they learn to build a career. Here's how skill, clientele, multiple income streams, and presence drive earning potential.",
+          "es": "Los graduados de ABI no solo aprenden a cortar cabello — aprenden a construir una carrera. Así la habilidad, la clientela, las múltiples fuentes de ingreso y la presencia impulsan el potencial de ganancias."
+        },
+        "body": [
+          {
+            "en": "A skilled barber's income isn't capped by an hourly wage — it scales with speed, clientele, and reputation. Established barbers in busy NYC shops routinely build strong full-time incomes, and the top earners add booth ownership, product lines, and content to the mix.",
+            "es": "El ingreso de un barbero hábil no está limitado por un salario por hora — escala con la velocidad, la clientela y la reputación. Los barberos establecidos en barberías concurridas de NYC construyen ingresos sólidos a tiempo completo de forma rutinaria, y los que más ganan suman la propiedad de un puesto, líneas de productos y contenido."
+          },
+          {
+            "en": "It starts with training that makes you fast and versatile. ABI's clinic-first approach puts you on real heads early, so by graduation you're not just licensed — you're employable from day one, with the technique to grow your book quickly.",
+            "es": "Comienza con una formación que te hace rápido y versátil. El enfoque centrado en la clínica de ABI te pone en cabezas reales temprano, así que al graduarte no solo tienes licencia — eres empleable desde el primer día, con la técnica para hacer crecer tu clientela rápidamente."
+          }
+        ]
+      },
+      {
+        "slug": "affordable-excellence-abi",
+        "iso": "2023-12-06",
+        "date": {
+          "en": "December 6, 2023",
+          "es": "6 de diciembre de 2023"
+        },
+        "title": {
+          "en": "Affordable Excellence: The American Barber Institute in New York",
+          "es": "Excelencia Accesible: American Barber Institute en Nueva York"
+        },
+        "excerpt": {
+          "en": "NYC barber school tuition often exceeds $10,000. American Barber Institute keeps quality training affordable — around $5,600 — with weekly payment plans that fit your life.",
+          "es": "La matrícula de escuelas de barbería en NYC suele superar los $10,000. American Barber Institute mantiene la formación de calidad accesible — alrededor de $5,600 — con planes de pago semanales que se ajustan a tu vida."
+        },
+        "body": [
+          {
+            "en": "Quality training shouldn't put you in deep debt. Many NYC barber programs run well over $10,000, but ABI keeps the 500-Hour Master Barber program around $5,600 — without cutting corners on instruction or clinic time.",
+            "es": "La formación de calidad no debería endeudarte profundamente. Muchos programas de barbería en NYC superan ampliamente los $10,000, pero ABI mantiene el programa de Maestro Barbero de 500 Horas alrededor de $5,600 — sin recortar en instrucción ni en tiempo de clínica."
+          },
+          {
+            "en": "Flexible weekly payment plans — starting at just $150 a week — mean you can train while you keep your life running. Add GI Bill® and ACCES-VR options, and a career in barbering becomes genuinely accessible.",
+            "es": "Los planes de pago semanales flexibles — desde solo $150 a la semana — significan que puedes entrenar mientras mantienes tu vida en marcha. Suma las opciones de GI Bill® y ACCES-VR, y una carrera en la barbería se vuelve genuinamente accesible."
+          }
+        ]
+      },
+      {
+        "slug": "benefits-of-enrolling-abi",
+        "iso": "2023-12-05",
+        "date": {
+          "en": "December 5, 2023",
+          "es": "5 de diciembre de 2023"
+        },
+        "title": {
+          "en": "Exploring the Benefits of Enrolling in the American Barber Institute",
+          "es": "Explorando los Beneficios de Inscribirte en American Barber Institute"
+        },
+        "excerpt": {
+          "en": "Choosing the right barber school shapes your career. Here's what ABI's 500-hour Master Barber program delivers — hands-on training, NYC licensing prep, and real career support.",
+          "es": "Elegir la escuela de barbería correcta moldea tu carrera. Esto es lo que ofrece el programa de Maestro Barbero de 500 horas de ABI — entrenamiento práctico, preparación para la licencia de NYC y apoyo profesional real."
+        },
+        "body": [
+          {
+            "en": "The school you choose shapes the barber you become. ABI is New York's only dedicated barber school — no distractions, just the craft, taught by master barbers with decades on the floor. You train on real clients from your first few weeks, not on mannequins for months.",
+            "es": "La escuela que eliges moldea al barbero en que te conviertes. ABI es la única escuela dedicada a la barbería de Nueva York — sin distracciones, solo el oficio, enseñado por maestros barberos con décadas en el piso. Entrenas con clientes reales desde tus primeras semanas, no con maniquíes durante meses."
+          },
+          {
+            "en": "Beyond technique, you get full NY State Board exam prep, flexible morning/afternoon/weekend schedules, financial-aid options, and a Job Placement Office that connects graduates with partner shops across the city. It's training built to end in a career, not just a certificate.",
+            "es": "Más allá de la técnica, obtienes preparación completa para el examen de la Junta Estatal de NY, horarios flexibles de mañana/tarde/fin de semana, opciones de ayuda financiera y una Oficina de Colocación Laboral que conecta a los graduados con barberías aliadas por toda la ciudad. Es una formación construida para terminar en una carrera, no solo en un certificado."
+          }
+        ]
+      }
     ]
   },
   "footer": {
-    "tagline": {"en":"New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.","es":"La única escuela de barbería dedicada de Nueva York. Licenciada por el Departamento de Educación del Estado de Nueva York. Cambiando vidas por más de 30 años."},
+    "tagline": {
+      "en": "New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.",
+      "es": "La única escuela de barbería dedicada de Nueva York. Licenciada por el Departamento de Educación del Estado de Nueva York. Cambiando vidas por más de 30 años."
+    },
     "hours": [
-      {"en":"Monday – Friday: 8:00 AM – 8:00 PM","es":"Lunes – Viernes: 8:00 AM – 8:00 PM"},
-      {"en":"Saturday: 9:00 AM – 7:00 PM","es":"Sábado: 9:00 AM – 7:00 PM"},
-      {"en":"Sunday: 9:00 AM – 7:00 PM","es":"Domingo: 9:00 AM – 7:00 PM"}
+      {
+        "en": "Monday – Friday: 8:00 AM – 8:00 PM",
+        "es": "Lunes – Viernes: 8:00 AM – 8:00 PM"
+      },
+      {
+        "en": "Saturday: 9:00 AM – 7:00 PM",
+        "es": "Sábado: 9:00 AM – 7:00 PM"
+      },
+      {
+        "en": "Sunday: 9:00 AM – 7:00 PM",
+        "es": "Domingo: 9:00 AM – 7:00 PM"
+      }
     ],
-    "copyright": {"en":"© 2026 American Barber Institute (ABI). All Rights Reserved. Licensed by the NY State Dept. of Education.","es":"© 2026 American Barber Institute (ABI). Todos los derechos reservados. Licenciada por el Depto. de Educación del Estado de NY."},
-    "gibill_note": {"en":"*GI BILL® is a registered trademark of the U.S. Department of Veterans Affairs.","es":"*GI BILL® es una marca registrada del Departamento de Asuntos de Veteranos de EE. UU."}
+    "copyright": {
+      "en": "© 2026 American Barber Institute (ABI). All Rights Reserved. Licensed by the NY State Dept. of Education.",
+      "es": "© 2026 American Barber Institute (ABI). Todos los derechos reservados. Licenciada por el Depto. de Educación del Estado de NY."
+    },
+    "gibill_note": {
+      "en": "*GI BILL® is a registered trademark of the U.S. Department of Veterans Affairs.",
+      "es": "*GI BILL® es una marca registrada del Departamento de Asuntos de Veteranos de EE. UU."
+    }
   }
 }

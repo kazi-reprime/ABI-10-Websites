@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 05-barber-prime ----
 TOKENS = {
     "slug": "05-barber-prime",
+    "logo_dark_bg": True,
     "bg": "#0a0807",
     "bg2": "#13100d",
     "ink": "#f3e9d6",
@@ -46,9 +47,11 @@ TOKENS = {
 SITE = {
     "slug": "05-barber-prime",
     "vercel_name": "abi-app-5",
-    "logo": "luxury_logo_american_barber_inst-.jpeg",
+    "logo": "site-05-gold.jpeg",
     "video": "gold_abi_monogram_in_dark.mp4",
-    "site_index": 4
+    "site_index": 4,
+    "favicon": "site-05-gold-favicon.png",
+    "og": "site-05-gold-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; overrides the engine) ----

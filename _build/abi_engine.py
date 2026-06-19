@@ -25,10 +25,24 @@ def tel(p: str) -> str:
 
 
 def bi(d) -> str:
-    """Wrap a {"en","es"} dict into bilingual spans; pass strings through."""
+    """Wrap a {"en","es"} dict into bilingual spans; pass strings through.
+    NEVER use inside an HTML attribute (placeholder/alt/title/aria-*/value) — the
+    spans leak as literal text and break the attribute. Use bt() for attributes."""
     if isinstance(d, str):
         return d
     return f'<span class="lang-en">{d.get("en","")}</span><span class="lang-es">{d.get("es","")}</span>'
+
+
+def bt(d) -> str:
+    """Plain-text bilingual for ATTRIBUTE contexts (placeholder/alt/title/aria-*).
+    Lang spans cannot live in attributes, so collapse to a single string: English,
+    plus the Spanish in parentheses where both differ and it still reads cleanly."""
+    if isinstance(d, str):
+        return d
+    en, es = d.get("en", ""), d.get("es", "")
+    if not es or es == en:
+        return en
+    return f"{en} / {es}"
 
 
 # Nav order mirrors the reference site: About, Programs, Resources, FAQs, Jobs, Haircuts,
@@ -374,9 +388,9 @@ details.card[open] summary::after{transform:rotate(45deg)}
 /* ---- sticky mobile call bar ---- */
 .sticky-call{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + var(--safe-bottom));z-index:50;gap:8px}
 .sticky-call a{flex:1;padding:14px 10px;min-height:52px;border-radius:999px;font-weight:800;font-size:.86rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);display:inline-flex;align-items:center;justify-content:center;gap:6px}
-.sticky-call a.en{background:var(--accent);color:var(--bg)}
-.sticky-call a.es{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
-.sticky-call .flag{font-size:.66rem;padding:1px 6px;border:1px solid currentColor;border-radius:999px;font-weight:900}
+.sticky-call a.call{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
+.sticky-call a.apply{background:var(--accent);color:var(--bg)}
+.sticky-call a .ico{font-size:1rem;line-height:1}
 @media (max-width:980px){.sticky-call{display:flex}}
 
 @media (max-width:480px){
@@ -411,6 +425,67 @@ details.card[open] summary::after{transform:rotate(45deg)}
 .social-row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
 .social-row a{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--mut);font-weight:800;font-size:.66rem;transition:color .2s,background .2s,border-color .2s,transform .2s}
 .social-row a:hover{color:var(--bg);background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+
+/* ============ FINAL-PASS additions ============ */
+/* 1-line brand & headings — never wrap, scale to fit instead */
+.nowrap-fit{white-space:nowrap}
+.footer-grid h4.nowrap-fit{white-space:nowrap}
+
+/* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
+.brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;flex-shrink:0;position:relative;border-radius:9px;overflow:hidden}
+.brand-logo .brand-mark img{height:46px;width:auto;max-width:200px;object-fit:contain;border-radius:9px;box-shadow:none;border:0}
+.brand-mark.logo-light{background:#fff;padding:3px 7px;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.06)}
+.brand-mark.logo-dark{background:transparent}
+.brand-mark.has-ovl .logo-pole-ovl{position:absolute;pointer-events:none;border-radius:3px;background:repeating-linear-gradient(45deg,#e11d2a 0 6px,#fff 6px 12px,var(--accent) 12px 18px,#fff 18px 24px);background-size:100% 34px;animation:poleSpin 1s linear infinite;opacity:.95;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.brand-mark.has-ovl + .brand-pole{display:none}
+@media (max-width:760px){.brand-mark,.brand-logo .brand-mark img{height:40px}.brand-logo .brand-mark img{max-width:160px}}
+@media (max-width:480px){.brand-mark,.brand-logo .brand-mark img{height:36px}.brand-logo .brand-mark img{max-width:140px}}
+
+/* EN/ES toggle in the sticky header — ALWAYS visible */
+.lang-toggle-header{flex-shrink:0;margin-left:6px}
+@media (max-width:1280px){.lang-toggle-header{margin-left:auto}}
+@media (max-width:480px){.lang-toggle-header button{padding:0 10px;min-width:38px;font-size:.72rem}}
+
+/* next-class countdown */
+.next-class{margin-top:22px;display:inline-flex;flex-direction:column;gap:8px;padding:16px 22px;border:1px solid var(--line);border-radius:var(--card-r);background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.next-class.nc-center{margin-left:auto;margin-right:auto;align-items:center}
+.next-class .nc-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.next-class .nc-date{font-family:var(--font-head);font-weight:800;font-size:clamp(1.05rem,3vw,1.45rem);color:var(--ink)}
+.next-class .nc-timer{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.next-class .nc-unit{display:inline-flex;flex-direction:column;align-items:center;min-width:52px;padding:8px 6px;border-radius:10px;background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.next-class .nc-unit b{font-family:var(--font-head);font-size:clamp(1.2rem,4vw,1.7rem);font-weight:900;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.next-class .nc-unit i{font-style:normal;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:3px}
+
+/* home contact box (desktop + mobile) */
+.home-contact .hc-box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(20px,3.5vw,40px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.home-contact .hc-form .btn{margin-top:4px}
+@media (max-width:760px){.home-contact .hc-box{grid-template-columns:1fr;gap:18px}}
+
+/* instructor cards — photo + bio, fits mobile & desktop */
+.ins-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(14px,2.6vw,22px)}
+.ins-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ins-card .ins-photo{aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.ins-card .ins-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
+.ins-card:hover .ins-photo img{transform:scale(1.05)}
+.ins-card .ins-body{padding:clamp(16px,2.4vw,22px)}
+.ins-card .ins-name{margin:6px 0 10px}
+.ins-card .ins-bio{color:var(--mut);line-height:1.7;margin-bottom:12px;font-size:.95rem}
+.ins-card .ins-tags{font-size:.82rem;color:var(--accent);font-weight:700}
+
+/* partner cards — logos/photos use contain so nothing is mis-cropped; name below image */
+.partner-card .img-wrap{aspect-ratio:16/10;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.partner-card .img-wrap img{width:100%;height:100%;object-fit:contain}
+.partner-card .partner-title{margin:0 0 6px;font-size:1.25rem}
+.partner-card .p-phone{margin-top:10px}
+.partner-card .p-phone a{color:var(--accent);font-weight:800}
+
+/* Manhattan | Bronx split */
+.campus-split .campus-col .campus-progs li{padding:10px 0}
+.campus-split .campus-col .campus-progs li::before{content:"▸ "}
+
+/* footer logo emblem */
+.footer-logo{height:54px;width:auto;max-width:200px;object-fit:contain;margin-bottom:14px;border-radius:8px}
 """
 
 MEDIA_STYLE_CSS = {
@@ -464,18 +539,19 @@ def head_meta(page_path, title=None):
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{canon}">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<link rel="icon" type="image/jpeg" href="/assets/logo.jpeg">
-<link rel="apple-touch-icon" href="/assets/logo.jpeg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="American Barber Institute">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{BRAND_DESC_EN}">
-<meta property="og:image" content="/assets/logo.jpeg">
+<meta property="og:image" content="/assets/og.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{BRAND_DESC_EN}">
+<meta name="twitter:image" content="/assets/og.png">
 <meta name="format-detection" content="telephone=yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">'''
@@ -539,25 +615,45 @@ def top_banner():
     <span class="cta-label"><span class="lang-en">En Español</span><span class="lang-es">En Español</span></span>
     <span class="cta-num">{B["phone_manhattan_es"]}</span>
   </a>
-  <div class="lang-toggle" role="group" aria-label="Language toggle">
-    <button type="button" data-lang="en">EN</button>
-    <button type="button" data-lang="es">ES</button>
-  </div>
 </div>'''
 
 
-def header_html(active_key=""):
+def lang_toggle(extra_cls=""):
+    """EN/ES segmented toggle. Rendered in the sticky header so it is ALWAYS visible.
+    All .lang-toggle instances stay in sync via the shared JS."""
+    return (f'<div class="lang-toggle {extra_cls}" role="group" aria-label="Language / Idioma">'
+            f'<button type="button" data-lang="en" aria-label="English">EN</button>'
+            f'<button type="button" data-lang="es" aria-label="Español">ES</button></div>')
+
+
+def header_html(active_key="", t=None):
+    t = t or {}
     links = "".join(
         f'<a href="{p}" class="{"active" if k == active_key else ""}">{bi(NAV[k])}</a>'
         for k, p in NAV_ITEMS
     )
+    # Brand mark = logo image + a spinning barber pole. No text wordmark (the logo carries
+    # the name). frame class tones the logo to its baked background so it never looks like a
+    # floating box on the theme. If the site sets t["logo_pole"] = {"l","t","w","h"} (percent
+    # box over the logo's own pole), an animated pole is overlaid there and the standalone pole
+    # is dropped — i.e. the logo's OWN pole appears to spin. Otherwise a crisp animated pole
+    # sits beside the logo so every header has a moving pole.
+    frame_cls = "logo-dark" if t.get("logo_dark_bg") else "logo-light"
+    pole = t.get("logo_pole")
+    img = ('<img src="/assets/logo.jpeg" alt="American Barber Institute — New York\'s dedicated barber school" '
+           'width="200" height="60" decoding="async">')
+    if pole:
+        ovl = (f'<span class="logo-pole-ovl" aria-hidden="true" '
+               f'style="left:{pole["l"]}%;top:{pole["t"]}%;width:{pole["w"]}%;height:{pole["h"]}%"></span>')
+        brand = f'<span class="brand-mark has-ovl {frame_cls}">{img}{ovl}</span>'
+    else:
+        brand = (f'<span class="barber-pole" role="img" aria-label="Barber pole"></span>'
+                 f'<span class="brand-mark {frame_cls}">{img}</span>')
     return f'''<header class="site-header">
   <div class="header-inner">
-    <a class="brand-logo" href="/" aria-label="American Barber Institute home">
-      <span class="barber-pole" role="img" aria-label="Barber pole"></span>
-      <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
-    </a>
+    <a class="brand-logo" href="/" aria-label="American Barber Institute home">{brand}</a>
     <nav class="primary-nav" id="primary-nav">{links}</nav>
+    {lang_toggle("lang-toggle-header")}
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -566,9 +662,10 @@ def header_html(active_key=""):
 
 
 def sticky_call():
-    return f'''<div class="sticky-call" role="region" aria-label="Quick call">
-  <a class="en" href="tel:{tel(B["phone_manhattan"])}"><span class="flag">EN</span> {B["phone_manhattan"]}</a>
-  <a class="es" href="tel:{tel(B["phone_manhattan_es"])}"><span class="flag">ES</span> {B["phone_manhattan_es"]}</a>
+    """Mobile-only fixed bottom bar — the two end actions: Call Now + Become a Barber."""
+    return f'''<div class="sticky-call" role="region" aria-label="Quick actions">
+  <a class="call" href="tel:{tel(B["phone_manhattan"])}" aria-label="Call admissions now"><span class="ico" aria-hidden="true">📞</span> {bi({"en":"Call Now","es":"Llama Ahora"})}</a>
+  <a class="apply" href="/contact" aria-label="Become a barber — apply now">{bi(UI["become_barber"])} <span class="ico" aria-hidden="true">✂</span></a>
 </div>'''
 
 
@@ -591,7 +688,8 @@ def footer_html():
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>American Barber Institute</h4>
+        <img class="footer-logo" src="/assets/logo.jpeg" alt="American Barber Institute" width="200" height="64" loading="lazy">
+        <h4 class="nowrap-fit">American Barber Institute</h4>
         <p>{bi(f["tagline"])}</p>
         <p style="margin-top:10px;font-size:.85rem">{bi({"en": "GI Bill® · ACCES-VR · VA benefits accepted.", "es": "GI Bill® · ACCES-VR · beneficios de la VA aceptados."})}</p>
         <div class="social-row">{socials}</div>
@@ -706,6 +804,30 @@ JS = r'''<script>
     document.querySelectorAll('.m-tile').forEach(function(t){ mio.observe(t); });
   }
 })();
+
+/* ---- next-class countdown: live to the first Monday of every month ---- */
+(function(){
+  var els = document.querySelectorAll('[data-next-class]');
+  if (!els.length) return;
+  function firstMonday(y,m){ var d=new Date(y,m,1); var delta=(1-d.getDay()+7)%7; d.setDate(1+delta); d.setHours(0,0,0,0); return d; }
+  function nextStart(now){
+    var y=now.getFullYear(), m=now.getMonth(), fm=firstMonday(y,m);
+    if (fm.getTime()<=now.getTime()){ m+=1; if(m>11){m=0;y+=1;} fm=firstMonday(y,m); }
+    return fm;
+  }
+  function pad(v){ return (v<10?'0':'')+v; }
+  function tick(){
+    var now=new Date(), t=nextStart(now), diff=Math.max(0,t-now);
+    var lang=(document.documentElement.lang==='es')?'es-US':'en-US';
+    var dstr=t.toLocaleDateString(lang,{weekday:'long',month:'long',day:'numeric'});
+    var d=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, mi=Math.floor(diff/6e4)%60, s=Math.floor(diff/1e3)%60;
+    els.forEach(function(el){
+      var dt=el.querySelector('[data-nc-date]'); if(dt) dt.textContent=dstr;
+      ['days','hours','mins','secs'].forEach(function(k,idx){ var n=el.querySelector('[data-nc="'+k+'"]'); if(n) n.textContent=pad([d,h,mi,s][idx]); });
+    });
+  }
+  tick(); setInterval(tick,1000);
+})();
 </script>'''
 
 
@@ -763,7 +885,7 @@ def render_page(t, page_key, pdata, site_index=0, article=None):
         hfx=hfx,
         decoration=decoration_layer(t),
         top_banner=top_banner(),
-        header=header_html(page_key),
+        header=header_html(page_key, t),
         hero_cls="hero-home" if page_key == "home" else "",
         eyebrow=pdata["eyebrow"], h1=pdata["h1"], sub=pdata["sub"],
         hero_ctas=pdata.get("hero_ctas", ""),
@@ -777,6 +899,35 @@ def render_page(t, page_key, pdata, site_index=0, article=None):
 
 
 # ===================== page content builders =====================
+def _instructor_card(i, compact=False):
+    photo = (f'<div class="ins-photo"><img src="/assets/instructors/{i["image"]}" loading="lazy" '
+             f'alt="{bt(i["name"])} — American Barber Institute instructor"></div>') if i.get("image") else ""
+    tags = " · ".join(bi(tg) for tg in i.get("tags", []))
+    tagline = "" if compact or not tags else f'<p class="ins-tags">{tags}</p>'
+    bio = "" if compact else f'<p class="ins-bio">{bi(i["bio"])}</p>'
+    return (f'<div class="card ins-card">{photo}<div class="ins-body">'
+            f'<div class="eyebrow-acc">{bi(i["role"])}</div>'
+            f'<h3 class="ins-name">{i["name"]}</h3>{bio}{tagline}</div></div>')
+
+
+def _campus_split():
+    """Manhattan | Bronx side-by-side — shown wherever programs/campuses appear, per request."""
+    c1, c2 = CONTENT["campuses"]
+    progs = CONTENT["programs"]
+    def col(campus_en, c):
+        items = [p for p in progs if campus_en in p["campus"]["en"]]
+        li = "".join(f'<li><b>{bi(p["name"])}</b> — <span style="color:var(--accent);font-weight:800">{p["price"]}</span><br><span style="color:var(--mut);font-size:.85rem">{bi(p["duration"])}</span></li>' for p in items)
+        return (f'<div class="card campus-col"><div class="eyebrow-acc">{bi(c["name"])} {bi({"en":"Campus","es":"Campus"})}</div>'
+                f'<h3 style="margin:8px 0">{bi(c["name"])}</h3>'
+                f'<p style="color:var(--mut);font-size:.92rem;margin-bottom:6px">{c["address"]}</p>'
+                f'<p style="margin-bottom:12px"><a href="tel:{tel(c["phone"])}" style="color:var(--accent);font-weight:800">{c["phone"]}</a></p>'
+                f'<ul class="list-clean campus-progs">{li}</ul></div>')
+    return (f'<section class="campus-split"><div class="container">'
+            f'<div class="eyebrow-acc">{bi({"en":"Two NYC Campuses","es":"Dos Campus en NYC"})}</div>'
+            f'<h2 style="margin-bottom:16px"><span class="nowrap-fit">Manhattan</span> &nbsp;|&nbsp; <span class="nowrap-fit">Bronx</span></h2>'
+            f'<div class="grid-2">{col("Manhattan", c1)}{col("Bronx", c2)}</div></div></section>')
+
+
 def _program_card(p):
     badge = f'<span class="badge">{bi(p["badge"])}</span>' if p.get("badge") else ""
     return (f'<div class="card" style="position:relative">{badge}'
@@ -784,6 +935,46 @@ def _program_card(p):
             f'<h3 style="margin:8px 0">{bi(p["name"])}</h3>'
             f'<div class="price-tag">{bi(p["price"]) if isinstance(p["price"], dict) else p["price"]}</div>'
             f'<p style="color:var(--mut)">{bi(p["summary"])}</p></div>')
+
+
+def next_class_counter(center=True):
+    """Live countdown to the next class start (first Monday of every month). JS fills it in."""
+    cls = "nc-center" if center else ""
+    return (f'<div class="next-class {cls}" data-next-class aria-live="polite">'
+            f'<span class="nc-label">{bi({"en": "Next class starts", "es": "Próxima clase"})}</span>'
+            f'<span class="nc-date" data-nc-date>—</span>'
+            f'<div class="nc-timer">'
+            f'<span class="nc-unit"><b data-nc="days">--</b><i>{bi({"en": "days", "es": "días"})}</i></span>'
+            f'<span class="nc-unit"><b data-nc="hours">--</b><i>{bi({"en": "hrs", "es": "hrs"})}</i></span>'
+            f'<span class="nc-unit"><b data-nc="mins">--</b><i>{bi({"en": "min", "es": "min"})}</i></span>'
+            f'<span class="nc-unit"><b data-nc="secs">--</b><i>{bi({"en": "sec", "es": "seg"})}</i></span>'
+            f'</div></div>')
+
+
+def home_contact_section():
+    """Lead-capture contact box shown on the home page (desktop + mobile), posts to FormSubmit."""
+    progs = "".join(f"<option>{(p['name']['en'] if isinstance(p['name'], dict) else p['name'])}</option>" for p in CONTENT["programs"])
+    return f'''<section class="home-contact" id="home-contact"><div class="container"><div class="hc-box">
+  <div class="hc-copy">
+    <div class="eyebrow-acc">{bi({"en": "Get Started", "es": "Empieza Hoy"})}</div>
+    <h2 style="margin:8px 0 10px">{bi({"en": "Talk to admissions today", "es": "Habla con admisiones hoy"})}</h2>
+    <p style="color:var(--mut);margin-bottom:16px">{bi({"en": "Tell us how to reach you and an ABI advisor calls you back — same day during business hours.", "es": "Dinos cómo contactarte y un asesor de ABI te devuelve la llamada — el mismo día en horario laboral."})}</p>
+    <p style="margin-bottom:6px"><a href="tel:{tel(B["phone_manhattan"])}" style="color:var(--accent);font-weight:800;font-size:1.12rem">📞 {B["phone_manhattan"]}</a></p>
+    <p style="color:var(--mut);font-size:.86rem">{bi({"en": "Manhattan &amp; Bronx · Open 7 days", "es": "Manhattan y Bronx · Abierto 7 días"})}</p>
+  </div>
+  <form class="hc-form form-grid" action="https://formsubmit.co/{B["email"]}" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="New ABI website inquiry (home)">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="{FORM_NEXT}">
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+    <div class="field-group"><label for="hc-name">{bi({"en": "Name", "es": "Nombre"})} *</label><input required id="hc-name" name="name" autocomplete="name" placeholder="{bt({"en": "Your name", "es": "Tu nombre"})}" class="input"></div>
+    <div class="field-group"><label for="hc-phone">{bi({"en": "Phone", "es": "Teléfono"})} *</label><input required id="hc-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(212) 555-0123" class="input"></div>
+    <div class="field-group"><label for="hc-prog">{bi({"en": "Program of interest", "es": "Programa de interés"})}</label><select id="hc-prog" name="program" class="input">{progs}</select></div>
+    <button type="submit" class="btn btn-primary" style="width:100%">{bi(UI["become_barber"])} ✂</button>
+    <p class="privacy" style="font-size:.76rem;color:var(--mut);text-align:center">{bi({"en": "Same-day response. Never spam.", "es": "Respuesta el mismo día. Nunca spam."})}</p>
+  </form>
+</div></div></section>'''
 
 
 def p_home():
@@ -795,13 +986,15 @@ def p_home():
     earn = "".join(f'<div class="card"><div class="eyebrow-acc">{bi(t["window"])}</div><h3 style="margin:8px 0">{bi(t["stage"])}</h3><div class="price-tag">{t["range"]}</div></div>' for t in ce["tiers"])
     grads = " · ".join(p["name"] for p in CONTENT["partners"])
     hero_ctas = (f'<div class="hero-ctas"><a class="btn btn-primary" href="/contact">{bi(UI["become_barber"])} ✂</a>'
-                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>')
+                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>'
+                 + next_class_counter())
     return {"path": "/",
             "eyebrow": bi({"en": "NY State Licensed", "es": "Licenciada por el Estado de NY"}),
             "h1": bi(B["tagline"]),
             "sub": bi(B["subtitle"]),
             "hero_ctas": hero_ctas,
             "body": f'''<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Barber Programs — NYC","es":"Programas de Barbería — NYC"})}</div><h2 style="margin-bottom:8px">{bi({"en":"Choose your path to a Master Barber License","es":"Elige tu camino a la Licencia de Maestro Barbero"})}</h2><p class="lead">{bi({"en":"Four state-licensed programs across two NYC campuses. Flexible weekly payment plans on every track.","es":"Cuatro programas licenciados por el estado en dos campus de NYC. Planes de pago semanales flexibles en cada opción."})}</p><div class="grid">{progs}</div><div class="btn-wrap" style="justify-content:flex-start;margin-top:22px"><a class="btn btn-primary" href="/programs">{bi(UI["view_all_programs"])}</a><a class="btn btn-ghost" href="/programs">{bi(UI["class_schedule"])}</a></div></div></section>
+{_campus_split()}
 <section class="stats-band"><div class="container"><div class="eyebrow-acc center">{bi({"en":"By the numbers","es":"En cifras"})}</div><h2 class="center" style="margin-bottom:24px">{bi({"en":"Built on three decades","es":"Construido sobre tres décadas"})}</h2><div class="stats-grid">
 <div class="stat-card"><b class="count" data-target="30" data-suffix="+">0</b><span class="label">{bi({"en":"Years in business","es":"Años en activo"})}</span></div>
 <div class="stat-card"><b class="count" data-target="10000" data-suffix="+">0</b><span class="label">{bi({"en":"Graduates trained","es":"Graduados entrenados"})}</span></div>
@@ -812,11 +1005,12 @@ def p_home():
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Schedule & Tuition","es":"Horario y Matrícula"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three flexible schedules","es":"Tres horarios flexibles"})}</h2><div class="grid">{sched}</div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi(ce["headline"])}</div><h2 style="margin-bottom:14px">{bi({"en":"What barbers earn","es":"Lo que ganan los barberos"})}</h2><div class="grid">{earn}</div><p class="lead" style="margin-top:14px;font-size:.84rem">{bi(ce["note"])}</p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Where Our Graduates Work","es":"Dónde Trabajan Nuestros Graduados"})}</div><h2 style="margin-bottom:12px">{bi({"en":"From our chairs to NYC's best shops","es":"De nuestras sillas a las mejores barberías de NYC"})}</h2><p class="lead">{grads}.</p><p><a class="btn btn-ghost" href="/partners">{bi({"en":"Meet our partner shops →","es":"Conoce nuestras barberías aliadas →"})}</a></p></div></section>
-<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Student voices","es":"Voces estudiantiles"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What our students say","es":"Lo que dicen nuestros estudiantes"})}</h2><div class="grid">{tcards}</div></div></section>'''}
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Student voices","es":"Voces estudiantiles"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What our students say","es":"Lo que dicen nuestros estudiantes"})}</h2><div class="grid">{tcards}</div></div></section>
+{home_contact_section()}'''}
 
 
 def p_about():
-    instr = "".join(f'<div class="card"><div class="eyebrow-acc" style="margin-bottom:8px">{bi(i["role"])}</div><h3 style="margin-bottom:10px">{i["name"]}</h3><p style="color:var(--mut);margin-bottom:10px">{bi(i["bio"])}</p><p style="font-size:.8rem;color:var(--accent);font-weight:700">{" · ".join(bi(tg) for tg in i["tags"])}</p></div>' for i in CONTENT["instructors"][:3])
+    instr = "".join(_instructor_card(i) for i in CONTENT["instructors"][:3])
     why = "".join(f'<div class="card"><h3 style="margin-bottom:8px">{bi(w["title"])}</h3><p style="color:var(--mut)">{bi(w["desc"])}</p></div>' for w in CONTENT["why_choose"])
     return {"path": "/about",
             "eyebrow": bi({"en": "About ABI", "es": "Acerca de ABI"}),
@@ -833,7 +1027,7 @@ def p_about():
 <div class="stat-card"><b class="count" data-target="2" data-suffix="">0</b><span class="label">{bi({"en":"NYC campuses","es":"Campus en NYC"})}</span><span class="sublabel">{bi({"en":"Manhattan + Bronx","es":"Manhattan + Bronx"})}</span></div>
 <div class="stat-card"><b class="count" data-target="17" data-suffix="">0</b><span class="label">{bi({"en":"Weeks to license","es":"Semanas a la licencia"})}</span><span class="sublabel">{bi({"en":"Full-time track","es":"Tiempo completo"})}</span></div>
 </div></div></section>
-<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Leadership","es":"Liderazgo"})}</div><h2 style="margin-bottom:24px">{bi({"en":"The faculty","es":"La facultad"})}</h2><div class="grid">{instr}</div><p style="margin-top:20px"><a class="btn btn-ghost" href="/instructors">{bi({"en":"Meet all instructors →","es":"Conoce a todos →"})}</a></p></div></section>
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Leadership","es":"Liderazgo"})}</div><h2 style="margin-bottom:24px">{bi({"en":"The faculty","es":"La facultad"})}</h2><div class="ins-grid">{instr}</div><p style="margin-top:20px"><a class="btn btn-ghost" href="/instructors">{bi({"en":"Meet all instructors →","es":"Conoce a todos →"})}</a></p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Why ABI","es":"Por qué ABI"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What makes us different","es":"Lo que nos hace diferentes"})}</h2><div class="grid">{why}</div></div></section>'''}
 
 
@@ -844,9 +1038,11 @@ def p_programs():
     req = "".join(f"<li>{bi(r)}</li>" for r in CONTENT["requirements"])
     return {"path": "/programs",
             "eyebrow": bi({"en": "Programs & Tuition", "es": "Programas y Matrícula"}),
-            "h1": bi({"en": "Barber Programs — NYC", "es": "Programas de Barbería — NYC"}),
+            "h1": f'<span class="nowrap-fit">{bi({"en": "Barber Programs — NYC", "es": "Programas de Barbería — NYC"})}</span>',
             "sub": bi({"en": "Licensed by the New York State Department of Education. New classes start the first Monday of every month.", "es": "Licenciada por el Departamento de Educación del Estado de Nueva York. Las nuevas clases comienzan el primer lunes de cada mes."}),
+            "hero_ctas": next_class_counter(),
             "body": f'''<section><div class="container"><h2>{bi({"en":"Choose your program","es":"Elige tu programa"})}</h2><p class="lead">{bi({"en":"Every program is state-licensed and exam-prep ready. Flexible weekly payment plans on every track.","es":"Cada programa está licenciado por el estado y listo para el examen. Planes de pago semanales flexibles."})}</p><div class="grid">{rows}</div></div></section>
+{_campus_split()}
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Schedule & Tuition","es":"Horario y Matrícula"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three flexible schedules","es":"Tres horarios flexibles"})}</h2><div class="grid">{sched}</div><p style="margin-top:18px;color:var(--mut);font-size:.92rem">{bi({"en":"Start your barber journey today for only $150 per week. GI Bill® and ACCES-VR accepted.","es":"Comienza tu camino de barbero hoy por solo $150 por semana. GI Bill® y ACCES-VR aceptados."})} <a href="/resources" style="color:var(--accent);text-decoration:underline">{bi({"en":"See full benefits guide →","es":"Ver guía completa →"})}</a></p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Enrollment","es":"Inscripción"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three steps to your first chair","es":"Tres pasos a tu primer sillón"})}</h2><div class="grid">{steps}</div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Requirements","es":"Requisitos"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Documents to enroll","es":"Documentos para inscribirte"})}</h2><ul class="list-clean" style="max-width:680px">{req}</ul></div></section>'''}
@@ -970,7 +1166,15 @@ def article_pages():
 
 
 def p_partners():
-    cards = "".join(f'<div class="card partner-card"><div class="img-wrap"><img src="/assets/img/{PARTNER_IMGS[i % len(PARTNER_IMGS)]}" loading="lazy" alt="{p["name"]}"><div class="partner-name">{p["name"]}</div></div><div class="body"><div class="locations">{p["locations"]}</div><p class="desc">{bi(p["desc"])}</p><p class="why">→ {bi(p["why"])}</p></div></div>' for i, p in enumerate(CONTENT["partners"]))
+    def card(p):
+        img = (f'<div class="img-wrap"><img src="/assets/partners/{p["image"]}" loading="lazy" alt="{bt(p["name"])} — American Barber Institute partner shop"></div>') if p.get("image") else ""
+        phone = (f'<p class="p-phone"><a href="tel:{tel(p["phone"])}">{p["phone"]}</a></p>') if p.get("phone") else ""
+        loc = f'<div class="locations">{p["locations"]}</div>' if p.get("locations") else ""
+        return (f'<div class="card partner-card">{img}<div class="body">'
+                f'<h3 class="partner-title">{p["name"]}</h3>{loc}'
+                f'<p class="desc">{bi(p["desc"])}</p>'
+                f'<p class="why">→ {bi(p["why"])}</p>{phone}</div></div>')
+    cards = "".join(card(p) for p in CONTENT["partners"])
     return {"path": "/partners",
             "eyebrow": bi({"en": "Partner Shops", "es": "Barberías Aliadas"}),
             "h1": bi({"en": "Where ABI graduates work.", "es": "Dónde trabajan los graduados de ABI."}),
@@ -979,12 +1183,19 @@ def p_partners():
 
 
 def p_instructors():
-    cards = "".join(f'<div class="card"><div class="eyebrow-acc" style="margin-bottom:8px">{bi(i["role"])}</div><h3 style="margin-bottom:10px">{i["name"]}</h3><p style="color:var(--mut);line-height:1.7;margin-bottom:14px">{bi(i["bio"])}</p><p style="font-size:.84rem;color:var(--accent);font-weight:700">{" · ".join(bi(tg) for tg in i["tags"])}</p></div>' for i in CONTENT["instructors"])
+    mh = [i for i in CONTENT["instructors"] if i["team"]["en"] == "Manhattan"]
+    bx = [i for i in CONTENT["instructors"] if i["team"]["en"] == "Bronx"]
+    def group(title, lst):
+        cards = "".join(_instructor_card(i) for i in lst)
+        return (f'<section><div class="container"><div class="eyebrow-acc">{bi(title)}</div>'
+                f'<h2 style="margin-bottom:20px">{bi(title)}</h2><div class="ins-grid">{cards}</div></div></section>')
+    body = (group({"en": "Manhattan Campus", "es": "Campus de Manhattan"}, mh)
+            + group({"en": "Bronx Campus", "es": "Campus del Bronx"}, bx))
     return {"path": "/instructors",
             "eyebrow": bi({"en": "Faculty", "es": "Profesorado"}),
             "h1": bi({"en": "Master barbers. Master teachers.", "es": "Maestros barberos. Maestros instructores."}),
             "sub": bi({"en": "Decades of working-floor experience and a clinic-first teaching style. You learn by chair time, with an instructor inches away.", "es": "Décadas de experiencia en el piso y un estilo de enseñanza centrado en la clínica. Aprendes con tiempo en la silla."}),
-            "body": f'<section><div class="container"><div class="grid-2">{cards}</div></div></section>'}
+            "body": body}
 
 
 def p_faq():
@@ -1025,7 +1236,7 @@ def p_contact():
 <div class="field-group"><label>{bi({"en":"Best way to reach you","es":"Cómo prefieres que te contactemos"})}</label><div class="radio-row"><label class="radio-pill"><input type="radio" name="contactBy" value="call" checked><span>{bi({"en":"Call","es":"Llamada"})}</span></label><label class="radio-pill"><input type="radio" name="contactBy" value="text"><span>{bi({"en":"Text","es":"Texto"})}</span></label><label class="radio-pill"><input type="radio" name="contactBy" value="email"><span>Email</span></label></div></div>
 <div class="row-2"><div class="field-group"><label for="f-program">{bi({"en":"Program of interest","es":"Programa de interés"})}</label><select id="f-program" name="program" class="input"><option>500-Hour Master Barber (Manhattan)</option><option>500-Hour Master Barber (Bronx)</option><option>50-Hour Refresher</option><option>3-Hour Contagious Diseases</option><option>{bi({"en":"Not sure yet","es":"Aún no estoy seguro"})}</option></select></div><div class="field-group"><label for="f-schedule">{bi({"en":"Preferred schedule","es":"Horario preferido"})}</label><select id="f-schedule" name="schedule" class="input"><option>{bi({"en":"Morning (Mon–Fri 8AM–2PM)","es":"Mañana (Lun–Vie 8AM–2PM)"})}</option><option>{bi({"en":"Afternoon (Mon–Fri 2PM–8PM)","es":"Tarde (Lun–Vie 2PM–8PM)"})}</option><option>{bi({"en":"Weekend (Sat–Sun 9AM–7PM)","es":"Fin de Semana (Sáb–Dom 9AM–7PM)"})}</option><option>{bi({"en":"Flexible","es":"Flexible"})}</option></select></div></div>
 <div class="field-group"><label for="f-funding">{bi({"en":"Funding (optional)","es":"Financiamiento (opcional)"})}</label><select id="f-funding" name="funding" class="input"><option>{bi({"en":"Self-pay / weekly plan","es":"Pago propio / plan semanal"})}</option><option>GI Bill® (Post-9/11 / VR&E / Montgomery / DEA)</option><option>ACCES-VR</option><option>{bi({"en":"Not sure yet","es":"Aún no estoy seguro"})}</option></select></div>
-<div class="field-group"><label for="f-msg">{bi({"en":"What would you like to know?","es":"¿Qué te gustaría saber?"})}</label><textarea id="f-msg" name="message" placeholder="{bi({"en":"Optional — any questions for admissions","es":"Opcional — preguntas para admisiones"})}" rows="4" class="input" style="resize:vertical"></textarea></div>
+<div class="field-group"><label for="f-msg">{bi({"en":"What would you like to know?","es":"¿Qué te gustaría saber?"})}</label><textarea id="f-msg" name="message" placeholder="{bt({"en":"Optional — any questions for admissions","es":"Opcional — preguntas para admisiones"})}" rows="4" class="input" style="resize:vertical"></textarea></div>
 <div class="form-cta"><button type="submit" class="btn btn-primary">{bi({"en":"Send to admissions","es":"Enviar a admisiones"})}</button><p class="privacy">{bi({"en":"We respond same-day during business hours. Never spam.","es":"Respondemos el mismo día en horario laboral. Nunca spam."})}</p></div>
 </form></div></div></section>'''}
 
@@ -1049,7 +1260,11 @@ PAGE_BUILDERS = {
 def route_assets(html, site):
     """Point every local /assets/... URL at the shared asset host, so sites carry no media."""
     html = html.replace("/assets/showcase/", f"{ASSET_BASE}/showcase/")
+    html = html.replace("/assets/instructors/", f"{ASSET_BASE}/instructors/")
+    html = html.replace("/assets/partners/", f"{ASSET_BASE}/partners/")
     html = html.replace("/assets/img/", f"{ASSET_BASE}/img/")
+    html = html.replace("/assets/favicon.png", f"{ASSET_BASE}/logos/{site.get('favicon', site['logo'])}")
+    html = html.replace("/assets/og.png", f"{ASSET_BASE}/logos/{site.get('og', site['logo'])}")
     html = html.replace("/assets/logo.jpeg", f"{ASSET_BASE}/logos/{site['logo']}")
     html = html.replace("/assets/bg.mp4", f"{ASSET_BASE}/videos/{site['video']}")
     return html

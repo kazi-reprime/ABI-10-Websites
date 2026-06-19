@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 01-neon-blade ----
 TOKENS = {
     "slug": "01-neon-blade",
+    "logo_dark_bg": True,
     "bg": "#05060a",
     "bg2": "#0a0d18",
     "ink": "#e9ecff",
@@ -46,9 +47,11 @@ TOKENS = {
 SITE = {
     "slug": "01-neon-blade",
     "vercel_name": "abi-app-1",
-    "logo": "cyberpunk_logo_for_american_barb-.jpeg",
+    "logo": "site-01-neon.jpeg",
     "video": "cyberpunk_neon_animation_abi_mon-.mp4",
-    "site_index": 0
+    "site_index": 0,
+    "favicon": "site-01-neon-favicon.png",
+    "og": "site-01-neon-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; SITE_CSS wins the cascade) ----

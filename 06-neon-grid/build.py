@@ -22,6 +22,7 @@ import abi_engine
 # as plain rgba (valid CSS); SITE_CSS uses color-mix(...) exclusively — never var(--accent)NN.
 TOKENS = {
     "slug": "06-neon-grid",
+    "logo_dark_bg": True,
     "bg": "#05060a",
     "bg2": "rgba(13,18,28,.6)",
     "ink": "#e8f6ff",
@@ -51,9 +52,11 @@ TOKENS = {
 SITE = {
     "slug": "06-neon-grid",
     "vercel_name": "abi-app-6",
-    "logo": "barber_pole_circuit_icon.jpeg",
+    "logo": "site-06-chrome2.jpeg",
     "video": "futuristic_animation_for_abi.mp4",
-    "site_index": 5
+    "site_index": 5,
+    "favicon": "site-06-chrome2-favicon.png",
+    "og": "site-06-chrome2-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; safe to expand) ----

@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 08-holographic ----
 TOKENS = {
     "slug": "08-holographic",
+    "logo_dark_bg": False,
     "bg": "#0c0b1a",
     "bg2": "rgba(255,255,255,.055)",
     "ink": "#ecebff",
@@ -46,9 +47,11 @@ TOKENS = {
 SITE = {
     "slug": "08-holographic",
     "vercel_name": "abi-app-8",
-    "logo": "abi_crest_logo_design.jpeg",
+    "logo": "site-08-abimono.jpeg",
     "video": "abstract_animation_for_american_-.mp4",
-    "site_index": 7
+    "site_index": 7,
+    "favicon": "site-08-abimono-favicon.png",
+    "og": "site-08-abimono-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; overrides engine for THIS site only) ----

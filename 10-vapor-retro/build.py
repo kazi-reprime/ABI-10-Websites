@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 10-vapor-retro ----
 TOKENS = {
     "slug": "10-vapor-retro",
+    "logo_dark_bg": False,
     "bg": "#150522",
     "bg2": "#1a0530",
     "ink": "#fdeaff",
@@ -46,9 +47,11 @@ TOKENS = {
 SITE = {
     "slug": "10-vapor-retro",
     "vercel_name": "abi-app-10",
-    "logo": "futuristic_wordmark_logo_america-.jpeg",
+    "logo": "site-10-crest.jpeg",
     "video": "letter_i_transforms_barber_pole.mp4",
-    "site_index": 9
+    "site_index": 9,
+    "favicon": "site-10-crest-favicon.png",
+    "og": "site-10-crest-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; safe to expand) ----

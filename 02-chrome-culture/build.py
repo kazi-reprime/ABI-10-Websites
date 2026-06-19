@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 02-chrome-culture ----
 TOKENS = {
     "slug": "02-chrome-culture",
+    "logo_dark_bg": True,
     "bg": "#0c0c0e",
     "bg2": "#141417",
     "ink": "#f4f5f7",
@@ -48,9 +49,11 @@ TOKENS = {
 SITE = {
     "slug": "02-chrome-culture",
     "vercel_name": "abi-app-2",
-    "logo": "american_barber_institute_logo_2.jpeg",
+    "logo": "site-02-chrome.jpeg",
     "video": "animated_logo_transition_america-.mp4",
-    "site_index": 1
+    "site_index": 1,
+    "favicon": "site-02-chrome-favicon.png",
+    "og": "site-02-chrome-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; safe to expand) ----

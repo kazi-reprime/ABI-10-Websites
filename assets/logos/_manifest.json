@@ -1,0 +1,92 @@
+{
+  "01-neon-blade": {
+    "logo": "site-01-neon.jpeg",
+    "favicon": "site-01-neon-favicon.png",
+    "og": "site-01-neon-og.png",
+    "logo_w": 1376,
+    "logo_h": 768,
+    "bg_hex": "#13171a",
+    "is_dark_bg": true
+  },
+  "02-chrome-culture": {
+    "logo": "site-02-chrome.jpeg",
+    "favicon": "site-02-chrome-favicon.png",
+    "og": "site-02-chrome-og.png",
+    "logo_w": 768,
+    "logo_h": 1376,
+    "bg_hex": "#74736e",
+    "is_dark_bg": true
+  },
+  "03-aurora-fade": {
+    "logo": "site-03-aurora.jpeg",
+    "favicon": "site-03-aurora-favicon.png",
+    "og": "site-03-aurora-og.png",
+    "logo_w": 768,
+    "logo_h": 1376,
+    "bg_hex": "#eff0f0",
+    "is_dark_bg": false
+  },
+  "04-midnight-hud": {
+    "logo": "site-04-badge.jpeg",
+    "favicon": "site-04-badge-favicon.png",
+    "og": "site-04-badge-og.png",
+    "logo_w": 768,
+    "logo_h": 1376,
+    "bg_hex": "#262a2f",
+    "is_dark_bg": true
+  },
+  "05-barber-prime": {
+    "logo": "site-05-gold.jpeg",
+    "favicon": "site-05-gold-favicon.png",
+    "og": "site-05-gold-og.png",
+    "logo_w": 1376,
+    "logo_h": 768,
+    "bg_hex": "#262528",
+    "is_dark_bg": true
+  },
+  "06-neon-grid": {
+    "logo": "site-06-chrome2.jpeg",
+    "favicon": "site-06-chrome2-favicon.png",
+    "og": "site-06-chrome2-og.png",
+    "logo_w": 1376,
+    "logo_h": 768,
+    "bg_hex": "#41454b",
+    "is_dark_bg": true
+  },
+  "07-chrome-liquid": {
+    "logo": "site-07-mono.jpeg",
+    "favicon": "site-07-mono-favicon.png",
+    "og": "site-07-mono-og.png",
+    "logo_w": 768,
+    "logo_h": 1376,
+    "bg_hex": "#fdfcfd",
+    "is_dark_bg": false
+  },
+  "08-holographic": {
+    "logo": "site-08-abimono.jpeg",
+    "favicon": "site-08-abimono-favicon.png",
+    "og": "site-08-abimono-og.png",
+    "logo_w": 768,
+    "logo_h": 1376,
+    "bg_hex": "#fdfdfd",
+    "is_dark_bg": false
+  },
+  "09-noir-gold": {
+    "logo": "site-09-waxseal.jpeg",
+    "favicon": "site-09-waxseal-favicon.png",
+    "og": "site-09-waxseal-og.png",
+    "logo_w": 1376,
+    "logo_h": 768,
+    "bg_hex": "#18100b",
+    "is_dark_bg": true
+  },
+  "10-vapor-retro": {
+    "logo": "site-10-crest.jpeg",
+    "favicon": "site-10-crest-favicon.png",
+    "og": "site-10-crest-og.png",
+    "logo_w": 768,
+    "logo_h": 1376,
+    "bg_hex": "#fdfdfd",
+    "is_dark_bg": false
+  }
+}

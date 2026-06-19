@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 03-aurora-fade ----
 TOKENS = {
     "slug": "03-aurora-fade",
+    "logo_dark_bg": False,
     "bg": "#f4f1ff",
     "bg2": "rgba(255,255,255,.55)",
     "ink": "#1a1430",
@@ -50,9 +51,11 @@ TOKENS = {
 SITE = {
     "slug": "03-aurora-fade",
     "vercel_name": "abi-app-3",
-    "logo": "final-logo.gif.jpeg",
+    "logo": "site-03-aurora.jpeg",
     "video": "animated_logo_transition_america-_2.mp4",
-    "site_index": 2
+    "site_index": 2,
+    "favicon": "site-03-aurora-favicon.png",
+    "og": "site-03-aurora-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; overrides the engine) ----

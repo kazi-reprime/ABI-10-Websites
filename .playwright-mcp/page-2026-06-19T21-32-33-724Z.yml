@@ -1,0 +1,671 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - paragraph [ref=e5]: Start Your Barber Journey Today for Only $150 Per Week*
+    - generic [ref=e8]:
+      - link "English (212) 290-2289" [ref=e9] [cursor=pointer]:
+        - /url: tel:2122902289
+        - img [ref=e10]
+        - generic [ref=e12]: English
+        - text: (212) 290-2289
+      - generic [ref=e13]: "|"
+      - link "Spanish (212) 290-0278" [ref=e14] [cursor=pointer]:
+        - /url: tel:2122900278
+        - img [ref=e15]
+        - generic [ref=e17]: Spanish
+        - text: (212) 290-0278
+    - generic [ref=e19]:
+      - link "American Barber Institute" [ref=e20] [cursor=pointer]:
+        - /url: /
+        - img "American Barber Institute" [ref=e21]
+      - navigation [ref=e22]:
+        - button "About" [ref=e24]:
+          - text: About
+          - img [ref=e25]
+        - button "Programs" [ref=e28]:
+          - text: Programs
+          - img [ref=e29]
+        - button "Resources" [ref=e32]:
+          - text: Resources
+          - img [ref=e33]
+        - link "FAQs" [ref=e35] [cursor=pointer]:
+          - /url: /faqs
+        - link "Jobs" [ref=e36] [cursor=pointer]:
+          - /url: /jobs
+        - link "Haircuts" [ref=e37] [cursor=pointer]:
+          - /url: /haircuts
+        - link "Gallery" [ref=e38] [cursor=pointer]:
+          - /url: /gallery
+        - link "Blog" [ref=e39] [cursor=pointer]:
+          - /url: /blog
+        - link "Contact" [ref=e40] [cursor=pointer]:
+          - /url: /contact
+      - link "Sign In" [ref=e41] [cursor=pointer]:
+        - /url: /login
+      - link "Become a Barber Let's Do It ✂" [ref=e42] [cursor=pointer]:
+        - /url: /contact#lead-form
+        - generic [ref=e43]: Become a Barber
+        - generic [ref=e44]: Let's Do It ✂
+      - generic [ref=e45]:
+        - link "English" [ref=e46] [cursor=pointer]:
+          - /url: /about/instructors
+          - text: EN
+        - link "Español" [ref=e47] [cursor=pointer]:
+          - /url: /es/about/instructors
+          - text: ES
+  - main [ref=e48]:
+    - generic [ref=e49]:
+      - img [ref=e50]
+      - generic [ref=e52]:
+        - link "About ABI" [ref=e53] [cursor=pointer]:
+          - /url: /about
+          - img [ref=e54]
+          - text: About ABI
+        - paragraph [ref=e56]: Expert Team
+        - heading "Our Instructors" [level=1] [ref=e57]
+        - paragraph [ref=e58]: Learn from master barbers who bring decades of real-world experience and a genuine passion for teaching.
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: The ABI Team
+        - heading "Meet Our Master Instructors" [level=2] [ref=e63]
+      - img "The American Barber Institute instructor team" [ref=e66]
+    - generic [ref=e69]:
+      - generic [ref=e71]:
+        - img "David Ayeoribe" [ref=e74]
+        - heading "David Ayeoribe" [level=3] [ref=e75]
+        - paragraph [ref=e76]: Lead Senior Instructor & Director
+        - generic [ref=e77]:
+          - img [ref=e78]
+          - img [ref=e80]
+          - img [ref=e82]
+          - img [ref=e84]
+          - img [ref=e86]
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: 50+
+            - paragraph [ref=e91]: Years Experience
+          - generic [ref=e92]:
+            - paragraph [ref=e93]: 1000+
+            - paragraph [ref=e94]: Students Taught
+      - generic [ref=e95]:
+        - paragraph [ref=e96]: Lead Senior Instructor & Director
+        - heading "David Ayeoribe" [level=3] [ref=e97]
+        - generic [ref=e98]:
+          - paragraph [ref=e100]: Affectionately known to generations of barbers as “King David,” David Ayeoribe is a living cornerstone of American Barber Institute and one of the most respected names in New York barbering education. With over 50 years behind the chair and more than 30 years teaching, David is widely recognized as the longest-serving barber instructor in New York City.
+          - button "Read more" [ref=e101]:
+            - text: Read more
+            - img [ref=e102]
+        - list [ref=e104]:
+          - listitem [ref=e105]:
+            - img [ref=e106]
+            - text: Lead Instructor & Director
+          - listitem [ref=e109]:
+            - img [ref=e110]
+            - text: NY State Licensed
+        - generic [ref=e115]:
+          - paragraph [ref=e116]: What Makes David Different
+          - list [ref=e117]:
+            - listitem [ref=e118]:
+              - generic [ref=e120]: Licensed Instructor, Director, and Manager (NYSED BPSS)
+            - listitem [ref=e121]:
+              - generic [ref=e123]: Graduate, London School of Modern Management
+            - listitem [ref=e124]:
+              - generic [ref=e126]: 50+ years in barbering and 30+ years teaching
+            - listitem [ref=e127]:
+              - generic [ref=e129]: Has taught at every American Barber Institute location and at Tribeca Barber School
+            - listitem [ref=e130]:
+              - generic [ref=e132]: Trained thousands of licensed barbers who have become entrepreneurs, shop owners, and industry leaders
+            - listitem [ref=e133]:
+              - generic [ref=e135]: Creator of Barber License Practical Exam NYS Instructions on YouTube
+    - generic [ref=e137]:
+      - generic [ref=e138]:
+        - paragraph [ref=e139]: 48 West 39th Street · New York, NY
+        - heading "Our Manhattan Team" [level=2] [ref=e140]
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e144]:
+            - img "Harold \"Barkim\" Brown" [ref=e147]
+            - heading "Harold \"Barkim\" Brown" [level=3] [ref=e148]
+            - paragraph [ref=e149]: Lead Instructor
+            - generic [ref=e150]:
+              - img [ref=e151]
+              - img [ref=e153]
+              - img [ref=e155]
+              - img [ref=e157]
+              - img [ref=e159]
+          - generic [ref=e161]:
+            - paragraph [ref=e162]: Lead Instructor
+            - heading "Harold \"Barkim\" Brown" [level=3] [ref=e163]
+            - generic [ref=e164]:
+              - paragraph [ref=e166]: Harold “Barkim” Brown is a Queens native, a master barber, and the kind of teacher students remember for the rest of their careers. Known around the shop as the best one-armed barber in the world, Harold has turned every doubt ever thrown at him into fuel — and now pours that same energy into the next generation of barbers.
+              - button "Read more" [ref=e167]:
+                - text: Read more
+                - img [ref=e168]
+            - list [ref=e170]:
+              - listitem [ref=e171]:
+                - img [ref=e172]
+                - text: Emmy-Featured Story
+              - listitem [ref=e175]:
+                - img [ref=e176]
+                - text: Master Barber
+            - generic [ref=e181]:
+              - paragraph [ref=e182]: What Makes Harold Different
+              - list [ref=e183]:
+                - listitem [ref=e184]:
+                  - generic [ref=e186]: Lead Instructor at American Barber Institute
+                - listitem [ref=e187]:
+                  - generic [ref=e189]: Featured in “The One Armed Barber” — 2024 New York Emmy Award winner (Diversity, Equity and Inclusion in News)
+                - listitem [ref=e190]:
+                  - generic [ref=e192]: "Press features: New York Post, PIX11, ABC7 Eyewitness News, Barber World TV"
+                - listitem [ref=e193]:
+                  - generic [ref=e195]: Mentored by Desperado; pays it forward — has trained hundreds of barbers including current instructor Humberto Heras
+                - listitem [ref=e196]:
+                  - generic [ref=e198]: Teaches the full range — fades, tapers, line-ups, razor work, shaves — plus etiquette and professionalism
+        - generic [ref=e199]:
+          - generic [ref=e201]:
+            - img "Barry Brown" [ref=e204]
+            - heading "Barry Brown" [level=3] [ref=e205]
+            - paragraph [ref=e206]: Instructor
+            - generic [ref=e207]:
+              - img [ref=e208]
+              - img [ref=e210]
+              - img [ref=e212]
+              - img [ref=e214]
+              - img [ref=e216]
+          - generic [ref=e218]:
+            - paragraph [ref=e219]: Instructor
+            - heading "Barry Brown" [level=3] [ref=e220]
+            - generic [ref=e221]:
+              - paragraph [ref=e223]: "Barry Brown’s story with barbering started long before he ever walked into a classroom. He began cutting hair as a young man and quickly proved what was already obvious to anyone who saw him work: barbering was in his blood."
+              - button "Read more" [ref=e224]:
+                - text: Read more
+                - img [ref=e225]
+            - list [ref=e227]:
+              - listitem [ref=e228]:
+                - img [ref=e229]
+                - text: Standout Student to Instructor
+              - listitem [ref=e232]:
+                - img [ref=e233]
+                - text: Mentored by Harold Brown
+            - generic [ref=e238]:
+              - paragraph [ref=e239]: What Makes Barry Different
+              - list [ref=e240]:
+                - listitem [ref=e241]:
+                  - generic [ref=e243]: Years of real barbering experience before ever entering the classroom
+                - listitem [ref=e244]:
+                  - generic [ref=e246]: Personally recognized and mentored by Harold “Barkim” Brown, ABI’s Lead Instructor
+                - listitem [ref=e247]:
+                  - generic [ref=e249]: Exceptional student turned trusted instructor
+                - listitem [ref=e250]:
+                  - generic [ref=e252]: Natural talent combined with professional training — teaches from both instinct and craft
+                - listitem [ref=e253]:
+                  - generic [ref=e255]: A true product of the ABI family — teacher-to-teacher lineage
+        - generic [ref=e256]:
+          - generic [ref=e258]:
+            - img "Freddie Liciaga" [ref=e261]
+            - heading "Freddie Liciaga" [level=3] [ref=e262]
+            - paragraph [ref=e263]: Bilingual Instructor
+            - generic [ref=e264]:
+              - img [ref=e265]
+              - img [ref=e267]
+              - img [ref=e269]
+              - img [ref=e271]
+              - img [ref=e273]
+          - generic [ref=e275]:
+            - paragraph [ref=e276]: Bilingual Instructor
+            - heading "Freddie Liciaga" [level=3] [ref=e277]
+            - generic [ref=e278]:
+              - paragraph [ref=e280]: Freddie Liciaga’s journey at American Barber Institute is the kind of story that defines what ABI is all about. Before he ever stood at the front of a classroom, Freddie sat in one — and from day one, he stood out.
+              - button "Read more" [ref=e281]:
+                - text: Read more
+                - img [ref=e282]
+            - list [ref=e284]:
+              - listitem [ref=e285]:
+                - img [ref=e286]
+                - text: State Exam Specialist
+              - listitem [ref=e289]:
+                - img [ref=e290]
+                - text: English & Spanish
+            - generic [ref=e295]:
+              - paragraph [ref=e296]: What Makes Freddie Different
+              - list [ref=e297]:
+                - listitem [ref=e298]:
+                  - generic [ref=e300]: Speaks to students in English and Spanish — making every student feel welcome and understood
+                - listitem [ref=e301]:
+                  - generic [ref=e303]: Former standout ABI student turned trusted instructor
+                - listitem [ref=e304]:
+                  - generic [ref=e306]: Relentless work ethic — still the first in, last out
+                - listitem [ref=e307]:
+                  - generic [ref=e309]: State board exam preparation specialist — known for getting students exam-ready
+                - listitem [ref=e310]:
+                  - generic [ref=e312]: Strong personal connection with students — leads the classroom with heart as much as technique
+        - generic [ref=e313]:
+          - generic [ref=e315]:
+            - img "Benny Santamaria" [ref=e318]
+            - heading "Benny Santamaria" [level=3] [ref=e319]
+            - paragraph [ref=e320]: Bilingual Instructor
+            - generic [ref=e321]:
+              - img [ref=e322]
+              - img [ref=e324]
+              - img [ref=e326]
+              - img [ref=e328]
+              - img [ref=e330]
+          - generic [ref=e332]:
+            - paragraph [ref=e333]: Bilingual Instructor
+            - heading "Benny Santamaria" [level=3] [ref=e334]
+            - generic [ref=e335]:
+              - paragraph [ref=e337]: "As a young man, Benny Santamaria faced a real crossroads: grind through odd jobs for the rest of his life, or commit fully to mastering a craft. Benny chose the craft. He chose barbering. And he never looked back."
+              - button "Read more" [ref=e338]:
+                - text: Read more
+                - img [ref=e339]
+            - list [ref=e341]:
+              - listitem [ref=e342]:
+                - img [ref=e343]
+                - text: Master Shaving Skills
+              - listitem [ref=e346]:
+                - img [ref=e347]
+                - text: English & Spanish
+            - generic [ref=e352]:
+              - paragraph [ref=e353]: What Makes Benny Different
+              - list [ref=e354]:
+                - listitem [ref=e355]:
+                  - generic [ref=e357]: Master of the craft — built from the ground up, by choice
+                - listitem [ref=e358]:
+                  - generic [ref=e360]: Impeccable shaving skills and precise scissor work
+                - listitem [ref=e361]:
+                  - generic [ref=e363]: ABI’s youngest instructor — high-energy teaching style, always on the practical floor
+                - listitem [ref=e364]:
+                  - generic [ref=e366]: Speaks to students in English and Spanish — accessible to every learner
+                - listitem [ref=e367]:
+                  - generic [ref=e369]: The teammate every student wants in their corner
+        - generic [ref=e370]:
+          - generic [ref=e372]:
+            - img "Richard Cancel" [ref=e375]
+            - heading "Richard Cancel" [level=3] [ref=e376]
+            - paragraph [ref=e377]: Bilingual Instructor
+            - generic [ref=e378]:
+              - img [ref=e379]
+              - img [ref=e381]
+              - img [ref=e383]
+              - img [ref=e385]
+              - img [ref=e387]
+          - generic [ref=e389]:
+            - paragraph [ref=e390]: Bilingual Instructor
+            - heading "Richard Cancel" [level=3] [ref=e391]
+            - generic [ref=e392]:
+              - paragraph [ref=e394]: Richard Cancel’s story begins with family, inspiration, and a pair of clippers. As a young man, Richard watched his older brother Mike build an entire life around the craft — more than 30 years in the barbering business, mentoring others along the way, and earning a reputation that speaks for itself. To Richard, Mike wasn’t just a brother — he was a mentor, a model, and the reason Richard ever picked up a pair of clippers in the first place.
+              - button "Read more" [ref=e395]:
+                - text: Read more
+                - img [ref=e396]
+            - list [ref=e398]:
+              - listitem [ref=e399]:
+                - img [ref=e400]
+                - text: Barber & Tattoo Artist
+              - listitem [ref=e403]:
+                - img [ref=e404]
+                - text: English & Spanish
+            - generic [ref=e409]:
+              - paragraph [ref=e410]: What Makes Richard Different
+              - list [ref=e411]:
+                - listitem [ref=e412]:
+                  - generic [ref=e414]: Hands-on training from a 30+ year industry veteran — his brother Mike, also an ABI graduate
+                - listitem [ref=e415]:
+                  - generic [ref=e417]: Dual expertise in barbering and tattooing — a rare skill set few instructors bring to the classroom
+                - listitem [ref=e418]:
+                  - generic [ref=e420]: Comes from a true ABI legacy — his brother runs a thriving Manhattan barbering and tattoo business
+                - listitem [ref=e421]:
+                  - generic [ref=e423]: Speaks to students in English and Spanish — accessible to every learner
+                - listitem [ref=e424]:
+                  - generic [ref=e426]: Teaches to give back — driven by purpose, not just career
+    - generic [ref=e428]:
+      - generic [ref=e429]:
+        - paragraph [ref=e430]: 121 Westchester Square · Bronx, NY
+        - heading "Our Bronx Team" [level=2] [ref=e431]
+      - generic [ref=e432]:
+        - generic [ref=e433]:
+          - generic [ref=e435]:
+            - img "Truth \"The Barber Artist\" Quinones" [ref=e438]
+            - heading "Truth \"The Barber Artist\" Quinones" [level=3] [ref=e439]
+            - paragraph [ref=e440]: Founding Director, ABI Bronx
+            - generic [ref=e441]:
+              - img [ref=e442]
+              - img [ref=e444]
+              - img [ref=e446]
+              - img [ref=e448]
+              - img [ref=e450]
+            - generic [ref=e453]:
+              - paragraph [ref=e454]: 40+
+              - paragraph [ref=e455]: Years Experience
+          - generic [ref=e456]:
+            - paragraph [ref=e457]: Founding Director, ABI Bronx
+            - heading "Truth \"The Barber Artist\" Quinones" [level=3] [ref=e458]
+            - generic [ref=e459]:
+              - paragraph [ref=e461]: Truth Quinones — known across the industry as Truth The Barber Artist — has spent over four decades behind the chair. Since beginning his career in 1985, he has earned a reputation for precision, innovation, and elevating the barbering profession wherever he goes.
+              - button "Read more" [ref=e462]:
+                - text: Read more
+                - img [ref=e463]
+            - list [ref=e465]:
+              - listitem [ref=e466]:
+                - img [ref=e467]
+                - text: Former NYS Board Examiner
+              - listitem [ref=e470]:
+                - img [ref=e471]
+                - text: Andis Brand Partner
+            - generic [ref=e476]:
+              - paragraph [ref=e477]: What Makes Truth Different
+              - list [ref=e478]:
+                - listitem [ref=e479]:
+                  - generic [ref=e481]: 40+ years in barbering since 1985
+                - listitem [ref=e482]:
+                  - generic [ref=e484]: Founding Director of ABI Bronx — with the school since its inception
+                - listitem [ref=e485]:
+                  - generic [ref=e487]: Former New York State Board Examiner — insider knowledge of licensing & compliance
+                - listitem [ref=e488]:
+                  - generic [ref=e490]: Andis brand partner and national industry influencer
+                - listitem [ref=e491]:
+                  - generic [ref=e493]: Bridges tradition and innovation — classic fundamentals meets modern business strategy
+        - generic [ref=e494]:
+          - generic [ref=e496]:
+            - img "Osvaldy \"Mr. O\" Rodriguez" [ref=e499]
+            - heading "Osvaldy \"Mr. O\" Rodriguez" [level=3] [ref=e500]
+            - paragraph [ref=e501]: Instructor
+            - generic [ref=e502]:
+              - img [ref=e503]
+              - img [ref=e505]
+              - img [ref=e507]
+              - img [ref=e509]
+              - img [ref=e511]
+            - generic [ref=e514]:
+              - paragraph [ref=e515]: 8+
+              - paragraph [ref=e516]: Years Experience
+          - generic [ref=e517]:
+            - paragraph [ref=e518]: Instructor
+            - heading "Osvaldy \"Mr. O\" Rodriguez" [level=3] [ref=e519]
+            - generic [ref=e520]:
+              - paragraph [ref=e522]: Known to his students and peers simply as “Mr. O,” Osvaldy Rodriguez is proof that age is no measure of mastery. At just 23 years old, Mr. O is already a Licensed Master Barber, licensed instructor, and award-winning competitor — with more than 8 years of professional barbering experience to his name.
+              - button "Read more" [ref=e523]:
+                - text: Read more
+                - img [ref=e524]
+            - list [ref=e526]:
+              - listitem [ref=e527]:
+                - img [ref=e528]
+                - text: Master Barber at 19
+              - listitem [ref=e531]:
+                - img [ref=e532]
+                - text: Award-Winning Competitor
+            - generic [ref=e537]:
+              - paragraph [ref=e538]: What Makes Osvaldy Different
+              - list [ref=e539]:
+                - listitem [ref=e540]:
+                  - generic [ref=e542]: Licensed Master Barber — earned at just 19 years old
+                - listitem [ref=e543]:
+                  - generic [ref=e545]: Licensed instructor with 8+ years of professional barbering experience
+                - listitem [ref=e546]:
+                  - generic [ref=e548]: Award-winning competitor — multiple barbering competition wins
+                - listitem [ref=e549]:
+                  - generic [ref=e551]: Bronx-born, Queens-raised — a product of the NYC barbering scene
+                - listitem [ref=e552]:
+                  - generic [ref=e554]: Precision + creativity — a signature technical style rooted in fundamentals
+                - listitem [ref=e555]:
+                  - generic [ref=e557]: Always current — continuously studying new trends, tools, and techniques
+        - generic [ref=e558]:
+          - generic [ref=e560]:
+            - img "Noah Vera" [ref=e563]
+            - heading "Noah Vera" [level=3] [ref=e564]
+            - paragraph [ref=e565]: Bilingual Instructor, ABI Bronx
+            - generic [ref=e566]:
+              - img [ref=e567]
+              - img [ref=e569]
+              - img [ref=e571]
+              - img [ref=e573]
+              - img [ref=e575]
+            - generic [ref=e578]:
+              - paragraph [ref=e579]: 8+
+              - paragraph [ref=e580]: Years Experience
+          - generic [ref=e581]:
+            - paragraph [ref=e582]: Bilingual Instructor, ABI Bronx
+            - heading "Noah Vera" [level=3] [ref=e583]
+            - generic [ref=e584]:
+              - paragraph [ref=e586]: At just 23 years old, Noah Vera is proof that age is no measure of mastery. A Licensed Master Barber, licensed instructor, and seasoned professional with more than 8 years behind the chair, Noah is part of the new generation of NYC barbering — and he has already earned his place at the top of it.
+              - button "Read more" [ref=e587]:
+                - text: Read more
+                - img [ref=e588]
+            - list [ref=e590]:
+              - listitem [ref=e591]:
+                - img [ref=e592]
+                - text: Master Barber at 19
+              - listitem [ref=e595]:
+                - img [ref=e596]
+                - text: English & Spanish
+            - generic [ref=e601]:
+              - paragraph [ref=e602]: What Makes Noah Different
+              - list [ref=e603]:
+                - listitem [ref=e604]:
+                  - generic [ref=e606]: Licensed Master Barber since age 19 — rare early achievement
+                - listitem [ref=e607]:
+                  - generic [ref=e609]: 23 years old with 8+ years of professional barbering experience
+                - listitem [ref=e610]:
+                  - generic [ref=e612]: Licensed instructor at American Barber Institute Bronx
+                - listitem [ref=e613]:
+                  - generic [ref=e615]: Speaks to students in English and Spanish — making every student feel welcome
+                - listitem [ref=e616]:
+                  - generic [ref=e618]: Bronx-born, Queens-raised — a true product of the NYC barbering scene
+                - listitem [ref=e619]:
+                  - generic [ref=e621]: Peer-to-student connection — teaches from recent, lived experience
+                - listitem [ref=e622]:
+                  - generic [ref=e624]: High standards — drives students to meet the bar he holds for himself
+    - generic [ref=e626]:
+      - generic [ref=e627]:
+        - paragraph [ref=e628]: How We Teach
+        - heading "Our Teaching Philosophy" [level=2] [ref=e629]
+        - paragraph [ref=e630]: At ABI, instructors don't just teach barbering — they mentor the next generation of professionals.
+      - generic [ref=e631]:
+        - generic [ref=e633]:
+          - generic [ref=e634]: "01"
+          - heading "Hands-On from the First Few Weeks" [level=3] [ref=e635]
+          - paragraph [ref=e636]: Students begin working on real clients within the first few weeks, building confidence and skill through practice.
+        - generic [ref=e638]:
+          - generic [ref=e639]: "02"
+          - heading "Real-World Ready" [level=3] [ref=e640]
+          - paragraph [ref=e641]: Every technique taught reflects what students will actually need in a professional barbershop environment.
+        - generic [ref=e643]:
+          - generic [ref=e644]: "03"
+          - heading "Mentorship & Support" [level=3] [ref=e645]
+          - paragraph [ref=e646]: Instructors are available throughout training and beyond, including for NY State Board Exam prep.
+    - generic [ref=e648]:
+      - generic [ref=e649]:
+        - paragraph [ref=e650]: Student Reviews
+        - heading "What Students Say" [level=2] [ref=e651]
+      - generic [ref=e652]:
+        - generic [ref=e654]:
+          - generic [ref=e655]:
+            - img [ref=e656]
+            - img [ref=e658]
+            - img [ref=e660]
+            - img [ref=e662]
+            - img [ref=e664]
+          - paragraph [ref=e666]: “One of the best teachers around by the name of King David — will show you everything there is to know about barbering. 100% commitment from this school.”
+          - generic [ref=e667]:
+            - generic [ref=e668]: JM
+            - generic [ref=e669]:
+              - paragraph [ref=e670]: Jerrick Matthews
+              - paragraph [ref=e671]: Current Student
+        - generic [ref=e673]:
+          - generic [ref=e674]:
+            - img [ref=e675]
+            - img [ref=e677]
+            - img [ref=e679]
+            - img [ref=e681]
+            - img [ref=e683]
+          - paragraph [ref=e685]: “King David has been awesome! He has 30 years of experience and gives us great techniques while also polishing up on basic skills.”
+          - generic [ref=e686]:
+            - generic [ref=e687]: CP
+            - generic [ref=e688]:
+              - paragraph [ref=e689]: Carlos Perez
+              - paragraph [ref=e690]: Current Student
+        - generic [ref=e692]:
+          - generic [ref=e693]:
+            - img [ref=e694]
+            - img [ref=e696]
+            - img [ref=e698]
+            - img [ref=e700]
+            - img [ref=e702]
+          - paragraph [ref=e704]: “Nothing but positivity and eagerness to learn more in this field. The instructors create an environment where everyone wants to succeed.”
+          - generic [ref=e705]:
+            - generic [ref=e706]: ZF
+            - generic [ref=e707]:
+              - paragraph [ref=e708]: Zyee Fin
+              - paragraph [ref=e709]: Current Student
+    - generic [ref=e711]:
+      - heading "Learn from the Best" [level=2] [ref=e712]
+      - paragraph [ref=e713]: Come in for a tour and meet our instructors in person. We'd love to show you around.
+      - generic [ref=e714]:
+        - link "Become a Barber Let's Do It ✂" [ref=e715] [cursor=pointer]:
+          - /url: /contact#lead-form
+          - generic [ref=e716]: Become a Barber
+          - generic [ref=e717]: Let's Do It ✂
+        - link "(212) 290-2289" [ref=e718] [cursor=pointer]:
+          - /url: tel:2122902289
+          - img [ref=e719]
+          - text: (212) 290-2289
+  - generic [ref=e721]:
+    - img
+    - generic [ref=e722]:
+      - generic [ref=e723]:
+        - paragraph [ref=e724]: Free Information
+        - heading "Ready to Start Your Barber Career?" [level=2] [ref=e725]
+        - paragraph [ref=e726]: Fill out the form and an ABI admissions agent will call you within 24 hours.
+      - generic [ref=e729]: Loading form…
+  - contentinfo [ref=e730]:
+    - generic [ref=e732]:
+      - generic [ref=e733]:
+        - paragraph [ref=e734]: Ready to begin?
+        - heading "Start Your Barbering Career Today" [level=2] [ref=e735]
+      - link "Become a Barber Let's Do It ✂" [ref=e736] [cursor=pointer]:
+        - /url: /contact#lead-form
+        - generic [ref=e737]: Become a Barber
+        - generic [ref=e738]: Let's Do It ✂
+    - generic [ref=e739]:
+      - generic [ref=e740]:
+        - generic [ref=e741]:
+          - link "American Barber Institute" [ref=e742] [cursor=pointer]:
+            - /url: /
+            - img "American Barber Institute" [ref=e744]
+          - paragraph [ref=e745]: New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.
+          - generic [ref=e746]:
+            - link "Facebook" [ref=e747] [cursor=pointer]:
+              - /url: https://www.facebook.com/Abi.Education/
+              - img [ref=e748]
+            - link "Instagram" [ref=e750] [cursor=pointer]:
+              - /url: https://www.instagram.com/americanbarberinstitute/
+              - img [ref=e751]
+            - link "YouTube" [ref=e754] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ
+              - img [ref=e755]
+            - link "Twitter" [ref=e758] [cursor=pointer]:
+              - /url: https://x.com/amerbarberedu
+              - img [ref=e759]
+            - link "Pinterest" [ref=e761] [cursor=pointer]:
+              - /url: https://www.pinterest.com/alexzholendz/american-barber-institute/
+              - img [ref=e762]
+        - generic [ref=e764]:
+          - heading "Links" [level=3] [ref=e765]: Links
+          - list [ref=e767]:
+            - listitem [ref=e768]:
+              - link "About ABI" [ref=e769] [cursor=pointer]:
+                - /url: /about
+                - text: About ABI
+            - listitem [ref=e771]:
+              - link "Programs" [ref=e772] [cursor=pointer]:
+                - /url: /courses
+                - text: Programs
+            - listitem [ref=e774]:
+              - link "Class Schedule" [ref=e775] [cursor=pointer]:
+                - /url: /schedule
+                - text: Class Schedule
+            - listitem [ref=e777]:
+              - link "FAQs" [ref=e778] [cursor=pointer]:
+                - /url: /faqs
+                - text: FAQs
+            - listitem [ref=e780]:
+              - link "Haircuts" [ref=e781] [cursor=pointer]:
+                - /url: /haircuts
+                - text: Haircuts
+            - listitem [ref=e783]:
+              - link "Resources" [ref=e784] [cursor=pointer]:
+                - /url: /resources
+                - text: Resources
+            - listitem [ref=e786]:
+              - link "Job Placement" [ref=e787] [cursor=pointer]:
+                - /url: /jobs
+                - text: Job Placement
+            - listitem [ref=e789]:
+              - link "Gallery" [ref=e790] [cursor=pointer]:
+                - /url: /gallery
+                - text: Gallery
+            - listitem [ref=e792]:
+              - link "Blog" [ref=e793] [cursor=pointer]:
+                - /url: /blog
+                - text: Blog
+            - listitem [ref=e795]:
+              - link "Contact" [ref=e796] [cursor=pointer]:
+                - /url: /contact
+                - text: Contact
+        - generic [ref=e798]:
+          - heading "Locations" [level=3] [ref=e799]: Locations
+          - generic [ref=e801]:
+            - generic [ref=e802]:
+              - img [ref=e803]
+              - generic [ref=e806]:
+                - paragraph [ref=e807]: Manhattan
+                - paragraph [ref=e808]: 48 West 39th Street
+                - paragraph [ref=e809]: New York, NY 10018
+            - generic [ref=e810]:
+              - img [ref=e811]
+              - generic [ref=e814]:
+                - paragraph [ref=e815]: Bronx
+                - paragraph [ref=e816]: 121 Westchester Square
+                - paragraph [ref=e817]: Bronx, NY 10461
+        - generic [ref=e818]:
+          - heading "Contact" [level=3] [ref=e819]: Contact
+          - generic [ref=e821]:
+            - list [ref=e822]:
+              - listitem [ref=e823]:
+                - link "(212) 290-2289 (English)" [ref=e824] [cursor=pointer]:
+                  - /url: tel:2122902289
+                  - img [ref=e825]
+                  - text: (212) 290-2289
+                  - generic [ref=e827]: (English)
+              - listitem [ref=e828]:
+                - link "(212) 290-0278 (Español)" [ref=e829] [cursor=pointer]:
+                  - /url: tel:2122900278
+                  - img [ref=e830]
+                  - text: (212) 290-0278
+                  - generic [ref=e832]: (Español)
+              - listitem [ref=e833]:
+                - link "(718) 676-0640 (Bronx)" [ref=e834] [cursor=pointer]:
+                  - /url: tel:7186760640
+                  - img [ref=e835]
+                  - text: (718) 676-0640
+                  - generic [ref=e837]: (Bronx)
+              - listitem [ref=e838]:
+                - link "admission@abi.edu" [ref=e839] [cursor=pointer]:
+                  - /url: mailto:admission@abi.edu
+                  - img [ref=e840]
+                  - text: admission@abi.edu
+            - generic [ref=e844]:
+              - img [ref=e845]
+              - list [ref=e848]:
+                - listitem [ref=e849]:
+                  - generic [ref=e850]: "Monday – Friday:"
+                  - text: 8:00 AM – 8:00 PM
+                - listitem [ref=e851]:
+                  - generic [ref=e852]: "Saturday:"
+                  - text: 9:00 AM – 7:00 PM
+                - listitem [ref=e853]:
+                  - generic [ref=e854]: "Sunday:"
+                  - text: 9:00 AM – 7:00 PM
+      - generic [ref=e856]:
+        - paragraph [ref=e857]: © 2026 American Barber Institute (ABI). All Rights Reserved. Licensed by the NY State Dept. of Education.
+        - paragraph [ref=e858]: "*GI BILL® is a registered trademark of the U.S. Department of Veterans Affairs."
+  - region "Notifications alt+T"
+  - alert [ref=e859]

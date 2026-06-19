@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 09-noir-gold ----
 TOKENS = {
     "slug": "09-noir-gold",
+    "logo_dark_bg": True,
     "bg": "#0a0908",
     "bg2": "#0f0d0a",
     "ink": "#f3ede0",
@@ -46,9 +47,11 @@ TOKENS = {
 SITE = {
     "slug": "09-noir-gold",
     "vercel_name": "abi-app-9",
-    "logo": "luxury_mobile_splash_screen_abi.jpeg",
+    "logo": "site-09-waxseal.jpeg",
     "video": "luxury_logo_animation_abi_monogram.mp4",
-    "site_index": 8
+    "site_index": 8,
+    "favicon": "site-09-waxseal-favicon.png",
+    "og": "site-09-waxseal-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; safe to expand) ----

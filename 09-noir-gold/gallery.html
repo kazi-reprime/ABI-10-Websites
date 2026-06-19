@@ -10,18 +10,19 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="/gallery">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<link rel="icon" type="image/jpeg" href="https://assets-lilac-five.vercel.app/logos/luxury_mobile_splash_screen_abi.jpeg">
-<link rel="apple-touch-icon" href="https://assets-lilac-five.vercel.app/logos/luxury_mobile_splash_screen_abi.jpeg">
+<link rel="icon" type="image/png" href="https://assets-lilac-five.vercel.app/logos/site-09-waxseal-favicon.png">
+<link rel="apple-touch-icon" href="https://assets-lilac-five.vercel.app/logos/site-09-waxseal-favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="American Barber Institute">
 <meta property="og:title" content="Gallery · American Barber Institute">
 <meta property="og:description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
-<meta property="og:image" content="https://assets-lilac-five.vercel.app/logos/luxury_mobile_splash_screen_abi.jpeg">
+<meta property="og:image" content="https://assets-lilac-five.vercel.app/logos/site-09-waxseal-og.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gallery · American Barber Institute">
 <meta name="twitter:description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
+<meta name="twitter:image" content="https://assets-lilac-five.vercel.app/logos/site-09-waxseal-og.png">
 <meta name="format-detection" content="telephone=yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -252,9 +253,9 @@ details.card[open] summary::after{transform:rotate(45deg)}
 /* ---- sticky mobile call bar ---- */
 .sticky-call{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + var(--safe-bottom));z-index:50;gap:8px}
 .sticky-call a{flex:1;padding:14px 10px;min-height:52px;border-radius:999px;font-weight:800;font-size:.86rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);display:inline-flex;align-items:center;justify-content:center;gap:6px}
-.sticky-call a.en{background:var(--accent);color:var(--bg)}
-.sticky-call a.es{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
-.sticky-call .flag{font-size:.66rem;padding:1px 6px;border:1px solid currentColor;border-radius:999px;font-weight:900}
+.sticky-call a.call{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
+.sticky-call a.apply{background:var(--accent);color:var(--bg)}
+.sticky-call a .ico{font-size:1rem;line-height:1}
 @media (max-width:980px){.sticky-call{display:flex}}
 
 @media (max-width:480px){
@@ -289,11 +290,72 @@ details.card[open] summary::after{transform:rotate(45deg)}
 .social-row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
 .social-row a{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--mut);font-weight:800;font-size:.66rem;transition:color .2s,background .2s,border-color .2s,transform .2s}
 .social-row a:hover{color:var(--bg);background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+
+/* ============ FINAL-PASS additions ============ */
+/* 1-line brand & headings — never wrap, scale to fit instead */
+.nowrap-fit{white-space:nowrap}
+.footer-grid h4.nowrap-fit{white-space:nowrap}
+
+/* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
+.brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;flex-shrink:0;position:relative;border-radius:9px;overflow:hidden}
+.brand-logo .brand-mark img{height:46px;width:auto;max-width:200px;object-fit:contain;border-radius:9px;box-shadow:none;border:0}
+.brand-mark.logo-light{background:#fff;padding:3px 7px;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.06)}
+.brand-mark.logo-dark{background:transparent}
+.brand-mark.has-ovl .logo-pole-ovl{position:absolute;pointer-events:none;border-radius:3px;background:repeating-linear-gradient(45deg,#e11d2a 0 6px,#fff 6px 12px,var(--accent) 12px 18px,#fff 18px 24px);background-size:100% 34px;animation:poleSpin 1s linear infinite;opacity:.95;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.brand-mark.has-ovl + .brand-pole{display:none}
+@media (max-width:760px){.brand-mark,.brand-logo .brand-mark img{height:40px}.brand-logo .brand-mark img{max-width:160px}}
+@media (max-width:480px){.brand-mark,.brand-logo .brand-mark img{height:36px}.brand-logo .brand-mark img{max-width:140px}}
+
+/* EN/ES toggle in the sticky header — ALWAYS visible */
+.lang-toggle-header{flex-shrink:0;margin-left:6px}
+@media (max-width:1280px){.lang-toggle-header{margin-left:auto}}
+@media (max-width:480px){.lang-toggle-header button{padding:0 10px;min-width:38px;font-size:.72rem}}
+
+/* next-class countdown */
+.next-class{margin-top:22px;display:inline-flex;flex-direction:column;gap:8px;padding:16px 22px;border:1px solid var(--line);border-radius:var(--card-r);background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.next-class.nc-center{margin-left:auto;margin-right:auto;align-items:center}
+.next-class .nc-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.next-class .nc-date{font-family:var(--font-head);font-weight:800;font-size:clamp(1.05rem,3vw,1.45rem);color:var(--ink)}
+.next-class .nc-timer{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.next-class .nc-unit{display:inline-flex;flex-direction:column;align-items:center;min-width:52px;padding:8px 6px;border-radius:10px;background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.next-class .nc-unit b{font-family:var(--font-head);font-size:clamp(1.2rem,4vw,1.7rem);font-weight:900;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.next-class .nc-unit i{font-style:normal;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:3px}
+
+/* home contact box (desktop + mobile) */
+.home-contact .hc-box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(20px,3.5vw,40px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.home-contact .hc-form .btn{margin-top:4px}
+@media (max-width:760px){.home-contact .hc-box{grid-template-columns:1fr;gap:18px}}
+
+/* instructor cards — photo + bio, fits mobile & desktop */
+.ins-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(14px,2.6vw,22px)}
+.ins-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ins-card .ins-photo{aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.ins-card .ins-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
+.ins-card:hover .ins-photo img{transform:scale(1.05)}
+.ins-card .ins-body{padding:clamp(16px,2.4vw,22px)}
+.ins-card .ins-name{margin:6px 0 10px}
+.ins-card .ins-bio{color:var(--mut);line-height:1.7;margin-bottom:12px;font-size:.95rem}
+.ins-card .ins-tags{font-size:.82rem;color:var(--accent);font-weight:700}
+
+/* partner cards — logos/photos use contain so nothing is mis-cropped; name below image */
+.partner-card .img-wrap{aspect-ratio:16/10;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.partner-card .img-wrap img{width:100%;height:100%;object-fit:contain}
+.partner-card .partner-title{margin:0 0 6px;font-size:1.25rem}
+.partner-card .p-phone{margin-top:10px}
+.partner-card .p-phone a{color:var(--accent);font-weight:800}
+
+/* Manhattan | Bronx split */
+.campus-split .campus-col .campus-progs li{padding:10px 0}
+.campus-split .campus-col .campus-progs li::before{content:"▸ "}
+
+/* footer logo emblem */
+.footer-logo{height:54px;width:auto;max-width:200px;object-fit:contain;margin-bottom:14px;border-radius:8px}
 .ms-spotlight-cine .m-tile{transform:translateY(26px);filter:brightness(.6);transition:opacity .7s,transform .7s,filter 1s}.ms-spotlight-cine .m-tile.shown{transform:none;filter:brightness(1)}.ms-spotlight-cine .m-tile .m-media{transform:scale(1.08);transition:transform 6s ease-out}.ms-spotlight-cine .m-tile.shown .m-media{transform:scale(1)}.ms-spotlight-cine .m-tile:hover{box-shadow:0 0 60px color-mix(in srgb,var(--accent) 33%,transparent)}/* === 09-noir-gold unique polish === */h1,h2,h3,h4{overflow-wrap:break-word;word-wrap:break-word;hyphens:auto}.lang-toggle{height:34px;border-width:1px;letter-spacing:.2em}.lang-toggle button.active{background:var(--accent);color:#0a0908}body::before,body::after{content:'';position:fixed;left:0;right:0;height:clamp(14px,2.2vh,30px);z-index:20;pointer-events:none;background:linear-gradient(var(--bg),color-mix(in srgb,var(--bg) 86%,transparent));}body::before{top:0;border-bottom:1px solid color-mix(in srgb,var(--accent) 30%,transparent);background:linear-gradient(180deg,var(--bg),color-mix(in srgb,var(--bg) 0%,transparent));}body::after{bottom:0;border-top:1px solid color-mix(in srgb,var(--accent) 30%,transparent);background:linear-gradient(0deg,var(--bg),color-mix(in srgb,var(--bg) 0%,transparent));}@media (max-width:980px){body::before,body::after{display:none}}.eyebrow-acc{position:relative}.eyebrow-acc::after{content:'';display:inline-block;vertical-align:middle;width:clamp(22px,4vw,46px);height:1px;margin-left:12px;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 0%,transparent))}.center .eyebrow-acc::after,.m-head .eyb::after{display:none}.card:not(.partner-card){position:relative}.card:not(.partner-card)::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;background:radial-gradient(120% 90% at 85% 0%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 55%);opacity:.7;transition:opacity .4s}.card:not(.partner-card):hover::after{opacity:1}.card:not(.partner-card)>*{position:relative;z-index:1}@media (prefers-reduced-motion:reduce){.card::after{transition:none}}</style>
 </head>
 <body class="lang-en hfx-gold">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKLLGPC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<video class="bg-video" autoplay muted loop playsinline poster="https://assets-lilac-five.vercel.app/logos/luxury_mobile_splash_screen_abi.jpeg" aria-hidden="true"><source src="https://assets-lilac-five.vercel.app/videos/luxury_logo_animation_abi_monogram.mp4" type="video/mp4"></video>
+<video class="bg-video" autoplay muted loop playsinline poster="https://assets-lilac-five.vercel.app/logos/site-09-waxseal.jpeg" aria-hidden="true"><source src="https://assets-lilac-five.vercel.app/videos/luxury_logo_animation_abi_monogram.mp4" type="video/mp4"></video>
 <div class="bg-overlay"></div>
 <div class="deco-spotlight" aria-hidden="true"></div>
 <div class="top-banner">
@@ -308,18 +370,12 @@ details.card[open] summary::after{transform:rotate(45deg)}
     <span class="cta-label"><span class="lang-en">En Español</span><span class="lang-es">En Español</span></span>
     <span class="cta-num">(212) 290-0278</span>
   </a>
-  <div class="lang-toggle" role="group" aria-label="Language toggle">
-    <button type="button" data-lang="en">EN</button>
-    <button type="button" data-lang="es">ES</button>
-  </div>
 </div>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand-logo" href="/" aria-label="American Barber Institute home">
-      <span class="barber-pole" role="img" aria-label="Barber pole"></span>
-      <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
-    </a>
+    <a class="brand-logo" href="/" aria-label="American Barber Institute home"><span class="barber-pole" role="img" aria-label="Barber pole"></span><span class="brand-mark logo-dark"><img src="https://assets-lilac-five.vercel.app/logos/site-09-waxseal.jpeg" alt="American Barber Institute — New York's dedicated barber school" width="200" height="60" decoding="async"></span></a>
     <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement" class=""><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery" class="active"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/blog" class=""><span class="lang-en">Blog</span><span class="lang-es">Blog</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <div class="lang-toggle lang-toggle-header" role="group" aria-label="Language / Idioma"><button type="button" data-lang="en" aria-label="English">EN</button><button type="button" data-lang="es" aria-label="Español">ES</button></div>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -335,7 +391,7 @@ details.card[open] summary::after{transform:rotate(45deg)}
     </div>
   </section>
   <section><div class="container"><div class="gallery-grid"><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777902051735-whatsapp-image-2026-05-02-at-10.11.12-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777902051735-whatsapp-image-2026-05-02-at-10.11.12-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777902052974-whatsapp-image-2026-05-02-at-10.11.45-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777902052974-whatsapp-image-2026-05-02-at-10.11.45-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777902054092-whatsapp-image-2026-05-02-at-10.12.00-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777902054092-whatsapp-image-2026-05-02-at-10.12.00-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777902054817-whatsapp-image-2026-05-02-at-10.12.11-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777902054817-whatsapp-image-2026-05-02-at-10.12.11-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1777902055856-whatsapp-image-2026-05-02-at-10.12.22-pm.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1777902055856-whatsapp-image-2026-05-02-at-10.12.22-pm.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040800272-af00c12c-bf7a-4d99-89ae-43635c28c92c.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040802276-af8d48ad-1d4b-4e8c-b2d9-f0841e0b7278.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040802276-af8d48ad-1d4b-4e8c-b2d9-f0841e0b7278.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040803049-c25a402e-5cad-48d3-a611-5175d963cd4e.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040803049-c25a402e-5cad-48d3-a611-5175d963cd4e.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040804122-ea2fc4b0-928e-4e36-b1e9-14c6e92ba41a.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040804122-ea2fc4b0-928e-4e36-b1e9-14c6e92ba41a.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040806062-img_0854.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040806062-img_0854.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040807130-img_3181.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040807130-img_3181.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040808153-img_5656.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040808153-img_5656.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040809214-img_8676.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040809214-img_8676.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040811026-img_8677.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040811026-img_8677.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040812374-img_8680.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040812374-img_8680.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040813900-img_8697.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040813900-img_8697.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040815419-img_8698.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040815419-img_8698.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040816945-img_8699.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040816945-img_8699.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040818460-img_8700.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040818460-img_8700.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040820652-img_8701.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040820652-img_8701.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040823325-img_8703.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040823325-img_8703.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1778040825064-img_8704.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1778040825064-img_8704.jpeg" loading="lazy" alt="ABI student work"></a><a class="gallery-tile" href="https://assets-lilac-five.vercel.app/img/1780371662786-whatsapp-image-2026-06-01-at-15.04.51.jpeg" target="_blank" rel="noopener"><img src="https://assets-lilac-five.vercel.app/img/1780371662786-whatsapp-image-2026-06-01-at-15.04.51.jpeg" loading="lazy" alt="ABI student work"></a></div></div></section>
-  <section class="media-band ms-spotlight-cine"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">More from the shop</span><span class="lang-es">Más de la barbería</span></div><h2><span class="lang-en">In motion</span><span class="lang-es">En movimiento</span></h2><p><span class="lang-en">Clips and frames from the clinic, the classroom, and graduation day.</span><span class="lang-es">Clips e imágenes de la clínica, el aula y el día de graduación.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-grooms-beard-straight-razor.mp4" poster="https://assets-lilac-five.vercel.app/logos/luxury_mobile_splash_screen_abi.jpeg" aria-label="Barber grooms beard straight razor"></video><figcaption class="m-cap">Barber grooms beard straight razor</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040809214-img-8676-2.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-hands-grooming-client-s-head.mp4" poster="https://assets-lilac-five.vercel.app/logos/luxury_mobile_splash_screen_abi.jpeg" aria-label="Barber hands grooming client's head"></video><figcaption class="m-cap">Barber hands grooming client's head</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040809214-img-8676.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-trimming-client-s-beard.mp4" poster="https://assets-lilac-five.vercel.app/logos/luxury_mobile_splash_screen_abi.jpeg" aria-label="Barber trimming client's beard"></video><figcaption class="m-cap">Barber trimming client's beard</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040811026-img-8677.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040812374-img-8680.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040813900-img-8697.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040815419-img-8698.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040816945-img-8699.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040818460-img-8700.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
+  <section class="media-band ms-spotlight-cine"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">More from the shop</span><span class="lang-es">Más de la barbería</span></div><h2><span class="lang-en">In motion</span><span class="lang-es">En movimiento</span></h2><p><span class="lang-en">Clips and frames from the clinic, the classroom, and graduation day.</span><span class="lang-es">Clips e imágenes de la clínica, el aula y el día de graduación.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-grooms-beard-straight-razor.mp4" poster="https://assets-lilac-five.vercel.app/logos/site-09-waxseal.jpeg" aria-label="Barber grooms beard straight razor"></video><figcaption class="m-cap">Barber grooms beard straight razor</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040809214-img-8676-2.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-hands-grooming-client-s-head.mp4" poster="https://assets-lilac-five.vercel.app/logos/site-09-waxseal.jpeg" aria-label="Barber hands grooming client's head"></video><figcaption class="m-cap">Barber hands grooming client's head</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040809214-img-8676.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-trimming-client-s-beard.mp4" poster="https://assets-lilac-five.vercel.app/logos/site-09-waxseal.jpeg" aria-label="Barber trimming client's beard"></video><figcaption class="m-cap">Barber trimming client's beard</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040811026-img-8677.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040812374-img-8680.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040813900-img-8697.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040815419-img-8698.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040816945-img-8699.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040818460-img-8700.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
   <section class="cta-band"><div class="container">
   <div class="eyebrow-acc"><span class="lang-en">Ready to Begin?</span><span class="lang-es">¿Listo para Empezar?</span></div>
   <h2 style="margin:10px 0 12px"><span class="lang-en">Ready to Start Your Barber Career?</span><span class="lang-es">¿Listo para Comenzar Tu Carrera de Barbero?</span></h2>
@@ -347,7 +403,8 @@ details.card[open] summary::after{transform:rotate(45deg)}
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>American Barber Institute</h4>
+        <img class="footer-logo" src="https://assets-lilac-five.vercel.app/logos/site-09-waxseal.jpeg" alt="American Barber Institute" width="200" height="64" loading="lazy">
+        <h4 class="nowrap-fit">American Barber Institute</h4>
         <p><span class="lang-en">New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.</span><span class="lang-es">La única escuela de barbería dedicada de Nueva York. Licenciada por el Departamento de Educación del Estado de Nueva York. Cambiando vidas por más de 30 años.</span></p>
         <p style="margin-top:10px;font-size:.85rem"><span class="lang-en">GI Bill® · ACCES-VR · VA benefits accepted.</span><span class="lang-es">GI Bill® · ACCES-VR · beneficios de la VA aceptados.</span></p>
         <div class="social-row"><a href="https://www.facebook.com/Abi.Education/" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://www.instagram.com/americanbarberinstitute/" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="https://x.com/amerbarberedu" target="_blank" rel="noopener" aria-label="X">X</a><a href="https://www.pinterest.com/alexzholendz/american-barber-institute/" target="_blank" rel="noopener" aria-label="Pinterest">P</a></div>
@@ -376,9 +433,9 @@ details.card[open] summary::after{transform:rotate(45deg)}
     </div>
   </div>
 </footer>
-<div class="sticky-call" role="region" aria-label="Quick call">
-  <a class="en" href="tel:2122902289"><span class="flag">EN</span> (212) 290-2289</a>
-  <a class="es" href="tel:2122900278"><span class="flag">ES</span> (212) 290-0278</a>
+<div class="sticky-call" role="region" aria-label="Quick actions">
+  <a class="call" href="tel:2122902289" aria-label="Call admissions now"><span class="ico" aria-hidden="true">📞</span> <span class="lang-en">Call Now</span><span class="lang-es">Llama Ahora</span></a>
+  <a class="apply" href="/contact" aria-label="Become a barber — apply now"><span class="lang-en">Become a Barber</span><span class="lang-es">Conviértete en Barbero</span> <span class="ico" aria-hidden="true">✂</span></a>
 </div>
 <script>
 (function(){
@@ -463,6 +520,30 @@ details.card[open] summary::after{transform:rotate(45deg)}
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.m-tile').forEach(function(t){ mio.observe(t); });
   }
+})();
+
+/* ---- next-class countdown: live to the first Monday of every month ---- */
+(function(){
+  var els = document.querySelectorAll('[data-next-class]');
+  if (!els.length) return;
+  function firstMonday(y,m){ var d=new Date(y,m,1); var delta=(1-d.getDay()+7)%7; d.setDate(1+delta); d.setHours(0,0,0,0); return d; }
+  function nextStart(now){
+    var y=now.getFullYear(), m=now.getMonth(), fm=firstMonday(y,m);
+    if (fm.getTime()<=now.getTime()){ m+=1; if(m>11){m=0;y+=1;} fm=firstMonday(y,m); }
+    return fm;
+  }
+  function pad(v){ return (v<10?'0':'')+v; }
+  function tick(){
+    var now=new Date(), t=nextStart(now), diff=Math.max(0,t-now);
+    var lang=(document.documentElement.lang==='es')?'es-US':'en-US';
+    var dstr=t.toLocaleDateString(lang,{weekday:'long',month:'long',day:'numeric'});
+    var d=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, mi=Math.floor(diff/6e4)%60, s=Math.floor(diff/1e3)%60;
+    els.forEach(function(el){
+      var dt=el.querySelector('[data-nc-date]'); if(dt) dt.textContent=dstr;
+      ['days','hours','mins','secs'].forEach(function(k,idx){ var n=el.querySelector('[data-nc="'+k+'"]'); if(n) n.textContent=pad([d,h,mi,s][idx]); });
+    });
+  }
+  tick(); setInterval(tick,1000);
 })();
 </script>
 </body>

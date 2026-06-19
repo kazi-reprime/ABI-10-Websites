@@ -17,6 +17,7 @@ import abi_engine
 # ---- design tokens for 04-midnight-hud ----
 TOKENS = {
     "slug": "04-midnight-hud",
+    "logo_dark_bg": True,
     "bg": "#040810",
     "bg2": "rgba(10,18,32,.66)",
     "ink": "#dfeaff",
@@ -46,9 +47,11 @@ TOKENS = {
 SITE = {
     "slug": "04-midnight-hud",
     "vercel_name": "abi-app-4",
-    "logo": "abi_monogram_with_accent.jpeg",
+    "logo": "site-04-badge.jpeg",
     "video": "futuristic_abi_animation_barber_-.mp4",
-    "site_index": 3
+    "site_index": 3,
+    "favicon": "site-04-badge-favicon.png",
+    "og": "site-04-badge-og.png"
 }
 
 # ---- per-site unique polish (engine appends this last; safe to expand) ----

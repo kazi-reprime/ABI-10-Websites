@@ -1,0 +1,347 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - paragraph [ref=e5]: ¡Comienza Tu Carrera de Barbero Hoy por Solo $150 a la Semana!*
+    - generic [ref=e8]:
+      - link "Inglés (212) 290-2289" [ref=e9] [cursor=pointer]:
+        - /url: tel:2122902289
+        - img [ref=e10]
+        - generic [ref=e12]: Inglés
+        - text: (212) 290-2289
+      - generic [ref=e13]: "|"
+      - link "Español (212) 290-0278" [ref=e14] [cursor=pointer]:
+        - /url: tel:2122900278
+        - img [ref=e15]
+        - generic [ref=e17]: Español
+        - text: (212) 290-0278
+    - generic [ref=e19]:
+      - link "American Barber Institute" [ref=e20] [cursor=pointer]:
+        - /url: /es
+        - img "American Barber Institute" [ref=e21]
+      - navigation [ref=e22]:
+        - button "Acerca de" [ref=e24]:
+          - text: Acerca de
+          - img [ref=e25]
+        - button "Programas" [ref=e28]:
+          - text: Programas
+          - img [ref=e29]
+        - button "Recursos" [ref=e32]:
+          - text: Recursos
+          - img [ref=e33]
+        - link "Preguntas Frecuentes" [ref=e35] [cursor=pointer]:
+          - /url: /es/faqs
+        - link "Empleo" [ref=e36] [cursor=pointer]:
+          - /url: /es/jobs
+        - link "Cortes de Cabello" [ref=e37] [cursor=pointer]:
+          - /url: /es/haircuts
+        - link "Galería" [ref=e38] [cursor=pointer]:
+          - /url: /es/gallery
+        - link "Blog" [ref=e39] [cursor=pointer]:
+          - /url: /es/blog
+        - link "Contacto" [ref=e40] [cursor=pointer]:
+          - /url: /es/contact
+      - link "Iniciar Sesión" [ref=e41] [cursor=pointer]:
+        - /url: /login
+      - link "Conviértete en Barbero ¡Adelante! ✂" [ref=e42] [cursor=pointer]:
+        - /url: /es/contact#lead-form
+        - generic [ref=e43]: Conviértete en Barbero
+        - generic [ref=e44]: ¡Adelante! ✂
+      - generic [ref=e45]:
+        - link "English" [ref=e46] [cursor=pointer]:
+          - /url: /partners
+          - text: EN
+        - link "Español" [ref=e47] [cursor=pointer]:
+          - /url: /es/partners
+          - text: ES
+  - main [ref=e48]:
+    - generic [ref=e49]:
+      - img [ref=e50]
+      - generic [ref=e52]:
+        - link "Inicio" [ref=e53] [cursor=pointer]:
+          - /url: /es
+          - img [ref=e54]
+          - text: Inicio
+        - paragraph [ref=e56]: Barberías Reales · Carreras Reales
+        - heading "Nuestros Socios" [level=1] [ref=e57]
+        - paragraph [ref=e58]: Por casi 30 años, los graduados de ABI han salido de nuestras aulas hacia carreras que construyen vidas reales. Aquí hay cinco de los lugares a los que llegan.
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: Nuestros Socios
+        - heading "Las Barberías de Nuestros Estudiantes" [level=2] [ref=e63]
+        - paragraph [ref=e64]: Barberías reales. Carreras reales. Una escuela detrás de cada silla.
+        - paragraph [ref=e65]: Por casi 30 años, los graduados de American Barber Institute han salido de nuestras aulas hacia carreras que construyen vidas reales. Algunos abren sus propias barberías. Algunos se convierten en copropietarios. Algunos se unen a los equipos más respetados de Nueva York. Aquí hay seis de los lugares a los que llegan.
+      - generic [ref=e66]:
+        - generic [ref=e69]:
+          - img "Levels Barbershop logo" [ref=e72]
+          - generic [ref=e73]:
+            - paragraph [ref=e74]: 01·El Imperio de 30 Años
+            - heading "Levels Barbershop" [level=3] [ref=e75]
+            - generic [ref=e76]:
+              - paragraph [ref=e77]: Levels Barbershop fue fundada en 1996 en la Calle 125 de Harlem por Kamal Nuru. Hoy se extiende por Manhattan, Brooklyn y Orange County, NY — junto a la línea de productos The Antique Barber, la plataforma de medios Barber World TV y la batalla anual NYC Barber Battle.
+              - paragraph [ref=e78]: Varios de los copropietarios de la familia Nuru son orgullosos graduados de ABI. Hace aproximadamente 15 años obtuvieron su licencia con nosotros antes de ayudar a construir uno de los nombres más icónicos de la barbería neoyorquina. Muchos de los barberos con licencia que trabajan hoy en Levels también son alumnos de ABI — colocados allí por graduados que vinieron antes.
+              - paragraph [ref=e79]: "La relación sigue viva hoy: Barber World TV presentó al instructor principal de ABI, Harold \"Barkim\" Brown, en el Episodio 007, compartiendo su historia con la industria."
+            - blockquote [ref=e80]: Estudia en ABI. Obtén tu licencia. Construye algo que perdure.
+            - link "levelsbarbershop.com" [ref=e82] [cursor=pointer]:
+              - /url: https://www.levelsbarbershop.com
+              - img [ref=e83]
+              - text: levelsbarbershop.com
+        - generic [ref=e88]:
+          - img "Diamond Fadez Barbershop interior" [ref=e91]
+          - generic [ref=e92]:
+            - paragraph [ref=e93]: 02·A Una Cuadra de Casa
+            - heading "Diamond Fadez" [level=3] [ref=e94]
+            - generic [ref=e95]:
+              - paragraph [ref=e96]: Diamond Fadez Barbershop se encuentra a una cuadra del campus principal de ABI, en el 308 West 39th Street — un estudio combinado de barbería y tatuajes que los clientes llaman "la mejor barbería de la ciudad".
+              - paragraph [ref=e97]: "La barbería es propiedad de Mike — un orgulloso graduado de ABI y hermano mayor del actual instructor bilingüe de ABI, Richard Cancel. El éxito de Mike también es la razón por la que Richard regresó a ABI como maestro: misma escuela, mismo oficio, dos generaciones de una familia formando a la próxima ola de barberos."
+            - blockquote [ref=e98]: Una escuela. Una cuadra. Una familia. Generaciones de maestros barberos.
+            - generic [ref=e99]:
+              - link "diamondfadezbarbershop.com" [ref=e100] [cursor=pointer]:
+                - /url: https://diamondfadezbarbershop.com
+                - img [ref=e101]
+                - text: diamondfadezbarbershop.com
+              - generic [ref=e104]:
+                - img [ref=e105]
+                - text: 308 W 39th Street, NYC
+              - link "(646) 370-3474" [ref=e108] [cursor=pointer]:
+                - /url: tel:+16463703474
+                - img [ref=e109]
+                - text: (646) 370-3474
+              - link "@Diamond_Fadez1" [ref=e111] [cursor=pointer]:
+                - /url: https://www.instagram.com/Diamond_Fadez1
+                - img [ref=e112]
+                - text: "@Diamond_Fadez1"
+        - generic [ref=e117]:
+          - img "Untouchable Cutz logo" [ref=e120]
+          - generic [ref=e121]:
+            - paragraph [ref=e122]: 03·La Historia de Dos Años
+            - heading "Untouchable Cutz" [level=3] [ref=e123]
+            - generic [ref=e124]:
+              - paragraph [ref=e125]: Cuando Jimmy entró a ABI, ya estaba en otro nivel — súper avanzado desde el primer día, haciendo preguntas, retando los límites, construyendo amistades con cada persona que lo enseñaba.
+              - paragraph [ref=e126]: Solo dos años después de obtener su licencia de ABI, Jimmy abrió su propia barbería.
+              - paragraph [ref=e127]: Aproximadamente 15 años después, Untouchable Cutz es una de las barberías más respetadas de Staten Island — un hermoso espacio moderno respaldado por un equipo con más de 50 años combinados de experiencia. A lo largo de los años, Jimmy ha contratado a muchos graduados de ABI, y su barbería hoy ofrece tutorías privadas y clases semanales de grooming — pasando el oficio a la próxima generación.
+            - blockquote [ref=e128]: De la licencia a la propiedad en dos años. El esfuerzo nunca para.
+            - generic [ref=e129]:
+              - link "untouchablecutz.com" [ref=e130] [cursor=pointer]:
+                - /url: https://untouchablecutz.com
+                - img [ref=e131]
+                - text: untouchablecutz.com
+              - generic [ref=e134]:
+                - img [ref=e135]
+                - text: Staten Island, NY
+              - link "@untouchablecutz" [ref=e138] [cursor=pointer]:
+                - /url: https://www.instagram.com/untouchablecutz
+                - img [ref=e139]
+                - text: "@untouchablecutz"
+        - generic [ref=e144]:
+          - img "Expo Gentlemen Salon — barber at work" [ref=e147]
+          - generic [ref=e148]:
+            - paragraph [ref=e149]: 04·El Socio de Confianza
+            - heading "Expo Gentlemen Salon" [level=3] [ref=e150]
+            - generic [ref=e151]:
+              - paragraph [ref=e152]: No todas las historias de ABI son sobre un graduado que abrió su propia barbería. Algunas de las historias más importantes son sobre los dueños que contratan a nuestros graduados.
+              - paragraph [ref=e153]: Joe no es un graduado de ABI — y no necesitaba serlo. Como el empresario establecido detrás de Expo Gentlemen Salon, con sedes en Staten Island y Brooklyn, Joe ha construido dos barberías prósperas confiando en American Barber Institute para enviarle el talento que necesita, año tras año.
+              - paragraph [ref=e154]: "Varios alumnos de ABI son la base del equipo en ambas sedes. La relación se basa en algo simple: cada graduado que ABI envía, rinde. Esa confianza se ha mantenido por años — y es por eso que, cuando Joe necesita contratar, llama a ABI primero."
+            - blockquote [ref=e155]: Por cada graduado de ABI que se convierte en dueño, muchos más entran a barberías establecidas como la de Joe y construyen carreras reales.
+            - generic [ref=e156]:
+              - link "Book online" [ref=e157] [cursor=pointer]:
+                - /url: https://expogentlemen.simplybook.vip/v2/
+                - img [ref=e158]
+                - text: Book online
+              - generic [ref=e161]:
+                - img [ref=e162]
+                - text: "Staten Island: 326 New Dorp Lane"
+              - link "(718) 980-1100" [ref=e165] [cursor=pointer]:
+                - /url: tel:+17189801100
+                - img [ref=e166]
+                - text: (718) 980-1100
+        - generic [ref=e170]:
+          - img "Otis & Finn Barbershop logo" [ref=e173]
+          - generic [ref=e174]:
+            - paragraph [ref=e175]: 05·El Socio Reconocido por la Prensa
+            - heading "Otis & Finn" [level=3] [ref=e176]
+            - generic [ref=e177]:
+              - paragraph [ref=e178]: Otis & Finn Barbershop es una de las barberías más celebradas y vanguardistas de NYC — presentada en GQ, BuzzFeed, HuffPost, FOX5 y PIX11 — con cuatro sedes en Long Island City, Court Square, Greenpoint y Williamsburg.
+              - paragraph [ref=e179]: Los graduados de ABI son parte del equipo que le ha ganado a Otis & Finn su reputación por una barbería clásica y de alta calidad y un espacio comunitario radicalmente inclusivo. Uno de esos graduados, James Cavanaugh — un neoyorquino nativo que trabaja en la sede de Greenpoint — ha cortado cabello profesionalmente durante cinco años desde que obtuvo su licencia en ABI. Otis & Finn nombra orgullosamente a ABI en su página oficial de biografía.
+            - blockquote [ref=e180]: "Ese es el tipo de alianza al que entran los graduados de ABI: barberías que respaldan públicamente a sus alumnos, invierten en educación continua y tratan a su equipo como la marca."
+            - generic [ref=e181]:
+              - link "otisandfinn.com" [ref=e182] [cursor=pointer]:
+                - /url: https://otisandfinn.com
+                - img [ref=e183]
+                - text: otisandfinn.com
+              - generic [ref=e186]:
+                - img [ref=e187]
+                - text: LIC · Court Square · Greenpoint · Williamsburg
+        - generic [ref=e192]:
+          - img "NYC Barber Shop Museum logo" [ref=e195]
+          - generic [ref=e196]:
+            - paragraph [ref=e197]: 06·El Museo Vivo
+            - heading "NYC Barber Shop Museum" [level=3] [ref=e198]
+            - generic [ref=e199]:
+              - paragraph [ref=e200]: En el Upper West Side de Manhattan, NYC Barber Shop Museum — operado bajo REAMIR & Co. en Columbus Avenue y la Calle 70 Este, con una segunda sede en Sunny Isles, Miami — es el primer museo de su tipo en la ciudad de Nueva York y una barbería en funcionamiento donde cada corte se realiza rodeado de más de un siglo de historia de la barbería.
+              - paragraph [ref=e201]: Detrás de las sillas está el Maestro Barbero Arthur Rubinoff — un barbero de cuarta generación cuyo linaje se extiende desde Fergana, Uzbekistán, hasta el Upper West Side. Tras la muerte de su padre Rubin en 2003, Arthur viajó por el mundo rastreando más de mil artefactos — incluidas las herramientas originales de su bisabuelo y una silla de 1929 que se cree fue usada por James Dean — y abrió el museo en junio de 2018. La barbería ganó el premio Best Barbershop de New York Style Magazine en 2015 y hoy opera como una organización sin fines de lucro 501(c)(3).
+              - paragraph [ref=e202]: "Por años, ABI y Arthur Rubinoff han compartido un pipeline. Alex, dueño de ABI, ha colocado graduados con el NYC Barber Shop Museum — construyendo una de las cosas más raras de esta industria: una relación confiable y continua entre una escuela y un maestro. Para los estudiantes de ABI, trabajar allí no es simplemente un trabajo. Es un punto de referencia — donde los estándares de cuatro generaciones de maestros barberos se convierten en los estándares que un joven barbero llevará por el resto de su carrera."
+            - blockquote [ref=e203]: Estudiar en ABI es entrar en un oficio. Trabajar en el NYC Barber Shop Museum es entrar en un linaje.
+            - generic [ref=e204]:
+              - link "barbershopmuseum.com" [ref=e205] [cursor=pointer]:
+                - /url: https://barbershopmuseum.com
+                - img [ref=e206]
+                - text: barbershopmuseum.com
+              - generic [ref=e209]:
+                - img [ref=e210]
+                - text: Columbus Ave & E 70th St, Manhattan
+      - generic [ref=e214]:
+        - paragraph [ref=e215]: La Promesa de ABI
+        - heading "Estudia en ABI. Entra a una carrera real." [level=3] [ref=e216]
+        - paragraph [ref=e217]: Obtén tu licencia. Construye tu oficio. Conviértete en socio. Contrata a la próxima generación. Por 30 años, nuestros graduados nunca han tenido que preguntarse dónde trabajar.
+        - paragraph [ref=e218]: ¿Listo para comenzar tu camino?
+        - generic [ref=e219]:
+          - link "(212) 290-2289" [ref=e220] [cursor=pointer]:
+            - /url: tel:+12122900278
+            - img [ref=e221]
+            - text: (212) 290-2289
+          - link "Contáctanos" [ref=e223] [cursor=pointer]:
+            - /url: /es/contact
+            - text: Contáctanos
+            - img [ref=e224]
+        - paragraph [ref=e226]: 48 West 39th Street, Nueva York, NY 10018
+  - generic [ref=e227]:
+    - img
+    - generic [ref=e228]:
+      - generic [ref=e229]:
+        - paragraph [ref=e230]: Información Gratuita
+        - heading "¿Listo para Comenzar Tu Carrera de Barbero?" [level=2] [ref=e231]
+        - paragraph [ref=e232]: Completa el formulario y un agente de admisiones de ABI te llamará dentro de 24 horas.
+      - generic [ref=e235]: Loading form…
+  - contentinfo [ref=e236]:
+    - generic [ref=e238]:
+      - generic [ref=e239]:
+        - paragraph [ref=e240]: ¿Listo para empezar?
+        - heading "Comienza Tu Carrera de Barbería Hoy" [level=2] [ref=e241]
+      - link "Conviértete en Barbero ¡Adelante! ✂" [ref=e242] [cursor=pointer]:
+        - /url: /es/contact#lead-form
+        - generic [ref=e243]: Conviértete en Barbero
+        - generic [ref=e244]: ¡Adelante! ✂
+    - generic [ref=e245]:
+      - generic [ref=e246]:
+        - generic [ref=e247]:
+          - link "American Barber Institute" [ref=e248] [cursor=pointer]:
+            - /url: /es
+            - img "American Barber Institute" [ref=e250]
+          - paragraph [ref=e251]: La única escuela de barbería dedicada en Nueva York. Licenciada por el Departamento de Educación del Estado de NY. Cambiando vidas por más de 30 años.
+          - generic [ref=e252]:
+            - link "Facebook" [ref=e253] [cursor=pointer]:
+              - /url: https://www.facebook.com/Abi.Education/
+              - img [ref=e254]
+            - link "Instagram" [ref=e256] [cursor=pointer]:
+              - /url: https://www.instagram.com/americanbarberinstitute/
+              - img [ref=e257]
+            - link "YouTube" [ref=e260] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ
+              - img [ref=e261]
+            - link "Twitter" [ref=e264] [cursor=pointer]:
+              - /url: https://x.com/amerbarberedu
+              - img [ref=e265]
+            - link "Pinterest" [ref=e267] [cursor=pointer]:
+              - /url: https://www.pinterest.com/alexzholendz/american-barber-institute/
+              - img [ref=e268]
+        - generic [ref=e270]:
+          - heading "Enlaces" [level=3] [ref=e271]: Enlaces
+          - list [ref=e273]:
+            - listitem [ref=e274]:
+              - link "Acerca de ABI" [ref=e275] [cursor=pointer]:
+                - /url: /es/about
+                - text: Acerca de ABI
+            - listitem [ref=e277]:
+              - link "Programas" [ref=e278] [cursor=pointer]:
+                - /url: /es/courses
+                - text: Programas
+            - listitem [ref=e280]:
+              - link "Horario de Clases" [ref=e281] [cursor=pointer]:
+                - /url: /es/schedule
+                - text: Horario de Clases
+            - listitem [ref=e283]:
+              - link "Preguntas Frecuentes" [ref=e284] [cursor=pointer]:
+                - /url: /es/faqs
+                - text: Preguntas Frecuentes
+            - listitem [ref=e286]:
+              - link "Cortes de Cabello" [ref=e287] [cursor=pointer]:
+                - /url: /es/haircuts
+                - text: Cortes de Cabello
+            - listitem [ref=e289]:
+              - link "Recursos" [ref=e290] [cursor=pointer]:
+                - /url: /es/resources
+                - text: Recursos
+            - listitem [ref=e292]:
+              - link "Colocación Laboral" [ref=e293] [cursor=pointer]:
+                - /url: /es/jobs
+                - text: Colocación Laboral
+            - listitem [ref=e295]:
+              - link "Galería" [ref=e296] [cursor=pointer]:
+                - /url: /es/gallery
+                - text: Galería
+            - listitem [ref=e298]:
+              - link "Blog" [ref=e299] [cursor=pointer]:
+                - /url: /es/blog
+                - text: Blog
+            - listitem [ref=e301]:
+              - link "Contacto" [ref=e302] [cursor=pointer]:
+                - /url: /es/contact
+                - text: Contacto
+        - generic [ref=e304]:
+          - heading "Ubicaciones" [level=3] [ref=e305]: Ubicaciones
+          - generic [ref=e307]:
+            - generic [ref=e308]:
+              - img [ref=e309]
+              - generic [ref=e312]:
+                - paragraph [ref=e313]: Manhattan
+                - paragraph [ref=e314]: 48 West 39th Street
+                - paragraph [ref=e315]: New York, NY 10018
+            - generic [ref=e316]:
+              - img [ref=e317]
+              - generic [ref=e320]:
+                - paragraph [ref=e321]: Bronx
+                - paragraph [ref=e322]: 121 Westchester Square
+                - paragraph [ref=e323]: Bronx, NY 10461
+        - generic [ref=e324]:
+          - heading "Contacto" [level=3] [ref=e325]: Contacto
+          - generic [ref=e327]:
+            - list [ref=e328]:
+              - listitem [ref=e329]:
+                - link "(212) 290-2289 (English)" [ref=e330] [cursor=pointer]:
+                  - /url: tel:2122902289
+                  - img [ref=e331]
+                  - text: (212) 290-2289
+                  - generic [ref=e333]: (English)
+              - listitem [ref=e334]:
+                - link "(212) 290-0278 (Español)" [ref=e335] [cursor=pointer]:
+                  - /url: tel:2122900278
+                  - img [ref=e336]
+                  - text: (212) 290-0278
+                  - generic [ref=e338]: (Español)
+              - listitem [ref=e339]:
+                - link "(718) 676-0640 (Bronx)" [ref=e340] [cursor=pointer]:
+                  - /url: tel:7186760640
+                  - img [ref=e341]
+                  - text: (718) 676-0640
+                  - generic [ref=e343]: (Bronx)
+              - listitem [ref=e344]:
+                - link "admission@abi.edu" [ref=e345] [cursor=pointer]:
+                  - /url: mailto:admission@abi.edu
+                  - img [ref=e346]
+                  - text: admission@abi.edu
+            - generic [ref=e350]:
+              - img [ref=e351]
+              - list [ref=e354]:
+                - listitem [ref=e355]:
+                  - generic [ref=e356]: "Lunes – Viernes:"
+                  - text: 8:00 AM – 8:00 PM
+                - listitem [ref=e357]:
+                  - generic [ref=e358]: "Sábado:"
+                  - text: 9:00 AM – 7:00 PM
+                - listitem [ref=e359]:
+                  - generic [ref=e360]: "Domingo:"
+                  - text: 9:00 AM – 7:00 PM
+      - generic [ref=e362]:
+        - paragraph [ref=e363]: © 2026 American Barber Institute (ABI). Todos los derechos reservados. Licenciada por el Departamento de Educación del Estado de NY.
+        - paragraph [ref=e364]: "*GI BILL® es una marca registrada del Departamento de Asuntos de Veteranos de EE. UU."
+  - region "Notifications alt+T"
+  - alert [ref=e365]

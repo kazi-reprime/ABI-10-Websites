@@ -10,18 +10,19 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="/partners">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<link rel="icon" type="image/jpeg" href="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg">
-<link rel="apple-touch-icon" href="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg">
+<link rel="icon" type="image/png" href="https://assets-lilac-five.vercel.app/logos/site-07-mono-favicon.png">
+<link rel="apple-touch-icon" href="https://assets-lilac-five.vercel.app/logos/site-07-mono-favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="American Barber Institute">
 <meta property="og:title" content="Partner Shops · American Barber Institute">
 <meta property="og:description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
-<meta property="og:image" content="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg">
+<meta property="og:image" content="https://assets-lilac-five.vercel.app/logos/site-07-mono-og.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Partner Shops · American Barber Institute">
 <meta name="twitter:description" content="American Barber Institute (ABI) — New York's only dedicated barber school. NY State licensed. 30+ years, 10,000+ graduates. GI Bill® accepted. Manhattan & Bronx campuses.">
+<meta name="twitter:image" content="https://assets-lilac-five.vercel.app/logos/site-07-mono-og.png">
 <meta name="format-detection" content="telephone=yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -252,9 +253,9 @@ details.card[open] summary::after{transform:rotate(45deg)}
 /* ---- sticky mobile call bar ---- */
 .sticky-call{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + var(--safe-bottom));z-index:50;gap:8px}
 .sticky-call a{flex:1;padding:14px 10px;min-height:52px;border-radius:999px;font-weight:800;font-size:.86rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);display:inline-flex;align-items:center;justify-content:center;gap:6px}
-.sticky-call a.en{background:var(--accent);color:var(--bg)}
-.sticky-call a.es{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
-.sticky-call .flag{font-size:.66rem;padding:1px 6px;border:1px solid currentColor;border-radius:999px;font-weight:900}
+.sticky-call a.call{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
+.sticky-call a.apply{background:var(--accent);color:var(--bg)}
+.sticky-call a .ico{font-size:1rem;line-height:1}
 @media (max-width:980px){.sticky-call{display:flex}}
 
 @media (max-width:480px){
@@ -289,11 +290,72 @@ details.card[open] summary::after{transform:rotate(45deg)}
 .social-row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
 .social-row a{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--mut);font-weight:800;font-size:.66rem;transition:color .2s,background .2s,border-color .2s,transform .2s}
 .social-row a:hover{color:var(--bg);background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+
+/* ============ FINAL-PASS additions ============ */
+/* 1-line brand & headings — never wrap, scale to fit instead */
+.nowrap-fit{white-space:nowrap}
+.footer-grid h4.nowrap-fit{white-space:nowrap}
+
+/* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
+.brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;flex-shrink:0;position:relative;border-radius:9px;overflow:hidden}
+.brand-logo .brand-mark img{height:46px;width:auto;max-width:200px;object-fit:contain;border-radius:9px;box-shadow:none;border:0}
+.brand-mark.logo-light{background:#fff;padding:3px 7px;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.06)}
+.brand-mark.logo-dark{background:transparent}
+.brand-mark.has-ovl .logo-pole-ovl{position:absolute;pointer-events:none;border-radius:3px;background:repeating-linear-gradient(45deg,#e11d2a 0 6px,#fff 6px 12px,var(--accent) 12px 18px,#fff 18px 24px);background-size:100% 34px;animation:poleSpin 1s linear infinite;opacity:.95;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.brand-mark.has-ovl + .brand-pole{display:none}
+@media (max-width:760px){.brand-mark,.brand-logo .brand-mark img{height:40px}.brand-logo .brand-mark img{max-width:160px}}
+@media (max-width:480px){.brand-mark,.brand-logo .brand-mark img{height:36px}.brand-logo .brand-mark img{max-width:140px}}
+
+/* EN/ES toggle in the sticky header — ALWAYS visible */
+.lang-toggle-header{flex-shrink:0;margin-left:6px}
+@media (max-width:1280px){.lang-toggle-header{margin-left:auto}}
+@media (max-width:480px){.lang-toggle-header button{padding:0 10px;min-width:38px;font-size:.72rem}}
+
+/* next-class countdown */
+.next-class{margin-top:22px;display:inline-flex;flex-direction:column;gap:8px;padding:16px 22px;border:1px solid var(--line);border-radius:var(--card-r);background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.next-class.nc-center{margin-left:auto;margin-right:auto;align-items:center}
+.next-class .nc-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.next-class .nc-date{font-family:var(--font-head);font-weight:800;font-size:clamp(1.05rem,3vw,1.45rem);color:var(--ink)}
+.next-class .nc-timer{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.next-class .nc-unit{display:inline-flex;flex-direction:column;align-items:center;min-width:52px;padding:8px 6px;border-radius:10px;background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.next-class .nc-unit b{font-family:var(--font-head);font-size:clamp(1.2rem,4vw,1.7rem);font-weight:900;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.next-class .nc-unit i{font-style:normal;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:3px}
+
+/* home contact box (desktop + mobile) */
+.home-contact .hc-box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(20px,3.5vw,40px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.home-contact .hc-form .btn{margin-top:4px}
+@media (max-width:760px){.home-contact .hc-box{grid-template-columns:1fr;gap:18px}}
+
+/* instructor cards — photo + bio, fits mobile & desktop */
+.ins-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(14px,2.6vw,22px)}
+.ins-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ins-card .ins-photo{aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.ins-card .ins-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
+.ins-card:hover .ins-photo img{transform:scale(1.05)}
+.ins-card .ins-body{padding:clamp(16px,2.4vw,22px)}
+.ins-card .ins-name{margin:6px 0 10px}
+.ins-card .ins-bio{color:var(--mut);line-height:1.7;margin-bottom:12px;font-size:.95rem}
+.ins-card .ins-tags{font-size:.82rem;color:var(--accent);font-weight:700}
+
+/* partner cards — logos/photos use contain so nothing is mis-cropped; name below image */
+.partner-card .img-wrap{aspect-ratio:16/10;background:#fff;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.partner-card .img-wrap img{width:100%;height:100%;object-fit:contain}
+.partner-card .partner-title{margin:0 0 6px;font-size:1.25rem}
+.partner-card .p-phone{margin-top:10px}
+.partner-card .p-phone a{color:var(--accent);font-weight:800}
+
+/* Manhattan | Bronx split */
+.campus-split .campus-col .campus-progs li{padding:10px 0}
+.campus-split .campus-col .campus-progs li::before{content:"▸ "}
+
+/* footer logo emblem */
+.footer-logo{height:54px;width:auto;max-width:200px;object-fit:contain;margin-bottom:14px;border-radius:8px}
 .ms-brutal-offset .m-tile{border:2px solid var(--ink);border-radius:0;transform:translate(18px,18px);box-shadow:-10px 10px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}.ms-brutal-offset .m-tile:hover{box-shadow:-16px 16px 0 var(--accent);transform:translate(2px,-2px)}@media (max-width:600px){.ms-brutal-offset .m-tile{transform:translate(7px,7px);box-shadow:-5px 5px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}}/* ===== 07-chrome-liquid · flat brutalist polish ===== */.lang-toggle{border-radius:0;border-width:2px}.lang-toggle button{font-weight:900;transition:background .15s,color .15s}.lang-toggle button.active{background:var(--accent);color:var(--bg)}.card,.stat-card{border:2px solid var(--ink);box-shadow:6px 6px 0 color-mix(in srgb,var(--ink) 88%,transparent)}.card:hover,.stat-card:hover{border-color:var(--accent);box-shadow:8px 8px 0 var(--accent);transform:translate(-2px,-2px)}.eyebrow-acc{position:relative;padding-left:16px}.eyebrow-acc::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:8px;height:18px;background:var(--accent)}.eyebrow-acc.center{padding-left:0}.eyebrow-acc.center::before{display:none}.btn-primary{border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}.btn-primary:hover{filter:none;box-shadow:7px 7px 0 var(--ink);transform:translate(-2px,-2px)}.btn-ghost{border-width:2px;font-weight:900}:root{--mut:#4f535b}@media (max-width:600px){.ms-brutal-offset .m-tile{transform:none;box-shadow:-6px 6px 0 var(--accent)}.ms-brutal-offset .m-tile.shown{transform:none}.ms-brutal-offset .m-tile:hover{box-shadow:-6px 6px 0 var(--accent);transform:none}.card,.stat-card{box-shadow:4px 4px 0 color-mix(in srgb,var(--ink) 88%,transparent)}.btn-primary{box-shadow:4px 4px 0 var(--ink)}}@media (prefers-reduced-motion:reduce){.card:hover,.stat-card:hover,.btn-primary:hover{transform:none}}</style>
 </head>
 <body class="lang-en ">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKLLGPC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<video class="bg-video" autoplay muted loop playsinline poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" aria-hidden="true"><source src="https://assets-lilac-five.vercel.app/videos/urban_motion_graphic_new_york.mp4" type="video/mp4"></video>
+<video class="bg-video" autoplay muted loop playsinline poster="https://assets-lilac-five.vercel.app/logos/site-07-mono.jpeg" aria-hidden="true"><source src="https://assets-lilac-five.vercel.app/videos/urban_motion_graphic_new_york.mp4" type="video/mp4"></video>
 <div class="bg-overlay"></div>
 <div class="deco-flat" aria-hidden="true"></div>
 <div class="top-banner">
@@ -308,18 +370,12 @@ details.card[open] summary::after{transform:rotate(45deg)}
     <span class="cta-label"><span class="lang-en">En Español</span><span class="lang-es">En Español</span></span>
     <span class="cta-num">(212) 290-0278</span>
   </a>
-  <div class="lang-toggle" role="group" aria-label="Language toggle">
-    <button type="button" data-lang="en">EN</button>
-    <button type="button" data-lang="es">ES</button>
-  </div>
 </div>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand-logo" href="/" aria-label="American Barber Institute home">
-      <span class="barber-pole" role="img" aria-label="Barber pole"></span>
-      <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
-    </a>
+    <a class="brand-logo" href="/" aria-label="American Barber Institute home"><span class="barber-pole" role="img" aria-label="Barber pole"></span><span class="brand-mark logo-light"><img src="https://assets-lilac-five.vercel.app/logos/site-07-mono.jpeg" alt="American Barber Institute — New York's dedicated barber school" width="200" height="60" decoding="async"></span></a>
     <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement" class=""><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts" class=""><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/blog" class=""><span class="lang-en">Blog</span><span class="lang-es">Blog</span></a><a href="/partners" class="active"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <div class="lang-toggle lang-toggle-header" role="group" aria-label="Language / Idioma"><button type="button" data-lang="en" aria-label="English">EN</button><button type="button" data-lang="es" aria-label="Español">ES</button></div>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -334,8 +390,48 @@ details.card[open] summary::after{transform:rotate(45deg)}
       
     </div>
   </section>
-  <section><div class="container"><div class="grid-2"><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/img/1777901148558-whatsapp-image-2026-05-02-at-10.09.37-pm.jpeg" loading="lazy" alt="Levels Barbershop"><div class="partner-name">Levels Barbershop</div></div><div class="body"><div class="locations">Manhattan · Brooklyn · Orange County, NY</div><p class="desc"><span class="lang-en">Founded 1996 on 125th Street in Harlem. Multi-location empire including The Antique Barber product line and Barber World TV. Several Nuru-family co-owners are ABI graduates; many licensed barbers on staff are alumni.</span><span class="lang-es">Fundada en 1996 en la calle 125 en Harlem. Imperio multi-locación que incluye la línea de productos The Antique Barber y Barber World TV. Varios co-dueños de la familia Nuru son graduados de ABI; muchos barberos licenciados en el equipo son ex-alumnos.</span></p><p class="why">→ <span class="lang-en">Proof that ABI graduates can build iconic businesses.</span><span class="lang-es">Prueba de que los graduados de ABI pueden construir negocios icónicos.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/img/1777901150350-whatsapp-image-2026-05-02-at-10.09.49-pm.jpeg" loading="lazy" alt="Diamond Fadez"><div class="partner-name">Diamond Fadez</div></div><div class="body"><div class="locations">308 West 39th Street, NYC</div><p class="desc"><span class="lang-en">Combined barbershop and tattoo studio one block from ABI's Manhattan campus. Owner Mike is an ABI graduate; his brother Richard teaches at ABI as a bilingual instructor.</span><span class="lang-es">Barbería y estudio de tatuajes combinados a una cuadra del campus de Manhattan de ABI. El dueño Mike es graduado de ABI; su hermano Richard enseña en ABI como instructor bilingüe.</span></p><p class="why">→ <span class="lang-en">Two generations of one family — taught and now teaching.</span><span class="lang-es">Dos generaciones de una familia — enseñados y ahora enseñando.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/img/1777901151547-whatsapp-image-2026-05-02-at-10.10.00-pm.jpeg" loading="lazy" alt="Untouchable Cutz"><div class="partner-name">Untouchable Cutz</div></div><div class="body"><div class="locations">Staten Island, NY</div><p class="desc"><span class="lang-en">Respected modern barbershop with a team carrying 50+ combined years of experience. Owner Jimmy opened shop within two years of earning his ABI license.</span><span class="lang-es">Barbería moderna respetada con un equipo que acumula más de 50 años combinados de experiencia. El dueño Jimmy abrió su tienda dos años después de obtener su licencia de ABI.</span></p><p class="why">→ <span class="lang-en">Rapid entrepreneurial success.</span><span class="lang-es">Éxito empresarial rápido.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/img/1777901152517-whatsapp-image-2026-05-02-at-10.10.24-pm.jpeg" loading="lazy" alt="Expo Gentlemen Salon"><div class="partner-name">Expo Gentlemen Salon</div></div><div class="body"><div class="locations">Staten Island · Brooklyn</div><p class="desc"><span class="lang-en">Multi-location established salon. Owner Joe consistently hires ABI graduates to staff both locations.</span><span class="lang-es">Salón multi-locación establecido. El dueño Joe contrata consistentemente graduados de ABI para ambas ubicaciones.</span></p><p class="why">→ <span class="lang-en">Trust built through consistent graduate performance.</span><span class="lang-es">Confianza construida a través del desempeño consistente de los graduados.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/img/1777902049495-whatsapp-image-2026-05-02-at-10.10.45-pm.jpeg" loading="lazy" alt="Otis & Finn"><div class="partner-name">Otis & Finn</div></div><div class="body"><div class="locations">Long Island City · Court Square · Greenpoint · Williamsburg</div><p class="desc"><span class="lang-en">State-of-the-art barbershop featured in GQ, BuzzFeed, HuffPost, FOX5, PIX11. ABI graduate James Cavanaugh featured in the official bio.</span><span class="lang-es">Barbería de vanguardia destacada en GQ, BuzzFeed, HuffPost, FOX5 y PIX11. El graduado de ABI James Cavanaugh aparece en la biografía oficial.</span></p><p class="why">→ <span class="lang-en">Employers publicly recognize and invest in alumni talent.</span><span class="lang-es">Empleadores reconocen y invierten públicamente en el talento ex-alumno.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/img/1777902050518-whatsapp-image-2026-05-02-at-10.11.04-pm.jpeg" loading="lazy" alt="NYC Barber Shop Museum"><div class="partner-name">NYC Barber Shop Museum</div></div><div class="body"><div class="locations">Columbus Ave & E 70th St, Manhattan · Sunny Isles, Miami</div><p class="desc"><span class="lang-en">The first museum of its kind — a working barbershop housing century-old artifacts. Operated by fourth-generation Master Barber Arthur Rubinoff. 501(c)(3) non-profit.</span><span class="lang-es">El primer museo de su tipo — una barbería en funcionamiento que alberga artefactos centenarios. Operada por el Maestro Barbero de cuarta generación Arthur Rubinoff. Sin fines de lucro 501(c)(3).</span></p><p class="why">→ <span class="lang-en">Four-generation professional standard. School-to-master pipeline.</span><span class="lang-es">Estándar profesional de cuatro generaciones. Tubería de escuela a maestro.</span></p></div></div></div></div></section>
-  <section class="media-band ms-brutal-offset"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">The network</span><span class="lang-es">La red</span></div><h2><span class="lang-en">Where the craft leads</span><span class="lang-es">A dónde lleva el oficio</span></h2><p><span class="lang-en">From our chairs to shops across the five boroughs and beyond.</span><span class="lang-es">De nuestras sillas a barberías en los cinco condados y más allá.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-cutting-hair-clippers.mp4" poster="https://assets-lilac-five.vercel.app/logos/logo_for_american_barber_institute_2.jpeg" aria-label="Barber cutting hair clippers"></video><figcaption class="m-cap">Barber cutting hair clippers</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040806062-img-0854.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040807130-img-3181.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040808153-img-5656.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
+  <section><div class="container"><div class="grid-2"><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/partners/levels-barbershop.png" loading="lazy" alt="Levels Barbershop — American Barber Institute partner shop"></div><div class="body"><h3 class="partner-title">Levels Barbershop</h3><div class="locations">Manhattan · Brooklyn · Orange County, NY</div><p class="desc"><span class="lang-en">Levels Barbershop was founded in 1996 on 125th Street in Harlem by Kamal Nuru. Today it spans Manhattan, Brooklyn, and Orange County, NY — alongside The Antique Barber product line, Barber World TV media platform, and the annual NYC Barber Battle.
+
+Several of the Nuru family co-owners are proud ABI graduates. Approximately 15 years ago, they earned their licenses with us before going on to help build one of the most iconic names in NYC barbering. Many of the licensed barbers working at Levels today are also ABI alumni — placed there by graduates who came before them.
+
+The relationship is alive today: Barber World TV featured ABI Lead Instructor Harold "Barkim" Brown on Episode 007, sharing his story with the wider industry.</span><span class="lang-es">Levels Barbershop fue fundada en 1996 en la Calle 125 de Harlem por Kamal Nuru. Hoy se extiende por Manhattan, Brooklyn y Orange County, NY — junto a la línea de productos The Antique Barber, la plataforma de medios Barber World TV y la batalla anual NYC Barber Battle.
+
+Varios de los copropietarios de la familia Nuru son orgullosos graduados de ABI. Hace aproximadamente 15 años obtuvieron su licencia con nosotros antes de ayudar a construir uno de los nombres más icónicos de la barbería neoyorquina. Muchos de los barberos con licencia que trabajan hoy en Levels también son alumnos de ABI — colocados allí por graduados que vinieron antes.
+
+La relación sigue viva hoy: Barber World TV presentó al instructor principal de ABI, Harold "Barkim" Brown, en el Episodio 007, compartiendo su historia con la industria.</span></p><p class="why">→ <span class="lang-en">Train at ABI. Earn your license. Build something that lasts.</span><span class="lang-es">Estudia en ABI. Obtén tu licencia. Construye algo que perdure.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/partners/diamond-fadez.webp" loading="lazy" alt="Diamond Fadez — American Barber Institute partner shop"></div><div class="body"><h3 class="partner-title">Diamond Fadez</h3><div class="locations">308 W 39th Street, NYC</div><p class="desc"><span class="lang-en">Diamond Fadez Barbershop sits one block from ABI's flagship campus at 308 West 39th Street — a unique combined barbershop and tattoo studio that customers call "the best barbershop in the city."
+
+The shop is owned by Mike — a proud ABI graduate and the older brother of current ABI bilingual instructor Richard Cancel. Mike's success is also why Richard came back to ABI as a teacher: same school, same craft, two generations of one family training the next wave of barbers.</span><span class="lang-es">Diamond Fadez Barbershop se encuentra a una cuadra del campus principal de ABI, en el 308 West 39th Street — un estudio combinado de barbería y tatuajes que los clientes llaman "la mejor barbería de la ciudad".
+
+La barbería es propiedad de Mike — un orgulloso graduado de ABI y hermano mayor del actual instructor bilingüe de ABI, Richard Cancel. El éxito de Mike también es la razón por la que Richard regresó a ABI como maestro: misma escuela, mismo oficio, dos generaciones de una familia formando a la próxima ola de barberos.</span></p><p class="why">→ <span class="lang-en">One school. One block. One family. Generations of master barbers.</span><span class="lang-es">Una escuela. Una cuadra. Una familia. Generaciones de maestros barberos.</span></p><p class="p-phone"><a href="tel:6463703474">(646) 370-3474</a></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/partners/untouchable-cutz.png" loading="lazy" alt="Untouchable Cutz — American Barber Institute partner shop"></div><div class="body"><h3 class="partner-title">Untouchable Cutz</h3><div class="locations">Staten Island, NY</div><p class="desc"><span class="lang-en">When Jimmy walked into ABI, he was already on a different level — super advanced from day one, asking questions, pushing boundaries, building friendships with everyone who taught him.
+
+Just two years after earning his ABI license, Jimmy opened his own shop.
+
+Approximately 15 years later, Untouchable Cutz is one of Staten Island's most respected barbershops — a beautiful modern space backed by a team carrying 50+ combined years of barbering experience. Over the years, Jimmy has hired many ABI graduates, and his shop now offers private tutoring and weekly grooming classes — passing the craft on to the next generation.</span><span class="lang-es">Cuando Jimmy entró a ABI, ya estaba en otro nivel — súper avanzado desde el primer día, haciendo preguntas, retando los límites, construyendo amistades con cada persona que lo enseñaba.
+
+Solo dos años después de obtener su licencia de ABI, Jimmy abrió su propia barbería.
+
+Aproximadamente 15 años después, Untouchable Cutz es una de las barberías más respetadas de Staten Island — un hermoso espacio moderno respaldado por un equipo con más de 50 años combinados de experiencia. A lo largo de los años, Jimmy ha contratado a muchos graduados de ABI, y su barbería hoy ofrece tutorías privadas y clases semanales de grooming — pasando el oficio a la próxima generación.</span></p><p class="why">→ <span class="lang-en">From license to ownership in two years. The grind never stops.</span><span class="lang-es">De la licencia a la propiedad en dos años. El esfuerzo nunca para.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/partners/expo-gentlemen-salon.jpg" loading="lazy" alt="Expo Gentlemen Salon — American Barber Institute partner shop"></div><div class="body"><h3 class="partner-title">Expo Gentlemen Salon</h3><div class="locations">Staten Island: 326 New Dorp Lane</div><p class="desc"><span class="lang-en">Not every ABI story is about a graduate who opened their own shop. Some of the most important stories are about the owners who hire our graduates.
+
+Joe isn't an ABI graduate — and he didn't have to be. As the established entrepreneur behind Expo Gentlemen Salon, with locations in Staten Island and Brooklyn, Joe has built two thriving shops by trusting American Barber Institute to send him the talent he needs, year after year.
+
+Multiple ABI alumni anchor the team across both locations. The relationship is built on something simple: every graduate ABI sends, performs. That trust has held for years — and it's why, when Joe needs to hire, he calls ABI first.</span><span class="lang-es">No todas las historias de ABI son sobre un graduado que abrió su propia barbería. Algunas de las historias más importantes son sobre los dueños que contratan a nuestros graduados.
+
+Joe no es un graduado de ABI — y no necesitaba serlo. Como el empresario establecido detrás de Expo Gentlemen Salon, con sedes en Staten Island y Brooklyn, Joe ha construido dos barberías prósperas confiando en American Barber Institute para enviarle el talento que necesita, año tras año.
+
+Varios alumnos de ABI son la base del equipo en ambas sedes. La relación se basa en algo simple: cada graduado que ABI envía, rinde. Esa confianza se ha mantenido por años — y es por eso que, cuando Joe necesita contratar, llama a ABI primero.</span></p><p class="why">→ <span class="lang-en">For every ABI grad who becomes an owner, many more walk into established shops like Joe's and build real careers.</span><span class="lang-es">Por cada graduado de ABI que se convierte en dueño, muchos más entran a barberías establecidas como la de Joe y construyen carreras reales.</span></p><p class="p-phone"><a href="tel:7189801100">(718) 980-1100</a></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/partners/otis-and-finn.png" loading="lazy" alt="Otis & Finn — American Barber Institute partner shop"></div><div class="body"><h3 class="partner-title">Otis & Finn</h3><div class="locations">LIC · Court Square · Greenpoint · Williamsburg</div><p class="desc"><span class="lang-en">Otis & Finn Barbershop is one of NYC's most celebrated state-of-the-art barbershops — featured in GQ, BuzzFeed, HuffPost, FOX5, and PIX11 — with four locations across Long Island City, Court Square, Greenpoint, and Williamsburg.
+
+ABI graduates are part of the team that has earned Otis & Finn its reputation for classic, high-quality barbering and a radically inclusive community space. One of those graduates, James Cavanaugh — a native New Yorker working out of the Greenpoint location — has been cutting hair professionally for five years since earning his license at ABI. Otis & Finn proudly names ABI on his official bio page.</span><span class="lang-es">Otis & Finn Barbershop es una de las barberías más celebradas y vanguardistas de NYC — presentada en GQ, BuzzFeed, HuffPost, FOX5 y PIX11 — con cuatro sedes en Long Island City, Court Square, Greenpoint y Williamsburg.
+
+Los graduados de ABI son parte del equipo que le ha ganado a Otis & Finn su reputación por una barbería clásica y de alta calidad y un espacio comunitario radicalmente inclusivo. Uno de esos graduados, James Cavanaugh — un neoyorquino nativo que trabaja en la sede de Greenpoint — ha cortado cabello profesionalmente durante cinco años desde que obtuvo su licencia en ABI. Otis & Finn nombra orgullosamente a ABI en su página oficial de biografía.</span></p><p class="why">→ <span class="lang-en">That's the kind of partnership ABI graduates step into: shops that back their alumni publicly, invest in continuing education, and treat their team as the brand.</span><span class="lang-es">Ese es el tipo de alianza al que entran los graduados de ABI: barberías que respaldan públicamente a sus alumnos, invierten en educación continua y tratan a su equipo como la marca.</span></p></div></div><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/partners/nyc-barber-shop-museum.svg" loading="lazy" alt="NYC Barber Shop Museum — American Barber Institute partner shop"></div><div class="body"><h3 class="partner-title">NYC Barber Shop Museum</h3><div class="locations">Columbus Ave & E 70th St, Manhattan</div><p class="desc"><span class="lang-en">On Manhattan's Upper West Side, NYC Barber Shop Museum — operated under REAMIR & Co. on Columbus Avenue and East 70th Street, with a second location in Sunny Isles, Miami — is the first museum of its kind in New York City and a working barbershop where every cut is performed surrounded by more than a century of barbering history.
+
+Behind the chairs is Master Barber Arthur Rubinoff — a fourth-generation barber whose lineage stretches from Fergana, Uzbekistan, to the Upper West Side. After his father Rubin passed in 2003, Arthur traveled the world tracking down more than a thousand artifacts — including his great-grandfather's original tools and a 1929 chair believed to have been used by James Dean — and opened the museum in June 2018. The shop earned New York Style Magazine's Best Barbershop award in 2015 and now operates as a 501(c)(3) non-profit.
+
+For years, ABI and Arthur Rubinoff have shared a pipeline. Alex, owner of ABI, has placed graduates with the NYC Barber Shop Museum — building one of the rarest things in this industry: a trusted, ongoing relationship between a school and a master. For ABI students, working there isn't simply a job. It's a benchmark — where the standards of four generations of master barbering become the standards a young barber carries for the rest of their career.</span><span class="lang-es">En el Upper West Side de Manhattan, NYC Barber Shop Museum — operado bajo REAMIR & Co. en Columbus Avenue y la Calle 70 Este, con una segunda sede en Sunny Isles, Miami — es el primer museo de su tipo en la ciudad de Nueva York y una barbería en funcionamiento donde cada corte se realiza rodeado de más de un siglo de historia de la barbería.
+
+Detrás de las sillas está el Maestro Barbero Arthur Rubinoff — un barbero de cuarta generación cuyo linaje se extiende desde Fergana, Uzbekistán, hasta el Upper West Side. Tras la muerte de su padre Rubin en 2003, Arthur viajó por el mundo rastreando más de mil artefactos — incluidas las herramientas originales de su bisabuelo y una silla de 1929 que se cree fue usada por James Dean — y abrió el museo en junio de 2018. La barbería ganó el premio Best Barbershop de New York Style Magazine en 2015 y hoy opera como una organización sin fines de lucro 501(c)(3).
+
+Por años, ABI y Arthur Rubinoff han compartido un pipeline. Alex, dueño de ABI, ha colocado graduados con el NYC Barber Shop Museum — construyendo una de las cosas más raras de esta industria: una relación confiable y continua entre una escuela y un maestro. Para los estudiantes de ABI, trabajar allí no es simplemente un trabajo. Es un punto de referencia — donde los estándares de cuatro generaciones de maestros barberos se convierten en los estándares que un joven barbero llevará por el resto de su carrera.</span></p><p class="why">→ <span class="lang-en">To learn at ABI is to step into a craft. To work at the NYC Barber Shop Museum is to step into a lineage.</span><span class="lang-es">Estudiar en ABI es entrar en un oficio. Trabajar en el NYC Barber Shop Museum es entrar en un linaje.</span></p></div></div></div></div></section>
+  <section class="media-band ms-brutal-offset"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">The network</span><span class="lang-es">La red</span></div><h2><span class="lang-en">Where the craft leads</span><span class="lang-es">A dónde lleva el oficio</span></h2><p><span class="lang-en">From our chairs to shops across the five boroughs and beyond.</span><span class="lang-es">De nuestras sillas a barberías en los cinco condados y más allá.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-cutting-hair-clippers.mp4" poster="https://assets-lilac-five.vercel.app/logos/site-07-mono.jpeg" aria-label="Barber cutting hair clippers"></video><figcaption class="m-cap">Barber cutting hair clippers</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040805086-f47f8b34-def6-4a3f-8ec7-b2723c5b6027.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040806062-img-0854.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040807130-img-3181.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040808153-img-5656.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
   <section class="cta-band"><div class="container">
   <div class="eyebrow-acc"><span class="lang-en">Ready to Begin?</span><span class="lang-es">¿Listo para Empezar?</span></div>
   <h2 style="margin:10px 0 12px"><span class="lang-en">Ready to Start Your Barber Career?</span><span class="lang-es">¿Listo para Comenzar Tu Carrera de Barbero?</span></h2>
@@ -347,7 +443,8 @@ details.card[open] summary::after{transform:rotate(45deg)}
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>American Barber Institute</h4>
+        <img class="footer-logo" src="https://assets-lilac-five.vercel.app/logos/site-07-mono.jpeg" alt="American Barber Institute" width="200" height="64" loading="lazy">
+        <h4 class="nowrap-fit">American Barber Institute</h4>
         <p><span class="lang-en">New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.</span><span class="lang-es">La única escuela de barbería dedicada de Nueva York. Licenciada por el Departamento de Educación del Estado de Nueva York. Cambiando vidas por más de 30 años.</span></p>
         <p style="margin-top:10px;font-size:.85rem"><span class="lang-en">GI Bill® · ACCES-VR · VA benefits accepted.</span><span class="lang-es">GI Bill® · ACCES-VR · beneficios de la VA aceptados.</span></p>
         <div class="social-row"><a href="https://www.facebook.com/Abi.Education/" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://www.instagram.com/americanbarberinstitute/" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="https://x.com/amerbarberedu" target="_blank" rel="noopener" aria-label="X">X</a><a href="https://www.pinterest.com/alexzholendz/american-barber-institute/" target="_blank" rel="noopener" aria-label="Pinterest">P</a></div>
@@ -376,9 +473,9 @@ details.card[open] summary::after{transform:rotate(45deg)}
     </div>
   </div>
 </footer>
-<div class="sticky-call" role="region" aria-label="Quick call">
-  <a class="en" href="tel:2122902289"><span class="flag">EN</span> (212) 290-2289</a>
-  <a class="es" href="tel:2122900278"><span class="flag">ES</span> (212) 290-0278</a>
+<div class="sticky-call" role="region" aria-label="Quick actions">
+  <a class="call" href="tel:2122902289" aria-label="Call admissions now"><span class="ico" aria-hidden="true">📞</span> <span class="lang-en">Call Now</span><span class="lang-es">Llama Ahora</span></a>
+  <a class="apply" href="/contact" aria-label="Become a barber — apply now"><span class="lang-en">Become a Barber</span><span class="lang-es">Conviértete en Barbero</span> <span class="ico" aria-hidden="true">✂</span></a>
 </div>
 <script>
 (function(){
@@ -463,6 +560,30 @@ details.card[open] summary::after{transform:rotate(45deg)}
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.m-tile').forEach(function(t){ mio.observe(t); });
   }
+})();
+
+/* ---- next-class countdown: live to the first Monday of every month ---- */
+(function(){
+  var els = document.querySelectorAll('[data-next-class]');
+  if (!els.length) return;
+  function firstMonday(y,m){ var d=new Date(y,m,1); var delta=(1-d.getDay()+7)%7; d.setDate(1+delta); d.setHours(0,0,0,0); return d; }
+  function nextStart(now){
+    var y=now.getFullYear(), m=now.getMonth(), fm=firstMonday(y,m);
+    if (fm.getTime()<=now.getTime()){ m+=1; if(m>11){m=0;y+=1;} fm=firstMonday(y,m); }
+    return fm;
+  }
+  function pad(v){ return (v<10?'0':'')+v; }
+  function tick(){
+    var now=new Date(), t=nextStart(now), diff=Math.max(0,t-now);
+    var lang=(document.documentElement.lang==='es')?'es-US':'en-US';
+    var dstr=t.toLocaleDateString(lang,{weekday:'long',month:'long',day:'numeric'});
+    var d=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, mi=Math.floor(diff/6e4)%60, s=Math.floor(diff/1e3)%60;
+    els.forEach(function(el){
+      var dt=el.querySelector('[data-nc-date]'); if(dt) dt.textContent=dstr;
+      ['days','hours','mins','secs'].forEach(function(k,idx){ var n=el.querySelector('[data-nc="'+k+'"]'); if(n) n.textContent=pad([d,h,mi,s][idx]); });
+    });
+  }
+  tick(); setInterval(tick,1000);
 })();
 </script>
 </body>
