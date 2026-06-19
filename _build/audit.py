@@ -57,7 +57,7 @@ def audit_page(site, path):
         if href.startswith(("tel:", "mailto:", "#", "https://", "http://", "//")):
             if "abi-app-" in href: fail(site, page, f"cross-site/self abi-app link: {href}")
             continue
-        if href.startswith("/assets/") or href.endswith((".xml", ".txt")):
+        if href.startswith(("/assets/", "/blog/")) or href.endswith((".xml", ".txt")):
             continue
         if href not in VALID_PATHS:
             fail(site, page, f"unknown internal link: {href}")
@@ -68,7 +68,7 @@ def audit_site(site):
     have = {p.stem for p in d.glob("*.html")}
     missing = EXPECT_PAGES - have
     if missing: fail(site, "-", f"missing pages: {sorted(missing)}")
-    for path in sorted(d.glob("*.html")):
+    for path in sorted(d.glob("*.html")) + sorted((d / "blog").glob("*.html")):
         audit_page(site, path)
     # content fidelity
     prog = (d / "programs.html").read_text(errors="replace") if (d / "programs.html").exists() else ""
@@ -79,7 +79,7 @@ def audit_site(site):
     blog = (d / "blog.html").read_text(errors="replace") if (d / "blog.html").exists() else ""
     if "Insights from the Chair" not in blog: fail(site, "blog", "blog headline missing")
     # forbidden stale content across all pages
-    for path in sorted(d.glob("*.html")):
+    for path in sorted(d.glob("*.html")) + sorted((d / "blog").glob("*.html")):
         t = path.read_text(errors="replace")
         if re.search(r'\$3(?![\d,])', t): fail(site, path.stem, "stale '$3' price found")
         if "540-Hour" in t or "540 Hour" in t: fail(site, path.stem, "stale 540-Hour program")
@@ -91,7 +91,7 @@ def audit_site(site):
 def main():
     for s in SITES:
         audit_site(s)
-    total_pages = sum(len(list((ROOT / s).glob("*.html"))) for s in SITES)
+    total_pages = sum(len(list((ROOT / s).glob("*.html"))) + len(list((ROOT / s / "blog").glob("*.html"))) for s in SITES)
     print(f"Audited {len(SITES)} sites, {total_pages} pages.")
     if not fails:
         print("RESULT: ALL CHECKS PASS")

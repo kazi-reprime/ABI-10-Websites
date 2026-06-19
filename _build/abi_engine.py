@@ -447,8 +447,8 @@ def decoration_layer(t):
 
 
 # ===================== chrome =====================
-def head_meta(page_path):
-    title = PAGE_TITLES.get(page_path, BRAND_TITLE)
+def head_meta(page_path, title=None):
+    title = title or PAGE_TITLES.get(page_path, BRAND_TITLE)
     canon = page_path if page_path != "/" else "/"
     return f'''<meta name="description" content="{BRAND_DESC_EN}">
 <meta name="keywords" content="barber school nyc, american barber institute, abi, master barber program, gi bill barber school, escuela de barberia nueva york">
@@ -473,12 +473,36 @@ def head_meta(page_path):
 <meta name="mobile-web-app-capable" content="yes">'''
 
 
-def jsonld(include_faq=False):
+def jsonld(include_faq=False, article=None):
     school = {"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "American Barber Institute", "alternateName": "ABI", "description": BRAND_DESC_EN, "telephone": B["phone_manhattan"], "email": B["email"], "foundingDate": "1995", "address": [{"@type": "PostalAddress", "streetAddress": "48 West 39th Street", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10018", "addressCountry": "US"}, {"@type": "PostalAddress", "streetAddress": "121 Westchester Square", "addressLocality": "Bronx", "addressRegion": "NY", "postalCode": "10461", "addressCountry": "US"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.3", "ratingCount": "100"}}
     out = f'<script type="application/ld+json">{json.dumps(school)}</script>'
     if include_faq:
         faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["q"]["en"], "acceptedAnswer": {"@type": "Answer", "text": q["a"]["en"]}} for q in CONTENT["faqs"]]}
         out += f'<script type="application/ld+json">{json.dumps(faq)}</script>'
+    if article:
+        post = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": article["title"]["en"], "datePublished": article["iso"], "dateModified": article["iso"], "description": article["excerpt"]["en"], "author": {"@type": "Organization", "name": "American Barber Institute"}, "publisher": {"@type": "Organization", "name": "American Barber Institute"}}
+        out += f'<script type="application/ld+json">{json.dumps(post)}</script>'
+    return out
+
+
+# ---- optional analytics (off until IDs are set; empty ships nothing) ----
+ANALYTICS = {"ga4": "", "pixel": ""}
+FORM_NEXT = ""  # set per-site in build_site() so the contact form returns the visitor to their own site
+_GA4_TPL = ('<script async src="https://www.googletagmanager.com/gtag/js?id=__GA__"></script>'
+            '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}'
+            'gtag("js",new Date());gtag("config","__GA__")</script>')
+_PIXEL_TPL = ("<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?"
+              "n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;"
+              "n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;"
+              "t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}"
+              "(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');"
+              "fbq('init','__PIXEL__');fbq('track','PageView')</script>")
+def analytics_snippet():
+    out = ""
+    if ANALYTICS.get("ga4"):
+        out += _GA4_TPL.replace("__GA__", ANALYTICS["ga4"])
+    if ANALYTICS.get("pixel"):
+        out += _PIXEL_TPL.replace("__PIXEL__", ANALYTICS["pixel"])
     return out
 
 
@@ -671,6 +695,7 @@ PAGE_TPL = '''<!DOCTYPE html>
 <title>{title}</title>
 {head_meta}
 {jsonld}
+{analytics}
 {css}
 </head>
 <body class="lang-en {hfx}">
@@ -699,14 +724,16 @@ PAGE_TPL = '''<!DOCTYPE html>
 </html>'''
 
 
-def render_page(t, page_key, pdata, site_index=0):
+def render_page(t, page_key, pdata, site_index=0, article=None):
     nvm = {"home": (2, 6), "gallery": (3, 8), "about": (2, 5), "haircuts": (2, 6), "faq": (1, 3), "contact": (1, 3)}
     nv, ni = nvm.get(page_key, (1, 4))
     hfx = H1FX_MAP.get(t.get("h1_effect", ""), "")
+    title = pdata.get("title") or PAGE_TITLES.get(pdata["path"], BRAND_TITLE)
     return PAGE_TPL.format(
-        title=PAGE_TITLES[pdata["path"]],
-        head_meta=head_meta(pdata["path"]),
-        jsonld=jsonld(include_faq=(page_key == "faq")),
+        title=title,
+        head_meta=head_meta(pdata["path"], title),
+        jsonld=jsonld(include_faq=(page_key == "faq"), article=article),
+        analytics=analytics_snippet(),
         css=css_for_site(t, pdata.get("_extra_css", "")),
         hfx=hfx,
         decoration=decoration_layer(t),
@@ -873,22 +900,43 @@ def p_blog():
         for h in bl["highlights"]
     )
     articles = "".join(
-        f'<article class="card"><div class="eyebrow-acc">{bi(a["date"])}</div>'
+        f'<a class="card" href="/blog/{a["slug"]}" style="display:block"><div class="eyebrow-acc">{bi(a["date"])}</div>'
         f'<h3 style="margin:8px 0">{bi(a["title"])}</h3>'
-        f'<p style="color:var(--mut);font-size:.94rem">{bi(a["excerpt"])}</p></article>'
+        f'<p style="color:var(--mut);font-size:.94rem">{bi(a["excerpt"])}</p>'
+        f'<p style="color:var(--accent);font-weight:800;font-size:.84rem;margin-top:10px">{bi({"en":"Read article →","es":"Leer artículo →"})}</p></a>'
         for a in bl["articles"]
     )
     return {"path": "/blog",
             "eyebrow": bi(bl["eyebrow"]),
             "h1": bi(bl["headline"]),
             "sub": bi(bl["intro"]),
-            "body": f'''<section><div class="container"><div class="card" style="border-color:var(--accent)">
+            "body": f'''<section><div class="container"><a class="card" href="/blog/{fe["slug"]}" style="border-color:var(--accent);display:block">
 <div class="eyebrow-acc">{bi({"en":"Featured · Latest Article","es":"Destacado · Último Artículo"})}</div>
 <h2 style="margin:10px 0">{bi(fe["title"])}</h2>
 <p style="color:var(--accent);font-weight:700;font-size:.84rem;margin-bottom:12px">{bi(fe["date"])} · {bi(fe["read"])}</p>
-<p style="color:var(--mut);max-width:760px">{bi(fe["excerpt"])}</p></div></div></section>
+<p style="color:var(--mut);max-width:760px">{bi(fe["excerpt"])}</p>
+<p style="color:var(--accent);font-weight:800;font-size:.86rem;margin-top:12px">{bi({"en":"Read article →","es":"Leer artículo →"})}</p></a></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"From the programs","es":"De los programas"})}</div><h2 style="margin-bottom:16px">{bi({"en":"Built around real training","es":"Basado en entrenamiento real"})}</h2><div class="grid-2">{highlights}</div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Latest articles","es":"Últimos artículos"})}</div><h2 style="margin-bottom:18px">{bi({"en":"More from the journal","es":"Más del diario"})}</h2><div class="grid">{articles}</div></div></section>'''}
+
+
+def article_pages():
+    """One pdata per blog article — each rendered to <slug>/blog/<article-slug>.html."""
+    bl = CONTENT["blog"]
+    pages = []
+    for a in [bl["featured"]] + bl["articles"]:
+        paras = "".join(f'<p style="margin-bottom:16px">{bi(p)}</p>' for p in a["body"])
+        meta = bi(a["date"]) + (f' · {bi(a["read"])}' if a.get("read") else "")
+        body = (f'<section><div class="container" style="max-width:760px">'
+                f'<p style="color:var(--accent);font-weight:700;font-size:.86rem;margin-bottom:20px">{meta}</p>'
+                f'<div style="color:var(--mut);font-size:1.05rem;line-height:1.85">{paras}</div>'
+                f'<p style="margin-top:30px"><a class="btn btn-ghost" href="/blog">← {bi({"en": "Back to the Journal", "es": "Volver al Diario"})}</a></p>'
+                f'</div></section>')
+        title = (a["title"]["en"] if isinstance(a["title"], dict) else a["title"]) + " · ABI Journal"
+        pdata = {"path": f"/blog/{a['slug']}", "title": title, "eyebrow": bi(bl["eyebrow"]),
+                 "h1": bi(a["title"]), "sub": bi(a["excerpt"]), "body": body}
+        pages.append((a["slug"], pdata, a))
+    return pages
 
 
 def p_partners():
@@ -935,7 +983,12 @@ def p_contact():
 <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi(c2["hours"])}</p>
 <a class="btn btn-primary" href="https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY" target="_blank" rel="noopener">{bi(UI["get_directions"])}</a></div>
 </div></div></section>
-<section><div class="container"><div class="card" style="max-width:680px;margin:0 auto"><h2 style="margin-bottom:8px">{bi({"en":"Request information","es":"Solicita información"})}</h2><p style="color:var(--mut);margin-bottom:22px">{bi({"en":"Fill out the form and an ABI admissions agent will call you within 24 hours.","es":"Completa el formulario y un agente de admisiones de ABI te llamará dentro de 24 horas."})}</p><form action="mailto:{B["email"]}" method="post" enctype="text/plain" class="form-grid" novalidate>
+<section><div class="container"><div class="card" style="max-width:680px;margin:0 auto"><h2 style="margin-bottom:8px">{bi({"en":"Request information","es":"Solicita información"})}</h2><p style="color:var(--mut);margin-bottom:22px">{bi({"en":"Fill out the form and an ABI admissions agent will call you within 24 hours.","es":"Completa el formulario y un agente de admisiones de ABI te llamará dentro de 24 horas."})}</p><form action="https://formsubmit.co/{B["email"]}" method="POST" class="form-grid" novalidate>
+<input type="hidden" name="_subject" value="New ABI website inquiry">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="{FORM_NEXT}">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 <div class="row-2"><div class="field-group"><label for="f-first">{bi({"en":"First name","es":"Nombre"})} *</label><input required id="f-first" name="firstName" autocomplete="given-name" placeholder="John / Juan" class="input"></div><div class="field-group"><label for="f-last">{bi({"en":"Last name","es":"Apellido"})} *</label><input required id="f-last" name="lastName" autocomplete="family-name" placeholder="Smith / Garcia" class="input"></div></div>
 <div class="row-2"><div class="field-group"><label for="f-email">Email *</label><input required id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" class="input"></div><div class="field-group"><label for="f-phone">{bi({"en":"Phone","es":"Teléfono"})} *</label><input required id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(212) 555-0123" class="input"></div></div>
 <div class="field-group"><label>{bi({"en":"Preferred language","es":"Idioma preferido"})}</label><div class="radio-row"><label class="radio-pill"><input type="radio" name="lang" value="EN" checked><span>English</span></label><label class="radio-pill"><input type="radio" name="lang" value="ES"><span>Español</span></label></div></div>
@@ -978,6 +1031,8 @@ def build_site(tokens, site, extra_css=""):
     site_dir = ROOT / slug
     site_dir.mkdir(parents=True, exist_ok=True)
     site_index = site.get("site_index", 0)
+    global FORM_NEXT
+    FORM_NEXT = f"https://{site['vercel_name']}.vercel.app/contact"
 
     (site_dir / ".vercelignore").write_text("assets/\n")
 
@@ -987,8 +1042,18 @@ def build_site(tokens, site, extra_css=""):
         html = route_assets(render_page(tokens, key, pdata, site_index), site)
         (site_dir / fname).write_text(html, encoding="utf-8")
 
+    # Blog article pages -> <slug>/blog/<article-slug>.html (cleanUrls serves them at /blog/<slug>)
+    blog_dir = site_dir / "blog"
+    blog_dir.mkdir(exist_ok=True)
+    article_paths = []
+    for aslug, pdata, art in article_pages():
+        pdata["_extra_css"] = extra_css
+        html = route_assets(render_page(tokens, "blog", pdata, site_index, article=art), site)
+        (blog_dir / f"{aslug}.html").write_text(html, encoding="utf-8")
+        article_paths.append(f"/blog/{aslug}")
+
     base = f"https://{site['vercel_name']}.vercel.app"
-    paths = [p for _, p in NAV_ITEMS]
+    paths = [p for _, p in NAV_ITEMS] + article_paths
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for p in paths:
         sm += f'  <url><loc>{base}{p}</loc><changefreq>weekly</changefreq><priority>{"1.0" if p == "/" else "0.7"}</priority></url>\n'
@@ -999,4 +1064,4 @@ def build_site(tokens, site, extra_css=""):
         {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
         {"source": "/(.*).html", "headers": [{"key": "Cache-Control", "value": "public, max-age=300, must-revalidate"}]},
     ]}, indent=2))
-    print(f"  OK {slug}: 12 pages (home + blog templated), mobile-first responsive")
+    print(f"  OK {slug}: 12 pages + {len(article_paths)} blog articles, mobile-first responsive")
