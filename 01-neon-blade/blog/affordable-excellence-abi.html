@@ -298,6 +298,9 @@ body.nav-open .sticky-call{display:none!important}
 /* 1-line brand & headings — never wrap, scale to fit instead */
 .nowrap-fit{white-space:nowrap}
 .footer-grid h4.nowrap-fit{white-space:nowrap}
+/* on phones a long heading kept on one line can overflow the viewport — let HEADING-level
+   nowrap phrases wrap ≤480px (mobile no-scroll wins); footer brand h4 stays one line. */
+@media (max-width:480px){h1 .nowrap-fit,h2 .nowrap-fit,h3 .nowrap-fit{white-space:normal}}
 
 /* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
 .brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}

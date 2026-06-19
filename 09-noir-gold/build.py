@@ -116,6 +116,9 @@ SITE_CSS = (
     "width:min(120%,1100px);height:min(90%,540px);z-index:-1;pointer-events:none;"
     "background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 14%,transparent),transparent 72%);"
     "filter:blur(8px)}"
+    # mobile: clip the wider-than-viewport hero glow so it can never extend the scroll width
+    "@media (max-width:980px){.hero-home,.subpage-hero{overflow:hidden}"
+    ".hero-home::before,.subpage-hero::before{width:100%}}"
     ".hero-home .eyebrow,.subpage-hero .eyebrow{background:color-mix(in srgb,var(--accent) 8%,transparent);"
     "box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 22%,transparent),"
     "0 0 26px color-mix(in srgb,var(--accent) 18%,transparent)}"

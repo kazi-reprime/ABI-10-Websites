@@ -228,6 +228,14 @@ SITE_CSS = (
     ".m-tile{box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 10%,transparent)}"
     ".m-tile:hover{box-shadow:0 22px 54px color-mix(in srgb,var(--accent) 30%,transparent),"
     "0 0 0 1px color-mix(in srgb,var(--accent2) 45%,transparent)}"
+    # MOBILE: flatten the glass-rotate 3D tiles (rotateY around left edge projects past the
+    # viewport on narrow/single-column layouts). Kill perspective + all rotateY states and
+    # clip the grid horizontally as a belt-and-suspenders guard against 3D overflow.
+    "@media (max-width:760px){.media-band.ms-glass-rotate .m-grid{perspective:none;overflow-x:clip}"
+    ".media-band.ms-glass-rotate .m-tile,"
+    ".media-band.ms-glass-rotate .m-tile.shown,"
+    ".media-band.ms-glass-rotate .m-tile:hover{transform:translateY(24px);transform-origin:center}"
+    ".media-band.ms-glass-rotate .m-tile.shown{transform:none}}"
 
     # ===== reduced-motion: kill all custom motion (engine guards globally too) =====
     "@media (prefers-reduced-motion:reduce){.btn-primary{animation:none}"

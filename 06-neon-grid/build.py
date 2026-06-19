@@ -72,6 +72,10 @@ SITE_CSS = (
     #     Layer A (this element): a deep field of glowing nodes (radial-gradient dots) that
     #     slowly drifts; Layer B (::before): a 3D perspective grid floor anchored to the bottom;
     #     Layer C (::after): connecting "network" scan-lines that sweep diagonally. ---
+    # Clip the layered scene: base .deco-grid is position:fixed;inset:0 in the engine but has
+    # NO overflow:hidden, while our ::before floor uses left:-25%/right:-25% + a 3D rotateX tilt
+    # that can extend past the viewport edges -> horizontal scroll on mobile. Contain it here.
+    ".deco-grid{overflow:hidden;max-width:100vw}"
     ".deco-grid{background-image:"
     "radial-gradient(circle at 12% 22%,color-mix(in srgb,var(--accent) 60%,transparent) 0,transparent 1.4px),"
     "radial-gradient(circle at 78% 16%,color-mix(in srgb,var(--accent2) 55%,transparent) 0,transparent 1.4px),"

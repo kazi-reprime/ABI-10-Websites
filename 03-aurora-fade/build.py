@@ -271,6 +271,17 @@ SITE_CSS = r"""
 /* --- airier section rhythm + centered eyebrow accent underline on the home contact --- */
 .home-contact .hc-box .eyebrow-acc::after{margin-left:0}
 
+/* --- MOBILE OVERFLOW FIX: .nowrap-fit inside headings ---
+   The engine wraps some heading phrases (e.g. the programs H1 "Barber Programs — NYC" /
+   "Programas de Barbería — NYC") in span.nowrap-fit{white-space:nowrap}. At narrow widths the
+   H1 clamps to its 2rem floor, so that locked single line measured ~399px and pushed the page
+   ~53px past a 360px viewport (horizontal scroll on /programs). Let those heading phrases wrap
+   on phones; the footer h4.nowrap-fit stays untouched (it never overflows). Headings only,
+   so it can't re-break any inline price/meta runs. */
+@media (max-width:480px){
+  h1 .nowrap-fit,h2 .nowrap-fit,h3 .nowrap-fit{white-space:normal}
+}
+
 @keyframes af-shimmer{0%{background-position:0 0}100%{background-position:200% 0}}
 """
 
