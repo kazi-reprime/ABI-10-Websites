@@ -3,115 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ABI · Ten Website Concepts · American Barber Institute</title>
-<meta name="description" content="Ten unique website concepts for the American Barber Institute — NYC's only dedicated barber school. One brand, ten visions.">
-<meta name="theme-color" content="#0a0c12">
-<link rel="icon" type="image/jpeg" href="https://abi-assets.vercel.app/logos/american_barber_institute_logo.jpeg">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Private — Authorized Access</title>
 <style>
-  :root { --bg:#06070c; --bg2:#0e1018; --ink:#e9ecff; --mut:#8b91b8; --line:rgba(255,255,255,.08); --accent:#00f0ff; --gold:#d4af37; --mag:#ff2bd6; --grad: linear-gradient(135deg, #00f0ff 0%, #ff2bd6 50%, #d4af37 100%); }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-  body { background:var(--bg); color:var(--ink); font-family:-apple-system, 'Segoe UI', system-ui, sans-serif; line-height:1.55; overflow-x:hidden; }
-  a { color:inherit; text-decoration:none; }
-  img { max-width:100%; height:auto; display:block; }
-  .wrap { max-width:1280px; margin:0 auto; padding:0 24px; }
-  /* hero */
-  header.hero { min-height:90vh; display:flex; flex-direction:column; justify-content:center; padding:90px 0 60px; position:relative; }
-  .hero::before { content:""; position:absolute; inset:0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,240,255,.18), transparent 60%), radial-gradient(ellipse 60% 40% at 90% 80%, rgba(255,43,214,.14), transparent 60%), radial-gradient(ellipse 70% 50% at 10% 90%, rgba(212,175,55,.12), transparent 60%); pointer-events:none; }
-  .hero-content { position:relative; }
-  .eyebrow { font-size:.7rem; letter-spacing:.4em; text-transform:uppercase; color:var(--accent); font-weight:700; }
-  .hero h1 { font-family:'Arial Black', system-ui; font-size: clamp(2.4rem, 7vw, 5.6rem); line-height:1; letter-spacing:-.02em; margin:24px 0 18px; }
-  .hero h1 .grad { background: var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-  .hero p.sub { max-width:680px; color:var(--mut); font-size:1.1rem; margin-bottom:32px; }
-  .meta-row { display:flex; gap:24px; flex-wrap:wrap; font-size:.84rem; color:var(--mut); margin-bottom:18px; }
-  .meta-row b { color:var(--ink); }
-  .pill { display:inline-block; padding:5px 12px; border:1px solid var(--line); border-radius:30px; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); }
-  /* grid */
-  section.sites { padding:60px 0 90px; }
-  .section-head { display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:18px; margin-bottom:34px; }
-  .section-head h2 { font-family:'Arial Black', system-ui; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height:1; }
-  .section-head p { color:var(--mut); max-width:380px; font-size:.96rem; }
-  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:22px; }
-  .card { position:relative; padding:28px 26px; border:1px solid var(--line); border-radius:22px; background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); overflow:hidden; transition: transform .3s, box-shadow .3s, border-color .3s; }
-  .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.18); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
-  .card::before { content:""; position:absolute; inset:0; background: var(--card-grad); opacity:.10; pointer-events:none; }
-  .card .badge { position:absolute; top:18px; right:18px; padding:5px 10px; background: rgba(0,0,0,.4); border:1px solid var(--line); border-radius:20px; font-size:.7rem; color:var(--mut); }
-  .card .num { font-family:'Arial Black', system-ui; font-size:3.4rem; line-height:1; opacity:.18; margin-bottom:6px; color:var(--card-color); position:relative; z-index:2; }
-  .card h3 { font-family:'Arial Black', system-ui; font-size:1.5rem; line-height:1.1; margin-bottom:8px; color:var(--card-color); position:relative; z-index:2; }
-  .card .theme { font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--mut); margin-bottom:14px; font-weight:700; position:relative; z-index:2; }
-  .card p { color:var(--mut); font-size:.92rem; line-height:1.6; margin-bottom:18px; min-height:54px; position:relative; z-index:2; }
-  .card .links { display:flex; gap:10px; flex-wrap:wrap; position:relative; z-index:2; }
-  .card .links a { display:inline-flex; align-items:center; gap:6px; padding:9px 16px; border-radius:30px; font-size:.82rem; font-weight:700; min-height:42px; transition:.2s; }
-  .card .links a.primary { background: var(--card-color); color:var(--bg); }
-  .card .links a.primary:hover { filter:brightness(1.1); }
-  .card .links a.ghost { border:1px solid var(--line); color:var(--ink); }
-  .card .links a.ghost:hover { border-color:var(--card-color); color:var(--card-color); }
-  /* footer */
-  footer { padding: 60px 0 40px; border-top:1px solid var(--line); background: rgba(0,0,0,.3); font-size:.88rem; color:var(--mut); }
-  .foot-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; }
-  .foot-row a { color:var(--accent); }
-  @media (max-width: 768px) {
-    .hero { min-height:auto; padding:70px 0 50px; }
-    .grid { grid-template-columns: 1fr; gap:16px; }
-    .card { padding:24px 22px; }
-    .foot-row { flex-direction:column; }
-  }
+:root{--bg:#06070c;--ink:#e9ecff;--mut:#8b91b8;--line:rgba(255,255,255,.08);--accent:#d4af37}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Segoe UI',system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;line-height:1.6}
+.card{max-width:600px;width:100%;padding:36px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);text-align:center}
+.lock{font-size:2.4rem;margin-bottom:14px}
+h1{font-size:1.5rem;margin-bottom:10px;letter-spacing:-.01em}
+p{color:var(--mut);font-size:.95rem;margin-bottom:8px}
+.pill{display:inline-block;margin-top:18px;padding:6px 14px;border:1px solid var(--accent);border-radius:30px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
 </style>
 </head>
 <body>
-<header class="hero">
-  <div class="wrap hero-content">
-    <span class="pill">American Barber Institute · Ten Visions</span>
-    <h1>One <span class="grad">brand</span>.<br>Ten distinct <span class="grad">websites</span>.</h1>
-    <p class="sub">Ten production-ready website concepts for ABI — New York's only dedicated barber school — each with its own visual identity, typography, layout, and call to action. Built on the same real content, deployed independently.</p>
-    <div class="meta-row">
-      <span><b>10</b> sites · <b>5</b> pages each · <b>50</b> total HTML</span>
-      <span><b>SEO</b> meta + JSON-LD + sitemap</span>
-      <span>Mobile-first · iOS / Android / Tablet / Desktop</span>
-    </div>
-  </div>
-</header>
-<section class="sites">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Choose a concept</h2>
-      <p>Every card opens its own live deployment. Tap "Visit" to see the full experience, or "Sitemap" to jump into the sub-pages.</p>
-    </div>
-    <div class="grid" id="grid"></div>
-  </div>
-</section>
-<footer>
-  <div class="wrap foot-row">
-    <span>© 2026 American Barber Institute (ABI) · Licensed by NY State Dept. of Education · GI Bill® accepted</span>
-    <span>admission@abi.edu · <a href="tel:2122902289">(212) 290-2289</a></span>
-  </div>
-</footer>
-<script>
-const SITES = [
-  {n:"01", slug:"01-neon-blade", name:"Neon Blade", theme:"Cyberpunk · WebGL", color:"#00f0ff", grad:"linear-gradient(135deg,#00f0ff,#7b5cff)", desc:"Cyberpunk WebGL training experience for the future of barbering.", url:"https://abi-app-1.vercel.app"},
-  {n:"02", slug:"02-chrome-culture", name:"Chrome Culture", theme:"Liquid Metal · Brutalism", color:"#c8c9cf", grad:"linear-gradient(135deg,#9ca0aa,#3a3d49)", desc:"Liquid-metal brutalism for the next generation of master barbers.", url:"https://abi-app-2.vercel.app"},
-  {n:"03", slug:"03-aurora-fade", name:"Aurora Fade", theme:"Light Holographic Shader", color:"#a285ff", grad:"linear-gradient(135deg,#a285ff,#7ce8ff)", desc:"Light, holographic experience for an inspired new barbering career.", url:"https://abi-app-3.vercel.app"},
-  {n:"04", slug:"04-midnight-hud", name:"Midnight HUD", theme:"Tactical Sci-Fi Interface", color:"#00ffaa", grad:"linear-gradient(135deg,#00ffaa,#0a3d3d)", desc:"Tactical sci-fi HUD experience — train like the operator you are.", url:"https://abi-app-4.vercel.app"},
-  {n:"05", slug:"05-barber-prime", name:"Barber Prime", theme:"Black + Gold · 3D Pole", color:"#d4af37", grad:"linear-gradient(135deg,#d4af37,#5d3a00)", desc:"Black and gold luxury barbering — the prime cut of barber schools in NYC.", url:"https://abi-app-5.vercel.app"},
-  {n:"06", slug:"06-neon-grid", name:"Neon Grid", theme:"Particle Network · Glitch", color:"#ff2bd6", grad:"linear-gradient(135deg,#ff2bd6,#7b5cff)", desc:"Particle-network barbering education — learn the craft on a digital floor.", url:"https://abi-app-6.vercel.app"},
-  {n:"07", slug:"07-chrome-liquid", name:"Chrome Liquid", theme:"Brutalist · Chrome Orb", color:"#e8e8e8", grad:"linear-gradient(135deg,#e8e8e8,#666)", desc:"Brutalist chrome experience for the bold barber-in-training.", url:"https://abi-app-7.vercel.app"},
-  {n:"08", slug:"08-holographic", name:"Holographic", theme:"Iridescent Glass · Ring", color:"#7ce8ff", grad:"linear-gradient(135deg,#7ce8ff,#ff2bd6)", desc:"Iridescent, holographic barber experience — see your future through every fade.", url:"https://abi-app-8.vercel.app"},
-  {n:"09", slug:"09-noir-gold", name:"Noir Gold", theme:"Cinematic Luxe · Spotlight", color:"#caa15a", grad:"linear-gradient(135deg,#caa15a,#1a1a1a)", desc:"Cinematic noir + gold luxe experience — barbering as cinema.", url:"https://abi-app-9.vercel.app"},
-  {n:"10", slug:"10-vapor-retro", name:"Vapor Retro", theme:"Synthwave · 3D Grid Sun", color:"#ff5cdc", grad:"linear-gradient(135deg,#ff5cdc,#7b5cff)", desc:"Synthwave retro experience for the barber who wants to stand out.", url:"https://abi-app-10.vercel.app"},
-];
-const grid = document.getElementById('grid');
-grid.innerHTML = SITES.map(s => `<article class="card" style="--card-color:${s.color};--card-grad:${s.grad}">
-  <span class="badge">${s.n}/10</span>
-  <div class="num">${s.n}</div>
-  <h3>${s.name}</h3>
-  <div class="theme">${s.theme}</div>
-  <p>${s.desc}</p>
-  <div class="links">
-    <a class="primary" href="${s.url}" target="_blank" rel="noopener">Visit site →</a>
-    <a class="ghost" href="${s.url}/programs.html" target="_blank" rel="noopener">Programs</a>
-    <a class="ghost" href="${s.url}/gallery.html" target="_blank" rel="noopener">Gallery</a>
-  </div>
-</article>`).join('');
-</script>
+<main class="card">
+  <div class="lock">🔒</div>
+  <h1>Private workspace</h1>
+  <p>This page is intentionally unlisted and not indexed by search engines.</p>
+  <p>If you arrived here by mistake, there is nothing public on this URL.</p>
+  <span class="pill">Authorized access only</span>
+</main>
 </body>
 </html>
