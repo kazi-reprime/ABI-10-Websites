@@ -386,12 +386,15 @@ details.card[open] summary::after{transform:rotate(45deg)}
 @media (max-width:480px){.footer-grid{grid-template-columns:1fr}}
 
 /* ---- sticky mobile call bar ---- */
-.sticky-call{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + var(--safe-bottom));z-index:50;gap:8px}
-.sticky-call a{flex:1;padding:14px 10px;min-height:52px;border-radius:999px;font-weight:800;font-size:.86rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);display:inline-flex;align-items:center;justify-content:center;gap:6px}
+/* mobile sticky bar: FLUSH to the screen bottom edge, full width, solid backing so page
+   content never shows through, and HIDDEN whenever the nav drawer is open (no overlap). */
+.sticky-call{display:none;position:fixed;left:0;right:0;bottom:0;z-index:45;gap:10px;padding:10px 12px calc(10px + var(--safe-bottom));background:color-mix(in srgb,var(--bg) 90%,#000);border-top:1px solid var(--line);box-shadow:0 -10px 28px rgba(0,0,0,.45)}
+.sticky-call a{flex:1;padding:13px 10px;min-height:50px;border-radius:var(--btn-r);font-weight:800;font-size:.9rem;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:7px}
 .sticky-call a.call{background:var(--bg2);color:var(--ink);border:2px solid var(--accent)}
 .sticky-call a.apply{background:var(--accent);color:var(--bg)}
-.sticky-call a .ico{font-size:1rem;line-height:1}
+.sticky-call a .ico{font-size:1.05rem;line-height:1}
 @media (max-width:980px){.sticky-call{display:flex}}
+body.nav-open .sticky-call{display:none!important}
 
 @media (max-width:480px){
   .row-stat{grid-template-columns:1fr 1fr;gap:8px}
@@ -433,14 +436,15 @@ details.card[open] summary::after{transform:rotate(45deg)}
 
 /* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
 .brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
-.brand-mark{display:inline-flex;align-items:center;justify-content:center;height:46px;width:46px;flex-shrink:0;position:relative;border-radius:10px;overflow:hidden}
-.brand-logo .brand-mark img{height:100%;width:100%;object-fit:cover;border-radius:10px;box-shadow:none;border:0}
-.brand-mark.logo-light{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.16);border:1px solid rgba(0,0,0,.08)}
-.brand-mark.logo-dark{background:transparent}
-.brand-mark.has-ovl .logo-pole-ovl{position:absolute;pointer-events:none;border-radius:3px;background:repeating-linear-gradient(45deg,#e11d2a 0 6px,#fff 6px 12px,var(--accent) 12px 18px,#fff 18px 24px);background-size:100% 34px;animation:poleSpin 1s linear infinite;opacity:.95;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
-.brand-mark.has-ovl + .brand-pole{display:none}
-@media (max-width:760px){.brand-mark{height:42px;width:42px}}
-@media (max-width:480px){.brand-mark{height:38px;width:38px}}
+/* white logo plate holds the REAL ABI horizontal logo — always legible on any theme */
+.brand-plate{display:inline-flex;align-items:center;flex-shrink:0;background:#fff;border-radius:9px;padding:5px 9px;box-shadow:0 2px 10px rgba(0,0,0,.18);border:1px solid color-mix(in srgb,var(--accent) 30%,rgba(0,0,0,.08))}
+.brand-plate img{height:34px;width:auto;max-width:none;display:block;object-fit:contain;border:0;box-shadow:none}
+/* header "Become a Barber" CTA — desktop only (mobile has the sticky bar + drawer) */
+.header-cta{display:none;align-items:center;gap:6px;flex-shrink:0;margin-left:6px;padding:9px 16px;min-height:42px;border-radius:var(--btn-r);background:var(--accent);color:var(--bg);font-weight:800;font-size:.82rem;letter-spacing:.01em;white-space:nowrap;transition:filter .2s,transform .2s}
+.header-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+@media (min-width:1281px){.header-cta{display:inline-flex}}
+@media (max-width:760px){.brand-plate img{height:30px}.brand-plate{padding:4px 7px}}
+@media (max-width:480px){.brand-plate img{height:26px}}
 
 /* EN/ES toggle in the sticky header — ALWAYS visible */
 .lang-toggle-header{flex-shrink:0;margin-left:6px}
@@ -485,7 +489,8 @@ details.card[open] summary::after{transform:rotate(45deg)}
 .campus-split .campus-col .campus-progs li::before{content:"▸ "}
 
 /* footer logo emblem */
-.footer-logo{height:54px;width:auto;max-width:200px;object-fit:contain;margin-bottom:14px;border-radius:8px}
+.footer-logo-plate{display:inline-block;background:#fff;border-radius:9px;padding:9px 13px;margin-bottom:14px}
+.footer-logo{height:44px;width:auto;max-width:220px;object-fit:contain;display:block}
 """
 
 MEDIA_STYLE_CSS = {
@@ -632,30 +637,19 @@ def header_html(active_key="", t=None):
         f'<a href="{p}" class="{"active" if k == active_key else ""}">{bi(NAV[k])}</a>'
         for k, p in NAV_ITEMS
     )
-    # Brand mark = logo image + a spinning barber pole. No text wordmark (the logo carries
-    # the name). frame class tones the logo to its baked background so it never looks like a
-    # floating box on the theme. If the site sets t["logo_pole"] = {"l","t","w","h"} (percent
-    # box over the logo's own pole), an animated pole is overlaid there and the standalone pole
-    # is dropped — i.e. the logo's OWN pole appears to spin. Otherwise a crisp animated pole
-    # sits beside the logo so every header has a moving pole.
-    frame_cls = "logo-dark" if t.get("logo_dark_bg") else "logo-light"
-    pole = t.get("logo_pole")
-    # Header uses the square (padded) favicon so every site shows a tidy square logo chip —
-    # the source logos are mixed portrait/landscape and would render as a thin sliver at 46px.
-    # The full detailed logo still appears (larger, contained) in the footer + OG image.
-    img = ('<img src="/assets/favicon.png" alt="American Barber Institute — New York\'s dedicated barber school" '
-           'width="46" height="46" decoding="async">')
-    if pole:
-        ovl = (f'<span class="logo-pole-ovl" aria-hidden="true" '
-               f'style="left:{pole["l"]}%;top:{pole["t"]}%;width:{pole["w"]}%;height:{pole["h"]}%"></span>')
-        brand = f'<span class="brand-mark has-ovl {frame_cls}">{img}{ovl}</span>'
-    else:
-        brand = (f'<span class="barber-pole" role="img" aria-label="Barber pole"></span>'
-                 f'<span class="brand-mark {frame_cls}">{img}</span>')
+    # Brand = the REAL ABI horizontal logo (legible, fits a header) on a white plate so it is
+    # always visible on any theme, preceded by the signature spinning barber pole. Same logo on
+    # all 10 sites (matches abi-app-123); the plate border + pole are theme-tinted.
+    brand = (f'<span class="barber-pole" role="img" aria-label="Barber pole"></span>'
+             f'<span class="brand-plate"><img src="/assets/brandlogo.gif" '
+             f'alt="American Barber Institute — New York\'s dedicated barber school" '
+             f'width="170" height="44" decoding="async"></span>')
+    cta = (f'<a class="header-cta" href="/contact">{bi(UI["become_barber"])} <span aria-hidden="true">✂</span></a>')
     return f'''<header class="site-header">
   <div class="header-inner">
     <a class="brand-logo" href="/" aria-label="American Barber Institute home">{brand}</a>
     <nav class="primary-nav" id="primary-nav">{links}</nav>
+    {cta}
     {lang_toggle("lang-toggle-header")}
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
@@ -691,7 +685,7 @@ def footer_html():
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img class="footer-logo" src="/assets/logo.jpeg" alt="American Barber Institute" width="200" height="64" loading="lazy">
+        <span class="footer-logo-plate"><img class="footer-logo" src="/assets/brandlogo.gif" alt="American Barber Institute" width="200" height="52" loading="lazy"></span>
         <h4 class="nowrap-fit">American Barber Institute</h4>
         <p>{bi(f["tagline"])}</p>
         <p style="margin-top:10px;font-size:.85rem">{bi({"en": "GI Bill® · ACCES-VR · VA benefits accepted.", "es": "GI Bill® · ACCES-VR · beneficios de la VA aceptados."})}</p>
@@ -1266,6 +1260,7 @@ def route_assets(html, site):
     html = html.replace("/assets/instructors/", f"{ASSET_BASE}/instructors/")
     html = html.replace("/assets/partners/", f"{ASSET_BASE}/partners/")
     html = html.replace("/assets/img/", f"{ASSET_BASE}/img/")
+    html = html.replace("/assets/brandlogo.gif", f"{ASSET_BASE}/logos/abi-logo.gif")
     html = html.replace("/assets/favicon.png", f"{ASSET_BASE}/logos/{site.get('favicon', site['logo'])}")
     html = html.replace("/assets/og.png", f"{ASSET_BASE}/logos/{site.get('og', site['logo'])}")
     html = html.replace("/assets/logo.jpeg", f"{ASSET_BASE}/logos/{site['logo']}")

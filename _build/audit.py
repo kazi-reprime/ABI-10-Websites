@@ -90,11 +90,12 @@ def audit_site(site):
         if "© 2026 American Barber Institute (ABI)" not in t: fail(site, path.stem, "footer copyright missing")
 
     # ---- v9 final-changes requirements ----
-    # header: logo image + spinning pole, routed to host, NO text wordmark
-    if "brand-mark" not in idx: fail(site, "index", "header logo (brand-mark) missing")
+    # header: real ABI logo on a plate + spinning pole, routed to host
+    if "brand-plate" not in idx: fail(site, "index", "header logo plate (brand-plate) missing")
+    if "/logos/abi-logo.gif" not in idx: fail(site, "index", "real ABI header logo not routed to host")
     if "assets-lilac-five.vercel.app/logos/" not in idx: fail(site, "index", "logo not routed to asset host")
-    if '<span class="brand-name"' in idx: fail(site, "index", "text wordmark still present in header")
-    if "barber-pole" not in idx and "logo-pole-ovl" not in idx: fail(site, "index", "spinning barber pole missing")
+    if "barber-pole" not in idx: fail(site, "index", "spinning barber pole missing")
+    if "header-cta" not in idx: fail(site, "index", "header 'Become a Barber' CTA missing")
     # EN/ES toggle always visible in the sticky header
     if "lang-toggle-header" not in idx: fail(site, "index", "always-visible header EN/ES toggle missing")
     # mobile sticky bar = Call Now + Become a Barber
