@@ -1,0 +1,87 @@
+{
+  "brand": {
+    "name": "American Barber Institute",
+    "short": "ABI",
+    "tagline": "Your Future. Your Career. Start Today.",
+    "subtitle": "New York's only dedicated barber school",
+    "phone_manhattan": "(212) 290-2289",
+    "phone_manhattan_es": "(212) 290-0278",
+    "phone_bronx": "(718) 676-0640",
+    "email": "admission@abi.edu",
+    "next_start_date": "Monday, July 6, 2026",
+    "years_in_business": "30+",
+    "graduates": "10,000+",
+    "rating": "4.3/5 on Google"
+  },
+  "campuses": [
+    {"name":"Manhattan","address":"48 West 39th Street, New York, NY 10018","phone":"(212) 290-2289","hours":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM"},
+    {"name":"Bronx","address":"121 Westchester Square, Bronx, NY 10461","phone":"(718) 676-0640","hours":"Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM"}
+  ],
+  "programs": [
+    {"campus":"Manhattan","name":"500 Hour Master Barber","duration":"17 weeks","summary":"State-approved comprehensive barber training with NY State Board Exam prep and hands-on experience.","price":"From $4,600"},
+    {"campus":"Manhattan","name":"50 Hour Barber Refresher","duration":"Flexible","summary":"Refresher course for licensed barbers to update their technique.","price":"Contact for pricing"},
+    {"campus":"Manhattan","name":"3 Hour Contagious Diseases","duration":"3 hours","summary":"Sanitation and infection control training required by NY State.","price":"Contact for pricing"},
+    {"campus":"Bronx","name":"540 Hour Master Barber — Bronx","duration":"~18 weeks","summary":"Master barber certification program at the Westchester Square campus.","price":"From $4,600"},
+    {"campus":"Bronx","name":"3 Hour Contagious Diseases","duration":"3 hours","summary":"Sanitation and infection control training required by NY State.","price":"Contact for pricing"}
+  ],
+  "schedules": [
+    {"label":"Full-Time Morning","days":"Mon–Fri","time":"8:00 AM – 2:00 PM","tuition":"$5,600","plan":"$500 down + 17 weekly payments of $300"},
+    {"label":"Full-Time Afternoon","days":"Mon–Fri","time":"2:00 PM – 8:00 PM","tuition":"$4,600","plan":"$500 down + 16 weekly payments of $250 + $100 final"},
+    {"label":"Weekend","days":"Sat & Sun","time":"9:00 AM – 7:00 PM","tuition":"$4,600","plan":"$550 down + 27 weekly payments of $150"}
+  ],
+  "enrollment_steps": [
+    {"step":1,"title":"Get Started","desc":"Submit your information to begin your barbering journey."},
+    {"step":2,"title":"Speak With an Advisor","desc":"An admissions advisor answers your questions and reviews payment plan options."},
+    {"step":3,"title":"Start Training","desc":"Complete enrollment and begin building your barbering career on day one."}
+  ],
+  "why_choose": [
+    "New York's only dedicated barber school — barbering is all we do.",
+    "Licensed by NY State Department of Education (BPSS).",
+    "30+ years of proven results with 10,000+ graduates.",
+    "Flexible schedules: morning, afternoon, weekend.",
+    "Veterans & GI Bill® benefits accepted (ACCES-VR, Post-9/11 GI Bill®, VA).",
+    "Hands-on training in a real barber clinic from day one.",
+    "Real barbershop skills taught within the first few weeks.",
+    "Job placement services on graduation.",
+    "Two campuses: Manhattan and the Bronx.",
+    "No prior experience required."
+  ],
+  "career_earnings": [
+    {"stage":"Entry-Level Barber","window":"Year 1","range":"$35,000 – $45,000","desc":"Building a client base and refining technique."},
+    {"stage":"Established Barber","window":"Years 2–3","range":"$50,000 – $70,000","desc":"Loyal clientele, faster service, increased income."},
+    {"stage":"Booth Renter / Shop Owner","window":"Year 3+","range":"$75,000 – $100,000+","desc":"Full control of schedule and earnings."}
+  ],
+  "testimonials": [
+    {"name":"Jerrick Matthews","role":"Current Student","quote":"The level of knowledge and training is superb! One of the best teachers around — King David — will show you everything."},
+    {"name":"Carlos Perez","role":"Current Student","quote":"I have King David as my instructor and he has been awesome! He has 30 years of experience and gives us great techniques."},
+    {"name":"Zyee Fin","role":"Current Student","quote":"I'm currently enrolled and I'm happy with the progress from learning from the teachers and classmates. Nothing but positivity."},
+    {"name":"Richard Cacace","role":"Reviewer (5★)","quote":"The best barber school in New York — way better than the Arrojo Barber Academy. Real barber culture."},
+    {"name":"Vincybie Lee","role":"Client","quote":"Only $3 for a regular haircut and it's not bad at all. Great that we could help student trainees."},
+    {"name":"Tina Banee","role":"Client","quote":"Donovan gave me a great haircut. He did exactly what I asked. Well worth $3 plus a $7 tip."}
+  ],
+  "partners": ["Levels Barbershop","Diamond Fadez Barbershop","Untouchable Cutz","Expo Gentlemen Salon","Otis & Finn Barbershop","NYC Barber Shop Museum"],
+  "faqs": [
+    {"q":"How long does the Master Barber program take?","a":"The 500-Hour Master Barber program runs about 17 weeks (≈4 months) full-time. Weekend students typically complete in 27 weeks."},
+    {"q":"Do I need prior experience to enroll?","a":"No prior experience is required. We train you from the ground up, starting with the fundamentals and progressing to advanced cutting, fading, beard work, and shaving."},
+    {"q":"Is ABI licensed and accredited?","a":"Yes. ABI is licensed by the New York State Department of Education through the Bureau of Proprietary School Supervision (BPSS)."},
+    {"q":"What's the tuition and how do I pay?","a":"Tuition ranges from $4,600 to $5,600 depending on schedule. Every plan starts with a small down payment and continues with low weekly payments — full breakdown on the Programs page."},
+    {"q":"Do you accept GI Bill® or VA benefits?","a":"Yes. We accept Post-9/11 GI Bill®, VA benefits, and ACCES-VR. Our admissions advisors will walk you through the paperwork."},
+    {"q":"When is the next class start?","a":"Our next start date is Monday, July 6, 2026. We accept new students on a rolling basis — contact admissions for the next available cohort."},
+    {"q":"Where are your campuses?","a":"Manhattan: 48 West 39th Street, New York, NY 10018. Bronx: 121 Westchester Square, Bronx, NY 10461."},
+    {"q":"What hours can I train?","a":"Three flexible tracks: Morning (Mon–Fri 8AM–2PM), Afternoon (Mon–Fri 2PM–8PM), and Weekend (Sat–Sun 9AM–7PM)."},
+    {"q":"Do you help with job placement?","a":"Yes. Job placement services are included. Our network includes Levels, Diamond Fadez, Untouchable Cutz, Otis & Finn, and the NYC Barber Shop Museum."},
+    {"q":"What skills will I learn?","a":"Modern fades, haircutting, beard work, straight-razor shaving, styling, color, sanitation, business basics, and NY State Board Exam preparation."},
+    {"q":"Can I get a haircut at the school?","a":"Yes — our student clinic offers haircuts from $3 (haircuts), giving our trainees real chair time while you get a great cut."},
+    {"q":"Do you offer financial assistance?","a":"Yes. We work with veterans (VA, GI Bill®), ACCES-VR participants, and offer in-house weekly payment plans for every program."},
+    {"q":"How big are the classes?","a":"We keep instructor-to-student ratios low to ensure every student gets real hands-on time on the floor."},
+    {"q":"What happens after I graduate?","a":"You take the NY State Board Exam, earn your license, and start working. Our placement team helps you land your first chair."},
+    {"q":"Do you offer Spanish-language admissions?","a":"Yes — Spanish-speaking advisors are available. Call (212) 290-0278 for Spanish admissions at the Manhattan campus."}
+  ],
+  "footer_links": ["About","Programs","Schedule","FAQ","Haircuts","Gallery","Job Placement","Resources","Contact","Blog"],
+  "social": [
+    {"label":"Instagram","href":"https://instagram.com"},
+    {"label":"Facebook","href":"https://facebook.com"},
+    {"label":"YouTube","href":"https://youtube.com"},
+    {"label":"Twitter","href":"https://x.com"}
+  ]
+}

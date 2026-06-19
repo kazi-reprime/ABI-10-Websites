@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abi-app-9.vercel.app/sitemap.xml
