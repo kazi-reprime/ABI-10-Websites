@@ -1,7 +1,7 @@
 # ABI 10 Websites — Session Handoff
 
-**Status:** v5 SHIPPED. All 10 sites live, audited, pushed to GitHub.
-**Last commit:** `011168e — v5: counters + upgraded form + responsive logo + design inheritance + agent-audited`
+**Status:** v6 SHIPPED. All 10 sites live. Duplicate header/footer fixed, Haircuts page restored, photos+videos on every page (10 unique animations), per-site EN/ES toggles, **media served from a shared asset host** (sites now deploy at ~760 KB each).
+**Asset host:** `https://assets-lilac-five.vercel.app` (Vercel project `assets`, scope `mkknights-projects`) — serves `/showcase/{vid,img}`, `/img`, `/logos`, `/videos`. CORS `*`, immutable cache. All 10 sites reference media from here (`ASSET_BASE` in `build.py`). See `DESIGN-AUDIT.md` for the full fix log.
 **Repo:** https://github.com/kazi-reprime/ABI-10-Websites
 **Working dir:** `/Users/mkazi/ABI-10-Websites`
 **Vercel team scope:** `mkknights-projects` (every `vercel` command MUST include `--scope mkknights-projects --yes`)
@@ -72,7 +72,7 @@ The user sends each URL to a different prospect; each must look like the ONLY AB
 
 ## 4. Hard requirements (these are LAW — do not regress)
 
-1. **No cross-links.** No site links to another. No shared `abi-assets.vercel.app` CDN. No "see our other site" anywhere.
+1. **No cross-links between sites.** No site links to another; no "see our other site." (NOTE: as of 2026-06-19 the user chose to serve *media* from a shared asset host — `assets-lilac-five.vercel.app` — to avoid re-uploading ~900 MB on every deploy. This is media-only and reveals no other site; the no-cross-LINKS rule still holds.)
 2. **No 11th site.** No master hub. The user killed it. Do not resurrect.
 3. **Bilingual.** Every page has `.lang-en` / `.lang-es` spans + a body-class toggle (persisted in `localStorage`). No page reload on toggle.
 4. **Two centered call buttons** in top banner — EN `(212) 290-2289`, ES `(212) 290-0278`. Always visible, always clickable, `tabular-nums`.
@@ -81,7 +81,7 @@ The user sends each URL to a different prospect; each must look like the ONLY AB
 7. **Mobile-first responsive** — iPhone (incl. notch via `env(safe-area-inset-*)`), Android, tablet, desktop. Logo uses `clamp(34px, 4.6vw, 44px)` + breakpoints at 1180/980/760/540/480/360.
 8. **Animated counters** on About page: 30+ Years, 10,000+ Graduates, 2 Campuses, 17 Weeks, 3000 sq ft, 100+ Reviews. IntersectionObserver + cubic ease + 1400ms.
 9. **SEO complete** — meta + OpenGraph + Twitter + JSON-LD (EducationalOrganization + FAQPage) + sitemap + robots.
-10. **Per-site assets bundled locally.** Each site's `/assets/` is its own copy. NEVER point to another site's assets.
+10. **Media on the shared asset host (REVERSED 2026-06-19).** Sites carry NO media; every `/assets/...` URL is rewritten to `ASSET_BASE` by `route_assets()` in `build.py`. Each site has a `.vercelignore` excluding `assets/` so deploys are HTML-only (~760 KB). To change media: update `assets/`, then `cd assets && vercel --prod --scope mkknights-projects --yes` (uploads once).
 
 ---
 
@@ -93,7 +93,13 @@ python3 _build/build.py
 ```
 
 This regenerates all 10 sites' HTML from `_content/content.json` + `_content/tokens/<slug>.json`.
-**Does NOT touch assets** — those are bundled once and gitignored.
+**Does NOT touch the asset host** — media lives at `ASSET_BASE` (deploy `assets/` separately).
+
+⚠️ **After ANY rebuild, re-run the per-site polish.** The 10 agents' unique EN/ES toggles + nav-fixes live in `<slug>/_polish.py` (idempotent) and are injected into the GENERATED HTML — a rebuild wipes sub-page toggles. Always run:
+```bash
+for d in 0*-* 10-*; do (cd "$d" && python3 _polish.py); done
+```
+The media-style CSS uses `color-mix()` (a `_fix_css_alpha()` helper converts any `var(--x)HH` — invalid CSS — at build time; agent `_polish.py` blocks may still emit `var(--x)HH`, so a final in-place conversion pass over the HTML is the safe last step).
 
 - To change content for ALL sites: edit `_content/content.json` and re-run build.
 - To re-theme one site: edit `_content/tokens/<slug>.json` and re-run build.

@@ -5,6 +5,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC_ASSETS = ROOT / "assets"
+# Shared asset host (deployed once) — all 10 sites reference media from here instead of bundling it,
+# so per-site deploys carry only HTML (KB) and media is uploaded a single time.
+ASSET_BASE = "https://assets-lilac-five.vercel.app"
 CONTENT = json.loads((ROOT / "_content" / "content.json").read_text())
 SITES = json.loads((ROOT / "_content" / "sites.json").read_text())["sites"]
 
@@ -871,7 +874,7 @@ def p_instructors():
 <section><div class="container" style="text-align:center"><h2 style="margin-bottom:14px">{bi({"en":"Train with us","es":"Entrena con nosotros"})}</h2><p class="lead" style="margin:0 auto 20px">{bi({"en":"New cohorts begin the first Monday of every month.","es":"Las nuevas generaciones comienzan el primer lunes de cada mes."})}</p><a class="btn btn-primary" href="/contact">{bi(UI["apply_today"])}</a> <a class="btn btn-ghost" href="/programs" style="margin-left:8px">{bi(UI["see_programs"])}</a></div></section>'''}
 
 def p_gallery(site_dir):
-    imgs = sorted([f for f in os.listdir(site_dir/"assets"/"img") if f.lower().endswith(('.jpeg','.jpg','.png'))])[:30]
+    imgs = GALLERY_FILES[:30]  # from the shared source pool (media now lives on the asset host)
     tiles = "".join(f'<a class="gallery-tile" href="/assets/img/{f}" target="_blank" rel="noopener"><img src="/assets/img/{f}" loading="lazy" alt="ABI student work"></a>' for f in imgs)
     return {"path":"/gallery",
         "eyebrow": bi({"en":"On the floor","es":"En el piso"}),
@@ -1077,6 +1080,14 @@ def add_v5_chrome(html, tokens, site_index=0):
     html = re.sub(r'<meta name="viewport"[^>]*>', '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">', html, count=1)
     return html
 
+def route_assets(html, site):
+    """Point every local /assets/... URL at the shared asset host, so sites carry no media."""
+    html = html.replace("/assets/showcase/", f"{ASSET_BASE}/showcase/")
+    html = html.replace("/assets/img/", f"{ASSET_BASE}/img/")
+    html = html.replace("/assets/logo.jpeg", f"{ASSET_BASE}/logos/{site['logo']}")
+    html = html.replace("/assets/bg.mp4", f"{ASSET_BASE}/videos/{site['video']}")
+    return html
+
 def build_site(site):
     slug = site["slug"]
     site_dir = ROOT / slug
@@ -1084,8 +1095,8 @@ def build_site(site):
     tokens = load_tokens(slug)
     site_index = SITES.index(site)
 
-    # Bundle assets
-    bundle_assets(site, site_dir)
+    # Media now lives on the shared asset host — exclude any local assets/ bundle from deploys.
+    (site_dir / ".vercelignore").write_text("assets/\n")
 
     # Enhance index.html (idempotent — safe to re-run)
     idx = site_dir / "index.html"
@@ -1095,6 +1106,7 @@ def build_site(site):
     html = fix_paths(html)
     html = scrub_price(html)
     html = add_v5_chrome(html, tokens, site_index)
+    html = route_assets(html, site)
     idx.write_text(html, encoding="utf-8")
 
     # Sub-pages (haircuts restored)
@@ -1112,7 +1124,8 @@ def build_site(site):
     ]
     for fname, key, fn in pages_def:
         pdata = fn()
-        (site_dir / fname).write_text(render_subpage(tokens, key, pdata, site_index), encoding="utf-8")
+        page_html = route_assets(render_subpage(tokens, key, pdata, site_index), site)
+        (site_dir / fname).write_text(page_html, encoding="utf-8")
 
     # Sitemap (haircuts included)
     base = f"https://{site['vercel_name']}.vercel.app"
