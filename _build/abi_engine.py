@@ -421,9 +421,7 @@ body.nav-open .sticky-call{display:none!important}
 .m-vid.playing::before{opacity:0}
 @media (prefers-reduced-motion:reduce){.m-tile,.m-tile.shown{opacity:1!important;transform:none!important;animation:none!important}}
 /* ---- animated barber pole (brand mark; blue stripe tinted per site via --accent) ---- */
-.barber-pole{position:relative;display:inline-block;width:14px;height:clamp(34px,4.6vw,44px);border-radius:8px;flex-shrink:0;overflow:hidden;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,#e11d2a 0 8px,#fff 8px 16px,var(--accent) 16px 24px,#fff 24px 32px);background-size:100% 46px;animation:poleSpin 1s linear infinite;box-shadow:0 2px 8px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.18)}
-@keyframes poleSpin{to{background-position:0 -46px}}
-@media (prefers-reduced-motion:reduce){.barber-pole{animation:none}}
+/* (animated barber pole removed per request — the header logo carries the pole graphic) */
 /* ---- footer social row ---- */
 .social-row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
 .social-row a{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--mut);font-weight:800;font-size:.66rem;transition:color .2s,background .2s,border-color .2s,transform .2s}
@@ -440,14 +438,15 @@ body.nav-open .sticky-call{display:none!important}
 /* header brand = logo image + spinning pole (no wordmark). Override base .brand-logo img. */
 .brand-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;min-width:0}
 /* white logo plate holds the REAL ABI horizontal logo — always legible on any theme */
-.brand-plate{display:inline-flex;align-items:center;flex-shrink:0;background:#fff;border-radius:9px;padding:5px 9px;box-shadow:0 2px 10px rgba(0,0,0,.18);border:1px solid color-mix(in srgb,var(--accent) 30%,rgba(0,0,0,.08))}
-.brand-plate img{height:34px;width:auto;max-width:none;display:block;object-fit:contain;border:0;box-shadow:none}
-/* header "Become a Barber" CTA — desktop only (mobile has the sticky bar + drawer) */
+.brand-plate{display:inline-flex;align-items:center;flex-shrink:0;background:#fff;border-radius:11px;padding:7px 13px;box-shadow:0 2px 12px rgba(0,0,0,.2);border:1px solid color-mix(in srgb,var(--accent) 32%,rgba(0,0,0,.08))}
+.brand-plate img{height:46px;width:auto;max-width:none;display:block;object-fit:contain;border:0;box-shadow:none}
+/* header "Become a Barber" CTA — only on wide desktops so the full nav (incl. Contact) fits */
 .header-cta{display:none;align-items:center;gap:6px;flex-shrink:0;margin-left:6px;padding:9px 16px;min-height:42px;border-radius:var(--btn-r);background:var(--accent);color:var(--bg);font-weight:800;font-size:.82rem;letter-spacing:.01em;white-space:nowrap;transition:filter .2s,transform .2s}
 .header-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
-@media (min-width:1281px){.header-cta{display:inline-flex}}
-@media (max-width:760px){.brand-plate img{height:30px}.brand-plate{padding:4px 7px}}
-@media (max-width:480px){.brand-plate img{height:26px}}
+@media (min-width:1400px){.header-cta{display:inline-flex}}
+@media (max-width:760px){.brand-plate img{height:40px}.brand-plate{padding:6px 10px}}
+@media (max-width:480px){.brand-plate img{height:34px}.brand-plate{padding:5px 9px}}
+@media (max-width:360px){.brand-plate img{height:30px}}
 
 /* EN/ES toggle in the sticky header — ALWAYS visible */
 .lang-toggle-header{flex-shrink:0;margin-left:6px}
@@ -465,9 +464,10 @@ body.nav-open .sticky-call{display:none!important}
 .next-class .nc-unit i{font-style:normal;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:3px}
 
 /* home contact box (desktop + mobile) */
-.home-contact .hc-box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(20px,3.5vw,40px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.home-contact .hc-form .btn{margin-top:4px}
-@media (max-width:760px){.home-contact .hc-box{grid-template-columns:1fr;gap:18px}}
+.home-contact .hc-head{max-width:680px;margin:0 auto clamp(22px,4vw,38px)}
+.home-contact .hc-box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);align-items:start;background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(20px,3.5vw,40px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.home-contact .lead-form .btn,.lead-form .btn{margin-top:4px}
+@media (max-width:860px){.home-contact .hc-box{grid-template-columns:1fr;gap:18px}}
 
 /* instructor cards — photo + bio, fits mobile & desktop */
 .ins-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(14px,2.6vw,22px)}
@@ -636,17 +636,17 @@ def lang_toggle(extra_cls=""):
 
 def header_html(active_key="", t=None):
     t = t or {}
+    # "Home" is omitted — the logo links home (matches abi-app-123) and this frees nav room so
+    # Contact (last item) is never clipped on desktop.
     links = "".join(
         f'<a href="{p}" class="{"active" if k == active_key else ""}">{bi(NAV[k])}</a>'
-        for k, p in NAV_ITEMS
+        for k, p in NAV_ITEMS if k != "home"
     )
-    # Brand = the REAL ABI horizontal logo (legible, fits a header) on a white plate so it is
-    # always visible on any theme, preceded by the signature spinning barber pole. Same logo on
-    # all 10 sites (matches abi-app-123); the plate border + pole are theme-tinted.
-    brand = (f'<span class="barber-pole" role="img" aria-label="Barber pole"></span>'
-             f'<span class="brand-plate"><img src="/assets/brandlogo.gif" '
-             f'alt="American Barber Institute — New York\'s dedicated barber school" '
-             f'width="170" height="44" decoding="async"></span>')
+    # Brand = the REAL ABI horizontal logo on a white plate so it's always legible on any theme.
+    # No animated pole (removed per request) — the logo carries the pole graphic itself.
+    brand = ('<span class="brand-plate"><img src="/assets/brandlogo.gif" '
+             'alt="American Barber Institute — New York\'s dedicated barber school" '
+             'width="200" height="52" decoding="async"></span>')
     cta = (f'<a class="header-cta" href="/contact">{bi(UI["become_barber"])} <span aria-hidden="true">✂</span></a>')
     return f'''<header class="site-header">
   <div class="header-inner">
@@ -951,30 +951,61 @@ def next_class_counter(center=True):
             f'</div></div>')
 
 
-def home_contact_section():
-    """Lead-capture contact box shown on the home page (desktop + mobile), posts to FormSubmit."""
-    progs = "".join(f"<option>{(p['name']['en'] if isinstance(p['name'], dict) else p['name'])}</option>" for p in CONTENT["programs"])
-    return f'''<section class="home-contact" id="home-contact"><div class="container"><div class="hc-box">
-  <div class="hc-copy">
-    <div class="eyebrow-acc">{bi({"en": "Get Started", "es": "Empieza Hoy"})}</div>
-    <h2 style="margin:8px 0 10px">{bi({"en": "Talk to admissions today", "es": "Habla con admisiones hoy"})}</h2>
-    <p style="color:var(--mut);margin-bottom:16px">{bi({"en": "Tell us how to reach you and an ABI advisor calls you back — same day during business hours.", "es": "Dinos cómo contactarte y un asesor de ABI te devuelve la llamada — el mismo día en horario laboral."})}</p>
-    <p style="margin-bottom:6px"><a href="tel:{tel(B["phone_manhattan"])}" style="color:var(--accent);font-weight:800;font-size:1.12rem">📞 {B["phone_manhattan"]}</a></p>
-    <p style="color:var(--mut);font-size:.86rem">{bi({"en": "Manhattan &amp; Bronx · Open 7 days", "es": "Manhattan y Bronx · Abierto 7 días"})}</p>
-  </div>
-  <form class="hc-form form-grid" action="https://formsubmit.co/{B["email"]}" method="POST" novalidate>
-    <input type="hidden" name="_subject" value="New ABI website inquiry (home)">
+def lead_form(subject, form_id=""):
+    """The ABI lead form — mirrors the real abi-app-123 contact form fields exactly:
+    First/Last/Phone/Email + Preferred Location + Preferred Language + Message. Posts to
+    FormSubmit (the real site uses Supabase). Reused on the home box AND the contact page."""
+    idp = (form_id + "-") if form_id else ""
+    loc_opts = ("<option value=\"\">" + bt({"en": "Select a location", "es": "Selecciona una ubicación"}) + "</option>"
+                "<option>Manhattan — 48 West 39th Street</option>"
+                "<option>Bronx — 121 Westchester Square</option>"
+                f"<option>{bt({'en':'No preference','es':'Sin preferencia'})}</option>")
+    lang_opts = ("<option value=\"\">" + bt({"en": "Select a language", "es": "Selecciona un idioma"}) + "</option>"
+                 "<option>English</option><option>Spanish / Español</option>")
+    return f'''<form class="lead-form form-grid"{f' id="{form_id}"' if form_id else ''} action="https://formsubmit.co/{B["email"]}" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="{subject}">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="{FORM_NEXT}">
     <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-    <div class="field-group"><label for="hc-name">{bi({"en": "Name", "es": "Nombre"})} *</label><input required id="hc-name" name="name" autocomplete="name" placeholder="{bt({"en": "Your name", "es": "Tu nombre"})}" class="input"></div>
-    <div class="field-group"><label for="hc-phone">{bi({"en": "Phone", "es": "Teléfono"})} *</label><input required id="hc-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(212) 555-0123" class="input"></div>
-    <div class="field-group"><label for="hc-prog">{bi({"en": "Program of interest", "es": "Programa de interés"})}</label><select id="hc-prog" name="program" class="input">{progs}</select></div>
-    <button type="submit" class="btn btn-primary" style="width:100%">{bi(UI["become_barber"])} ✂</button>
-    <p class="privacy" style="font-size:.76rem;color:var(--mut);text-align:center">{bi({"en": "Same-day response. Never spam.", "es": "Respuesta el mismo día. Nunca spam."})}</p>
-  </form>
-</div></div></section>'''
+    <div class="row-2">
+      <div class="field-group"><label for="{idp}first">{bi({"en":"First Name","es":"Nombre"})} *</label><input required id="{idp}first" name="firstName" autocomplete="given-name" placeholder="{bt({'en':'First name','es':'Nombre'})}" class="input"></div>
+      <div class="field-group"><label for="{idp}last">{bi({"en":"Last Name","es":"Apellido"})} *</label><input required id="{idp}last" name="lastName" autocomplete="family-name" placeholder="{bt({'en':'Last name','es':'Apellido'})}" class="input"></div>
+    </div>
+    <div class="row-2">
+      <div class="field-group"><label for="{idp}phone">{bi({"en":"Phone","es":"Teléfono"})} *</label><input required id="{idp}phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(212) 555-0123" class="input"></div>
+      <div class="field-group"><label for="{idp}email">{bi({"en":"Email","es":"Correo"})}</label><input id="{idp}email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="example@gmail.com" class="input"></div>
+    </div>
+    <div class="row-2">
+      <div class="field-group"><label for="{idp}loc">{bi({"en":"Preferred Location","es":"Ubicación Preferida"})}</label><select id="{idp}loc" name="preferredLocation" class="input">{loc_opts}</select></div>
+      <div class="field-group"><label for="{idp}lng">{bi({"en":"Preferred Language","es":"Idioma Preferido"})}</label><select id="{idp}lng" name="preferredLanguage" class="input">{lang_opts}</select></div>
+    </div>
+    <div class="field-group"><label for="{idp}msg">{bi({"en":"Message for ABI","es":"Mensaje para ABI"})}</label><textarea id="{idp}msg" name="message" rows="4" class="input" style="resize:vertical" placeholder="{bt({'en':'Any questions or notes...','es':'Preguntas o notas...'})}"></textarea></div>
+    <button type="submit" class="btn btn-primary" style="width:100%">{bi(UI["lets_do_it"])} ✂</button>
+    <p class="privacy" style="font-size:.76rem;color:var(--mut);text-align:center">{bi({"en":"No spam. We respect your privacy. Same-day response during business hours.","es":"Sin spam. Respetamos tu privacidad. Respuesta el mismo día en horario laboral."})}</p>
+  </form>'''
+
+
+def home_contact_section():
+    """Home-page closing block: the next-class countdown timer, then the SAME contact box as the
+    contact page (First/Last/Phone/Email + Location/Language/Message). Shown on every site, both
+    mobile and desktop."""
+    return f'''<section class="home-contact" id="home-contact"><div class="container">
+  <div class="hc-head center">
+    <div class="eyebrow-acc">{bi({"en":"Seats Fill Fast","es":"Los Cupos se Llenan"})}</div>
+    <h2 style="margin:8px 0 14px">{bi({"en":"The next class is counting down","es":"La próxima clase ya está en cuenta regresiva"})}</h2>
+    {next_class_counter()}
+  </div>
+  <div class="hc-box">
+    <div class="hc-copy">
+      <h3 style="margin:0 0 10px">{bi({"en":"Don't wait — talk to admissions today","es":"No esperes — habla con admisiones hoy"})}</h3>
+      <p style="color:var(--mut);margin-bottom:16px">{bi({"en":"Tell us how to reach you and an ABI advisor calls you back — same day during business hours.","es":"Dinos cómo contactarte y un asesor de ABI te devuelve la llamada — el mismo día en horario laboral."})}</p>
+      <p style="margin-bottom:6px"><a href="tel:{tel(B["phone_manhattan"])}" style="color:var(--accent);font-weight:800;font-size:1.12rem">📞 {B["phone_manhattan"]}</a></p>
+      <p style="color:var(--mut);font-size:.86rem">{bi({"en":"Manhattan &amp; Bronx · Open 7 days","es":"Manhattan y Bronx · Abierto 7 días"})}</p>
+    </div>
+    {lead_form("New ABI website inquiry (home)", form_id="home-lead")}
+  </div>
+</div></section>'''
 
 
 def p_home():
@@ -986,8 +1017,7 @@ def p_home():
     earn = "".join(f'<div class="card"><div class="eyebrow-acc">{bi(t["window"])}</div><h3 style="margin:8px 0">{bi(t["stage"])}</h3><div class="price-tag">{t["range"]}</div></div>' for t in ce["tiers"])
     grads = " · ".join(p["name"] for p in CONTENT["partners"])
     hero_ctas = (f'<div class="hero-ctas"><a class="btn btn-primary" href="/contact">{bi(UI["become_barber"])} ✂</a>'
-                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>'
-                 + next_class_counter())
+                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>')
     return {"path": "/",
             "eyebrow": bi({"en": "NY State Licensed", "es": "Licenciada por el Estado de NY"}),
             "h1": bi(B["tagline"]),
@@ -1209,36 +1239,25 @@ def p_faq():
 
 def p_contact():
     c1, c2 = CONTENT["campuses"]
+    reqs = "".join(f"<li>{bi(r)}</li>" for r in CONTENT["requirements"])
     return {"path": "/contact",
-            "eyebrow": bi({"en": "Contact", "es": "Contacto"}),
-            "h1": bi({"en": "Visit ABI.", "es": "Visita ABI."}),
-            "sub": bi({"en": "Two campuses across NYC. Call, walk in, or send a message — admissions responds same-day.", "es": "Dos campus en NYC. Llama, ven sin cita, o envía un mensaje — admisiones responde el mismo día."}),
-            "body": f'''<section><div class="container"><div class="grid-2">
+            "eyebrow": bi({"en": "Get in Touch", "es": "Ponte en Contacto"}),
+            "h1": bi({"en": "Contact ABI", "es": "Contacta a ABI"}),
+            "sub": bi({"en": "Questions about programs, tuition, schedules, or enrollment? Call, walk in, or send a message — admissions responds same-day.", "es": "¿Preguntas sobre programas, matrícula, horarios o inscripción? Llama, ven sin cita, o envía un mensaje — admisiones responde el mismo día."}),
+            "body": f'''<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Reach Us","es":"Comunícate"})}</div><h2 style="margin-bottom:18px">{bi({"en":"Two campuses across NYC","es":"Dos campus en NYC"})}</h2><div class="grid-2">
 <div class="card"><div class="eyebrow-acc">{bi({"en":"Manhattan Campus","es":"Campus de Manhattan"})}</div><h3 style="margin:8px 0">{bi(c1["name"])} — 48 W 39th St</h3><p style="color:var(--mut);margin-bottom:8px">{c1["address"]}</p>
 <p style="margin-bottom:6px"><a href="tel:{tel(c1["phone"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{c1["phone"]} <span class="lang-en">(English)</span><span class="lang-es">(Inglés)</span></a></p>
 <p style="margin-bottom:6px"><a href="tel:{tel(B["phone_manhattan_es"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{B["phone_manhattan_es"]} <span class="lang-en">(Spanish)</span><span class="lang-es">(Español)</span></a></p>
+<p style="margin-bottom:6px"><a href="mailto:{B["email"]}" style="color:var(--accent);font-weight:700">{B["email"]}</a></p>
 <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi(c1["hours"])}</p>
 <a class="btn btn-primary" href="https://www.google.com/maps?q=48+West+39th+Street+New+York+NY" target="_blank" rel="noopener">{bi(UI["get_directions"])}</a></div>
 <div class="card"><div class="eyebrow-acc">{bi({"en":"Bronx Campus","es":"Campus del Bronx"})}</div><h3 style="margin:8px 0">{bi(c2["name"])} — 121 Westchester Sq</h3><p style="color:var(--mut);margin-bottom:8px">{c2["address"]}</p>
-<p style="margin-bottom:6px"><a href="tel:{tel(c2["phone"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{c2["phone"]}</a></p>
+<p style="margin-bottom:6px"><a href="tel:{tel(c2["phone"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{c2["phone"]} <span class="lang-en">(Bronx)</span><span class="lang-es">(Bronx)</span></a></p>
 <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi(c2["hours"])}</p>
 <a class="btn btn-primary" href="https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY" target="_blank" rel="noopener">{bi(UI["get_directions"])}</a></div>
 </div></div></section>
-<section><div class="container"><div class="card" style="max-width:680px;margin:0 auto"><h2 style="margin-bottom:8px">{bi({"en":"Request information","es":"Solicita información"})}</h2><p style="color:var(--mut);margin-bottom:22px">{bi({"en":"Fill out the form and an ABI admissions agent will call you within 24 hours.","es":"Completa el formulario y un agente de admisiones de ABI te llamará dentro de 24 horas."})}</p><form action="https://formsubmit.co/{B["email"]}" method="POST" class="form-grid" novalidate>
-<input type="hidden" name="_subject" value="New ABI website inquiry">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="{FORM_NEXT}">
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-<div class="row-2"><div class="field-group"><label for="f-first">{bi({"en":"First name","es":"Nombre"})} *</label><input required id="f-first" name="firstName" autocomplete="given-name" placeholder="John / Juan" class="input"></div><div class="field-group"><label for="f-last">{bi({"en":"Last name","es":"Apellido"})} *</label><input required id="f-last" name="lastName" autocomplete="family-name" placeholder="Smith / Garcia" class="input"></div></div>
-<div class="row-2"><div class="field-group"><label for="f-email">Email *</label><input required id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" class="input"></div><div class="field-group"><label for="f-phone">{bi({"en":"Phone","es":"Teléfono"})} *</label><input required id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(212) 555-0123" class="input"></div></div>
-<div class="field-group"><label>{bi({"en":"Preferred language","es":"Idioma preferido"})}</label><div class="radio-row"><label class="radio-pill"><input type="radio" name="lang" value="EN" checked><span>English</span></label><label class="radio-pill"><input type="radio" name="lang" value="ES"><span>Español</span></label></div></div>
-<div class="field-group"><label>{bi({"en":"Best way to reach you","es":"Cómo prefieres que te contactemos"})}</label><div class="radio-row"><label class="radio-pill"><input type="radio" name="contactBy" value="call" checked><span>{bi({"en":"Call","es":"Llamada"})}</span></label><label class="radio-pill"><input type="radio" name="contactBy" value="text"><span>{bi({"en":"Text","es":"Texto"})}</span></label><label class="radio-pill"><input type="radio" name="contactBy" value="email"><span>Email</span></label></div></div>
-<div class="row-2"><div class="field-group"><label for="f-program">{bi({"en":"Program of interest","es":"Programa de interés"})}</label><select id="f-program" name="program" class="input"><option>500-Hour Master Barber (Manhattan)</option><option>500-Hour Master Barber (Bronx)</option><option>50-Hour Refresher</option><option>3-Hour Contagious Diseases</option><option>{bi({"en":"Not sure yet","es":"Aún no estoy seguro"})}</option></select></div><div class="field-group"><label for="f-schedule">{bi({"en":"Preferred schedule","es":"Horario preferido"})}</label><select id="f-schedule" name="schedule" class="input"><option>{bi({"en":"Morning (Mon–Fri 8AM–2PM)","es":"Mañana (Lun–Vie 8AM–2PM)"})}</option><option>{bi({"en":"Afternoon (Mon–Fri 2PM–8PM)","es":"Tarde (Lun–Vie 2PM–8PM)"})}</option><option>{bi({"en":"Weekend (Sat–Sun 9AM–7PM)","es":"Fin de Semana (Sáb–Dom 9AM–7PM)"})}</option><option>{bi({"en":"Flexible","es":"Flexible"})}</option></select></div></div>
-<div class="field-group"><label for="f-funding">{bi({"en":"Funding (optional)","es":"Financiamiento (opcional)"})}</label><select id="f-funding" name="funding" class="input"><option>{bi({"en":"Self-pay / weekly plan","es":"Pago propio / plan semanal"})}</option><option>GI Bill® (Post-9/11 / VR&E / Montgomery / DEA)</option><option>ACCES-VR</option><option>{bi({"en":"Not sure yet","es":"Aún no estoy seguro"})}</option></select></div>
-<div class="field-group"><label for="f-msg">{bi({"en":"What would you like to know?","es":"¿Qué te gustaría saber?"})}</label><textarea id="f-msg" name="message" placeholder="{bt({"en":"Optional — any questions for admissions","es":"Opcional — preguntas para admisiones"})}" rows="4" class="input" style="resize:vertical"></textarea></div>
-<div class="form-cta"><button type="submit" class="btn btn-primary">{bi({"en":"Send to admissions","es":"Enviar a admisiones"})}</button><p class="privacy">{bi({"en":"We respond same-day during business hours. Never spam.","es":"Respondemos el mismo día en horario laboral. Nunca spam."})}</p></div>
-</form></div></div></section>'''}
+<section><div class="container"><div class="card" style="max-width:820px;margin:0 auto"><div class="eyebrow-acc">{bi({"en":"Ready to enroll?","es":"¿Listo para inscribirte?"})}</div><h2 style="margin:8px 0 12px">{bi({"en":"What you'll need to get started","es":"Lo que necesitas para empezar"})}</h2><ul class="list-clean">{reqs}</ul><div class="btn-wrap" style="justify-content:flex-start;margin-top:18px"><a class="btn btn-primary" href="#lead-form">{bi(UI["apply_now"])} ✂</a><a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div></div></div></section>
+<section id="lead-form"><div class="container"><div class="card" style="max-width:680px;margin:0 auto"><div class="eyebrow-acc center">{bi({"en":"Send a Message","es":"Envía un Mensaje"})}</div><h2 style="margin:8px 0 8px;text-align:center">{bi({"en":"How can we help?","es":"¿Cómo podemos ayudarte?"})}</h2><p style="color:var(--mut);margin:0 auto 22px;text-align:center;max-width:520px">{bi({"en":"Fill out the form and an ABI admissions agent will get back to you — same day during business hours.","es":"Completa el formulario y un agente de admisiones de ABI te contactará — el mismo día en horario laboral."})}</p>{lead_form("New ABI website inquiry (contact page)", form_id="contact-lead")}</div></div></section>'''}
 
 
 PAGE_BUILDERS = {
