@@ -84,31 +84,20 @@ SITE_CSS = (
 
     # ===== MOBILE / RESPONSIVENESS FIXES =====
 
-    # FIX 1 (sticky-call bar): the engine's body{animation:pageIn ... both} leaves a
-    # residual identity transform on <body>, which turns <body> into the containing
-    # block for position:fixed children -> the sticky call bar drops to page bottom.
-    # Override with an opacity-only page-in so no transform persists on <body>.
-    "@media (prefers-reduced-motion:no-preference){"
-    "body.hfx-vapor{animation:vaporIn .42s cubic-bezier(.2,.8,.2,1) both}"
-    "@keyframes vaporIn{from{opacity:0}to{opacity:1}}}"
-    # Belt-and-suspenders: guarantee no transform lingers on <body>.
-    "body.hfx-vapor{transform:none}"
+    # NOTE: the engine now fixes two issues globally, so the local patches that used
+    # to live here have been REMOVED to avoid double-up:
+    #   * sticky-call bar: engine's page-in is opacity-only (no transform persists on
+    #     <body>), so position:fixed children anchor to the viewport correctly.
+    #   * nav drawer gap: engine anchors .primary-nav at top:100% (max-width:1280px).
+    # Only the two genuinely vapor-specific fixes below remain.
 
-    # FIX 2 (nav drawer gap): <header> has backdrop-filter, making it the containing
-    # block for its position:fixed .primary-nav child. The engine's --nav-top
-    # (a viewport coordinate) then mis-anchors the drawer by the top-banner height.
-    # Anchor the drawer flush to the header's own bottom edge instead.
-    "@media (max-width:1180px){"
-    ".site-header .primary-nav{top:calc(100% + 1px);max-height:calc(100dvh - 100%);"
-    "max-height:calc(100svh - 100%)}}"
-
-    # FIX 3 (vhs-flip media projection): rotateX(-25deg) projects tiles a few px past
+    # FIX A (vhs-flip media projection): rotateX(-25deg) projects tiles a few px past
     # their container. Body overflow-x:hidden already prevents scroll, but clip the
     # media band so the projection never grazes the viewport edge on small screens.
     "@media (max-width:760px){.media-band{overflow-x:clip}"
     ".ms-vhs-flip .m-grid{overflow:visible}}"
 
-    # FIX 4 (vapor-shadow H1 legibility): the 3px/-2px double offset reads as a heavy
+    # FIX B (vapor-shadow H1 legibility): the 3px/-2px double offset reads as a heavy
     # ghost at mobile heading sizes. Tighten offsets progressively so the H1 stays
     # crisp and inside its container at 360px (contrast itself already passes AA).
     "@media (max-width:600px){"

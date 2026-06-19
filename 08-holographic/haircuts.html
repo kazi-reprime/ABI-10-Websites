@@ -82,8 +82,8 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .cta-call .cta-flag{font-size:.66rem;padding:2px 7px;border:1.5px solid currentColor;border-radius:999px;font-weight:900;letter-spacing:.08em}
 .cta-call .cta-label{font-size:.78rem;font-weight:700;letter-spacing:.04em}
 .cta-call .cta-num{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.86rem;font-weight:900}
-.lang-toggle{display:inline-flex;align-items:stretch;height:38px;border-radius:999px;border:2px solid currentColor;overflow:hidden}
-.lang-toggle button{background:transparent;border:0;color:inherit;padding:0 14px;min-width:44px;cursor:pointer;font-weight:900;letter-spacing:.12em;font-family:inherit;font-size:.78rem}
+.lang-toggle{display:inline-flex;align-items:stretch;min-height:44px;border-radius:999px;border:2px solid currentColor;overflow:hidden}
+.lang-toggle button{background:transparent;border:0;color:inherit;padding:0 14px;min-width:44px;min-height:44px;cursor:pointer;font-weight:900;letter-spacing:.12em;font-family:inherit;font-size:.78rem}
 .lang-toggle button.active{background:rgba(0,0,0,.35)}
 
 /* ---- header ---- */
@@ -105,7 +105,7 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 
 /* ---- mobile nav drawer: anchored under the header via JS-measured --nav-top
    (robust to the top-banner wrapping to multiple rows on small screens) ---- */
-@media (max-width:1180px){
+@media (max-width:1280px){
   .primary-nav{position:fixed;left:0;right:0;top:100%;z-index:29;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px calc(24px + var(--safe-bottom));max-height:calc(100dvh - 100%);overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility .25s;box-shadow:0 24px 48px rgba(0,0,0,.5)}
   .primary-nav.open{opacity:1;visibility:visible;transform:none}
   .primary-nav a{padding:15px 8px;border-bottom:1px solid var(--line);font-size:1.02rem;min-height:54px;width:100%}
@@ -116,13 +116,13 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
   .header-inner{height:62px;padding:0 14px}
   .top-banner{padding:8px 10px calc(8px + var(--safe-top));gap:6px}
   .promo-line{font-size:.66rem}
-  .cta-call{padding:7px 12px;min-height:40px;font-size:.76rem;gap:6px}
+  .cta-call{padding:7px 12px;min-height:44px;font-size:.76rem;gap:6px}
 }
 @media (max-width:480px){
   .header-inner{height:58px;padding:0 12px}
   .brand-name .brand-line2{display:none}
   .top-banner{padding:7px 8px calc(7px + var(--safe-top));gap:5px}
-  .cta-call{padding:6px 10px;min-height:38px;font-size:.72rem}
+  .cta-call{padding:6px 10px;min-height:44px;font-size:.72rem}
   .cta-call .cta-label{display:none}
   .cta-call .cta-num{font-size:.78rem}
   .cta-call .cta-flag{font-size:.6rem;padding:1px 5px}
@@ -309,7 +309,7 @@ details.card[open] summary::after{transform:rotate(45deg)}
       <img src="https://assets-lilac-five.vercel.app/logos/abi_crest_logo_design.jpeg" alt="ABI">
       <span class="brand-name"><span class="brand-line1">American Barber</span><span class="brand-line2">Institute</span></span>
     </a>
-    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement" class=""><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts" class="active"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
+    <nav class="primary-nav" id="primary-nav"><a href="/" class=""><span class="lang-en">Home</span><span class="lang-es">Inicio</span></a><a href="/about" class=""><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs" class=""><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources" class=""><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq" class=""><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement" class=""><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts" class="active"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery" class=""><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/blog" class=""><span class="lang-en">Blog</span><span class="lang-es">Blog</span></a><a href="/partners" class=""><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors" class=""><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact" class=""><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></nav>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -351,7 +351,7 @@ details.card[open] summary::after{transform:rotate(45deg)}
       </div>
       <div>
         <h4><span class="lang-en">Links</span><span class="lang-es">Enlaces</span></h4>
-        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement"><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+        <a href="/about"><span class="lang-en">About</span><span class="lang-es">Acerca de</span></a><a href="/programs"><span class="lang-en">Programs</span><span class="lang-es">Programas</span></a><a href="/resources"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></a><a href="/faq"><span class="lang-en">FAQs</span><span class="lang-es">Preguntas Frecuentes</span></a><a href="/job-placement"><span class="lang-en">Jobs</span><span class="lang-es">Empleos</span></a><a href="/haircuts"><span class="lang-en">Haircuts</span><span class="lang-es">Cortes de Cabello</span></a><a href="/gallery"><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a><a href="/blog"><span class="lang-en">Blog</span><span class="lang-es">Blog</span></a><a href="/partners"><span class="lang-en">Partners</span><span class="lang-es">Aliados</span></a><a href="/instructors"><span class="lang-en">Instructors</span><span class="lang-es">Instructores</span></a><a href="/contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
       </div>
       <div>
         <h4><span class="lang-en">Locations</span><span class="lang-es">Ubicaciones</span></h4>
@@ -411,7 +411,7 @@ details.card[open] summary::after{transform:rotate(45deg)}
     });
     nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-    window.addEventListener('resize', function(){ setNavTop(); if (window.innerWidth > 1180) close(); });
+    window.addEventListener('resize', function(){ setNavTop(); if (window.innerWidth > 1280) close(); });
   }
 
   if (document.querySelector('.deco-spotlight')){

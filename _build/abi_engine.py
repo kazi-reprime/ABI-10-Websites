@@ -36,8 +36,8 @@ def bi(d) -> str:
 NAV_ITEMS = [
     ("home", "/"), ("about", "/about"), ("programs", "/programs"), ("resources", "/resources"),
     ("faq", "/faq"), ("jobplacement", "/job-placement"), ("haircuts", "/haircuts"),
-    ("gallery", "/gallery"), ("partners", "/partners"), ("instructors", "/instructors"),
-    ("contact", "/contact"),
+    ("gallery", "/gallery"), ("blog", "/blog"), ("partners", "/partners"),
+    ("instructors", "/instructors"), ("contact", "/contact"),
 ]
 PAGE_ORDER = [k for k, _ in NAV_ITEMS]
 
@@ -53,6 +53,7 @@ PAGE_TITLES = {
     "/job-placement": "Barber Job Placement · American Barber Institute NYC",
     "/haircuts": "Student Haircuts · American Barber Institute · NYC",
     "/gallery": "Gallery · American Barber Institute",
+    "/blog": "ABI Journal · Barbering Tips, News & Career Advice · American Barber Institute",
     "/partners": "Partner Shops · American Barber Institute",
     "/instructors": "Instructors · American Barber Institute",
     "/contact": "Contact · American Barber Institute · NYC",
@@ -93,6 +94,7 @@ MEDIA_HEADINGS = {
     "programs": {"eyb": {"en": "In training", "es": "En entrenamiento"}, "h2": {"en": "What your day looks like", "es": "Cómo es tu día"}, "p": {"en": "Hands-on from week one — fades, beard work, straight-razor, and the full board-exam path.", "es": "Práctico desde la primera semana — degradados, barba, navaja y el camino completo al examen."}},
     "instructors": {"eyb": {"en": "Masters at work", "es": "Maestros en acción"}, "h2": {"en": "Learn beside the best", "es": "Aprende junto a los mejores"}, "p": {"en": "Master barbers on the floor with you, every cut, every day.", "es": "Maestros barberos en el piso contigo, en cada corte, cada día."}},
     "gallery": {"eyb": {"en": "More from the shop", "es": "Más de la barbería"}, "h2": {"en": "In motion", "es": "En movimiento"}, "p": {"en": "Clips and frames from the clinic, the classroom, and graduation day.", "es": "Clips e imágenes de la clínica, el aula y el día de graduación."}},
+    "blog": {"eyb": {"en": "From the floor", "es": "Desde el piso"}, "h2": {"en": "Where the stories happen", "es": "Donde nacen las historias"}, "p": {"en": "The clinic, the chairs, and the careers our articles are written about.", "es": "La clínica, los sillones y las carreras sobre las que escribimos."}},
     "partners": {"eyb": {"en": "The network", "es": "La red"}, "h2": {"en": "Where the craft leads", "es": "A dónde lleva el oficio"}, "p": {"en": "From our chairs to shops across the five boroughs and beyond.", "es": "De nuestras sillas a barberías en los cinco condados y más allá."}},
     "haircuts": {"eyb": {"en": "See a cut in action", "es": "Mira un corte en acción"}, "h2": {"en": "Fresh cuts, real students", "es": "Cortes frescos, estudiantes reales"}, "p": {"en": "Every cut in our student clinic is supervised by a NY-licensed instructor.", "es": "Cada corte en nuestra clínica estudiantil es supervisado por un instructor licenciado de NY."}},
     "jobplacement": {"eyb": {"en": "Chair to career", "es": "De la silla a la carrera"}, "h2": {"en": "Built to work", "es": "Listos para trabajar"}, "p": {"en": "Graduates step straight onto working floors across New York.", "es": "Los graduados pasan directo a pisos de trabajo en Nueva York."}},
@@ -203,8 +205,8 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .cta-call .cta-flag{font-size:.66rem;padding:2px 7px;border:1.5px solid currentColor;border-radius:999px;font-weight:900;letter-spacing:.08em}
 .cta-call .cta-label{font-size:.78rem;font-weight:700;letter-spacing:.04em}
 .cta-call .cta-num{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.86rem;font-weight:900}
-.lang-toggle{display:inline-flex;align-items:stretch;height:38px;border-radius:999px;border:2px solid currentColor;overflow:hidden}
-.lang-toggle button{background:transparent;border:0;color:inherit;padding:0 14px;min-width:44px;cursor:pointer;font-weight:900;letter-spacing:.12em;font-family:inherit;font-size:.78rem}
+.lang-toggle{display:inline-flex;align-items:stretch;min-height:44px;border-radius:999px;border:2px solid currentColor;overflow:hidden}
+.lang-toggle button{background:transparent;border:0;color:inherit;padding:0 14px;min-width:44px;min-height:44px;cursor:pointer;font-weight:900;letter-spacing:.12em;font-family:inherit;font-size:.78rem}
 .lang-toggle button.active{background:rgba(0,0,0,.35)}
 
 /* ---- header ---- */
@@ -226,7 +228,7 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 
 /* ---- mobile nav drawer: anchored under the header via JS-measured --nav-top
    (robust to the top-banner wrapping to multiple rows on small screens) ---- */
-@media (max-width:1180px){
+@media (max-width:1280px){
   .primary-nav{position:fixed;left:0;right:0;top:100%;z-index:29;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px calc(24px + var(--safe-bottom));max-height:calc(100dvh - 100%);overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility .25s;box-shadow:0 24px 48px rgba(0,0,0,.5)}
   .primary-nav.open{opacity:1;visibility:visible;transform:none}
   .primary-nav a{padding:15px 8px;border-bottom:1px solid var(--line);font-size:1.02rem;min-height:54px;width:100%}
@@ -237,13 +239,13 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
   .header-inner{height:62px;padding:0 14px}
   .top-banner{padding:8px 10px calc(8px + var(--safe-top));gap:6px}
   .promo-line{font-size:.66rem}
-  .cta-call{padding:7px 12px;min-height:40px;font-size:.76rem;gap:6px}
+  .cta-call{padding:7px 12px;min-height:44px;font-size:.76rem;gap:6px}
 }
 @media (max-width:480px){
   .header-inner{height:58px;padding:0 12px}
   .brand-name .brand-line2{display:none}
   .top-banner{padding:7px 8px calc(7px + var(--safe-top));gap:5px}
-  .cta-call{padding:6px 10px;min-height:38px;font-size:.72rem}
+  .cta-call{padding:6px 10px;min-height:44px;font-size:.72rem}
   .cta-call .cta-label{display:none}
   .cta-call .cta-num{font-size:.78rem}
   .cta-call .cta-flag{font-size:.6rem;padding:1px 5px}
@@ -607,7 +609,7 @@ JS = r'''<script>
     });
     nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-    window.addEventListener('resize', function(){ setNavTop(); if (window.innerWidth > 1180) close(); });
+    window.addEventListener('resize', function(){ setNavTop(); if (window.innerWidth > 1280) close(); });
   }
 
   if (document.querySelector('.deco-spotlight')){
@@ -861,6 +863,34 @@ def p_gallery():
             "body": f'<section><div class="container"><div class="gallery-grid">{tiles}</div></div></section>'}
 
 
+def p_blog():
+    bl = CONTENT["blog"]
+    fe = bl["featured"]
+    highlights = "".join(
+        f'<a class="card" href="/programs" style="display:block"><div class="eyebrow-acc">{bi(h["tag"])}</div>'
+        f'<h3 style="margin:8px 0">{bi(h["title"])}</h3><p style="color:var(--mut);margin-bottom:10px">{bi(h["desc"])}</p>'
+        f'<p style="color:var(--accent);font-weight:800;font-size:.86rem">{bi(h["meta"])} · {bi({"en":"Explore program →","es":"Ver programa →"})}</p></a>'
+        for h in bl["highlights"]
+    )
+    articles = "".join(
+        f'<article class="card"><div class="eyebrow-acc">{bi(a["date"])}</div>'
+        f'<h3 style="margin:8px 0">{bi(a["title"])}</h3>'
+        f'<p style="color:var(--mut);font-size:.94rem">{bi(a["excerpt"])}</p></article>'
+        for a in bl["articles"]
+    )
+    return {"path": "/blog",
+            "eyebrow": bi(bl["eyebrow"]),
+            "h1": bi(bl["headline"]),
+            "sub": bi(bl["intro"]),
+            "body": f'''<section><div class="container"><div class="card" style="border-color:var(--accent)">
+<div class="eyebrow-acc">{bi({"en":"Featured · Latest Article","es":"Destacado · Último Artículo"})}</div>
+<h2 style="margin:10px 0">{bi(fe["title"])}</h2>
+<p style="color:var(--accent);font-weight:700;font-size:.84rem;margin-bottom:12px">{bi(fe["date"])} · {bi(fe["read"])}</p>
+<p style="color:var(--mut);max-width:760px">{bi(fe["excerpt"])}</p></div></div></section>
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"From the programs","es":"De los programas"})}</div><h2 style="margin-bottom:16px">{bi({"en":"Built around real training","es":"Basado en entrenamiento real"})}</h2><div class="grid-2">{highlights}</div></div></section>
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Latest articles","es":"Últimos artículos"})}</div><h2 style="margin-bottom:18px">{bi({"en":"More from the journal","es":"Más del diario"})}</h2><div class="grid">{articles}</div></div></section>'''}
+
+
 def p_partners():
     cards = "".join(f'<div class="card partner-card"><div class="img-wrap"><img src="/assets/img/{PARTNER_IMGS[i % len(PARTNER_IMGS)]}" loading="lazy" alt="{p["name"]}"><div class="partner-name">{p["name"]}</div></div><div class="body"><div class="locations">{p["locations"]}</div><p class="desc">{bi(p["desc"])}</p><p class="why">→ {bi(p["why"])}</p></div></div>' for i, p in enumerate(CONTENT["partners"]))
     return {"path": "/partners",
@@ -926,6 +956,7 @@ PAGE_BUILDERS = {
     "jobplacement": ("job-placement.html", p_jobplacement),
     "haircuts": ("haircuts.html", p_haircuts),
     "gallery": ("gallery.html", p_gallery),
+    "blog": ("blog.html", p_blog),
     "partners": ("partners.html", p_partners),
     "instructors": ("instructors.html", p_instructors),
     "contact": ("contact.html", p_contact),
@@ -968,4 +999,4 @@ def build_site(tokens, site, extra_css=""):
         {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
         {"source": "/(.*).html", "headers": [{"key": "Cache-Control", "value": "public, max-age=300, must-revalidate"}]},
     ]}, indent=2))
-    print(f"  OK {slug}: 11 pages (home templated), mobile-first responsive")
+    print(f"  OK {slug}: 12 pages (home + blog templated), mobile-first responsive")

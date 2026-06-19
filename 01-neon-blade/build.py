@@ -61,28 +61,26 @@ SITE_CSS = r"""
    01-neon-blade — unique polish + responsive fixes (SITE_CSS)
    ============================================================ */
 
-/* --- FIX 1: mobile nav drawer anchoring -----------------------------------
-   .site-header has backdrop-filter, which makes it the containing block for
-   the position:fixed .primary-nav drawer. The engine's --nav-top is measured
-   from the VIEWPORT, so it double-counts the header offset and the drawer
-   renders ~135px too low. Anchoring at top:100% of the header (its own bottom
-   edge) is correct inside that containing block and is robust to the promo
-   banner wrapping to multiple rows. Scoped to the engine's drawer breakpoint. */
-@media (max-width:1180px){
+/* --- FIX 1: mobile drawer anchoring (belt-and-suspenders) -----------------
+   The engine already flips .primary-nav to a fixed drawer anchored at top:100%
+   for max-width:1280px. .site-header has backdrop-filter, making it the
+   containing block for the fixed drawer, so top:100% == the header's own bottom
+   edge — correct and robust to the promo banner wrapping to multiple rows. We
+   re-assert top:100% across the FULL engine drawer range so the anchoring holds
+   even if upstream spacing changes. */
+@media (max-width:1280px){
   .primary-nav{top:100%;max-height:calc(100dvh - 100%)}
 }
 
-/* --- FIX 2: desktop nav-clip (1101-1280px) --------------------------------
-   The 11-item nav (flex:1; flex-wrap:nowrap) clips its rightmost links before
-   the hamburger appears. Allow a graceful, scrollbar-less horizontal scroll
-   and tighten spacing so no link is ever silently hidden. */
-@media (min-width:1101px){
+/* --- FIX 2: desktop 12-item nav anti-clip (>=1281px) ----------------------
+   At >=1281px the engine renders all 12 links inline (flex:1; flex-wrap:nowrap).
+   On the narrowest desktop widths the rightmost links can crowd, so allow a
+   graceful, scrollbar-less horizontal scroll as a safety net — no link is ever
+   silently hidden. (Below 1281px the engine drawer takes over, so this never
+   affects mobile.) */
+@media (min-width:1281px){
   .primary-nav{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none}
   .primary-nav::-webkit-scrollbar{display:none}
-}
-@media (min-width:1101px) and (max-width:1280px){
-  .primary-nav{gap:2px}
-  .primary-nav a{padding:8px 7px;font-size:.78rem;letter-spacing:0}
 }
 
 /* --- POLISH 1: unique cyberpunk neon EN/ES segmented toggle ---------------
@@ -90,7 +88,7 @@ SITE_CSS = r"""
    clipped corners. Restyles only .lang-toggle; no markup/JS changes. */
 .lang-toggle{
   position:relative;display:inline-flex;align-items:stretch;
-  height:38px;padding:2px;gap:2px;border-radius:10px;overflow:hidden;
+  height:44px;min-height:44px;padding:2px;gap:2px;border-radius:10px;overflow:hidden;
   background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 7%,transparent),color-mix(in srgb,var(--accent2) 6%,transparent));
   border:1.5px solid color-mix(in srgb,var(--accent) 55%,transparent);
   box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent),
@@ -102,7 +100,7 @@ SITE_CSS = r"""
 .lang-toggle button{
   position:relative;z-index:1;background:transparent;border:0;
   color:color-mix(in srgb,var(--accent) 78%,var(--ink));
-  padding:0 14px;min-width:44px;cursor:pointer;
+  padding:0 14px;min-width:44px;min-height:40px;cursor:pointer;
   font-weight:900;letter-spacing:.18em;font-family:inherit;font-size:.74rem;
   border-radius:8px;text-shadow:0 0 6px color-mix(in srgb,var(--accent) 35%,transparent);
   transition:color .22s ease,text-shadow .22s ease,background .22s ease
