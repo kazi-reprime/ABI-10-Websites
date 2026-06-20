@@ -1016,7 +1016,8 @@ def hero_form_card(form_id, subject):
     <div class="hff-head">
       <div class="eyebrow-acc">{bi({"en":"Get Started","es":"Empieza Hoy"})}</div>
       <h3 style="margin:6px 0 4px">{bi({"en":"Talk to admissions today","es":"Habla con admisiones hoy"})}</h3>
-      <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi({"en":"Free info — an ABI advisor calls you back, same day during business hours.","es":"Información gratis — un asesor de ABI te llama, el mismo día en horario laboral."})}</p>
+      <p style="color:var(--mut);font-size:.9rem;margin-bottom:12px">{bi({"en":"Free info — an ABI advisor calls you back, same day during business hours.","es":"Información gratis — un asesor de ABI te llama, el mismo día en horario laboral."})}</p>
+      {next_class_counter(center=False)}
     </div>
     {lead_form(subject, form_id=form_id)}
   </div></aside>'''
@@ -1053,8 +1054,7 @@ def p_home():
     earn = "".join(f'<div class="card"><div class="eyebrow-acc">{bi(t["window"])}</div><h3 style="margin:8px 0">{bi(t["stage"])}</h3><div class="price-tag">{t["range"]}</div></div>' for t in ce["tiers"])
     grads = " · ".join(p["name"] for p in CONTENT["partners"])
     hero_ctas = (f'<div class="hero-ctas"><a class="btn btn-primary" href="/contact">{bi(UI["become_barber"])} ✂</a>'
-                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>'
-                 + next_class_counter(center=False))
+                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>')
     return {"path": "/",
             "eyebrow": bi({"en": "Next start: Monday, July 6, 2026", "es": "Próximo inicio: Lunes, 6 de julio de 2026"}),
             "h1": bi(B["tagline"]),
