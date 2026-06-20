@@ -30,7 +30,7 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NKLLGPC');</script>
 <style>:root{--bg:#05060a;--bg2:#0a0d18;--ink:#e9ecff;--mut:#8b91b8;--accent:#00f0ff;--accent2:#ff2bd6;--accent3:#7b5cff;--line:rgba(123,92,255,.18);--glass:rgba(18,22,40,.55);--card-r:14px;--btn-r:46px;--font-body:'Segoe UI',system-ui,sans-serif;--font-head:'Arial Black','Segoe UI',sans-serif;--head-ls:-.02em;--head-lh:1;--ribbon-bg:linear-gradient(90deg,#ff2bd6,#7b5cff,#00f0ff);--ribbon-color:#04060c;--touch:48px;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;overflow-x:clip}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;font-size:16px;overflow-x:hidden;width:100%;max-width:100%;min-height:100vh;min-height:100svh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-bottom:calc(82px + var(--safe-bottom))}
 @media (min-width:981px){body{padding-bottom:0}}
 body.nav-open{overflow:hidden}
@@ -284,7 +284,7 @@ body.nav-open .sticky-call{display:none!important}
 }
 
 /* ---- media band ---- */
-.media-band{position:relative;z-index:2;padding:clamp(34px,6vw,72px) 0}
+.media-band{position:relative;z-index:2;padding:clamp(34px,6vw,72px) 0;overflow-x:clip}
 .media-band .m-head{max-width:760px;margin:0 auto clamp(18px,3vw,34px);text-align:center}
 .media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}
 .media-band .m-head h2{margin:10px 0}

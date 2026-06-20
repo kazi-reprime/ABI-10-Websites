@@ -165,7 +165,7 @@ def root_vars(t):
 
 CSS_BASE = r"""
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;overflow-x:clip}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;font-size:16px;overflow-x:hidden;width:100%;max-width:100%;min-height:100vh;min-height:100svh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-bottom:calc(82px + var(--safe-bottom))}
 @media (min-width:981px){body{padding-bottom:0}}
 body.nav-open{overflow:hidden}
@@ -419,7 +419,7 @@ body.nav-open .sticky-call{display:none!important}
 }
 
 /* ---- media band ---- */
-.media-band{position:relative;z-index:2;padding:clamp(34px,6vw,72px) 0}
+.media-band{position:relative;z-index:2;padding:clamp(34px,6vw,72px) 0;overflow-x:clip}
 .media-band .m-head{max-width:760px;margin:0 auto clamp(18px,3vw,34px);text-align:center}
 .media-band .m-head .eyb{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}
 .media-band .m-head h2{margin:10px 0}
