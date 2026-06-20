@@ -1,0 +1,240 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: Start Your Barber Journey Today for Only $150 per Week*
+    - link "Call English admissions" [ref=e4] [cursor=pointer]:
+      - /url: tel:2122902289
+      - generic [ref=e5]: EN
+      - generic [ref=e6]: Call Admissions
+      - generic [ref=e7]: (212) 290-2289
+    - link "Call Spanish admissions" [ref=e8] [cursor=pointer]:
+      - /url: tel:2122900278
+      - generic [ref=e9]: ES
+      - generic [ref=e10]: En Español
+      - generic [ref=e11]: (212) 290-0278
+  - banner [ref=e12]:
+    - generic [ref=e13]:
+      - link "American Barber Institute home" [ref=e14] [cursor=pointer]:
+        - /url: /
+        - img "American Barber Institute — New York's dedicated barber school" [ref=e16]
+      - group "Language / Idioma" [ref=e17]:
+        - button "English" [ref=e18] [cursor=pointer]: EN
+        - button "Español" [ref=e19] [cursor=pointer]: ES
+      - button "Open menu" [ref=e20] [cursor=pointer]
+  - main [ref=e24]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: ◉Get in Touch
+        - heading "Contact ABI" [level=1] [ref=e30]
+        - paragraph [ref=e31]: Questions about programs, tuition, schedules, or enrollment? Call, walk in, or send a message — admissions responds same-day.
+      - complementary [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - generic [ref=e35]: // Get Started
+            - heading "Talk to admissions today" [level=3] [ref=e36]
+            - paragraph [ref=e37]: Free info — an ABI advisor calls you back, same day during business hours.
+          - generic [ref=e38]:
+            - textbox [ref=e39]
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - generic [ref=e42]: First Name *
+                - textbox "First Name *" [ref=e43]:
+                  - /placeholder: First name / Nombre
+              - generic [ref=e44]:
+                - generic [ref=e45]: Last Name *
+                - textbox "Last Name *" [ref=e46]:
+                  - /placeholder: Last name / Apellido
+            - generic [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: Phone *
+                - textbox "Phone *" [ref=e50]:
+                  - /placeholder: (212) 555-0123
+              - generic [ref=e51]:
+                - generic [ref=e52]: Email
+                - textbox "Email" [ref=e53]:
+                  - /placeholder: example@gmail.com
+            - generic [ref=e54]:
+              - generic [ref=e55]:
+                - generic [ref=e56]: Preferred Location
+                - combobox "Preferred Location" [ref=e57]:
+                  - option "Select a location / Selecciona una ubicación" [selected]
+                  - option "Manhattan — 48 West 39th Street"
+                  - option "Bronx — 121 Westchester Square"
+                  - option "No preference / Sin preferencia"
+              - generic [ref=e58]:
+                - generic [ref=e59]: Preferred Language
+                - combobox "Preferred Language" [ref=e60]:
+                  - option "Select a language / Selecciona un idioma" [selected]
+                  - option "English"
+                  - option "Spanish / Español"
+            - generic [ref=e61]:
+              - generic [ref=e62]: Message for ABI
+              - textbox "Message for ABI" [ref=e63]:
+                - /placeholder: Any questions or notes... / Preguntas o notas...
+            - button "Let's Do It ✂" [ref=e64] [cursor=pointer]:
+              - generic [ref=e65]: Let's Do It
+              - text: ✂
+            - paragraph [ref=e66]: No spam. We respect your privacy. Same-day response during business hours.
+    - generic [ref=e68]:
+      - generic [ref=e69]: // Reach Us
+      - heading "Two campuses across NYC" [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]: // Manhattan Campus
+          - heading "Manhattan — 48 W 39th St" [level=3] [ref=e74]
+          - paragraph [ref=e75]: 48 West 39th Street, New York, NY 10018
+          - paragraph [ref=e76]:
+            - link "(212) 290-2289 (English)" [ref=e77] [cursor=pointer]:
+              - /url: tel:2122902289
+          - paragraph [ref=e78]:
+            - link "(212) 290-0278 (Spanish)" [ref=e79] [cursor=pointer]:
+              - /url: tel:2122900278
+          - paragraph [ref=e80]:
+            - link "admission@abi.edu" [ref=e81] [cursor=pointer]:
+              - /url: mailto:admission@abi.edu
+          - paragraph [ref=e82]: Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM
+          - link "Get Directions" [ref=e83] [cursor=pointer]:
+            - /url: https://www.google.com/maps?q=48+West+39th+Street+New+York+NY
+            - generic [ref=e84]: Get Directions
+        - generic [ref=e85]:
+          - generic [ref=e86]: // Bronx Campus
+          - heading "Bronx — 121 Westchester Sq" [level=3] [ref=e87]
+          - paragraph [ref=e88]: 121 Westchester Square, Bronx, NY 10461
+          - paragraph [ref=e89]:
+            - link "(718) 676-0640 (Bronx)" [ref=e90] [cursor=pointer]:
+              - /url: tel:7186760640
+          - paragraph [ref=e91]: Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM
+          - link "Get Directions" [ref=e92] [cursor=pointer]:
+            - /url: https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY
+            - generic [ref=e93]: Get Directions
+    - generic [ref=e96]:
+      - generic [ref=e97]: // Ready to enroll?
+      - heading "What you'll need to get started" [level=2] [ref=e98]
+      - list [ref=e99]:
+        - listitem [ref=e100]: ▸ Social Security card
+        - listitem [ref=e101]: ▸ High School Diploma, GED, or pass the ATB exam at ABI
+        - listitem [ref=e102]: ▸ Minimum age 17
+        - listitem [ref=e103]: ▸ Proof of residential address
+        - listitem [ref=e104]: ▸ Valid photo ID or driver's license
+        - listitem [ref=e105]: ▸ $500 down payment (includes $100 registration fee)
+      - generic [ref=e106]:
+        - link "Apply Now ✂" [ref=e107] [cursor=pointer]:
+          - /url: "#contact-lead"
+          - generic [ref=e108]: Apply Now
+          - text: ✂
+        - link "View All Programs" [ref=e109] [cursor=pointer]:
+          - /url: /programs
+          - generic [ref=e110]: View All Programs
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - generic [ref=e114]: Come see us
+        - heading "Two campuses, one craft" [level=2] [ref=e115]
+        - paragraph [ref=e116]: Walk in, watch a cut, and meet the team in Manhattan or the Bronx.
+      - generic [ref=e117]:
+        - figure "Men posing near window" [ref=e118]:
+          - generic "Men posing near window" [ref=e119]
+          - generic [ref=e120]: Men posing near window
+        - figure "American Barber Institute" [ref=e121]:
+          - img "American Barber Institute" [ref=e122]
+          - generic [ref=e123]: American Barber Institute
+        - figure "American Barber Institute" [ref=e124]:
+          - img "American Barber Institute" [ref=e125]
+          - generic [ref=e126]: American Barber Institute
+        - figure "American Barber Institute" [ref=e127]:
+          - img "American Barber Institute" [ref=e128]
+          - generic [ref=e129]: American Barber Institute
+    - generic [ref=e131]:
+      - generic [ref=e132]: // Ready to Begin?
+      - heading "Ready to Start Your Barber Career?" [level=2] [ref=e133]
+      - paragraph [ref=e134]: New classes begin the first Monday of every month. Apply today and take the first step toward your new career.
+      - generic [ref=e135]:
+        - link "Become a Barber ✂" [ref=e136] [cursor=pointer]:
+          - /url: /contact
+          - generic [ref=e137]: Become a Barber
+          - text: ✂
+        - link "Call Admissions · (212) 290-2289" [ref=e138] [cursor=pointer]:
+          - /url: tel:2122902289
+          - generic [ref=e139]: Call Admissions
+          - text: · (212) 290-2289
+  - contentinfo [ref=e140]:
+    - generic [ref=e141]:
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - img "American Barber Institute" [ref=e145]
+          - heading "American Barber Institute" [level=4] [ref=e146]
+          - paragraph [ref=e147]: New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.
+          - paragraph [ref=e148]: GI Bill® · ACCES-VR · VA benefits accepted.
+          - generic [ref=e149]:
+            - link "Facebook" [ref=e150] [cursor=pointer]:
+              - /url: https://www.facebook.com/Abi.Education/
+              - text: f
+            - link "Instagram" [ref=e151] [cursor=pointer]:
+              - /url: https://www.instagram.com/americanbarberinstitute/
+              - text: IG
+            - link "YouTube" [ref=e152] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ
+              - text: YT
+            - link "X" [ref=e153] [cursor=pointer]:
+              - /url: https://x.com/amerbarberedu
+            - link "Pinterest" [ref=e154] [cursor=pointer]:
+              - /url: https://www.pinterest.com/alexzholendz/american-barber-institute/
+              - text: P
+        - generic [ref=e155]:
+          - heading "Links" [level=4] [ref=e156]
+          - link "About" [ref=e157] [cursor=pointer]:
+            - /url: /about
+          - link "Programs" [ref=e158] [cursor=pointer]:
+            - /url: /programs
+          - link "Resources" [ref=e159] [cursor=pointer]:
+            - /url: /resources
+          - link "FAQs" [ref=e160] [cursor=pointer]:
+            - /url: /faq
+          - link "Jobs" [ref=e161] [cursor=pointer]:
+            - /url: /job-placement
+          - link "Haircuts" [ref=e162] [cursor=pointer]:
+            - /url: /haircuts
+          - link "Gallery" [ref=e163] [cursor=pointer]:
+            - /url: /gallery
+          - link "Blog" [ref=e164] [cursor=pointer]:
+            - /url: /blog
+          - link "Partners" [ref=e165] [cursor=pointer]:
+            - /url: /partners
+          - link "Instructors" [ref=e166] [cursor=pointer]:
+            - /url: /instructors
+          - link "Contact" [ref=e167] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=e168]:
+          - heading "Locations" [level=4] [ref=e169]
+          - paragraph [ref=e170]:
+            - text: Manhattan
+            - text: 48 West 39th Street
+            - text: New York, NY 10018
+          - paragraph [ref=e171]:
+            - text: Bronx
+            - text: 121 Westchester Square
+            - text: Bronx, NY 10461
+        - generic [ref=e172]:
+          - heading "Contact" [level=4] [ref=e173]
+          - link "(212) 290-2289 (English)" [ref=e174] [cursor=pointer]:
+            - /url: tel:2122902289
+          - link "(212) 290-0278 (Español)" [ref=e175] [cursor=pointer]:
+            - /url: tel:2122900278
+          - link "(718) 676-0640 (Bronx)" [ref=e176] [cursor=pointer]:
+            - /url: tel:7186760640
+          - link "admission@abi.edu" [ref=e177] [cursor=pointer]:
+            - /url: mailto:admission@abi.edu
+          - generic [ref=e178]:
+            - paragraph [ref=e179]: "Monday – Friday: 8:00 AM – 8:00 PM"
+            - paragraph [ref=e180]: "Saturday: 9:00 AM – 7:00 PM"
+            - paragraph [ref=e181]: "Sunday: 9:00 AM – 7:00 PM"
+      - generic [ref=e182]:
+        - generic [ref=e183]: © 2026 American Barber Institute (ABI). All Rights Reserved. Licensed by the NY State Dept. of Education.
+        - generic [ref=e184]: "*GI BILL® is a registered trademark of the U.S. Department of Veterans Affairs."
+  - region "Quick actions" [ref=e185]:
+    - link "Call admissions now" [ref=e186] [cursor=pointer]:
+      - /url: tel:2122902289
+      - generic [ref=e187]: 📞
+      - generic [ref=e188]: Call Now
+    - link "Become a barber — apply now" [ref=e189] [cursor=pointer]:
+      - /url: /contact
+      - generic [ref=e190]: Become a Barber
+      - generic [ref=e191]: ✂

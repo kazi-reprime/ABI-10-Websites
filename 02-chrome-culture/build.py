@@ -66,6 +66,15 @@ SITE = {
 SITE_CSS = (
     "/* ===== 02-chrome-culture: liquid-metal brutalism ===== */"
 
+    # --- kill horizontal scroll: clip (not hidden, so sticky header still works) ---
+    # Full-bleed bg layers (.deco-chrome, .bg-video, .bg-overlay) + the media-band
+    # carousel were leaking ~28px past the viewport on small screens. Clip at root,
+    # and hard-cap the decorative full-bleed layers + carousel to the viewport width.
+    "html{overflow-x:clip}"
+    "body{overflow-x:clip}"
+    ".deco-chrome,.bg-video,.bg-overlay{max-width:100vw}"
+    ".media-band{overflow-x:clip}"
+
     # --- pure-CSS animated brushed-metal background (signature backdrop) ---
     # Layered fine vertical brushing + a slow diagonal chrome sheen sweep + a faint
     # red horizon glow. Sits above the deco-chrome layer, below content (z-index 1).

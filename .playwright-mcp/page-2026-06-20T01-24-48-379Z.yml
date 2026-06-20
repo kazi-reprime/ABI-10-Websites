@@ -1,0 +1,404 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: Start Your Barber Journey Today for Only $150 per Week*
+    - link "Call English admissions" [ref=e4] [cursor=pointer]:
+      - /url: tel:2122902289
+      - generic [ref=e5]: EN
+      - generic [ref=e6]: (212) 290-2289
+    - link "Call Spanish admissions" [ref=e7] [cursor=pointer]:
+      - /url: tel:2122900278
+      - generic [ref=e8]: ES
+      - generic [ref=e9]: (212) 290-0278
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - link "American Barber Institute home" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img "American Barber Institute — New York's dedicated barber school" [ref=e14]
+      - group "Language / Idioma" [ref=e15]:
+        - button "English" [ref=e16] [cursor=pointer]: EN
+        - button "Español" [ref=e17] [cursor=pointer]: ES
+      - button "Open menu" [ref=e18] [cursor=pointer]
+  - main [ref=e22]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]: "◉Next start: Monday, July 6, 2026"
+        - heading "Your Future. Your Career. Start Today." [level=1] [ref=e28]
+        - paragraph [ref=e29]: Become a licensed barber in as little as 17 weeks. Hands-on training. Real skills. Real opportunities.
+        - generic [ref=e30]:
+          - link "Become a Barber ✂" [ref=e31] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e32]: Become a Barber
+            - text: ✂
+          - link "View All Programs" [ref=e33] [cursor=pointer]:
+            - /url: /programs
+            - generic [ref=e34]: View All Programs
+        - generic [ref=e35]:
+          - generic [ref=e36]: Next class starts
+          - generic [ref=e37]: Monday, July 6
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - generic [ref=e40]: "15"
+              - generic [ref=e41]: days
+            - generic [ref=e42]:
+              - generic [ref=e43]: "17"
+              - generic [ref=e44]: hrs
+            - generic [ref=e45]:
+              - generic [ref=e46]: "05"
+              - generic [ref=e47]: min
+            - generic [ref=e48]:
+              - generic [ref=e49]: "12"
+              - generic [ref=e50]: sec
+      - complementary [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: // Get Started
+            - heading "Talk to admissions today" [level=3] [ref=e55]
+            - paragraph [ref=e56]: Free info — an ABI advisor calls you back, same day during business hours.
+          - generic [ref=e57]:
+            - textbox [ref=e58]
+            - generic [ref=e59]:
+              - generic [ref=e60]:
+                - generic [ref=e61]: First Name *
+                - textbox "First Name *" [ref=e62]:
+                  - /placeholder: First name / Nombre
+              - generic [ref=e63]:
+                - generic [ref=e64]: Last Name *
+                - textbox "Last Name *" [ref=e65]:
+                  - /placeholder: Last name / Apellido
+            - generic [ref=e66]:
+              - generic [ref=e67]:
+                - generic [ref=e68]: Phone *
+                - textbox "Phone *" [ref=e69]:
+                  - /placeholder: (212) 555-0123
+              - generic [ref=e70]:
+                - generic [ref=e71]: Email
+                - textbox "Email" [ref=e72]:
+                  - /placeholder: example@gmail.com
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: Preferred Location
+                - combobox "Preferred Location" [ref=e76]:
+                  - option "Select a location / Selecciona una ubicación" [selected]
+                  - option "Manhattan — 48 West 39th Street"
+                  - option "Bronx — 121 Westchester Square"
+                  - option "No preference / Sin preferencia"
+              - generic [ref=e77]:
+                - generic [ref=e78]: Preferred Language
+                - combobox "Preferred Language" [ref=e79]:
+                  - option "Select a language / Selecciona un idioma" [selected]
+                  - option "English"
+                  - option "Spanish / Español"
+            - generic [ref=e80]:
+              - generic [ref=e81]: Message for ABI
+              - textbox "Message for ABI" [ref=e82]:
+                - /placeholder: Any questions or notes... / Preguntas o notas...
+            - button "Let's Do It ✂" [ref=e83] [cursor=pointer]:
+              - generic [ref=e84]: Let's Do It
+              - text: ✂
+            - paragraph [ref=e85]: No spam. We respect your privacy. Same-day response during business hours.
+    - generic [ref=e87]:
+      - generic [ref=e88]: // Barber Programs — NYC
+      - heading "Choose your path to a Master Barber License" [level=2] [ref=e89]
+      - paragraph [ref=e90]: Four state-licensed programs across two NYC campuses. Flexible weekly payment plans on every track.
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]: Most Popular
+          - generic [ref=e94]: // Manhattan · 500 Hours · ≈ 4 Months
+          - heading "500-Hour Master Barber Program" [level=3] [ref=e95]
+          - generic [ref=e96]: $5,600
+          - paragraph [ref=e97]: Our comprehensive 500-hour Master Barber training program is meticulously designed to equip students with the knowledge and skills necessary to thrive in the competitive world of barbering — from mastering classic techniques to staying updated on the latest trends.
+        - generic [ref=e98]:
+          - generic [ref=e99]: // Bronx · 500 Hours · ≈ 4 Months
+          - heading "500-Hour Master Barber Program — Bronx" [level=3] [ref=e100]
+          - generic [ref=e101]: $5,600
+          - paragraph [ref=e102]: Become a licensed Master Barber in New York State at our Bronx campus. The same comprehensive 500-hour curriculum as Manhattan, with the same flexible payment plans, hands-on training, and job placement assistance. Take control of your income, open your own barbershop, and thrive in a recession-proof industry.
+        - generic [ref=e103]:
+          - generic [ref=e104]: // Manhattan · 50 Hours · 2 Weeks
+          - heading "50-Hour Barber Refresher Program" [level=3] [ref=e105]
+          - generic [ref=e106]: $1,500
+          - paragraph [ref=e107]: Designed for licensed individuals, cosmetologists, hairdressers, and barber apprentices looking to sharpen their skills. Covers classical haircutting, straight razor shaves, fades, tapers, and NY State Board Exam prep.
+        - generic [ref=e108]:
+          - generic [ref=e109]: // Manhattan & Bronx · 3 Hours · 1 Session
+          - heading "3-Hour Contagious Diseases Program" [level=3] [ref=e110]
+          - generic [ref=e111]: $100
+          - paragraph [ref=e112]: The required HIV/Contagious Diseases course for the New York State Board of Barbering Exam. Covers bloodborne pathogen safety, sanitation standards, and NY State regulations. Available to all prospective and current students.
+      - generic [ref=e113]:
+        - link "View All Programs" [ref=e114] [cursor=pointer]:
+          - /url: /programs
+          - generic [ref=e115]: View All Programs
+        - link "Class Schedule" [ref=e116] [cursor=pointer]:
+          - /url: /programs
+          - generic [ref=e117]: Class Schedule
+    - generic [ref=e119]:
+      - generic [ref=e120]: // Two NYC Campuses
+      - heading "Manhattan | Bronx" [level=2] [ref=e121]
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - generic [ref=e124]: // Manhattan Campus
+          - heading "Manhattan" [level=3] [ref=e125]
+          - paragraph [ref=e126]: 48 West 39th Street, New York, NY 10018
+          - paragraph [ref=e127]:
+            - link "(212) 290-2289" [ref=e128] [cursor=pointer]:
+              - /url: tel:2122902289
+          - list [ref=e129]:
+            - listitem [ref=e130]:
+              - text: ▸
+              - generic [ref=e131]: 500-Hour Master Barber Program
+              - text: — $5,600
+              - generic [ref=e132]: 500 Hours · ≈ 4 Months
+            - listitem [ref=e133]:
+              - text: ▸
+              - generic [ref=e134]: 50-Hour Barber Refresher Program
+              - text: — $1,500
+              - generic [ref=e135]: 50 Hours · 2 Weeks
+            - listitem [ref=e136]:
+              - text: ▸
+              - generic [ref=e137]: 3-Hour Contagious Diseases Program
+              - text: — $100
+              - generic [ref=e138]: 3 Hours · 1 Session
+        - generic [ref=e139]:
+          - generic [ref=e140]: // Bronx Campus
+          - heading "Bronx" [level=3] [ref=e141]
+          - paragraph [ref=e142]: 121 Westchester Square, Bronx, NY 10461
+          - paragraph [ref=e143]:
+            - link "(718) 676-0640" [ref=e144] [cursor=pointer]:
+              - /url: tel:7186760640
+          - list [ref=e145]:
+            - listitem [ref=e146]:
+              - text: ▸
+              - generic [ref=e147]: 500-Hour Master Barber Program — Bronx
+              - text: — $5,600
+              - generic [ref=e148]: 500 Hours · ≈ 4 Months
+            - listitem [ref=e149]:
+              - text: ▸
+              - generic [ref=e150]: 3-Hour Contagious Diseases Program
+              - text: — $100
+              - generic [ref=e151]: 3 Hours · 1 Session
+    - generic [ref=e153]:
+      - generic [ref=e154]: // By the numbers
+      - heading "Built on three decades" [level=2] [ref=e155]
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - generic [ref=e158]: "0"
+          - generic [ref=e159]: Years in business
+        - generic [ref=e160]:
+          - generic [ref=e161]: "0"
+          - generic [ref=e162]: Graduates trained
+        - generic [ref=e163]:
+          - generic [ref=e164]: "0"
+          - generic [ref=e165]: Job placement rate
+        - generic [ref=e166]:
+          - generic [ref=e167]: "0"
+          - generic [ref=e168]: NYC campuses
+    - generic [ref=e170]:
+      - generic [ref=e171]: // Why Choose ABI
+      - heading "Everything you need to succeed" [level=2] [ref=e172]
+      - generic [ref=e173]:
+        - generic [ref=e174]:
+          - heading "NY State Licensed" [level=3] [ref=e175]
+          - paragraph [ref=e176]: ABI is licensed by the New York State Department of Education.
+        - generic [ref=e177]:
+          - heading "Hands-On from the First Few Weeks" [level=3] [ref=e178]
+          - paragraph [ref=e179]: Work with real clients starting in your first few weeks of class.
+        - generic [ref=e180]:
+          - heading "Flexible Schedules" [level=3] [ref=e181]
+          - paragraph [ref=e182]: Morning, Afternoon, and Weekend options to fit your life.
+        - generic [ref=e183]:
+          - heading "Job Placement Office" [level=3] [ref=e184]
+          - paragraph [ref=e185]: Dedicated team to help you land a job after graduation.
+        - generic [ref=e186]:
+          - heading "Financial Assistance Available" [level=3] [ref=e187]
+          - paragraph [ref=e188]: ACCES-VR, Post-9/11 GI Bill®, and VA benefits accepted.
+        - generic [ref=e189]:
+          - heading "Monthly Start Dates" [level=3] [ref=e190]
+          - paragraph [ref=e191]: New classes begin every first Monday of the month.
+    - generic [ref=e193]:
+      - generic [ref=e194]: // Schedule & Tuition
+      - heading "Three flexible schedules" [level=2] [ref=e195]
+      - generic [ref=e196]:
+        - generic [ref=e197]:
+          - generic [ref=e198]: // Full-Time Morning
+          - heading "Mon–Fri · 8:00 AM – 2:00 PM" [level=3] [ref=e199]
+          - generic [ref=e200]: $5,600
+          - paragraph [ref=e201]: $500 down + 17 weekly payments of $300
+        - generic [ref=e202]:
+          - generic [ref=e203]: // Full-Time Afternoon
+          - heading "Mon–Fri · 2:00 PM – 8:00 PM" [level=3] [ref=e204]
+          - generic [ref=e205]: $4,600
+          - paragraph [ref=e206]: $500 down + 16 weekly payments of $250 + $100 final
+        - generic [ref=e207]:
+          - generic [ref=e208]: // Weekend
+          - heading "Sat & Sun · 9:00 AM – 7:00 PM" [level=3] [ref=e209]
+          - generic [ref=e210]: $4,600
+          - paragraph [ref=e211]: $550 down + 27 weekly payments of $150
+    - generic [ref=e213]:
+      - generic [ref=e214]: // Barber Career Earnings
+      - heading "What barbers earn" [level=2] [ref=e215]
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - generic [ref=e218]: // Year 1
+          - heading "Entry-Level Barber" [level=3] [ref=e219]
+          - generic [ref=e220]: $35,000–$45,000/yr
+        - generic [ref=e221]:
+          - generic [ref=e222]: // Years 2–3
+          - heading "Established Barber" [level=3] [ref=e223]
+          - generic [ref=e224]: $50,000–$70,000/yr
+        - generic [ref=e225]:
+          - generic [ref=e226]: // Year 3+
+          - heading "Booth Renter / Shop Owner" [level=3] [ref=e227]
+          - generic [ref=e228]: $75,000+/yr
+      - paragraph [ref=e229]: Earnings vary by experience, location, hours, and clientele. Figures are industry estimates, not guarantees.
+    - generic [ref=e231]:
+      - generic [ref=e232]: // Where Our Graduates Work
+      - heading "From our chairs to NYC's best shops" [level=2] [ref=e233]
+      - paragraph [ref=e234]: Levels Barbershop · Diamond Fadez · Untouchable Cutz · Expo Gentlemen Salon · Otis & Finn · NYC Barber Shop Museum.
+      - paragraph [ref=e235]:
+        - link "Meet our partner shops →" [ref=e236] [cursor=pointer]:
+          - /url: /partners
+          - generic [ref=e237]: Meet our partner shops →
+    - generic [ref=e239]:
+      - generic [ref=e240]: // Student voices
+      - heading "What our students say" [level=2] [ref=e241]
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - paragraph [ref=e244]: “The level of knowledge and training is superb. One of the best teachers around — King David — will show you everything. ”
+          - paragraph [ref=e245]: Jerrick Matthews
+          - paragraph [ref=e246]: Current Student
+        - generic [ref=e247]:
+          - paragraph [ref=e248]: “I have King David as my instructor and he has been awesome. He has 30 years of experience. ”
+          - paragraph [ref=e249]: Carlos Perez
+          - paragraph [ref=e250]: Current Student
+        - generic [ref=e251]:
+          - paragraph [ref=e252]: “I'm enrolled and I'm happy with the progress from the teachers and classmates. Nothing but positivity. ”
+          - paragraph [ref=e253]: Zyee Fin
+          - paragraph [ref=e254]: Current Student
+        - generic [ref=e255]:
+          - paragraph [ref=e256]: “The best barber school in New York — real barber culture. ”
+          - paragraph [ref=e257]: Richard Cacace
+          - paragraph [ref=e258]: 5★ Google Review
+    - generic [ref=e260]:
+      - generic [ref=e261]:
+        - generic [ref=e262]: Inside ABI
+        - heading "This is the floor" [level=2] [ref=e263]
+        - paragraph [ref=e264]: Step inside our Manhattan and Bronx clinics — where future master barbers train every day.
+      - generic [ref=e265]:
+        - figure "Barbershop interior busy atmosphere" [ref=e266]:
+          - generic "Barbershop interior busy atmosphere" [ref=e267]
+          - generic [ref=e268]: Barbershop interior busy atmosphere
+        - figure "American Barber Institute" [ref=e269]:
+          - img "American Barber Institute" [ref=e270]
+          - generic [ref=e271]: American Barber Institute
+        - figure "Diverse group at institute" [ref=e272]:
+          - generic "Diverse group at institute" [ref=e273]
+          - generic [ref=e274]: Diverse group at institute
+        - figure "American Barber Institute" [ref=e275]:
+          - img "American Barber Institute" [ref=e276]
+          - generic [ref=e277]: American Barber Institute
+        - figure "American Barber Institute" [ref=e278]:
+          - img "American Barber Institute" [ref=e279]
+          - generic [ref=e280]: American Barber Institute
+        - figure "American Barber Institute" [ref=e281]:
+          - img "American Barber Institute" [ref=e282]
+          - generic [ref=e283]: American Barber Institute
+        - figure "American Barber Institute" [ref=e284]:
+          - img "American Barber Institute" [ref=e285]
+          - generic [ref=e286]: American Barber Institute
+        - figure "American Barber Institute" [ref=e287]:
+          - img "American Barber Institute" [ref=e288]
+          - generic [ref=e289]: American Barber Institute
+    - generic [ref=e291]:
+      - generic [ref=e292]: // Ready to Begin?
+      - heading "Ready to Start Your Barber Career?" [level=2] [ref=e293]
+      - paragraph [ref=e294]: New classes begin the first Monday of every month. Apply today and take the first step toward your new career.
+      - generic [ref=e295]:
+        - link "Become a Barber ✂" [ref=e296] [cursor=pointer]:
+          - /url: /contact
+          - generic [ref=e297]: Become a Barber
+          - text: ✂
+        - link "Call Admissions · (212) 290-2289" [ref=e298] [cursor=pointer]:
+          - /url: tel:2122902289
+          - generic [ref=e299]: Call Admissions
+          - text: · (212) 290-2289
+  - contentinfo [ref=e300]:
+    - generic [ref=e301]:
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - img "American Barber Institute" [ref=e305]
+          - heading "American Barber Institute" [level=4] [ref=e306]
+          - paragraph [ref=e307]: New York's only dedicated barber school. Licensed by the NY State Department of Education. Changing lives for over 30 years.
+          - paragraph [ref=e308]: GI Bill® · ACCES-VR · VA benefits accepted.
+          - generic [ref=e309]:
+            - link "Facebook" [ref=e310] [cursor=pointer]:
+              - /url: https://www.facebook.com/Abi.Education/
+              - text: f
+            - link "Instagram" [ref=e311] [cursor=pointer]:
+              - /url: https://www.instagram.com/americanbarberinstitute/
+              - text: IG
+            - link "YouTube" [ref=e312] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCy_pQUDfk2ldEp6_zyaIMhQ
+              - text: YT
+            - link "X" [ref=e313] [cursor=pointer]:
+              - /url: https://x.com/amerbarberedu
+            - link "Pinterest" [ref=e314] [cursor=pointer]:
+              - /url: https://www.pinterest.com/alexzholendz/american-barber-institute/
+              - text: P
+        - generic [ref=e315]:
+          - heading "Links" [level=4] [ref=e316]
+          - link "About" [ref=e317] [cursor=pointer]:
+            - /url: /about
+          - link "Programs" [ref=e318] [cursor=pointer]:
+            - /url: /programs
+          - link "Resources" [ref=e319] [cursor=pointer]:
+            - /url: /resources
+          - link "FAQs" [ref=e320] [cursor=pointer]:
+            - /url: /faq
+          - link "Jobs" [ref=e321] [cursor=pointer]:
+            - /url: /job-placement
+          - link "Haircuts" [ref=e322] [cursor=pointer]:
+            - /url: /haircuts
+          - link "Gallery" [ref=e323] [cursor=pointer]:
+            - /url: /gallery
+          - link "Blog" [ref=e324] [cursor=pointer]:
+            - /url: /blog
+          - link "Partners" [ref=e325] [cursor=pointer]:
+            - /url: /partners
+          - link "Instructors" [ref=e326] [cursor=pointer]:
+            - /url: /instructors
+          - link "Contact" [ref=e327] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=e328]:
+          - heading "Locations" [level=4] [ref=e329]
+          - paragraph [ref=e330]:
+            - text: Manhattan
+            - text: 48 West 39th Street
+            - text: New York, NY 10018
+          - paragraph [ref=e331]:
+            - text: Bronx
+            - text: 121 Westchester Square
+            - text: Bronx, NY 10461
+        - generic [ref=e332]:
+          - heading "Contact" [level=4] [ref=e333]
+          - link "(212) 290-2289 (English)" [ref=e334] [cursor=pointer]:
+            - /url: tel:2122902289
+          - link "(212) 290-0278 (Español)" [ref=e335] [cursor=pointer]:
+            - /url: tel:2122900278
+          - link "(718) 676-0640 (Bronx)" [ref=e336] [cursor=pointer]:
+            - /url: tel:7186760640
+          - link "admission@abi.edu" [ref=e337] [cursor=pointer]:
+            - /url: mailto:admission@abi.edu
+          - generic [ref=e338]:
+            - paragraph [ref=e339]: "Monday – Friday: 8:00 AM – 8:00 PM"
+            - paragraph [ref=e340]: "Saturday: 9:00 AM – 7:00 PM"
+            - paragraph [ref=e341]: "Sunday: 9:00 AM – 7:00 PM"
+      - generic [ref=e342]:
+        - generic [ref=e343]: © 2026 American Barber Institute (ABI). All Rights Reserved. Licensed by the NY State Dept. of Education.
+        - generic [ref=e344]: "*GI BILL® is a registered trademark of the U.S. Department of Veterans Affairs."
+  - region "Quick actions" [ref=e345]:
+    - link "Call admissions now" [ref=e346] [cursor=pointer]:
+      - /url: tel:2122902289
+      - generic [ref=e347]: 📞
+      - generic [ref=e348]: Call Now
+    - link "Become a barber — apply now" [ref=e349] [cursor=pointer]:
+      - /url: /contact
+      - generic [ref=e350]: Become a Barber
+      - generic [ref=e351]: ✂
