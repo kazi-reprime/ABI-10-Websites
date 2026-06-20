@@ -96,8 +96,8 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .brand-name{font-family:var(--font-head);font-weight:800;letter-spacing:.02em;line-height:1.1;display:flex;flex-direction:column;font-size:clamp(.78rem,1.7vw,.98rem)}
 .brand-name .brand-line1{color:var(--ink)}
 .brand-name .brand-line2{color:var(--accent)}
-.primary-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap}
-.primary-nav a{color:var(--mut);padding:8px 9px;min-height:44px;display:inline-flex;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.01em;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
+.primary-nav{display:flex;align-items:center;gap:1px;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
+.primary-nav a{color:var(--mut);padding:7px 7px;min-height:44px;display:inline-flex;align-items:center;font-size:.77rem;font-weight:600;letter-spacing:0;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
 .primary-nav a:hover,.primary-nav a.active{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
 .burger{width:48px;height:48px;display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:transparent;border:0;flex-shrink:0}
 .burger span{width:26px;height:2px;background:var(--accent);transition:.2s;border-radius:2px}
@@ -139,6 +139,22 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .subpage-hero h1{margin:20px 0 14px}
 .subpage-hero p.sub{max-width:720px;margin:0 auto;color:var(--mut);font-size:clamp(1rem,2.2vw,1.12rem)}
 .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+/* ---- hero with contact-form aside (home + contact): form on the RIGHT on desktop,
+   stacked below the hero text on mobile — mirrors abi-app-123's home hero ---- */
+.hero-grid{display:grid;gap:clamp(22px,3.5vw,40px);align-items:start}
+.subpage-hero.has-aside{text-align:left}
+.subpage-hero.has-aside .hero-main .eyebrow{margin-bottom:2px}
+.subpage-hero.has-aside .hero-main p.sub{margin-left:0;margin-right:0}
+.subpage-hero.has-aside .hero-ctas{justify-content:flex-start}
+.subpage-hero.has-aside .next-class{margin-left:0}
+@media (min-width:980px){
+  .has-aside .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);align-items:center;gap:clamp(28px,4vw,56px)}
+}
+.hero-aside{width:100%;min-width:0}
+.hero-form-card{background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(18px,3vw,26px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 48px rgba(0,0,0,.4);text-align:left}
+.hero-form-card .hff-head h3{font-size:clamp(1.2rem,2.6vw,1.5rem)}
+.hero-form-card .lead-form .row-2{grid-template-columns:1fr 1fr}
+@media (max-width:480px){.hero-form-card .lead-form .row-2{grid-template-columns:1fr}}
 
 /* ---- h1 effects (toggled by body hfx-* class) ---- */
 .hfx-glow h1{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 40%,transparent),0 0 48px color-mix(in srgb,var(--accent) 20%,transparent)}
@@ -393,10 +409,15 @@ body.nav-open .sticky-call{display:none!important}
 <main>
   <section class="subpage-hero ">
     <div class="container">
-      <div class="eyebrow"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></div>
-      <h1><span class="lang-en">Student Resources</span><span class="lang-es">Recursos para Estudiantes</span></h1>
-      <p class="sub"><span class="lang-en">Financial assistance options, licensing information, and everything you need to make the most of your ABI education.</span><span class="lang-es">Opciones de asistencia financiera, información de licencias, y todo lo que necesitas para aprovechar tu educación en ABI.</span></p>
-      
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span></div>
+          <h1><span class="lang-en">Student Resources</span><span class="lang-es">Recursos para Estudiantes</span></h1>
+          <p class="sub"><span class="lang-en">Financial assistance options, licensing information, and everything you need to make the most of your ABI education.</span><span class="lang-es">Opciones de asistencia financiera, información de licencias, y todo lo que necesitas para aprovechar tu educación en ABI.</span></p>
+          
+        </div>
+        
+      </div>
     </div>
   </section>
   <section><div class="container"><div class="grid-2"><div class="card"><h3 style="margin-bottom:10px">ACCES-VR Financial Assistance</h3><p style="color:var(--mut);margin-bottom:14px"><span class="lang-en">ACCES-VR (Adult Career and Continuing Education Services – Vocational Rehabilitation) is a New York State program that supports individuals with disabilities in obtaining and maintaining employment. If you qualify, you could receive financial assistance to pursue your barbering career at ABI at no cost to you.</span><span class="lang-es">ACCES-VR (Servicios de Educación Profesional y Continua para Adultos – Rehabilitación Vocacional) es un programa del Estado de Nueva York que apoya a personas con discapacidades para obtener y mantener empleo. Si calificas, podrías recibir asistencia financiera para seguir tu carrera de barbería en ABI sin costo para ti.</span></p><ul class="list-clean"><li><span class="lang-en">Available to individuals with documented disabilities</span><span class="lang-es">Disponible para personas con discapacidades documentadas</span></li><li><span class="lang-en">Covers tuition, tools, and supplies in some cases</span><span class="lang-es">Cubre matrícula, herramientas y suministros en algunos casos</span></li><li><span class="lang-en">Contact your local ACCES-VR office to apply</span><span class="lang-es">Contacta tu oficina local de ACCES-VR para aplicar</span></li><li><span class="lang-en">ABI can assist you with the referral process</span><span class="lang-es">ABI puede ayudarte con el proceso de referencia</span></li></ul></div><div class="card"><h3 style="margin-bottom:10px"><span class="lang-en">GI Bill® & VA Benefits</span><span class="lang-es">GI Bill® y Beneficios de la VA</span></h3><p style="color:var(--mut);margin-bottom:14px"><span class="lang-en">American Barber Institute accepts Post-9/11 GI Bill® education benefits and other VA education programs. Veterans and eligible dependents may be able to cover all or part of their tuition at ABI.</span><span class="lang-es">American Barber Institute acepta los beneficios educativos del GI Bill® Post-9/11 y otros programas educativos de la VA. Los veteranos y dependientes elegibles pueden cubrir todo o parte de su matrícula en ABI.</span></p><ul class="list-clean"><li><span class="lang-en">Post-9/11 GI Bill® (Chapter 33) accepted</span><span class="lang-es">GI Bill® Post-9/11 (Capítulo 33) aceptado</span></li><li><span class="lang-en">VR&E (Chapter 31) for veterans with service-connected disabilities</span><span class="lang-es">VR&E (Capítulo 31) para veteranos con discapacidades relacionadas al servicio</span></li><li><span class="lang-en">Montgomery GI Bill® and DEA (Chapter 35) also accepted</span><span class="lang-es">Montgomery GI Bill® y DEA (Capítulo 35) también aceptados</span></li><li><span class="lang-en">ABI will certify your enrollment with the VA</span><span class="lang-es">ABI certificará tu inscripción con la VA</span></li></ul></div><div class="card"><h3 style="margin-bottom:10px"><span class="lang-en">NY State Board of Barbering</span><span class="lang-es">Junta Estatal de Barbería de NY</span></h3><p style="color:var(--mut);margin-bottom:14px"><span class="lang-en">ABI prepares every student for the New York State Board of Barbering Examination. Upon passing, graduates receive their Master Barber License, which is required to practice barbering professionally in New York.</span><span class="lang-es">ABI prepara a cada estudiante para el Examen de la Junta Estatal de Barbería de Nueva York. Al aprobar, los graduados reciben su Licencia de Maestro Barbero, requerida para ejercer la barbería profesionalmente en Nueva York.</span></p><ul class="list-clean"><li><span class="lang-en">Full exam prep included in the 500-Hour program</span><span class="lang-es">Preparación completa para el examen incluida en el programa de 500 horas</span></li><li><span class="lang-en">Written and practical components covered</span><span class="lang-es">Componentes escritos y prácticos cubiertos</span></li><li><span class="lang-en">Licensure required to work in any NY barbershop</span><span class="lang-es">Se requiere licencia para trabajar en cualquier barbería de NY</span></li><li><span class="lang-en">ABI graduates are exam-ready upon completion</span><span class="lang-es">Los graduados de ABI están listos para el examen al completar</span></li></ul></div><div class="card"><h3 style="margin-bottom:10px"><span class="lang-en">Tools & Supplies</span><span class="lang-es">Herramientas & Suministros</span></h3><p style="color:var(--mut);margin-bottom:14px"><span class="lang-en">Students are responsible for purchasing their own barbering tools, books, and supplies. These can be purchased directly from ABI at registration or from other approved suppliers.</span><span class="lang-es">Los estudiantes son responsables de comprar sus propias herramientas, libros y suministros de barbería. Se pueden comprar directamente en ABI durante la inscripción o con otros proveedores aprobados.</span></p><ul class="list-clean"><li><span class="lang-en">A detailed tools list is provided upon registration</span><span class="lang-es">Se proporciona una lista detallada de herramientas en la inscripción</span></li><li><span class="lang-en">Tools available for purchase directly at ABI</span><span class="lang-es">Herramientas disponibles para compra directamente en ABI</span></li><li><span class="lang-en">Third-party suppliers are also accepted</span><span class="lang-es">También se aceptan proveedores externos</span></li><li><span class="lang-en">Ask your advisor about cost estimates</span><span class="lang-es">Pregunta a tu asesor sobre estimados de costo</span></li></ul></div></div></div></section>

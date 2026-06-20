@@ -96,8 +96,8 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .brand-name{font-family:var(--font-head);font-weight:800;letter-spacing:.02em;line-height:1.1;display:flex;flex-direction:column;font-size:clamp(.78rem,1.7vw,.98rem)}
 .brand-name .brand-line1{color:var(--ink)}
 .brand-name .brand-line2{color:var(--accent)}
-.primary-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap}
-.primary-nav a{color:var(--mut);padding:8px 9px;min-height:44px;display:inline-flex;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.01em;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
+.primary-nav{display:flex;align-items:center;gap:1px;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
+.primary-nav a{color:var(--mut);padding:7px 7px;min-height:44px;display:inline-flex;align-items:center;font-size:.77rem;font-weight:600;letter-spacing:0;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
 .primary-nav a:hover,.primary-nav a.active{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
 .burger{width:48px;height:48px;display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:transparent;border:0;flex-shrink:0}
 .burger span{width:26px;height:2px;background:var(--accent);transition:.2s;border-radius:2px}
@@ -139,6 +139,22 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .subpage-hero h1{margin:20px 0 14px}
 .subpage-hero p.sub{max-width:720px;margin:0 auto;color:var(--mut);font-size:clamp(1rem,2.2vw,1.12rem)}
 .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+/* ---- hero with contact-form aside (home + contact): form on the RIGHT on desktop,
+   stacked below the hero text on mobile — mirrors abi-app-123's home hero ---- */
+.hero-grid{display:grid;gap:clamp(22px,3.5vw,40px);align-items:start}
+.subpage-hero.has-aside{text-align:left}
+.subpage-hero.has-aside .hero-main .eyebrow{margin-bottom:2px}
+.subpage-hero.has-aside .hero-main p.sub{margin-left:0;margin-right:0}
+.subpage-hero.has-aside .hero-ctas{justify-content:flex-start}
+.subpage-hero.has-aside .next-class{margin-left:0}
+@media (min-width:980px){
+  .has-aside .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);align-items:center;gap:clamp(28px,4vw,56px)}
+}
+.hero-aside{width:100%;min-width:0}
+.hero-form-card{background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(18px,3vw,26px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 48px rgba(0,0,0,.4);text-align:left}
+.hero-form-card .hff-head h3{font-size:clamp(1.2rem,2.6vw,1.5rem)}
+.hero-form-card .lead-form .row-2{grid-template-columns:1fr 1fr}
+@media (max-width:480px){.hero-form-card .lead-form .row-2{grid-template-columns:1fr}}
 
 /* ---- h1 effects (toggled by body hfx-* class) ---- */
 .hfx-glow h1{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 40%,transparent),0 0 48px color-mix(in srgb,var(--accent) 20%,transparent)}
@@ -391,28 +407,22 @@ body.nav-open .sticky-call{display:none!important}
   </div>
 </header>
 <main>
-  <section class="subpage-hero ">
+  <section class="subpage-hero has-aside">
     <div class="container">
-      <div class="eyebrow"><span class="lang-en">Get in Touch</span><span class="lang-es">Ponte en Contacto</span></div>
-      <h1><span class="lang-en">Contact ABI</span><span class="lang-es">Contacta a ABI</span></h1>
-      <p class="sub"><span class="lang-en">Questions about programs, tuition, schedules, or enrollment? Call, walk in, or send a message — admissions responds same-day.</span><span class="lang-es">¿Preguntas sobre programas, matrícula, horarios o inscripción? Llama, ven sin cita, o envía un mensaje — admisiones responde el mismo día.</span></p>
-      
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow"><span class="lang-en">Get in Touch</span><span class="lang-es">Ponte en Contacto</span></div>
+          <h1><span class="lang-en">Contact ABI</span><span class="lang-es">Contacta a ABI</span></h1>
+          <p class="sub"><span class="lang-en">Questions about programs, tuition, schedules, or enrollment? Call, walk in, or send a message — admissions responds same-day.</span><span class="lang-es">¿Preguntas sobre programas, matrícula, horarios o inscripción? Llama, ven sin cita, o envía un mensaje — admisiones responde el mismo día.</span></p>
+          
+        </div>
+        <aside class="hero-aside"><div class="hero-form-card" id="contact-lead-wrap">
+    <div class="hff-head">
+      <div class="eyebrow-acc"><span class="lang-en">Get Started</span><span class="lang-es">Empieza Hoy</span></div>
+      <h3 style="margin:6px 0 4px"><span class="lang-en">Talk to admissions today</span><span class="lang-es">Habla con admisiones hoy</span></h3>
+      <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px"><span class="lang-en">Free info — an ABI advisor calls you back, same day during business hours.</span><span class="lang-es">Información gratis — un asesor de ABI te llama, el mismo día en horario laboral.</span></p>
     </div>
-  </section>
-  <section><div class="container"><div class="eyebrow-acc"><span class="lang-en">Reach Us</span><span class="lang-es">Comunícate</span></div><h2 style="margin-bottom:18px"><span class="lang-en">Two campuses across NYC</span><span class="lang-es">Dos campus en NYC</span></h2><div class="grid-2">
-<div class="card"><div class="eyebrow-acc"><span class="lang-en">Manhattan Campus</span><span class="lang-es">Campus de Manhattan</span></div><h3 style="margin:8px 0"><span class="lang-en">Manhattan</span><span class="lang-es">Manhattan</span> — 48 W 39th St</h3><p style="color:var(--mut);margin-bottom:8px">48 West 39th Street, New York, NY 10018</p>
-<p style="margin-bottom:6px"><a href="tel:2122902289" style="color:var(--accent);font-weight:800;font-size:1.05rem">(212) 290-2289 <span class="lang-en">(English)</span><span class="lang-es">(Inglés)</span></a></p>
-<p style="margin-bottom:6px"><a href="tel:2122900278" style="color:var(--accent);font-weight:800;font-size:1.05rem">(212) 290-0278 <span class="lang-en">(Spanish)</span><span class="lang-es">(Español)</span></a></p>
-<p style="margin-bottom:6px"><a href="mailto:admission@abi.edu" style="color:var(--accent);font-weight:700">admission@abi.edu</a></p>
-<p style="color:var(--mut);font-size:.9rem;margin-bottom:14px"><span class="lang-en">Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM</span><span class="lang-es">Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM</span></p>
-<a class="btn btn-primary" href="https://www.google.com/maps?q=48+West+39th+Street+New+York+NY" target="_blank" rel="noopener"><span class="lang-en">Get Directions</span><span class="lang-es">Obtener Direcciones</span></a></div>
-<div class="card"><div class="eyebrow-acc"><span class="lang-en">Bronx Campus</span><span class="lang-es">Campus del Bronx</span></div><h3 style="margin:8px 0"><span class="lang-en">Bronx</span><span class="lang-es">Bronx</span> — 121 Westchester Sq</h3><p style="color:var(--mut);margin-bottom:8px">121 Westchester Square, Bronx, NY 10461</p>
-<p style="margin-bottom:6px"><a href="tel:7186760640" style="color:var(--accent);font-weight:800;font-size:1.05rem">(718) 676-0640 <span class="lang-en">(Bronx)</span><span class="lang-es">(Bronx)</span></a></p>
-<p style="color:var(--mut);font-size:.9rem;margin-bottom:14px"><span class="lang-en">Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM</span><span class="lang-es">Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM</span></p>
-<a class="btn btn-primary" href="https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY" target="_blank" rel="noopener"><span class="lang-en">Get Directions</span><span class="lang-es">Obtener Direcciones</span></a></div>
-</div></div></section>
-<section><div class="container"><div class="card" style="max-width:820px;margin:0 auto"><div class="eyebrow-acc"><span class="lang-en">Ready to enroll?</span><span class="lang-es">¿Listo para inscribirte?</span></div><h2 style="margin:8px 0 12px"><span class="lang-en">What you'll need to get started</span><span class="lang-es">Lo que necesitas para empezar</span></h2><ul class="list-clean"><li><span class="lang-en">Social Security card</span><span class="lang-es">Tarjeta de Seguro Social</span></li><li><span class="lang-en">High School Diploma, GED, or pass the ATB exam at ABI</span><span class="lang-es">Diploma de Preparatoria, GED, o aprobar el examen ATB en ABI</span></li><li><span class="lang-en">Minimum age 17</span><span class="lang-es">Edad mínima de 17 años</span></li><li><span class="lang-en">Proof of residential address</span><span class="lang-es">Comprobante de domicilio</span></li><li><span class="lang-en">Valid photo ID or driver's license</span><span class="lang-es">Identificación con foto válida o licencia de conducir</span></li><li><span class="lang-en">$500 down payment (includes $100 registration fee)</span><span class="lang-es">$500 de enganche (incluye $100 de cuota de inscripción)</span></li></ul><div class="btn-wrap" style="justify-content:flex-start;margin-top:18px"><a class="btn btn-primary" href="#lead-form"><span class="lang-en">Apply Now</span><span class="lang-es">Aplica Ahora</span> ✂</a><a class="btn btn-ghost" href="/programs"><span class="lang-en">View All Programs</span><span class="lang-es">Ver Todos los Programas</span></a></div></div></div></section>
-<section id="lead-form"><div class="container"><div class="card" style="max-width:680px;margin:0 auto"><div class="eyebrow-acc center"><span class="lang-en">Send a Message</span><span class="lang-es">Envía un Mensaje</span></div><h2 style="margin:8px 0 8px;text-align:center"><span class="lang-en">How can we help?</span><span class="lang-es">¿Cómo podemos ayudarte?</span></h2><p style="color:var(--mut);margin:0 auto 22px;text-align:center;max-width:520px"><span class="lang-en">Fill out the form and an ABI admissions agent will get back to you — same day during business hours.</span><span class="lang-es">Completa el formulario y un agente de admisiones de ABI te contactará — el mismo día en horario laboral.</span></p><form class="lead-form form-grid" id="contact-lead" action="https://formsubmit.co/admission@abi.edu" method="POST" novalidate>
+    <form class="lead-form form-grid" id="contact-lead" action="https://formsubmit.co/admission@abi.edu" method="POST" novalidate>
     <input type="hidden" name="_subject" value="New ABI website inquiry (contact page)">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
@@ -433,7 +443,24 @@ body.nav-open .sticky-call{display:none!important}
     <div class="field-group"><label for="contact-lead-msg"><span class="lang-en">Message for ABI</span><span class="lang-es">Mensaje para ABI</span></label><textarea id="contact-lead-msg" name="message" rows="4" class="input" style="resize:vertical" placeholder="Any questions or notes... / Preguntas o notas..."></textarea></div>
     <button type="submit" class="btn btn-primary" style="width:100%"><span class="lang-en">Let's Do It</span><span class="lang-es">¡Adelante!</span> ✂</button>
     <p class="privacy" style="font-size:.76rem;color:var(--mut);text-align:center"><span class="lang-en">No spam. We respect your privacy. Same-day response during business hours.</span><span class="lang-es">Sin spam. Respetamos tu privacidad. Respuesta el mismo día en horario laboral.</span></p>
-  </form></div></div></section>
+  </form>
+  </div></aside>
+      </div>
+    </div>
+  </section>
+  <section><div class="container"><div class="eyebrow-acc"><span class="lang-en">Reach Us</span><span class="lang-es">Comunícate</span></div><h2 style="margin-bottom:18px"><span class="lang-en">Two campuses across NYC</span><span class="lang-es">Dos campus en NYC</span></h2><div class="grid-2">
+<div class="card"><div class="eyebrow-acc"><span class="lang-en">Manhattan Campus</span><span class="lang-es">Campus de Manhattan</span></div><h3 style="margin:8px 0"><span class="lang-en">Manhattan</span><span class="lang-es">Manhattan</span> — 48 W 39th St</h3><p style="color:var(--mut);margin-bottom:8px">48 West 39th Street, New York, NY 10018</p>
+<p style="margin-bottom:6px"><a href="tel:2122902289" style="color:var(--accent);font-weight:800;font-size:1.05rem">(212) 290-2289 <span class="lang-en">(English)</span><span class="lang-es">(Inglés)</span></a></p>
+<p style="margin-bottom:6px"><a href="tel:2122900278" style="color:var(--accent);font-weight:800;font-size:1.05rem">(212) 290-0278 <span class="lang-en">(Spanish)</span><span class="lang-es">(Español)</span></a></p>
+<p style="margin-bottom:6px"><a href="mailto:admission@abi.edu" style="color:var(--accent);font-weight:700">admission@abi.edu</a></p>
+<p style="color:var(--mut);font-size:.9rem;margin-bottom:14px"><span class="lang-en">Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM</span><span class="lang-es">Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM</span></p>
+<a class="btn btn-primary" href="https://www.google.com/maps?q=48+West+39th+Street+New+York+NY" target="_blank" rel="noopener"><span class="lang-en">Get Directions</span><span class="lang-es">Obtener Direcciones</span></a></div>
+<div class="card"><div class="eyebrow-acc"><span class="lang-en">Bronx Campus</span><span class="lang-es">Campus del Bronx</span></div><h3 style="margin:8px 0"><span class="lang-en">Bronx</span><span class="lang-es">Bronx</span> — 121 Westchester Sq</h3><p style="color:var(--mut);margin-bottom:8px">121 Westchester Square, Bronx, NY 10461</p>
+<p style="margin-bottom:6px"><a href="tel:7186760640" style="color:var(--accent);font-weight:800;font-size:1.05rem">(718) 676-0640 <span class="lang-en">(Bronx)</span><span class="lang-es">(Bronx)</span></a></p>
+<p style="color:var(--mut);font-size:.9rem;margin-bottom:14px"><span class="lang-en">Mon–Fri 8AM–8PM · Sat 9AM–7PM · Sun 9AM–7PM</span><span class="lang-es">Lun–Vie 8AM–8PM · Sáb 9AM–7PM · Dom 9AM–7PM</span></p>
+<a class="btn btn-primary" href="https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY" target="_blank" rel="noopener"><span class="lang-en">Get Directions</span><span class="lang-es">Obtener Direcciones</span></a></div>
+</div></div></section>
+<section><div class="container"><div class="card" style="max-width:820px;margin:0 auto"><div class="eyebrow-acc"><span class="lang-en">Ready to enroll?</span><span class="lang-es">¿Listo para inscribirte?</span></div><h2 style="margin:8px 0 12px"><span class="lang-en">What you'll need to get started</span><span class="lang-es">Lo que necesitas para empezar</span></h2><ul class="list-clean"><li><span class="lang-en">Social Security card</span><span class="lang-es">Tarjeta de Seguro Social</span></li><li><span class="lang-en">High School Diploma, GED, or pass the ATB exam at ABI</span><span class="lang-es">Diploma de Preparatoria, GED, o aprobar el examen ATB en ABI</span></li><li><span class="lang-en">Minimum age 17</span><span class="lang-es">Edad mínima de 17 años</span></li><li><span class="lang-en">Proof of residential address</span><span class="lang-es">Comprobante de domicilio</span></li><li><span class="lang-en">Valid photo ID or driver's license</span><span class="lang-es">Identificación con foto válida o licencia de conducir</span></li><li><span class="lang-en">$500 down payment (includes $100 registration fee)</span><span class="lang-es">$500 de enganche (incluye $100 de cuota de inscripción)</span></li></ul><div class="btn-wrap" style="justify-content:flex-start;margin-top:18px"><a class="btn btn-primary" href="#contact-lead"><span class="lang-en">Apply Now</span><span class="lang-es">Aplica Ahora</span> ✂</a><a class="btn btn-ghost" href="/programs"><span class="lang-en">View All Programs</span><span class="lang-es">Ver Todos los Programas</span></a></div></div></div></section>
   <section class="media-band ms-grid-tilt"><div class="container"><div class="m-head"><div class="eyb"><span class="lang-en">Come see us</span><span class="lang-es">Ven a vernos</span></div><h2><span class="lang-en">Two campuses, one craft</span><span class="lang-es">Dos campus, un oficio</span></h2><p><span class="lang-en">Walk in, watch a cut, and meet the team in Manhattan or the Bronx.</span><span class="lang-es">Ven, mira un corte y conoce al equipo en Manhattan o el Bronx.</span></p></div><div class="m-grid"><figure class="m-tile m-vid"><video class="m-media" muted loop playsinline preload="none" data-src="https://assets-lilac-five.vercel.app/showcase/vid/barber-demonstrates-haircutting.mp4" poster="https://assets-lilac-five.vercel.app/logos/site-06-chrome2.jpeg" aria-label="Barber demonstrates haircutting"></video><figcaption class="m-cap">Barber demonstrates haircutting</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040806062-img-0854.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040807130-img-3181.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure><figure class="m-tile m-img"><img class="m-media" loading="lazy" decoding="async" src="https://assets-lilac-five.vercel.app/showcase/img/1778040808153-img-5656.jpeg" alt="American Barber Institute"><figcaption class="m-cap">American Barber Institute</figcaption></figure></div></div></section>
   <section class="cta-band"><div class="container">
   <div class="eyebrow-acc"><span class="lang-en">Ready to Begin?</span><span class="lang-es">¿Listo para Empezar?</span></div>

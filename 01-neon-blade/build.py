@@ -79,16 +79,8 @@ SITE_CSS = r"""
   .primary-nav{top:100%;max-height:calc(100dvh - 100%)}
 }
 
-/* --- FIX 2: desktop 12-item nav anti-clip (>=1281px) ----------------------
-   At >=1281px the engine renders all 12 links inline (flex:1; flex-wrap:nowrap).
-   On the narrowest desktop widths the rightmost links can crowd, so allow a
-   graceful, scrollbar-less horizontal scroll as a safety net — no link is ever
-   silently hidden. (Below 1281px the engine drawer takes over, so this never
-   affects mobile.) */
-@media (min-width:1281px){
-  .primary-nav{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none}
-  .primary-nav::-webkit-scrollbar{display:none}
-}
+/* (removed the desktop nav horizontal-scroll clip — it could hide Contact; the engine
+   nav now fits all items, so no clipping safety net is needed.) */
 
 /* ============================================================
    SIGNATURE BACKGROUND — animated neon grid + drifting scanline

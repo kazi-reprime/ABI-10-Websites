@@ -96,8 +96,8 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .brand-name{font-family:var(--font-head);font-weight:800;letter-spacing:.02em;line-height:1.1;display:flex;flex-direction:column;font-size:clamp(.78rem,1.7vw,.98rem)}
 .brand-name .brand-line1{color:var(--ink)}
 .brand-name .brand-line2{color:var(--accent)}
-.primary-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap}
-.primary-nav a{color:var(--mut);padding:8px 9px;min-height:44px;display:inline-flex;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.01em;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
+.primary-nav{display:flex;align-items:center;gap:1px;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
+.primary-nav a{color:var(--mut);padding:7px 7px;min-height:44px;display:inline-flex;align-items:center;font-size:.77rem;font-weight:600;letter-spacing:0;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
 .primary-nav a:hover,.primary-nav a.active{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
 .burger{width:48px;height:48px;display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:transparent;border:0;flex-shrink:0}
 .burger span{width:26px;height:2px;background:var(--accent);transition:.2s;border-radius:2px}
@@ -139,6 +139,22 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .subpage-hero h1{margin:20px 0 14px}
 .subpage-hero p.sub{max-width:720px;margin:0 auto;color:var(--mut);font-size:clamp(1rem,2.2vw,1.12rem)}
 .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+/* ---- hero with contact-form aside (home + contact): form on the RIGHT on desktop,
+   stacked below the hero text on mobile — mirrors abi-app-123's home hero ---- */
+.hero-grid{display:grid;gap:clamp(22px,3.5vw,40px);align-items:start}
+.subpage-hero.has-aside{text-align:left}
+.subpage-hero.has-aside .hero-main .eyebrow{margin-bottom:2px}
+.subpage-hero.has-aside .hero-main p.sub{margin-left:0;margin-right:0}
+.subpage-hero.has-aside .hero-ctas{justify-content:flex-start}
+.subpage-hero.has-aside .next-class{margin-left:0}
+@media (min-width:980px){
+  .has-aside .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);align-items:center;gap:clamp(28px,4vw,56px)}
+}
+.hero-aside{width:100%;min-width:0}
+.hero-form-card{background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(18px,3vw,26px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 48px rgba(0,0,0,.4);text-align:left}
+.hero-form-card .hff-head h3{font-size:clamp(1.2rem,2.6vw,1.5rem)}
+.hero-form-card .lead-form .row-2{grid-template-columns:1fr 1fr}
+@media (max-width:480px){.hero-form-card .lead-form .row-2{grid-template-columns:1fr}}
 
 /* ---- h1 effects (toggled by body hfx-* class) ---- */
 .hfx-glow h1{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 40%,transparent),0 0 48px color-mix(in srgb,var(--accent) 20%,transparent)}
@@ -393,10 +409,15 @@ body.nav-open .sticky-call{display:none!important}
 <main>
   <section class="subpage-hero ">
     <div class="container">
-      <div class="eyebrow"><span class="lang-en">Partner Shops</span><span class="lang-es">Barberías Aliadas</span></div>
-      <h1><span class="lang-en">Where ABI graduates work.</span><span class="lang-es">Dónde trabajan los graduados de ABI.</span></h1>
-      <p class="sub"><span class="lang-en">Real shops. Real owners. Many of them started right here on the ABI clinic floor.</span><span class="lang-es">Barberías reales. Dueños reales. Muchos comenzaron aquí mismo en el piso clínico de ABI.</span></p>
-      
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow"><span class="lang-en">Partner Shops</span><span class="lang-es">Barberías Aliadas</span></div>
+          <h1><span class="lang-en">Where ABI graduates work.</span><span class="lang-es">Dónde trabajan los graduados de ABI.</span></h1>
+          <p class="sub"><span class="lang-en">Real shops. Real owners. Many of them started right here on the ABI clinic floor.</span><span class="lang-es">Barberías reales. Dueños reales. Muchos comenzaron aquí mismo en el piso clínico de ABI.</span></p>
+          
+        </div>
+        
+      </div>
     </div>
   </section>
   <section><div class="container"><div class="grid-2"><div class="card partner-card"><div class="img-wrap"><img src="https://assets-lilac-five.vercel.app/partners/levels-barbershop.png" loading="lazy" alt="Levels Barbershop — American Barber Institute partner shop"></div><div class="body"><h3 class="partner-title">Levels Barbershop</h3><div class="locations">Manhattan · Brooklyn · Orange County, NY</div><p class="desc"><span class="lang-en">Levels Barbershop was founded in 1996 on 125th Street in Harlem by Kamal Nuru. Today it spans Manhattan, Brooklyn, and Orange County, NY — alongside The Antique Barber product line, Barber World TV media platform, and the annual NYC Barber Battle.

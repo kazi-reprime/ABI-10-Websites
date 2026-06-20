@@ -231,8 +231,8 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .brand-name{font-family:var(--font-head);font-weight:800;letter-spacing:.02em;line-height:1.1;display:flex;flex-direction:column;font-size:clamp(.78rem,1.7vw,.98rem)}
 .brand-name .brand-line1{color:var(--ink)}
 .brand-name .brand-line2{color:var(--accent)}
-.primary-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;flex-wrap:nowrap}
-.primary-nav a{color:var(--mut);padding:8px 9px;min-height:44px;display:inline-flex;align-items:center;font-size:.8rem;font-weight:600;letter-spacing:.01em;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
+.primary-nav{display:flex;align-items:center;gap:1px;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
+.primary-nav a{color:var(--mut);padding:7px 7px;min-height:44px;display:inline-flex;align-items:center;font-size:.77rem;font-weight:600;letter-spacing:0;white-space:nowrap;border-radius:8px;transition:color .2s,background .2s}
 .primary-nav a:hover,.primary-nav a.active{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
 .burger{width:48px;height:48px;display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:transparent;border:0;flex-shrink:0}
 .burger span{width:26px;height:2px;background:var(--accent);transition:.2s;border-radius:2px}
@@ -274,6 +274,22 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 .subpage-hero h1{margin:20px 0 14px}
 .subpage-hero p.sub{max-width:720px;margin:0 auto;color:var(--mut);font-size:clamp(1rem,2.2vw,1.12rem)}
 .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+/* ---- hero with contact-form aside (home + contact): form on the RIGHT on desktop,
+   stacked below the hero text on mobile — mirrors abi-app-123's home hero ---- */
+.hero-grid{display:grid;gap:clamp(22px,3.5vw,40px);align-items:start}
+.subpage-hero.has-aside{text-align:left}
+.subpage-hero.has-aside .hero-main .eyebrow{margin-bottom:2px}
+.subpage-hero.has-aside .hero-main p.sub{margin-left:0;margin-right:0}
+.subpage-hero.has-aside .hero-ctas{justify-content:flex-start}
+.subpage-hero.has-aside .next-class{margin-left:0}
+@media (min-width:980px){
+  .has-aside .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);align-items:center;gap:clamp(28px,4vw,56px)}
+}
+.hero-aside{width:100%;min-width:0}
+.hero-form-card{background:var(--glass);border:1px solid var(--line);border-radius:var(--card-r);padding:clamp(18px,3vw,26px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 48px rgba(0,0,0,.4);text-align:left}
+.hero-form-card .hff-head h3{font-size:clamp(1.2rem,2.6vw,1.5rem)}
+.hero-form-card .lead-form .row-2{grid-template-columns:1fr 1fr}
+@media (max-width:480px){.hero-form-card .lead-form .row-2{grid-template-columns:1fr}}
 
 /* ---- h1 effects (toggled by body hfx-* class) ---- */
 .hfx-glow h1{text-shadow:0 0 24px color-mix(in srgb,var(--accent) 40%,transparent),0 0 48px color-mix(in srgb,var(--accent) 20%,transparent)}
@@ -853,10 +869,15 @@ PAGE_TPL = '''<!DOCTYPE html>
 <main>
   <section class="subpage-hero {hero_cls}">
     <div class="container">
-      <div class="eyebrow">{eyebrow}</div>
-      <h1>{h1}</h1>
-      <p class="sub">{sub}</p>
-      {hero_ctas}
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">{eyebrow}</div>
+          <h1>{h1}</h1>
+          <p class="sub">{sub}</p>
+          {hero_ctas}
+        </div>
+        {hero_aside}
+      </div>
     </div>
   </section>
   {body}
@@ -886,9 +907,10 @@ def render_page(t, page_key, pdata, site_index=0, article=None):
         decoration=decoration_layer(t),
         top_banner=top_banner(),
         header=header_html(page_key, t),
-        hero_cls="hero-home" if page_key == "home" else "",
+        hero_cls=("hero-home " if page_key == "home" else "") + ("has-aside" if pdata.get("hero_aside") else ""),
         eyebrow=pdata["eyebrow"], h1=pdata["h1"], sub=pdata["sub"],
         hero_ctas=pdata.get("hero_ctas", ""),
+        hero_aside=pdata.get("hero_aside", ""),
         body=pdata["body"],
         media=media_band(t, site_index, page_key, n_vid=nv, n_img=ni),
         cta_band=cta_band(),
@@ -986,6 +1008,20 @@ def lead_form(subject, form_id=""):
   </form>'''
 
 
+def hero_form_card(form_id, subject):
+    """The contact box that sits in the HERO (top of page), as a card on the RIGHT on desktop and
+    stacked below the hero text on mobile — mirrors abi-app-123's home hero. Same fields as the
+    contact page. Used on BOTH the home page and the contact page so the box is the top priority."""
+    return f'''<aside class="hero-aside"><div class="hero-form-card" id="{form_id}-wrap">
+    <div class="hff-head">
+      <div class="eyebrow-acc">{bi({"en":"Get Started","es":"Empieza Hoy"})}</div>
+      <h3 style="margin:6px 0 4px">{bi({"en":"Talk to admissions today","es":"Habla con admisiones hoy"})}</h3>
+      <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi({"en":"Free info — an ABI advisor calls you back, same day during business hours.","es":"Información gratis — un asesor de ABI te llama, el mismo día en horario laboral."})}</p>
+    </div>
+    {lead_form(subject, form_id=form_id)}
+  </div></aside>'''
+
+
 def home_contact_section():
     """Home-page closing block: the next-class countdown timer, then the SAME contact box as the
     contact page (First/Last/Phone/Email + Location/Language/Message). Shown on every site, both
@@ -1017,12 +1053,14 @@ def p_home():
     earn = "".join(f'<div class="card"><div class="eyebrow-acc">{bi(t["window"])}</div><h3 style="margin:8px 0">{bi(t["stage"])}</h3><div class="price-tag">{t["range"]}</div></div>' for t in ce["tiers"])
     grads = " · ".join(p["name"] for p in CONTENT["partners"])
     hero_ctas = (f'<div class="hero-ctas"><a class="btn btn-primary" href="/contact">{bi(UI["become_barber"])} ✂</a>'
-                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>')
+                 f'<a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div>'
+                 + next_class_counter(center=False))
     return {"path": "/",
-            "eyebrow": bi({"en": "NY State Licensed", "es": "Licenciada por el Estado de NY"}),
+            "eyebrow": bi({"en": "Next start: Monday, July 6, 2026", "es": "Próximo inicio: Lunes, 6 de julio de 2026"}),
             "h1": bi(B["tagline"]),
             "sub": bi(B["subtitle"]),
             "hero_ctas": hero_ctas,
+            "hero_aside": hero_form_card("home-lead", "New ABI website inquiry (home)"),
             "body": f'''<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Barber Programs — NYC","es":"Programas de Barbería — NYC"})}</div><h2 style="margin-bottom:8px">{bi({"en":"Choose your path to a Master Barber License","es":"Elige tu camino a la Licencia de Maestro Barbero"})}</h2><p class="lead">{bi({"en":"Four state-licensed programs across two NYC campuses. Flexible weekly payment plans on every track.","es":"Cuatro programas licenciados por el estado en dos campus de NYC. Planes de pago semanales flexibles en cada opción."})}</p><div class="grid">{progs}</div><div class="btn-wrap" style="justify-content:flex-start;margin-top:22px"><a class="btn btn-primary" href="/programs">{bi(UI["view_all_programs"])}</a><a class="btn btn-ghost" href="/programs">{bi(UI["class_schedule"])}</a></div></div></section>
 {_campus_split()}
 <section class="stats-band"><div class="container"><div class="eyebrow-acc center">{bi({"en":"By the numbers","es":"En cifras"})}</div><h2 class="center" style="margin-bottom:24px">{bi({"en":"Built on three decades","es":"Construido sobre tres décadas"})}</h2><div class="stats-grid">
@@ -1035,8 +1073,7 @@ def p_home():
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Schedule & Tuition","es":"Horario y Matrícula"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three flexible schedules","es":"Tres horarios flexibles"})}</h2><div class="grid">{sched}</div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi(ce["headline"])}</div><h2 style="margin-bottom:14px">{bi({"en":"What barbers earn","es":"Lo que ganan los barberos"})}</h2><div class="grid">{earn}</div><p class="lead" style="margin-top:14px;font-size:.84rem">{bi(ce["note"])}</p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Where Our Graduates Work","es":"Dónde Trabajan Nuestros Graduados"})}</div><h2 style="margin-bottom:12px">{bi({"en":"From our chairs to NYC's best shops","es":"De nuestras sillas a las mejores barberías de NYC"})}</h2><p class="lead">{grads}.</p><p><a class="btn btn-ghost" href="/partners">{bi({"en":"Meet our partner shops →","es":"Conoce nuestras barberías aliadas →"})}</a></p></div></section>
-<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Student voices","es":"Voces estudiantiles"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What our students say","es":"Lo que dicen nuestros estudiantes"})}</h2><div class="grid">{tcards}</div></div></section>
-{home_contact_section()}'''}
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Student voices","es":"Voces estudiantiles"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What our students say","es":"Lo que dicen nuestros estudiantes"})}</h2><div class="grid">{tcards}</div></div></section>'''}
 
 
 def p_about():
@@ -1244,6 +1281,7 @@ def p_contact():
             "eyebrow": bi({"en": "Get in Touch", "es": "Ponte en Contacto"}),
             "h1": bi({"en": "Contact ABI", "es": "Contacta a ABI"}),
             "sub": bi({"en": "Questions about programs, tuition, schedules, or enrollment? Call, walk in, or send a message — admissions responds same-day.", "es": "¿Preguntas sobre programas, matrícula, horarios o inscripción? Llama, ven sin cita, o envía un mensaje — admisiones responde el mismo día."}),
+            "hero_aside": hero_form_card("contact-lead", "New ABI website inquiry (contact page)"),
             "body": f'''<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Reach Us","es":"Comunícate"})}</div><h2 style="margin-bottom:18px">{bi({"en":"Two campuses across NYC","es":"Dos campus en NYC"})}</h2><div class="grid-2">
 <div class="card"><div class="eyebrow-acc">{bi({"en":"Manhattan Campus","es":"Campus de Manhattan"})}</div><h3 style="margin:8px 0">{bi(c1["name"])} — 48 W 39th St</h3><p style="color:var(--mut);margin-bottom:8px">{c1["address"]}</p>
 <p style="margin-bottom:6px"><a href="tel:{tel(c1["phone"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{c1["phone"]} <span class="lang-en">(English)</span><span class="lang-es">(Inglés)</span></a></p>
@@ -1256,8 +1294,7 @@ def p_contact():
 <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi(c2["hours"])}</p>
 <a class="btn btn-primary" href="https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY" target="_blank" rel="noopener">{bi(UI["get_directions"])}</a></div>
 </div></div></section>
-<section><div class="container"><div class="card" style="max-width:820px;margin:0 auto"><div class="eyebrow-acc">{bi({"en":"Ready to enroll?","es":"¿Listo para inscribirte?"})}</div><h2 style="margin:8px 0 12px">{bi({"en":"What you'll need to get started","es":"Lo que necesitas para empezar"})}</h2><ul class="list-clean">{reqs}</ul><div class="btn-wrap" style="justify-content:flex-start;margin-top:18px"><a class="btn btn-primary" href="#lead-form">{bi(UI["apply_now"])} ✂</a><a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div></div></div></section>
-<section id="lead-form"><div class="container"><div class="card" style="max-width:680px;margin:0 auto"><div class="eyebrow-acc center">{bi({"en":"Send a Message","es":"Envía un Mensaje"})}</div><h2 style="margin:8px 0 8px;text-align:center">{bi({"en":"How can we help?","es":"¿Cómo podemos ayudarte?"})}</h2><p style="color:var(--mut);margin:0 auto 22px;text-align:center;max-width:520px">{bi({"en":"Fill out the form and an ABI admissions agent will get back to you — same day during business hours.","es":"Completa el formulario y un agente de admisiones de ABI te contactará — el mismo día en horario laboral."})}</p>{lead_form("New ABI website inquiry (contact page)", form_id="contact-lead")}</div></div></section>'''}
+<section><div class="container"><div class="card" style="max-width:820px;margin:0 auto"><div class="eyebrow-acc">{bi({"en":"Ready to enroll?","es":"¿Listo para inscribirte?"})}</div><h2 style="margin:8px 0 12px">{bi({"en":"What you'll need to get started","es":"Lo que necesitas para empezar"})}</h2><ul class="list-clean">{reqs}</ul><div class="btn-wrap" style="justify-content:flex-start;margin-top:18px"><a class="btn btn-primary" href="#contact-lead">{bi(UI["apply_now"])} ✂</a><a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div></div></div></section>'''}
 
 
 PAGE_BUILDERS = {

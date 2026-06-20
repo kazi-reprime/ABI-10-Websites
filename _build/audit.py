@@ -108,8 +108,9 @@ def audit_site(site):
     # next-class countdown on home + programs
     if "data-next-class" not in idx: fail(site, "index", "next-class countdown missing")
     if "data-next-class" not in prog: fail(site, "programs", "next-class countdown missing")
-    # home contact box (desktop + mobile)
-    if 'id="home-contact"' not in idx: fail(site, "index", "home contact box missing")
+    # home contact box now lives in the HERO (top), beside the headline on desktop
+    if "hero-form-card" not in idx: fail(site, "index", "home hero contact box (hero-form-card) missing")
+    if "has-aside" not in idx: fail(site, "index", "home hero two-column (form aside) layout missing")
     # Manhattan | Bronx split on home + programs
     if "campus-split" not in idx: fail(site, "index", "Manhattan|Bronx split missing")
     if "campus-split" not in prog: fail(site, "programs", "Manhattan|Bronx split missing")
