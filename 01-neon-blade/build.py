@@ -76,7 +76,7 @@ SITE_CSS = r"""
    re-assert top:100% across the FULL engine drawer range so the anchoring holds
    even if upstream spacing changes. */
 @media (max-width:1280px){
-  .primary-nav{top:100%;max-height:calc(100dvh - 100%)}
+  .primary-nav{top:100%;max-height:calc(100dvh - var(--nav-top, 116px))}
 }
 
 /* (removed the desktop nav horizontal-scroll clip — it could hide Contact; the engine

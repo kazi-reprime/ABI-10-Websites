@@ -108,9 +108,9 @@ body.lang-en .lang-es,body.lang-es .lang-en{display:none!important}
 /* ---- mobile nav drawer: anchored under the header via JS-measured --nav-top
    (robust to the top-banner wrapping to multiple rows on small screens) ---- */
 @media (max-width:1280px){
-  .primary-nav{position:fixed;left:0;right:0;top:100%;z-index:29;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px calc(24px + var(--safe-bottom));max-height:calc(100dvh - 100%);overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility .25s;box-shadow:0 24px 48px rgba(0,0,0,.5)}
+  .primary-nav{position:fixed;left:0;right:0;top:100%;z-index:29;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px calc(24px + var(--safe-bottom));max-height:calc(100dvh - var(--nav-top, 116px));overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility .25s;box-shadow:0 24px 48px rgba(0,0,0,.5)}
   .primary-nav.open{opacity:1;visibility:visible;transform:none}
-  .primary-nav a{padding:15px 8px;border-bottom:1px solid var(--line);font-size:1.02rem;min-height:54px;width:100%}
+  .primary-nav a{padding:12px 8px;border-bottom:1px solid var(--line);font-size:1rem;min-height:48px;width:100%}
   .primary-nav a:last-child{border-bottom:0}
   .burger{display:inline-flex;margin-left:auto}
 }
