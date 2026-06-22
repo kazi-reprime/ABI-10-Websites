@@ -133,6 +133,22 @@ def audit_site(site):
     for nm in ("Levels Barbershop", "Diamond Fadez", "NYC Barber Shop Museum"):
         if nm not in part: fail(site, "partners", f"partner '{nm}' missing")
 
+    # ---- content-parity vs live abi-app-123 (narrative sections) ----
+    ab = (d / "about.html").read_text(errors="replace") if (d / "about.html").exists() else ""
+    if "feature-pills" not in idx: fail(site, "index", "feature pills strip missing")
+    for pill in ("Fast Track", "Day & Evening Classes", "Career Support"):
+        if pill not in idx: fail(site, "index", f"feature pill '{pill}' missing")
+    if "Hands-On Training That Matters" not in idx: fail(site, "index", "Real Skills section missing")
+    if "Sanitation and infection control" not in idx: fail(site, "index", "skills list (sanitation) missing")
+    if "No Experience Needed" not in idx: fail(site, "index", "Zero-to-Pro section missing")
+    if 'data-target="80"' not in idx: fail(site, "index", "graduation-rate stat (80%+) missing")
+    if "Seats Fill Fast" not in idx: fail(site, "index", "final CTA 'Seats Fill Fast' missing")
+    for nm in ("Vincybie Lee", "Tina Banee"):
+        if nm not in idx: fail(site, "index", f"testimonial '{nm}' missing")
+    if "Hi, I'm Alex" not in ab: fail(site, "about", "leadership welcome (Alex) missing")
+    if "Welcome from the Leadership" not in ab: fail(site, "about", "leadership heading missing")
+    if "Mentorship from seasoned professionals" not in prog: fail(site, "programs", "program inclusions list missing")
+
 
 def main():
     for s in SITES:

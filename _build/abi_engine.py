@@ -510,6 +510,14 @@ body.nav-open .sticky-call{display:none!important}
 /* footer logo emblem */
 .footer-logo-plate{display:inline-block;background:#fff;border-radius:9px;padding:9px 13px;margin-bottom:14px}
 .footer-logo{height:44px;width:auto;max-width:220px;object-fit:contain;display:block}
+
+/* ---- feature pills strip (under hero) — content parity with abi-app-123 ---- */
+.feature-pills{padding:clamp(14px,2.5vw,22px) 0}
+.feat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:clamp(8px,1.6vw,14px)}
+.feat-pill{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--card-r);background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .25s,transform .25s}
+.feat-pill:hover{border-color:var(--accent);transform:translateY(-3px)}
+.feat-pill b{font-family:var(--font-head);font-size:.96rem;color:var(--ink);letter-spacing:.01em}
+.feat-pill span{font-size:.78rem;color:var(--mut)}
 """
 
 MEDIA_STYLE_CSS = {
@@ -686,12 +694,68 @@ def sticky_call():
 
 
 def cta_band():
+    """Closing CTA band on every page — uses the live site's exact "Don't Wait — Seats Fill Fast"
+    copy (content parity with abi-app-123)."""
+    fc = CONTENT["final_cta"]
     return f'''<section class="cta-band"><div class="container">
-  <div class="eyebrow-acc">{bi({"en": "Ready to Begin?", "es": "¿Listo para Empezar?"})}</div>
-  <h2 style="margin:10px 0 12px">{bi({"en": "Ready to Start Your Barber Career?", "es": "¿Listo para Comenzar Tu Carrera de Barbero?"})}</h2>
-  <p class="lead" style="margin:0 auto 22px">{bi({"en": "New classes begin the first Monday of every month. Apply today and take the first step toward your new career.", "es": "Las nuevas clases comienzan el primer lunes de cada mes. Aplica hoy y da el primer paso hacia tu nueva carrera."})}</p>
+  <div class="eyebrow-acc">{bi(fc["eyebrow"])}</div>
+  <h2 style="margin:10px 0 12px">{bi(fc["heading"])}</h2>
+  <p class="lead" style="margin:0 auto 22px">{bi(fc["sub"])}</p>
   <div class="btn-wrap"><a class="btn btn-primary" href="/contact">{bi(UI["become_barber"])} ✂</a><a class="btn btn-ghost" href="tel:{tel(B["phone_manhattan"])}">{bi(UI["call_admissions"])} · {B["phone_manhattan"]}</a></div>
 </div></section>'''
+
+
+def feature_pills_strip():
+    """Row of trust/feature pills shown right under the hero — content parity with abi-app-123
+    (Fast Track · Day & Evening Classes · NY State Licensed · Financial Assistance · Career Support)."""
+    pills = "".join(
+        f'<div class="feat-pill"><b>{bi(p["title"])}</b><span>{bi(p["sub"])}</span></div>'
+        for p in CONTENT["feature_pills"]
+    )
+    return f'<section class="feature-pills"><div class="container"><div class="feat-row">{pills}</div></div></section>'
+
+
+def skills_section():
+    s = CONTENT["skills"]
+    items = "".join(f"<li>{bi(i)}</li>" for i in s["items"])
+    return (f'<section><div class="container"><div class="grid-2" style="align-items:center">'
+            f'<div><div class="eyebrow-acc">{bi(s["eyebrow"])}</div>'
+            f'<h2 style="margin-bottom:12px">{bi(s["heading"])}</h2>'
+            f'<p class="lead">{bi(s["intro"])}</p></div>'
+            f'<div class="card"><ul class="list-clean">{items}</ul></div>'
+            f'</div></div></section>')
+
+
+def zero_to_pro_section():
+    z = CONTENT["zero_to_pro"]
+    cats = "".join(
+        f'<div class="card center"><h3 style="margin-bottom:6px">{bi(c["label"])}</h3>'
+        f'<p style="color:var(--accent);font-weight:800;font-size:.9rem">{bi(c["note"])}</p></div>'
+        for c in z["categories"]
+    )
+    return (f'<section><div class="container center"><div class="eyebrow-acc">{bi(z["eyebrow"])}</div>'
+            f'<h2 style="margin-bottom:12px">{bi(z["heading"])}</h2>'
+            f'<p class="lead" style="margin:0 auto 22px">{bi(z["intro"])}</p>'
+            f'<div class="grid">{cats}</div></div></section>')
+
+
+def leadership_section():
+    """Personal welcome from the ABI leadership team (Alex) — content parity with abi-app-123."""
+    l = CONTENT["leadership"]
+    paras = "".join(f'<p style="color:var(--mut);line-height:1.85;margin-bottom:14px;font-size:1.05rem">{bi(p)}</p>' for p in l["body"])
+    return (f'<section><div class="container"><div class="card" style="max-width:860px;margin:0 auto">'
+            f'<div class="eyebrow-acc">{bi(l["eyebrow"])}</div>'
+            f'<h2 style="margin:8px 0 16px">{bi(l["heading"])}</h2>{paras}'
+            f'<p style="font-weight:800;color:var(--ink);margin-top:6px">{bi(l["signature"])}</p>'
+            f'</div></div></section>')
+
+
+def program_includes_block():
+    pi = CONTENT["program_includes"]
+    items = "".join(f"<li>{bi(i)}</li>" for i in pi["items"])
+    return (f'<section><div class="container"><div class="eyebrow-acc">{bi({"en":"What you get","es":"Lo que recibes"})}</div>'
+            f'<h2 style="margin-bottom:14px">{bi(pi["title"])}</h2>'
+            f'<ul class="list-clean" style="max-width:680px">{items}</ul></div></section>')
 
 
 def footer_html():
@@ -1061,15 +1125,18 @@ def p_home():
             "sub": bi(B["subtitle"]),
             "hero_ctas": hero_ctas,
             "hero_aside": hero_form_card("home-lead", "New ABI website inquiry (home)"),
-            "body": f'''<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Barber Programs — NYC","es":"Programas de Barbería — NYC"})}</div><h2 style="margin-bottom:8px">{bi({"en":"Choose your path to a Master Barber License","es":"Elige tu camino a la Licencia de Maestro Barbero"})}</h2><p class="lead">{bi({"en":"Four state-licensed programs across two NYC campuses. Flexible weekly payment plans on every track.","es":"Cuatro programas licenciados por el estado en dos campus de NYC. Planes de pago semanales flexibles en cada opción."})}</p><div class="grid">{progs}</div><div class="btn-wrap" style="justify-content:flex-start;margin-top:22px"><a class="btn btn-primary" href="/programs">{bi(UI["view_all_programs"])}</a><a class="btn btn-ghost" href="/programs">{bi(UI["class_schedule"])}</a></div></div></section>
+            "body": f'''{feature_pills_strip()}
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Barber Programs — NYC","es":"Programas de Barbería — NYC"})}</div><h2 style="margin-bottom:8px">{bi({"en":"Choose your path to a Master Barber License","es":"Elige tu camino a la Licencia de Maestro Barbero"})}</h2><p class="lead">{bi({"en":"Four state-licensed programs across two NYC campuses. Flexible weekly payment plans on every track.","es":"Cuatro programas licenciados por el estado en dos campus de NYC. Planes de pago semanales flexibles en cada opción."})}</p><div class="grid">{progs}</div><div class="btn-wrap" style="justify-content:flex-start;margin-top:22px"><a class="btn btn-primary" href="/programs">{bi(UI["view_all_programs"])}</a><a class="btn btn-ghost" href="/programs">{bi(UI["class_schedule"])}</a></div></div></section>
 {_campus_split()}
 <section class="stats-band"><div class="container"><div class="eyebrow-acc center">{bi({"en":"By the numbers","es":"En cifras"})}</div><h2 class="center" style="margin-bottom:24px">{bi({"en":"Built on three decades","es":"Construido sobre tres décadas"})}</h2><div class="stats-grid">
 <div class="stat-card"><b class="count" data-target="30" data-suffix="+">0</b><span class="label">{bi({"en":"Years in business","es":"Años en activo"})}</span></div>
 <div class="stat-card"><b class="count" data-target="10000" data-suffix="+">0</b><span class="label">{bi({"en":"Graduates trained","es":"Graduados entrenados"})}</span></div>
-<div class="stat-card"><b class="count" data-target="90" data-suffix="%+">0</b><span class="label">{bi({"en":"Job placement rate","es":"Tasa de colocación"})}</span></div>
-<div class="stat-card"><b class="count" data-target="2" data-suffix="">0</b><span class="label">{bi({"en":"NYC campuses","es":"Campus en NYC"})}</span></div>
+<div class="stat-card"><b class="count" data-target="80" data-suffix="%+">0</b><span class="label">{bi({"en":"Graduation rate","es":"Tasa de graduación"})}</span></div>
+<div class="stat-card"><b class="count" data-target="4" data-suffix="">0</b><span class="label">{bi({"en":"Months to get licensed","es":"Meses para licenciarte"})}</span></div>
 </div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Why Choose ABI","es":"Por Qué Elegir ABI"})}</div><h2 style="margin-bottom:18px">{bi({"en":"Everything you need to succeed","es":"Todo lo que necesitas para triunfar"})}</h2><div class="grid">{why}</div></div></section>
+{skills_section()}
+{zero_to_pro_section()}
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Schedule & Tuition","es":"Horario y Matrícula"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three flexible schedules","es":"Tres horarios flexibles"})}</h2><div class="grid">{sched}</div></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi(ce["headline"])}</div><h2 style="margin-bottom:14px">{bi({"en":"What barbers earn","es":"Lo que ganan los barberos"})}</h2><div class="grid">{earn}</div><p class="lead" style="margin-top:14px;font-size:.84rem">{bi(ce["note"])}</p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Where Our Graduates Work","es":"Dónde Trabajan Nuestros Graduados"})}</div><h2 style="margin-bottom:12px">{bi({"en":"From our chairs to NYC's best shops","es":"De nuestras sillas a las mejores barberías de NYC"})}</h2><p class="lead">{grads}.</p><p><a class="btn btn-ghost" href="/partners">{bi({"en":"Meet our partner shops →","es":"Conoce nuestras barberías aliadas →"})}</a></p></div></section>
@@ -1094,6 +1161,7 @@ def p_about():
 <div class="stat-card"><b class="count" data-target="2" data-suffix="">0</b><span class="label">{bi({"en":"NYC campuses","es":"Campus en NYC"})}</span><span class="sublabel">{bi({"en":"Manhattan + Bronx","es":"Manhattan + Bronx"})}</span></div>
 <div class="stat-card"><b class="count" data-target="17" data-suffix="">0</b><span class="label">{bi({"en":"Weeks to license","es":"Semanas a la licencia"})}</span><span class="sublabel">{bi({"en":"Full-time track","es":"Tiempo completo"})}</span></div>
 </div></div></section>
+{leadership_section()}
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Leadership","es":"Liderazgo"})}</div><h2 style="margin-bottom:24px">{bi({"en":"The faculty","es":"La facultad"})}</h2><div class="ins-grid">{instr}</div><p style="margin-top:20px"><a class="btn btn-ghost" href="/instructors">{bi({"en":"Meet all instructors →","es":"Conoce a todos →"})}</a></p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Why ABI","es":"Por qué ABI"})}</div><h2 style="margin-bottom:18px">{bi({"en":"What makes us different","es":"Lo que nos hace diferentes"})}</h2><div class="grid">{why}</div></div></section>'''}
 
@@ -1112,7 +1180,8 @@ def p_programs():
 {_campus_split()}
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Schedule & Tuition","es":"Horario y Matrícula"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three flexible schedules","es":"Tres horarios flexibles"})}</h2><div class="grid">{sched}</div><p style="margin-top:18px;color:var(--mut);font-size:.92rem">{bi({"en":"Start your barber journey today for only $150 per week. GI Bill® and ACCES-VR accepted.","es":"Comienza tu camino de barbero hoy por solo $150 por semana. GI Bill® y ACCES-VR aceptados."})} <a href="/resources" style="color:var(--accent);text-decoration:underline">{bi({"en":"See full benefits guide →","es":"Ver guía completa →"})}</a></p></div></section>
 <section><div class="container"><div class="eyebrow-acc">{bi({"en":"Enrollment","es":"Inscripción"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Three steps to your first chair","es":"Tres pasos a tu primer sillón"})}</h2><div class="grid">{steps}</div></div></section>
-<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Requirements","es":"Requisitos"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Documents to enroll","es":"Documentos para inscribirte"})}</h2><ul class="list-clean" style="max-width:680px">{req}</ul></div></section>'''}
+<section><div class="container"><div class="eyebrow-acc">{bi({"en":"Requirements","es":"Requisitos"})}</div><h2 style="margin-bottom:14px">{bi({"en":"Documents to enroll","es":"Documentos para inscribirte"})}</h2><ul class="list-clean" style="max-width:680px">{req}</ul></div></section>
+{program_includes_block()}'''}
 
 
 def p_resources():

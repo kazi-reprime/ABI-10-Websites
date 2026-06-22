@@ -474,6 +474,75 @@
       }
     }
   ],
+  "feature_pills": [
+    { "title": { "en": "Fast Track", "es": "Vía Rápida" }, "sub": { "en": "Licensed in as little as 17 weeks", "es": "Licenciado en tan solo 17 semanas" } },
+    { "title": { "en": "Day & Evening Classes", "es": "Clases de Día y Noche" }, "sub": { "en": "Morning, afternoon & weekend tracks", "es": "Opciones de mañana, tarde y fin de semana" } },
+    { "title": { "en": "NY State Licensed Program", "es": "Programa Licenciado por NY" }, "sub": { "en": "Dept. of Education (BPSS)", "es": "Depto. de Educación (BPSS)" } },
+    { "title": { "en": "Financial Assistance", "es": "Asistencia Financiera" }, "sub": { "en": "ACCES-VR, VA & more", "es": "ACCES-VR, VA y más" } },
+    { "title": { "en": "Career Support", "es": "Apoyo Profesional" }, "sub": { "en": "Job placement assistance", "es": "Asistencia de colocación laboral" } }
+  ],
+  "skills": {
+    "eyebrow": { "en": "Real Skills", "es": "Habilidades Reales" },
+    "heading": { "en": "Hands-On Training That Matters", "es": "Entrenamiento Práctico Que Importa" },
+    "intro": {
+      "en": "From the first few weeks, you'll be on the floor learning real barbering skills — not just theory. Our instructors bring decades of professional experience into every session.",
+      "es": "Desde las primeras semanas estarás en el piso aprendiendo habilidades reales de barbería — no solo teoría. Nuestros instructores aportan décadas de experiencia profesional en cada sesión."
+    },
+    "items": [
+      { "en": "Haircutting and modern fades", "es": "Corte de cabello y degradados modernos" },
+      { "en": "Beard work and shaving techniques", "es": "Trabajo de barba y técnicas de afeitado" },
+      { "en": "Grooming and styling", "es": "Arreglo y peinado" },
+      { "en": "Sanitation and infection control", "es": "Sanitización y control de infecciones" },
+      { "en": "Real barbershop skills within the first few weeks", "es": "Habilidades reales de barbería en las primeras semanas" }
+    ]
+  },
+  "zero_to_pro": {
+    "eyebrow": { "en": "Zero to Pro", "es": "De Cero a Profesional" },
+    "heading": { "en": "No Experience Needed", "es": "No Necesitas Experiencia" },
+    "intro": {
+      "en": "Whether you're starting from zero, switching careers, or have some background — we train you from beginner to licensed professional. All you need is the drive to succeed.",
+      "es": "Ya sea que empieces de cero, cambies de carrera o tengas algo de experiencia — te entrenamos desde principiante hasta profesional licenciado. Solo necesitas las ganas de triunfar."
+    },
+    "categories": [
+      { "label": { "en": "Starting Fresh", "es": "Empezando de Cero" }, "note": { "en": "Welcome", "es": "Bienvenido" } },
+      { "label": { "en": "Career Change", "es": "Cambio de Carrera" }, "note": { "en": "Perfect fit", "es": "Ideal para ti" } },
+      { "label": { "en": "Some Experience", "es": "Con Experiencia" }, "note": { "en": "Build on it", "es": "Aprovéchala" } }
+    ]
+  },
+  "program_includes": {
+    "title": { "en": "What's included in every program", "es": "Lo que incluye cada programa" },
+    "items": [
+      { "en": "State-approved barber training program", "es": "Programa de barbería aprobado por el estado" },
+      { "en": "Full preparation for the NY State Board Exam", "es": "Preparación completa para el Examen de la Junta Estatal de NY" },
+      { "en": "Real hands-on experience within the first few weeks", "es": "Experiencia práctica real en las primeras semanas" },
+      { "en": "Mentorship from seasoned professionals", "es": "Mentoría de profesionales experimentados" },
+      { "en": "Job placement services upon graduation", "es": "Servicios de colocación laboral al graduarte" },
+      { "en": "Access to both Manhattan & Bronx campuses", "es": "Acceso a ambos campus de Manhattan y el Bronx" }
+    ]
+  },
+  "leadership": {
+    "eyebrow": { "en": "A Personal Welcome", "es": "Una Bienvenida Personal" },
+    "heading": { "en": "Welcome from the Leadership Team", "es": "Bienvenida del Equipo de Liderazgo" },
+    "body": [
+      {
+        "en": "Hi, I'm Alex — thank you for taking the first step toward your barbering career. Every great barber I've known started exactly where you are now: curious, a little nervous, and ready to work.",
+        "es": "Hola, soy Alex — gracias por dar el primer paso hacia tu carrera de barbero. Cada gran barbero que he conocido empezó exactamente donde estás ahora: con curiosidad, un poco nervioso y listo para trabajar."
+      },
+      {
+        "en": "At ABI we don't just teach technique. We build the confidence, the discipline, and the community that carry you from your first fade to your own chair. Whether this is a new chapter or the dream you've been chasing for years, I want you to know you're welcome here. Fill out the pre-registration form, upload your documents in minutes, and I look forward to meeting you.",
+        "es": "En ABI no solo enseñamos técnica. Construimos la confianza, la disciplina y la comunidad que te llevan desde tu primer degradado hasta tu propia silla. Ya sea que este sea un nuevo capítulo o el sueño que has perseguido durante años, quiero que sepas que aquí eres bienvenido. Completa el formulario de pre-inscripción, sube tus documentos en minutos, y espero conocerte."
+      }
+    ],
+    "signature": { "en": "— The American Barber Institute Leadership Team", "es": "— El Equipo de Liderazgo de American Barber Institute" }
+  },
+  "final_cta": {
+    "eyebrow": { "en": "Don't Wait — Seats Fill Fast", "es": "No Esperes — Los Cupos se Llenan" },
+    "heading": { "en": "Stop Waiting. Start Your Career in as Little as 4 Months", "es": "Deja de Esperar. Comienza Tu Carrera en Tan Solo 4 Meses" },
+    "sub": {
+      "en": "Apply now and secure your future. Join thousands of ABI graduates working across New York and beyond — in a recession-proof industry you can call your own.",
+      "es": "Aplica ahora y asegura tu futuro. Únete a miles de graduados de ABI que trabajan por todo Nueva York y más allá — en una industria a prueba de recesiones que puedes llamar tuya."
+    }
+  },
   "career_earnings": {
     "headline": {
       "en": "Barber Career Earnings",
@@ -782,6 +851,28 @@
       "quote": {
         "en": "The best barber school in New York — real barber culture.",
         "es": "La mejor escuela de barbería de Nueva York — verdadera cultura de barbero."
+      }
+    },
+    {
+      "name": "Vincybie Lee",
+      "role": {
+        "en": "5★ Google Review",
+        "es": "Reseña 5★ Google"
+      },
+      "quote": {
+        "en": "Only $3 for a regular haircut and it's not bad at all.",
+        "es": "Solo $3 por un corte regular y no está nada mal."
+      }
+    },
+    {
+      "name": "Tina Banee",
+      "role": {
+        "en": "5★ Google Review",
+        "es": "Reseña 5★ Google"
+      },
+      "quote": {
+        "en": "Donovan gave me a great haircut. He did exactly what I asked.",
+        "es": "Donovan me dio un gran corte. Hizo exactamente lo que pedí."
       }
     }
   ],
