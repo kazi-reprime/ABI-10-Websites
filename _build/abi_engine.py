@@ -1431,13 +1431,24 @@ def build_site(tokens, site, extra_css=""):
     sm += "</urlset>\n"
     (site_dir / "sitemap.xml").write_text(sm)
     (site_dir / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n")
+    # CSP allowlists exactly the third parties the client's GTM container (GTM-NKLLGPC) actually
+    # loads — Google Tag Manager / Analytics, Facebook Pixel, Microsoft Clarity, ClickCease — plus
+    # the shared asset host. An injected script from any other origin is still blocked. (If a NEW
+    # marketing tag is added in GTM later, its origin must be added here too.)
     csp = ("default-src 'self'; "
-           "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; "
+           "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com "
+           "https://ssl.google-analytics.com https://connect.facebook.net https://www.clickcease.com "
+           "https://*.clickcease.com https://www.clarity.ms https://*.clarity.ms; "
            "style-src 'self' 'unsafe-inline'; "
-           "img-src 'self' data: https://assets-lilac-five.vercel.app https://www.googletagmanager.com; "
+           "img-src 'self' data: https://assets-lilac-five.vercel.app https://www.googletagmanager.com "
+           "https://www.google-analytics.com https://*.google-analytics.com https://*.g.doubleclick.net "
+           "https://www.facebook.com https://*.clarity.ms https://c.bing.com https://*.clickcease.com; "
            "media-src 'self' https://assets-lilac-five.vercel.app; font-src 'self'; "
-           "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net; "
-           "form-action https://formsubmit.co; frame-src https://www.googletagmanager.com; "
+           "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com "
+           "https://*.google-analytics.com https://analytics.google.com https://*.g.doubleclick.net "
+           "https://connect.facebook.net https://www.facebook.com https://*.clarity.ms https://*.clickcease.com; "
+           "form-action https://formsubmit.co; "
+           "frame-src https://www.googletagmanager.com https://www.facebook.com https://*.g.doubleclick.net; "
            "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests")
     security_headers = [
         {"key": "Content-Security-Policy", "value": csp},
