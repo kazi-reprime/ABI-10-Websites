@@ -763,7 +763,7 @@ def footer_html():
     nav_html = "".join(f'<a href="{p}">{bi(NAV[k])}</a>' for k, p in NAV_ITEMS if k != "home")
     hours = "".join(f'<p>{bi(h)}</p>' for h in f["hours"])
     _abbr = {"Facebook": "f", "Instagram": "IG", "YouTube": "YT", "X": "X", "Pinterest": "P"}
-    socials = "".join(f'<a href="{s["url"]}" target="_blank" rel="noopener" aria-label="{s["name"]}">{_abbr.get(s["name"], s["name"][:2])}</a>' for s in CONTENT.get("social", []))
+    socials = "".join(f'<a href="{s["url"]}" target="_blank" rel="noopener noreferrer" aria-label="{s["name"]}">{_abbr.get(s["name"], s["name"][:2])}</a>' for s in CONTENT.get("social", []))
     return f'''<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -1051,7 +1051,7 @@ def lead_form(subject, form_id=""):
     return f'''<form class="lead-form form-grid"{f' id="{form_id}"' if form_id else ''} action="https://formsubmit.co/{B["email"]}" method="POST" novalidate>
     <input type="hidden" name="_subject" value="{subject}">
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_captcha" value="true">
     <input type="hidden" name="_next" value="{FORM_NEXT}">
     <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
     <div class="row-2">
@@ -1244,7 +1244,7 @@ def p_haircuts():
 
 def p_gallery():
     imgs = GALLERY_FILES[:30]
-    tiles = "".join(f'<a class="gallery-tile" href="/assets/img/{f}" target="_blank" rel="noopener"><img src="/assets/img/{f}" loading="lazy" alt="ABI student work"></a>' for f in imgs)
+    tiles = "".join(f'<a class="gallery-tile" href="/assets/img/{f}" target="_blank" rel="noopener noreferrer"><img src="/assets/img/{f}" loading="lazy" alt="ABI student work"></a>' for f in imgs)
     return {"path": "/gallery",
             "eyebrow": bi({"en": "On the floor", "es": "En el piso"}),
             "h1": bi({"en": "Student work. Clinic life. Graduation day.", "es": "Trabajo de estudiantes. Vida en la clínica. Día de graduación."}),
@@ -1357,11 +1357,11 @@ def p_contact():
 <p style="margin-bottom:6px"><a href="tel:{tel(B["phone_manhattan_es"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{B["phone_manhattan_es"]} <span class="lang-en">(Spanish)</span><span class="lang-es">(Español)</span></a></p>
 <p style="margin-bottom:6px"><a href="mailto:{B["email"]}" style="color:var(--accent);font-weight:700">{B["email"]}</a></p>
 <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi(c1["hours"])}</p>
-<a class="btn btn-primary" href="https://www.google.com/maps?q=48+West+39th+Street+New+York+NY" target="_blank" rel="noopener">{bi(UI["get_directions"])}</a></div>
+<a class="btn btn-primary" href="https://www.google.com/maps?q=48+West+39th+Street+New+York+NY" target="_blank" rel="noopener noreferrer">{bi(UI["get_directions"])}</a></div>
 <div class="card"><div class="eyebrow-acc">{bi({"en":"Bronx Campus","es":"Campus del Bronx"})}</div><h3 style="margin:8px 0">{bi(c2["name"])} — 121 Westchester Sq</h3><p style="color:var(--mut);margin-bottom:8px">{c2["address"]}</p>
 <p style="margin-bottom:6px"><a href="tel:{tel(c2["phone"])}" style="color:var(--accent);font-weight:800;font-size:1.05rem">{c2["phone"]} <span class="lang-en">(Bronx)</span><span class="lang-es">(Bronx)</span></a></p>
 <p style="color:var(--mut);font-size:.9rem;margin-bottom:14px">{bi(c2["hours"])}</p>
-<a class="btn btn-primary" href="https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY" target="_blank" rel="noopener">{bi(UI["get_directions"])}</a></div>
+<a class="btn btn-primary" href="https://www.google.com/maps?q=121+Westchester+Square+Bronx+NY" target="_blank" rel="noopener noreferrer">{bi(UI["get_directions"])}</a></div>
 </div></div></section>
 <section><div class="container"><div class="card" style="max-width:820px;margin:0 auto"><div class="eyebrow-acc">{bi({"en":"Ready to enroll?","es":"¿Listo para inscribirte?"})}</div><h2 style="margin:8px 0 12px">{bi({"en":"What you'll need to get started","es":"Lo que necesitas para empezar"})}</h2><ul class="list-clean">{reqs}</ul><div class="btn-wrap" style="justify-content:flex-start;margin-top:18px"><a class="btn btn-primary" href="#contact-lead">{bi(UI["apply_now"])} ✂</a><a class="btn btn-ghost" href="/programs">{bi(UI["view_all_programs"])}</a></div></div></div></section>'''}
 
@@ -1431,8 +1431,29 @@ def build_site(tokens, site, extra_css=""):
     sm += "</urlset>\n"
     (site_dir / "sitemap.xml").write_text(sm)
     (site_dir / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n")
+    csp = ("default-src 'self'; "
+           "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; "
+           "style-src 'self' 'unsafe-inline'; "
+           "img-src 'self' data: https://assets-lilac-five.vercel.app https://www.googletagmanager.com; "
+           "media-src 'self' https://assets-lilac-five.vercel.app; font-src 'self'; "
+           "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net; "
+           "form-action https://formsubmit.co; frame-src https://www.googletagmanager.com; "
+           "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests")
+    security_headers = [
+        {"key": "Content-Security-Policy", "value": csp},
+        {"key": "X-Content-Type-Options", "value": "nosniff"},
+        {"key": "X-Frame-Options", "value": "DENY"},
+        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+        {"key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload"},
+        {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"},
+        {"key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups"},
+    ]
+    # Cache rules kept exactly as before (asset immutable + html short) so caching is unchanged;
+    # a separate header-only rule on /(.*) layers the security headers everywhere without
+    # clobbering the asset Cache-Control.
     (site_dir / "vercel.json").write_text(json.dumps({"cleanUrls": True, "trailingSlash": False, "headers": [
         {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
         {"source": "/(.*).html", "headers": [{"key": "Cache-Control", "value": "public, max-age=300, must-revalidate"}]},
+        {"source": "/(.*)", "headers": security_headers},
     ]}, indent=2))
     print(f"  OK {slug}: 12 pages + {len(article_paths)} blog articles, mobile-first responsive")
